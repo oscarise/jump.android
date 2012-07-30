@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::utils::AndroidUtils</compoundname>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1_1_set_from_map_3_01_e_01_4" prot="public">com::janrain::android::engage::utils::AndroidUtils::SetFromMap&lt; E &gt;</innerclass>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a844c5efdea72aa6bf76fb98b1072572a" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer> AndroidUtils.class.getSimpleName()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="91" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a8423ad52bafba9c33184c1f4f1dd8214" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int SDK_INT</definition>
+        <argsstring></argsstring>
+        <name>SDK_INT</name>
+        <initializer> getAndroidSdkInt()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="138" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a7e8459aa50f605e03d5a9cda66a4e2fd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>AndroidUtils</definition>
+        <argsstring>()</argsstring>
+        <name>AndroidUtils</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="92" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="92" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a98b8a26c7d8f22b86632e96a683c78d4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean isSmallNormalOrLargeScreen</definition>
+        <argsstring>()</argsstring>
+        <name>isSmallNormalOrLargeScreen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="94" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="94" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1aef3d41ea2a09344c73efe33903311c82" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean isCupcake</definition>
+        <argsstring>()</argsstring>
+        <name>isCupcake</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="106" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ae93098b1d04e4a71bec54cf1afd3ae23" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String urlEncode</definition>
+        <argsstring>(String s)</argsstring>
+        <name>urlEncode</name>
+        <param>
+          <type>String</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="122" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="122" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a07cc9a9afb0abb076250557af9720467" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String urlDecode</definition>
+        <argsstring>(String s)</argsstring>
+        <name>urlDecode</name>
+        <param>
+          <type>String</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="130" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="130" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a22dadf504daf3e56c82fc332b96c7092" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ApplicationInfo</type>
+        <definition>static ApplicationInfo getApplicationInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getApplicationInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="140" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ad0bbc1aeb25457c65d25204419844687" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int scaleDipToPixels</definition>
+        <argsstring>(int dip)</argsstring>
+        <name>scaleDipToPixels</name>
+        <param>
+          <type>int</type>
+          <declname>dip</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="149" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="149" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a06a1a234476f124ba89396b646cd217b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean isXlarge</definition>
+        <argsstring>()</argsstring>
+        <name>isXlarge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="161" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="161" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a5b1756c252a43b091640ff6ec1599450" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean isLandscape</definition>
+        <argsstring>()</argsstring>
+        <name>isLandscape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="165" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a8237970c5f5df404e90edc7a28b437d9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void setFinishOnTouchOutside</definition>
+        <argsstring>(Activity activity, boolean finish)</argsstring>
+        <name>setFinishOnTouchOutside</name>
+        <param>
+          <type>Activity</type>
+          <declname>activity</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>finish</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="170" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="170" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ae26746f3bb42687d27243fdf50c5959a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Object</type>
+        <definition>static Object ActivityGetActionBar</definition>
+        <argsstring>(Activity a)</argsstring>
+        <name>ActivityGetActionBar</name>
+        <param>
+          <type>Activity</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="183" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="183" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a6d418e2c01c18c3cf92a03790d03604b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ActionBarSetDisplayHomeAsUpEnabled</definition>
+        <argsstring>(Object actionBar, boolean arg)</argsstring>
+        <name>ActionBarSetDisplayHomeAsUpEnabled</name>
+        <param>
+          <type>Object</type>
+          <declname>actionBar</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="195" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="195" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a31ecccd9f7a39d2512c27e96c228f886" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Drawable</type>
+        <definition>static Drawable newBitmapDrawable</definition>
+        <argsstring>(Context c, Bitmap icon)</argsstring>
+        <name>newBitmapDrawable</name>
+        <param>
+          <type>Context</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>Bitmap</type>
+          <declname>icon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="207" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="207" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a87b5b695bb548cd2a13ae537fbc90293" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bitmapSetDensity</definition>
+        <argsstring>(Bitmap icon, int density)</argsstring>
+        <name>bitmapSetDensity</name>
+        <param>
+          <type>Bitmap</type>
+          <declname>icon</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>density</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="226" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="226" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ab79ef6180c003a98a1a610a2b4332d6c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String getConsoleMessageMessage</definition>
+        <argsstring>(ConsoleMessage consoleMessage)</argsstring>
+        <name>getConsoleMessageMessage</name>
+        <param>
+          <type>ConsoleMessage</type>
+          <declname>consoleMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="239" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="239" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a52a170773fbca6c388c87efc13cffabb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SharedPreferenceEditorApplyOrCommit</definition>
+        <argsstring>(SharedPreferences.Editor editor)</argsstring>
+        <name>SharedPreferenceEditorApplyOrCommit</name>
+        <param>
+          <type>SharedPreferences.Editor</type>
+          <declname>editor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="253" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="253" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ad4f7b76e856975143c9f0c2b6d3c55d1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int ColorDrawableGetColor</definition>
+        <argsstring>(ColorDrawable d)</argsstring>
+        <name>ColorDrawableGetColor</name>
+        <param>
+          <type>ColorDrawable</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="362" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="362" bodyend="377"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a416dbc0f6e0e8f954e2e490f72546ebd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int getAndroidSdkInt</definition>
+        <argsstring>()</argsstring>
+        <name>getAndroidSdkInt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="110" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="110" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a2013847685facf404ac18d8eaf214d48" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int getScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>getScreenSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="155" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="155" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="90" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" bodystart="90" bodyend="378"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a6d418e2c01c18c3cf92a03790d03604b" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>ActionBarSetDisplayHomeAsUpEnabled</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ae26746f3bb42687d27243fdf50c5959a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>ActivityGetActionBar</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a7e8459aa50f605e03d5a9cda66a4e2fd" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>AndroidUtils</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a87b5b695bb548cd2a13ae537fbc90293" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>bitmapSetDensity</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ad4f7b76e856975143c9f0c2b6d3c55d1" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>ColorDrawableGetColor</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a416dbc0f6e0e8f954e2e490f72546ebd" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>getAndroidSdkInt</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a22dadf504daf3e56c82fc332b96c7092" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>getApplicationInfo</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ab79ef6180c003a98a1a610a2b4332d6c" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>getConsoleMessageMessage</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a2013847685facf404ac18d8eaf214d48" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>getScreenSize</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1aef3d41ea2a09344c73efe33903311c82" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>isCupcake</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a5b1756c252a43b091640ff6ec1599450" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>isLandscape</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a98b8a26c7d8f22b86632e96a683c78d4" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>isSmallNormalOrLargeScreen</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a06a1a234476f124ba89396b646cd217b" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>isXlarge</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a31ecccd9f7a39d2512c27e96c228f886" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>newBitmapDrawable</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ad0bbc1aeb25457c65d25204419844687" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>scaleDipToPixels</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a8423ad52bafba9c33184c1f4f1dd8214" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>SDK_INT</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a8237970c5f5df404e90edc7a28b437d9" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>setFinishOnTouchOutside</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a52a170773fbca6c388c87efc13cffabb" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>SharedPreferenceEditorApplyOrCommit</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a844c5efdea72aa6bf76fb98b1072572a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>TAG</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1a07cc9a9afb0abb076250557af9720467" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>urlDecode</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils_1ae93098b1d04e4a71bec54cf1afd3ae23" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::AndroidUtils</scope><name>urlEncode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

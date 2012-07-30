@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::ui::JRProviderListFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">JRUiFragment</basecompoundref>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1_1_provider_adapter" prot="private">com::janrain::android::engage::ui::JRProviderListFragment::ProviderAdapter</innerclass>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a28c2bbaa6eab5181356472ca207b4398" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int RESULT_FAIL</definition>
+        <argsstring></argsstring>
+        <name>RESULT_FAIL</name>
+        <initializer> Activity.RESULT_FIRST_USER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="66" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a9c48c50e0ffd37f00bc51b738346749f" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int RESULT_NATIVE_SIGNIN</definition>
+        <argsstring></argsstring>
+        <name>RESULT_NATIVE_SIGNIN</name>
+        <initializer> Activity.RESULT_FIRST_USER + 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="67" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8d2fc9590a6a7b928d513812ccedc8a3" prot="private" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int TIMER_MAX_ITERATIONS</definition>
+        <argsstring></argsstring>
+        <name>TIMER_MAX_ITERATIONS</name>
+        <initializer> 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="69" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a4cfec47cf5135e04b838df02f034d3cd" prot="private" static="no" mutable="no">
+        <type>ArrayList&lt; JRProvider &gt;</type>
+        <definition>ArrayList&lt;JRProvider&gt; mProviderList</definition>
+        <argsstring></argsstring>
+        <name>mProviderList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="71" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aed8eac847605893faa91083d36c582ff" prot="private" static="no" mutable="no">
+        <type>ProviderAdapter</type>
+        <definition>ProviderAdapter mAdapter</definition>
+        <argsstring></argsstring>
+        <name>mAdapter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="72" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a1c10e5c66145e34cfe720dd128023094" prot="private" static="no" mutable="no">
+        <type>Timer</type>
+        <definition>Timer mTimer</definition>
+        <argsstring></argsstring>
+        <name>mTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="73" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a3868113e2a6c5c66d59238ef4a32bead" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mTimerCount</definition>
+        <argsstring></argsstring>
+        <name>mTimerCount</name>
+        <initializer> 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="74" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1acd2d6eefd4c04637702456e9c2d2f18c" prot="private" static="no" mutable="no">
+        <type>ListView</type>
+        <definition>ListView mListView</definition>
+        <argsstring></argsstring>
+        <name>mListView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="76" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a464009742ded1cb65c6a0b75f10cb7a2" prot="private" static="no" mutable="no">
+        <type>TextView</type>
+        <definition>TextView mEmptyTextLabel</definition>
+        <argsstring></argsstring>
+        <name>mEmptyTextLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="77" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a52a9bf15ea9b5a650129b2c293f981eb" prot="private" static="no" mutable="no">
+        <type>ProgressBar</type>
+        <definition>ProgressBar mLoadingProgress</definition>
+        <argsstring></argsstring>
+        <name>mLoadingProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="78" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1af4bf3158672d7dc16699d90f5c232dd2" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean mSectionHeaderEnabled</definition>
+        <argsstring></argsstring>
+        <name>mSectionHeaderEnabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="80" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aba685f8c0a8fe7009880e3dd931dea8f" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean mSectionFooterEnabled</definition>
+        <argsstring></argsstring>
+        <name>mSectionFooterEnabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="81" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a90bcf3440063885caffeb2f34db10ba6" prot="private" static="no" mutable="no">
+        <type>Runnable</type>
+        <definition>Runnable mNoProvidersFoundRunner</definition>
+        <argsstring></argsstring>
+        <name>mNoProvidersFoundRunner</name>
+        <initializer> new Runnable() {
+        public void run() {
+            mEmptyTextLabel.setVisibility(View.VISIBLE);
+            mLoadingProgress.setVisibility(View.GONE);
+
+            Toast.makeText(getActivity(), &quot;No providers found.&quot;, Toast.LENGTH_LONG).show();
+        }
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="183" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a21123f3c3a1c2f6fe22c406d22819dbf" prot="private" static="no" mutable="no">
+        <type>Runnable</type>
+        <definition>Runnable mProvidersLoadedRunner</definition>
+        <argsstring></argsstring>
+        <name>mProvidersLoadedRunner</name>
+        <initializer> new Runnable() {
+        public void run() {
+            mListView.setVisibility(View.VISIBLE);
+            mLoadingProgress.setVisibility(View.GONE);
+
+            for (JRProvider p : mProviderList) mAdapter.add(p);
+            mAdapter.notifyDataSetChanged();
+            maybeShowHideTaglines();
+        }
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="194" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a1dd1428027c0bf4240006e8b343eb777" prot="private" static="no" mutable="no">
+        <type>ListView.OnItemClickListener</type>
+        <definition>ListView.OnItemClickListener itemClickListener</definition>
+        <argsstring></argsstring>
+        <name>itemClickListener</name>
+        <initializer> new ListView.OnItemClickListener() {
+        public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+            JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
+            mSession.setCurrentlyAuthenticatingProvider(provider);
+
+            if (provider.requiresInput() ||
+                    (mSession.getAuthenticatedUserForProvider(provider) != null &amp;&amp;
+                    !provider.getForceReauth()) &amp;&amp; !mSession.getAlwaysForceReauth()) {
+                showUserLanding();
+            } else {
+                showWebView();
+            }
+        }
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="276" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8654eed37dc0299d4edb2b59e42e0282" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JRProviderListFragment</definition>
+        <argsstring>()</argsstring>
+        <name>JRProviderListFragment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="196" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="196" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a9feb4202611c5532fadd508bf1c3f6e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View onCreateView</definition>
+        <argsstring>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <param>
+          <type>LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="199" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="199" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8a744b43949a3939f448facad211e3d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void onDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>onDestroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="257" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="257" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a3bc85abb35d480f743e4b74d5de3d549" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void onActivityResult</definition>
+        <argsstring>(int requestCode, int resultCode, Intent data)</argsstring>
+        <name>onActivityResult</name>
+        <param>
+          <type>int</type>
+          <declname>requestCode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>resultCode</declname>
+        </param>
+        <param>
+          <type>Intent</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="279" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="279" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ae8b5d98d22185abdd4893bc5e2e434c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void finishJrSignin</definition>
+        <argsstring>()</argsstring>
+        <name>finishJrSignin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="402" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="402" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a27d9d991257d0e31910ee2af58ea4d12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String getCustomTitle</definition>
+        <argsstring>()</argsstring>
+        <name>getCustomTitle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="406" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="406" bodyend="410"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ae8958d62d1de815ca07fedadb61a280f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void doSessionPoll</definition>
+        <argsstring>()</argsstring>
+        <name>doSessionPoll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="335" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="335" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa158c1fcd9911530c5dd6b417da60c1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void cancelProviderList</definition>
+        <argsstring>()</argsstring>
+        <name>cancelProviderList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="361" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="361" bodyend="364"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1acb776333595cb036bf935852041cb088" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void onBackPressed</definition>
+        <argsstring>()</argsstring>
+        <name>onBackPressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="357" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="357" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ad9629307ceb5d9553b5e7305962b71ab" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void onFragmentHostActivityCreate</definition>
+        <argsstring>(JRFragmentHostActivity jrfh, JRSession session)</argsstring>
+        <name>onFragmentHostActivityCreate</name>
+        <param>
+          <type>JRFragmentHostActivity</type>
+          <declname>jrfh</declname>
+        </param>
+        <param>
+          <type>JRSession</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="385" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="385" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa31bba749bd6c6359886716ebb40bea3" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean shouldShowTitleWhenDialog</definition>
+        <argsstring>()</argsstring>
+        <name>shouldShowTitleWhenDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="413" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="413" bodyend="417"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a19ba788a02f4d27ac57ff6ef7a2fb172" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean shouldOpenDirectToUserLandingPage</definition>
+        <argsstring>(JRSession session)</argsstring>
+        <name>shouldOpenDirectToUserLandingPage</name>
+        <param>
+          <type>JRSession</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="366" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="366" bodyend="383"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="65" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="65" bodyend="418"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa158c1fcd9911530c5dd6b417da60c1a" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>cancelProviderList</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a0e3207db4a5996afd5954478858e5419" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>createProgressDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1aa5dbf028c9971e99017cec5aea254901" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>DIALOG_ABOUT</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a5b97e54f81a44912c02d6786ca76fd3c" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>DIALOG_PROGRESS</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a58e814875164d9bbefd858745927e443" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>dismissDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a0540765cef7a5b4e72504dacdf4858bb" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>dismissProgressDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1aa2dd5a97b1d2d8a7d9c86a3b80f532a9" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>dismissProgressDialogForCustomView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a20874e4065f7223214e877157420e4c7" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>doCustomViewCreate</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ae8958d62d1de815ca07fedadb61a280f" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>doSessionPoll</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a2726280e168517ccf6b74ba2c0bb2a09" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>finishFragment</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a0ca08c1c8f105ce87728fae88b8783c4" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>finishFragmentWithResult</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ae8b5d98d22185abdd4893bc5e2e434c6" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>finishJrSignin</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ae42361d417cdd2b6caa48d180630003a" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>getColor</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a27d9d991257d0e31910ee2af58ea4d12" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>getCustomTitle</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ab308335c39e7ffdfa839617d54bf5287" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>getCustomUiConfiguration</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a34ce5ba8f84713f875a343370c139ed3" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>getFragmentResult</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a3c6a14adecb6929cbd74356fa6274eb7" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>getLogTag</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1aa6e4d126e7ec7e3a43b3cd7450a4e1de" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>getSpecificProvider</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a675cf7b602f3a9827d3943d7a1089414" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>hasView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a08c7960e836e8d4cfbf7240222a63dc1" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>isEmbeddedMode</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a762bc4bf775d6c4c2adfb0826317e686" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>isSharingFlow</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a7cf1cbfe93c8a62f6ccf44c7e16d00d2" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>isSpecificProviderFlow</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a1dd1428027c0bf4240006e8b343eb777" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>itemClickListener</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1aa89b6a4eceb266efd58080a109dcac88" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>JR_ACTIVITY_JSON</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ae011a46fbac21f26483adb6cb67c8308" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>JR_FRAGMENT_FLOW_AUTH</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a97b18ea803fe4f3731f54f392ea084d4" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>JR_FRAGMENT_FLOW_BETA_DIRECT_SHARE</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a96f0bdcf1a5e1cdf708fa6a8741c2bfa" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>JR_FRAGMENT_FLOW_MODE</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a93829fda8bf091a73c119a60eec56370" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>JR_FRAGMENT_FLOW_SHARING</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8654eed37dc0299d4edb2b59e42e0282" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>JRProviderListFragment</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aed8eac847605893faa91083d36c582ff" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mAdapter</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a52d3add8080d304ae341733925d0245a" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>maybeShowHideTaglines</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a464009742ded1cb65c6a0b75f10cb7a2" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mEmptyTextLabel</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1acd2d6eefd4c04637702456e9c2d2f18c" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mListView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a52a9bf15ea9b5a650129b2c293f981eb" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mLoadingProgress</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a90bcf3440063885caffeb2f34db10ba6" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mNoProvidersFoundRunner</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a4cfec47cf5135e04b838df02f034d3cd" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mProviderList</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a21123f3c3a1c2f6fe22c406d22819dbf" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mProvidersLoadedRunner</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aba685f8c0a8fe7009880e3dd931dea8f" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mSectionFooterEnabled</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1af4bf3158672d7dc16699d90f5c232dd2" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mSectionHeaderEnabled</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a35a40b886acd0f82cc60bdcdf7bd72fa" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mSession</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a1c10e5c66145e34cfe720dd128023094" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mTimer</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a3868113e2a6c5c66d59238ef4a32bead" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>mTimerCount</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a5e729d0c3f1baa46ff20b7879719d3b7" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onActivityCreated</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a3bc85abb35d480f743e4b74d5de3d549" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onActivityResult</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ae15fe90738b5b8c4d7e1e493a36c2907" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onAttach</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1acb776333595cb036bf935852041cb088" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onBackPressed</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ad539240d964251febfd9aee25f05c5bc" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onConfigurationChanged</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a85e87cb5ced88dff7c8173ecc4f636d1" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a3d11859dcce1d9703a49b6c8ec735c2b" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onCreateDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a5c16dff8cae5b02eb3e557a675d83b46" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onCreateOptionsMenu</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a9feb4202611c5532fadd508bf1c3f6e5" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onCreateView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8a744b43949a3939f448facad211e3d2" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onDestroy</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1aa313fbad648f4a1660b2b0c05fe8f10c" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onDestroyView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a2a5fb1d2cc923b25a65c58d32ef19903" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onDetach</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ad9629307ceb5d9553b5e7305962b71ab" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onFragmentHostActivityCreate</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ac0c22c55dcaa5f7730f3bba78aa1dd1f" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onHiddenChanged</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a5aef4625808fe4445a71e4697211bfa9" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onInflate</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a37a55c533c74b60c0290ef1329d74e65" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onOptionsItemSelected</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ad36a232bff79e67140875eff1a578827" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onPause</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a762293ed03c59428a6ff8d0736b399a4" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onPrepareDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a14768c382cfd134f7688413a3eb56d08" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onResume</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1affd37de59d03c06511be4a6d509ffe18" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onSaveInstanceState</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a11bcf4e3177fdb549350a4aa149e9e67" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onStart</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a458397229d0b2076a739955b1cb8be35" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>onStop</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1ab79009965f5bec03803f9b3a6e3bd92a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>REQUEST_LANDING</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1aeaa7ce712a8e7ea8421186a1b87eb4a6" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>REQUEST_WEBVIEW</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a28c2bbaa6eab5181356472ca207b4398" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>RESULT_FAIL</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a9c48c50e0ffd37f00bc51b738346749f" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>RESULT_NATIVE_SIGNIN</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a33d258ed5fe94ef80f031a9b538ddf4e" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>setFragmentResult</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a19ba788a02f4d27ac57ff6ef7a2fb172" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>shouldOpenDirectToUserLandingPage</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa31bba749bd6c6359886716ebb40bea3" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>shouldShowTitleWhenDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a0a1f59dba9333e1831c59bccdf3713ff" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a3edd7ef97e6c896bc6146243c2c7067a" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a48c960698c8bcb3f8782a7e01e906ae6" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showProgressDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a4734fc91dea2b61150a291affc381359" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showProgressDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a1286fe77adde4f6325588c56c7ab1bc6" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showProgressDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a84f597ff1fed0b7fccd2db279cfa714f" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showProgressDialogForCustomView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a965ed0c6b9b447aab33b7a1e378ba1ce" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showUserLanding</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a7e8e1826ff2af68992f56a69c705e6ae" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showWebView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a57906a9365280fa996bd8f7672f97f6c" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>showWebView</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a844c5efdea72aa6bf76fb98b1072572a" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>TAG</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8d2fc9590a6a7b928d513812ccedc8a3" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>TIMER_MAX_ITERATIONS</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1afe2b5eba97a6f07c501de6ffc0b72190" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>tryToFinishFragment</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

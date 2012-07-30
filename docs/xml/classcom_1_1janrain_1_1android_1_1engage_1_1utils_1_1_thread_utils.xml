@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::utils::ThreadUtils</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils_1aec467bf74b62de7831ad264f62cbcedf" prot="private" static="yes" mutable="no">
+        <type>ThreadPoolExecutor</type>
+        <definition>ThreadPoolExecutor sExecutor</definition>
+        <argsstring></argsstring>
+        <name>sExecutor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" line="45" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils_1a2e87c5ede6b7235170d287cd2e254454" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" line="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils_1a6b7874bcf77873aa881d2680d2878e08" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void executeInBg</definition>
+        <argsstring>(Runnable r)</argsstring>
+        <name>executeInBg</name>
+        <param>
+          <type>Runnable</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" line="58" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" bodystart="58" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" line="44" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java" bodystart="44" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils_1a2e87c5ede6b7235170d287cd2e254454" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::utils::ThreadUtils</scope><name>[static initializer]</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils_1a6b7874bcf77873aa881d2680d2878e08" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::ThreadUtils</scope><name>executeInBg</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils_1aec467bf74b62de7831ad264f62cbcedf" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::ThreadUtils</scope><name>sExecutor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</compoundname>
+    <basecompoundref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface" prot="public" virt="non-virtual">JRCustomInterface</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a2abf326e27c4a305bec9fce369249b71" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mProviderListTitle</definition>
+        <argsstring></argsstring>
+        <name>mProviderListTitle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A custom title for the provider list activity </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="53" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a4d4bac8c7cf1da358bd1008366589f62" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mLandingTitle</definition>
+        <argsstring></argsstring>
+        <name>mLandingTitle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A custom title for the return experience and OpenID landing activity </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="58" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a5b8331345dc5f9d5124c9e9a98fbc726" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mWebViewTitle</definition>
+        <argsstring></argsstring>
+        <name>mWebViewTitle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A custom title for the WebView activity </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="63" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a1b32ae60ab6fe954a36e35146d10e502" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mSharingTitle</definition>
+        <argsstring></argsstring>
+        <name>mSharingTitle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A custom title for the sharing activity </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="68" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a1296df75b9a7a3c05582acaf94cd2478" prot="public" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean mShowProviderListTitleWhenDialog</definition>
+        <argsstring></argsstring>
+        <name>mShowProviderListTitleWhenDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls the display of the provider list title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="73" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aff34636189753687577bd52e3f4e7c1a" prot="public" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean mShowLandingTitleWhenDialog</definition>
+        <argsstring></argsstring>
+        <name>mShowLandingTitleWhenDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls the display of the return experience / OpenID landing page title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="79" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a286d6d2c5d6f00f12f3ff932eacb5e58" prot="public" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean mShowWebViewTitleWhenDialog</definition>
+        <argsstring></argsstring>
+        <name>mShowWebViewTitleWhenDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls the display of the WebView title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="84" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1ad535b9d8f191a722918a00ae308561c6" prot="public" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean mShowSharingTitleWhenDialog</definition>
+        <argsstring></argsstring>
+        <name>mShowSharingTitleWhenDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls the display of the sharing title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="89" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a8afd805cad9510a909be67607e393680" prot="public" static="no" mutable="no">
+        <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref></type>
+        <definition>JRCustomInterfaceView mProviderListHeader</definition>
+        <argsstring></argsstring>
+        <name>mProviderListHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides a custom ListView header for the provider list. This can be used to implement your own username/password sign-in </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="95" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a6e536dfb5bc43c29e54a24ad7095afea" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mProviderListSectionHeader</definition>
+        <argsstring></argsstring>
+        <name>mProviderListSectionHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides a custom section header displayed below the provider list header and above the list of providers. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="101" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aad31e002dabe2163e020f7b1af57948a" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mProviderListSectionFooter</definition>
+        <argsstring></argsstring>
+        <name>mProviderListSectionFooter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides a custom section footer displayed below the provider list and above the provider list footer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="106" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a6d6e51d8a2e5b189f455aa353cf16389" prot="public" static="no" mutable="no">
+        <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref></type>
+        <definition>JRCustomInterfaceView mProviderListFooter</definition>
+        <argsstring></argsstring>
+        <name>mProviderListFooter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides a custom ListView footer for the provider list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="111" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aec719aa4f7f4b2f14303bb89920d431a" prot="public" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean mSharingUsesSystemTabs</definition>
+        <argsstring></argsstring>
+        <name>mSharingUsesSystemTabs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls the use of the default system tabs displayed in the sharing UI </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="121" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a277f4a4466125cdfb7da23a5e94fae09" prot="public" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean mColorButtons</definition>
+        <argsstring></argsstring>
+        <name>mColorButtons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls coloring of buttons displayed by the library </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="126" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a50c107ba143e3ba94449a0e735c05c6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void onProviderListViewCreate</definition>
+        <argsstring>(ListView providerListView)</argsstring>
+        <name>onProviderListViewCreate</name>
+        <param>
+          <type>ListView</type>
+          <declname>providerListView</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the ListView for the provider list is created, but before the Adapter is set on it. You can use this method to customize the ListView </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="167" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="167" bodyend="167"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a8734be873169a1418b9665aa9645404b" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>final void</type>
+        <definition>final void onResume</definition>
+        <argsstring>()</argsstring>
+        <name>onResume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="169" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="169" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1acbaa4990a92b17fecf143c8e7af5c722" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>final void</type>
+        <definition>final void onPause</definition>
+        <argsstring>()</argsstring>
+        <name>onPause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="173" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="173" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3b88c4c5613ee0a7f7d9de351819b606" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>final void</type>
+        <definition>final void onSaveInstanceState</definition>
+        <argsstring>(Bundle outState)</argsstring>
+        <name>onSaveInstanceState</name>
+        <param>
+          <type>Bundle</type>
+          <declname>outState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="177" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="177" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a23e1ee896bb598b685a29c30eea119b0" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>final void</type>
+        <definition>final void onDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>onDestroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="181" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="181" bodyend="183"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a4411c20cc4339f692426ec9b122b9ff9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Set&lt; <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref> &gt;</type>
+        <definition>Set&lt;JRCustomInterfaceView&gt; getNonNullCustomViews</definition>
+        <argsstring>()</argsstring>
+        <name>getNonNullCustomViews</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="185" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="185" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3ccddf4bf1899f5f0ec938265e5d4983" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void addIfNotNullAndViewCreated</definition>
+        <argsstring>(Set&lt; JRCustomInterfaceView &gt; set, JRCustomInterfaceView v)</argsstring>
+        <name>addIfNotNullAndViewCreated</name>
+        <param>
+          <type>Set&lt; <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref> &gt;</type>
+          <declname>set</declname>
+        </param>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="192" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="192" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The abstract superclass of classes which define Engage library UI configuration customizations. </para>    </briefdescription>
+    <detaileddescription>
+<para>Extend this class and implement a public default constructor. In that constructor assign values to the fields you wish to use in your custom UI configuration.</para><para>This class also supplies event hooks to further control the look and feel of the Engage library. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="66">
+        <label>JRCustomInterface</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface"/>
+      </node>
+      <node id="65">
+        <label>JRCustomInterfaceConfiguration</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="69">
+        <label>JRCustomInterfaceView</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>JRCustomInterface</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface"/>
+      </node>
+      <node id="67">
+        <label>JRCustomInterfaceConfiguration</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>mProviderListHeader</edgelabel>
+          <edgelabel>mProviderListFooter</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="49" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="49" bodyend="195"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3ccddf4bf1899f5f0ec938265e5d4983" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>addIfNotNullAndViewCreated</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a4411c20cc4339f692426ec9b122b9ff9" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>getNonNullCustomViews</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a277f4a4466125cdfb7da23a5e94fae09" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mColorButtons</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a4d4bac8c7cf1da358bd1008366589f62" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mLandingTitle</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a6d6e51d8a2e5b189f455aa353cf16389" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mProviderListFooter</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a8afd805cad9510a909be67607e393680" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mProviderListHeader</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aad31e002dabe2163e020f7b1af57948a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mProviderListSectionFooter</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a6e536dfb5bc43c29e54a24ad7095afea" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mProviderListSectionHeader</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a2abf326e27c4a305bec9fce369249b71" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mProviderListTitle</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a1b32ae60ab6fe954a36e35146d10e502" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mSharingTitle</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aec719aa4f7f4b2f14303bb89920d431a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mSharingUsesSystemTabs</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aff34636189753687577bd52e3f4e7c1a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mShowLandingTitleWhenDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a1296df75b9a7a3c05582acaf94cd2478" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mShowProviderListTitleWhenDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1ad535b9d8f191a722918a00ae308561c6" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mShowSharingTitleWhenDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a286d6d2c5d6f00f12f3ff932eacb5e58" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mShowWebViewTitleWhenDialog</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a5b8331345dc5f9d5124c9e9a98fbc726" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>mWebViewTitle</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a23e1ee896bb598b685a29c30eea119b0" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>onDestroy</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1acbaa4990a92b17fecf143c8e7af5c722" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>onPause</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a50c107ba143e3ba94449a0e735c05c6b" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>onProviderListViewCreate</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a8734be873169a1418b9665aa9645404b" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>onResume</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3b88c4c5613ee0a7f7d9de351819b606" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>onSaveInstanceState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

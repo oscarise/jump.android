@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</compoundname>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1_1_aborted_request_exception" prot="private">com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor::AbortedRequestException</innerclass>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1_1_inflating_entity" prot="private">com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor::InflatingEntity</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a844c5efdea72aa6bf76fb98b1072572a" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer> HttpExecutor.class.getSimpleName()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="96" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1ab34fa6a32bb5e2724ccf38e29b8deedb" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String mUrl</definition>
+        <argsstring></argsstring>
+        <name>mUrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="98" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1aa637455eac95228253728e043c88882b" prot="private" static="no" mutable="no">
+        <type>List&lt; NameValuePair &gt;</type>
+        <definition>List&lt;NameValuePair&gt; mHeaders</definition>
+        <argsstring></argsstring>
+        <name>mHeaders</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="99" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1af99b1f30cdb1d653c8a1fa168f8e1932" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] mPostData</definition>
+        <argsstring></argsstring>
+        <name>mPostData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="100" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a0372c9fadd84874ec204dcd3f6209f9b" prot="private" static="no" mutable="no">
+        <type>Handler</type>
+        <definition>Handler mHandler</definition>
+        <argsstring></argsstring>
+        <name>mHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="101" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1aac77b5b9a1ae97ba2572345b3e1769a5" prot="private" static="no" mutable="no">
+        <type>DefaultHttpClient</type>
+        <definition>DefaultHttpClient mHttpClient</definition>
+        <argsstring></argsstring>
+        <name>mHttpClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="102" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1acf85e32dc33dadf9f821bc3fdd229e32" prot="private" static="no" mutable="no">
+        <type>HttpUriRequest</type>
+        <definition>HttpUriRequest mRequest</definition>
+        <argsstring></argsstring>
+        <name>mRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="103" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1ad34f54eb28a6f92944f17b51e2aabb9d" prot="private" static="no" mutable="no">
+        <type>JRConnectionManager.ConnectionData</type>
+        <definition>JRConnectionManager.ConnectionData mConnectionData</definition>
+        <argsstring></argsstring>
+        <name>mConnectionData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="104" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1af4008004a68ec63566c698ed710075ab" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HttpExecutor</definition>
+        <argsstring>()</argsstring>
+        <name>HttpExecutor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="106" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a234e714d87a7191e679bb2b08917b0ad" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void setupHttpClient</definition>
+        <argsstring>()</argsstring>
+        <name>setupHttpClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="117" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a6831060c5aaf7c9bee6985611368712d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void setupGoogleInflater</definition>
+        <argsstring>(HttpParams connectionParams)</argsstring>
+        <name>setupGoogleInflater</name>
+        <param>
+          <type>HttpParams</type>
+          <declname>connectionParams</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="125" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="125" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1aca022263545732378a76a6409b9e6b1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void invokeCallback</definition>
+        <argsstring>(JRConnectionManager.HttpCallbackWrapper callBack)</argsstring>
+        <name>invokeCallback</name>
+        <param>
+          <type>JRConnectionManager.HttpCallbackWrapper</type>
+          <declname>callBack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="273" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="273" bodyend="279"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a810caa1ed315f5beeb5cbf75b00c6e20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HttpExecutor</definition>
+        <argsstring>(Handler handler, JRConnectionManager.ConnectionData connectionData)</argsstring>
+        <name>HttpExecutor</name>
+        <param>
+          <type>Handler</type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>JRConnectionManager.ConnectionData</type>
+          <declname>connectionData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="108" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="108" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a13a43e6d814de94978c515cb084873b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="176" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="176" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1ad146fa8579a5f8a876c4688cc5a68520" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="281" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="281" bodyend="284"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="95" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="95" bodyend="287"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1af4008004a68ec63566c698ed710075ab" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>HttpExecutor</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a810caa1ed315f5beeb5cbf75b00c6e20" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>HttpExecutor</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1aca022263545732378a76a6409b9e6b1a" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>invokeCallback</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1ad34f54eb28a6f92944f17b51e2aabb9d" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mConnectionData</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a0372c9fadd84874ec204dcd3f6209f9b" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mHandler</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1aa637455eac95228253728e043c88882b" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mHeaders</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1aac77b5b9a1ae97ba2572345b3e1769a5" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mHttpClient</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1af99b1f30cdb1d653c8a1fa168f8e1932" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mPostData</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1acf85e32dc33dadf9f821bc3fdd229e32" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mRequest</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1ab34fa6a32bb5e2724ccf38e29b8deedb" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>mUrl</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a13a43e6d814de94978c515cb084873b1" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>run</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a6831060c5aaf7c9bee6985611368712d" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>setupGoogleInflater</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a234e714d87a7191e679bb2b08917b0ad" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>setupHttpClient</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1a844c5efdea72aa6bf76fb98b1072572a" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>TAG</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1ad146fa8579a5f8a876c4688cc5a68520" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
