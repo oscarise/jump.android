@@ -18,7 +18,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="66" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="66" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="66" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1ace7af73cf1ec9b97f73ac9badb12c321" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -32,7 +32,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="74" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="74" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="74" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1a927dee6b6e7145029fe7bcc3a3bd19e0" prot="private" static="no" mutable="no">
         <type>List&lt; String &gt;</type>
@@ -46,7 +46,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="82" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="82" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="82" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="82" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -63,7 +63,7 @@
 <para>Create an empty email object. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="100" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="100" bodyend="102"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="100" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="100" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1a3198347307e17cd38fe6cd00ba6eb253" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -99,7 +99,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="114" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="114" bodyend="121"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="114" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="114" bodyend="121"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -117,7 +117,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="170" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="170" bodyend="172"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="170" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="170" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1a39f0298f055f0b78ad2ac781d38f326f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -142,7 +142,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="180" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="180" bodyend="182"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="180" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="180" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1aff2f2ca4042b71a1c005ef33d796073f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -156,7 +156,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="190" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="190" bodyend="192"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="190" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="190" bodyend="192"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1aafa2e1148f40b8c77b01e849324620ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -181,7 +181,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="200" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="200" bodyend="202"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="200" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="200" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1a3fe96da2a85dff14969500fa13159121" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>List&lt; String &gt;</type>
@@ -195,7 +195,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="210" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="210" bodyend="212"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="210" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="210" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1a744f055478816813bc41d7db2979430f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -220,7 +220,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="223" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="223" bodyend="228"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="223" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="223" bodyend="228"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1ab482a851576f3766af32a2988ca25f59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -245,7 +245,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="236" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="236" bodyend="243"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="236" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="236" bodyend="243"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -260,7 +260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="90" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="90" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="90" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="90" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -279,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="137" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="137" bodyend="143"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="137" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="137" bodyend="143"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -298,14 +298,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="150" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="150" bodyend="157"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="150" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="150" bodyend="157"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Object containing content to be shared by email. </para>    </briefdescription>
     <detaileddescription>
 <para><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object" kindref="compound">JREmailObject</ref> is a simple container object for a pre-composed email to be attached to a <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref>.</para><para>Instantiate a new <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object" kindref="compound">JREmailObject</ref> with a subject and a body. Optionally, add a list of URLs from the body and Engage will automatically shorten them, track click-throughs, and provide analytics on your dashboard. </para>    </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="53" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="53" bodyend="245"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" line="53" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java" bodystart="53" bodyend="245"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1ab482a851576f3766af32a2988ca25f59" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JREmailObject</scope><name>addUrl</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object_1aff2f2ca4042b71a1c005ef33d796073f" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JREmailObject</scope><name>getBody</name></member>

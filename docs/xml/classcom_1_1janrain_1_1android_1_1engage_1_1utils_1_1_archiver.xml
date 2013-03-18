@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="56" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="56" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="52" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1aeda97426c572f1bb0ab41178cff9ee3c" prot="private" static="yes" mutable="no">
         <type>final String</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="58" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="58" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="54" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1a3e2e2d1c26c1166550acec2085a48979" prot="private" static="yes" mutable="no">
         <type>final String</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="61" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="60" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="57" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="63" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="63" bodyend="63"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="59" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="59" bodyend="59"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -112,7 +112,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="79" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="79" bodyend="83"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="75" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="75" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1adc6f70eba5f71885c3040cc1f6e57477" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -167,7 +167,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="100" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="100" bodyend="136"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="96" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="96" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1a4d98601b3b5fc631645c92d1294dd8f0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>static&lt; T &gt; T</type>
@@ -216,7 +216,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="155" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="155" bodyend="161"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="151" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="151" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1a7c0763a9c4429581a267d81a9b7212f4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>static&lt; T &gt; T</type>
@@ -276,7 +276,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="184" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="184" bodyend="212"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="180" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="180" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1a5159e24162b2aa5e563481b83ea7462f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -293,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="214" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="214" bodyend="220"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="210" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="210" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1aaac636246b41c7e9e188576bd0e15eff" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -314,14 +314,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="222" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="222" bodyend="226"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="218" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="218" bodyend="222"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="55" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="55" bodyend="237"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" line="51" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/Archiver.java" bodystart="51" bodyend="233"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1a9bd7a518d31886cc725e6a210f9e44fc" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::Archiver</scope><name>Archiver</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver_1a7c2a415059f063c5ee3e1cf12d035870" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::Archiver</scope><name>asyncSave</name></member>

@@ -14,14 +14,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="771"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="692"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="770" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="770" bodyend="772"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="691" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="691" bodyend="693"/>
     <listofallmembers>
       <member refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener_1a9726b6fffd0c5ee93e73663f1c315674" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::JREngage::ConfigFinishListener</scope><name>configDidFinish</name></member>
     </listofallmembers>

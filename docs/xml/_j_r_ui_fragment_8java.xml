@@ -75,8 +75,8 @@
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.io.Serializable;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.HashMap;</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>com.janrain.android.engage.utils.AndroidUtils.ActionBarSetDisplayHomeAsUpEnabled;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>com.janrain.android.engage.utils.AndroidUtils.ActivityGetActionBar;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>com.janrain.android.engage.utils.AndroidUtils.actionBarSetDisplayHomeAsUpEnabled;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>com.janrain.android.engage.utils.AndroidUtils.activityGetActionBar;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">abstract</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">JRUiFragment<sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>Fragment<sp/>{</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>KEY_MANAGED_DIALOGS<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;jr_managed_dialogs&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -167,7 +167,7 @@
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getActivity()<sp/>instanceof<sp/>JRFragmentHostActivity)<sp/>{</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getCustomTitle()<sp/>!=<sp/>null)<sp/>getActivity().setTitle(getCustomTitle());</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActionBarSetDisplayHomeAsUpEnabled(ActivityGetActionBar(getActivity()),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actionBarSetDisplayHomeAsUpEnabled(activityGetActionBar(getActivity()),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
@@ -645,6 +645,6 @@
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="646"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::utils::PrefUtils</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1af7a2d757666732a1866e76df5efb7860" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_USER_INPUT</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_USER_INPUT</name>
+        <initializer>&quot;jr_pref_user_input.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="47" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aef3d7128345abe448881b0ec99780421" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_FORCE_REAUTH</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_FORCE_REAUTH</name>
+        <initializer>&quot;jr_pref_force_reauth.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="48" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a16eb62e92b715cb1de1f5e6d4db21f7a" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_HIDE_POWERED_BY</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_HIDE_POWERED_BY</name>
+        <initializer>&quot;jr_hide_powered_by&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="49" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aa40a58a21528f388fa4ccd1330d89d13" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_CONFIGURATION_ETAG</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_CONFIGURATION_ETAG</name>
+        <initializer>&quot;jr_configuration_etag&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="50" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1ad039fa73fcebfd45799916a3fefc4fb2" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_LAST_USED_AUTH_PROVIDER</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_LAST_USED_AUTH_PROVIDER</name>
+        <initializer>&quot;jr_last_used_auth_provider&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="51" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a0e7e1fb0369c597c362aee0424048cee" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_LAST_USED_SHARING_PROVIDER</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_LAST_USED_SHARING_PROVIDER</name>
+        <initializer>&quot;jr_last_used_social_provider&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="52" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a0cfa0ac4657f035e5b0a8ee3e138275b" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_RP_BASE_URL</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_RP_BASE_URL</name>
+        <initializer>&quot;jr_base_url&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="53" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a66e83376739646d46bc119d0a3f81f77" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_ENGAGE_LIBRARY_VERSION</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_ENGAGE_LIBRARY_VERSION</name>
+        <initializer>&quot;jr_engage_library_version&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="54" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a79c7e42f7e457386d18c20d1609f43ce" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_USER_COMMENT</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_USER_COMMENT</name>
+        <initializer>&quot;jr_user_comment&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="55" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a39daea2e4e3ddd43c18c3adb5a2cfae2" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String KEY_JR_USER_COMMENT_TIME</definition>
+        <argsstring></argsstring>
+        <name>KEY_JR_USER_COMMENT_TIME</name>
+        <initializer>&quot;jr_user_comment_time&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="56" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aeee24ac9e127402b19e29252585419dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PrefUtils</definition>
+        <argsstring>()</argsstring>
+        <name>PrefUtils</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="58" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="58" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a17a907e8dc341d311d1090caf56315dc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String getString</definition>
+        <argsstring>(String key, String defValue)</argsstring>
+        <name>getString</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>defValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for getting shared preference string value by key.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of the preference to get. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default value if not found. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value of the preference, or defValue if not found. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="67" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a32ad6ed18ac89907bd980a9cf28e1cae" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean getBoolean</definition>
+        <argsstring>(String key, boolean defValue)</argsstring>
+        <name>getBoolean</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>defValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for getting shared preference boolean value by key.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of the preference to get. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default value if not found. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value of the preference, or defValue if not found. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="78" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a9bc61914dab18d425603b5c7d728a047" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int getInt</definition>
+        <argsstring>(String key, int defValue)</argsstring>
+        <name>getInt</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>defValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for getting shared preference integer value by key.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of the preference to get. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default value if not found. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value of the preference, or defValue if not found. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="89" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1afcb68fee513bc23f5eba920555796cc3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void putString</definition>
+        <argsstring>(String key, String value)</argsstring>
+        <name>putString</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="93" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a38668ed35e39c8a2cb46c65e63f59998" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void putBoolean</definition>
+        <argsstring>(String key, boolean value)</argsstring>
+        <name>putBoolean</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="97" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a3d306184984530436e5362f789a36ab0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void putInt</definition>
+        <argsstring>(String key, int value)</argsstring>
+        <name>putInt</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="101" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a75d7dfcb682b3fbb631ba9479f71bfb7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void putLong</definition>
+        <argsstring>(String key, long value)</argsstring>
+        <name>putLong</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="105" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a3a9c3444c340b2fea0b25bd736b3dea5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>static long getLong</definition>
+        <argsstring>(String key, int defaultValue)</argsstring>
+        <name>getLong</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>defaultValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="109" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="109" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a068a0d19566ff0b6a59e731941f90fd4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void remove</definition>
+        <argsstring>(String key)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="121" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="121" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a9e28724d0db50836c28e09fdc173721d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SharedPreferences</type>
+        <definition>static SharedPreferences getSharedPreferences</definition>
+        <argsstring>()</argsstring>
+        <name>getSharedPreferences</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="113" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="113" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aafb73cee42e408668778e4dbbe3a572b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SharedPreferences.Editor</type>
+        <definition>static SharedPreferences.Editor getEditor</definition>
+        <argsstring>()</argsstring>
+        <name>getEditor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="117" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a17714d4619d591c0e889566452776431" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void sharedPreferenceEditorApplyOrCommit</definition>
+        <argsstring>(SharedPreferences.Editor editor)</argsstring>
+        <name>sharedPreferenceEditorApplyOrCommit</name>
+        <param>
+          <type>SharedPreferences.Editor</type>
+          <declname>editor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="125" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="125" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" line="46" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/PrefUtils.java" bodystart="46" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a32ad6ed18ac89907bd980a9cf28e1cae" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>getBoolean</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aafb73cee42e408668778e4dbbe3a572b" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>getEditor</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a9bc61914dab18d425603b5c7d728a047" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>getInt</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a3a9c3444c340b2fea0b25bd736b3dea5" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>getLong</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a9e28724d0db50836c28e09fdc173721d" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>getSharedPreferences</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a17a907e8dc341d311d1090caf56315dc" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>getString</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aa40a58a21528f388fa4ccd1330d89d13" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_CONFIGURATION_ETAG</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a66e83376739646d46bc119d0a3f81f77" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_ENGAGE_LIBRARY_VERSION</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aef3d7128345abe448881b0ec99780421" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_FORCE_REAUTH</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a16eb62e92b715cb1de1f5e6d4db21f7a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_HIDE_POWERED_BY</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1ad039fa73fcebfd45799916a3fefc4fb2" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_LAST_USED_AUTH_PROVIDER</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a0e7e1fb0369c597c362aee0424048cee" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_LAST_USED_SHARING_PROVIDER</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a0cfa0ac4657f035e5b0a8ee3e138275b" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_RP_BASE_URL</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a79c7e42f7e457386d18c20d1609f43ce" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_USER_COMMENT</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a39daea2e4e3ddd43c18c3adb5a2cfae2" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_USER_COMMENT_TIME</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1af7a2d757666732a1866e76df5efb7860" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>KEY_JR_USER_INPUT</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1aeee24ac9e127402b19e29252585419dd" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>PrefUtils</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a38668ed35e39c8a2cb46c65e63f59998" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>putBoolean</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a3d306184984530436e5362f789a36ab0" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>putInt</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a75d7dfcb682b3fbb631ba9479f71bfb7" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>putLong</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1afcb68fee513bc23f5eba920555796cc3" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>putString</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a068a0d19566ff0b6a59e731941f90fd4" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>remove</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils_1a17714d4619d591c0e889566452776431" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::utils::PrefUtils</scope><name>sharedPreferenceEditorApplyOrCommit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="47" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="47" bodyend="49"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="47" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="47" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1a7d48fb798b730618cee200e1bfe76fde" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>static&lt; K, L, R &gt; HashMap&lt; K, L &gt;</type>
@@ -77,7 +77,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="70" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="70" bodyend="76"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="70" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="70" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1a09f6da278646fb5ddcaf8f7ab838c92a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>static&lt; L, R &gt; ArrayList&lt; L &gt;</type>
@@ -128,20 +128,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="91" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="91" bodyend="97"/>
-      </memberdef>
-      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1ab68e51c2fceb3e698b28a512635bc9a3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int[]</type>
-        <definition>static int [] test</definition>
-        <argsstring>()</argsstring>
-        <name>test</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="99" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="99" bodyend="99"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="91" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="91" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1ad1323b8440d8a6f8a37f21701d101c31" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>static&lt; L, R &gt; L[]</type>
@@ -192,20 +179,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="115" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="115" bodyend="122"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="113" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="113" bodyend="120"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="46" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="46" bodyend="123"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" line="46" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/CollectionUtils.java" bodystart="46" bodyend="121"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1a153fc61de8b1af89ef3fad58429eeac5" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::CollectionUtils</scope><name>isEmpty</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1a7d48fb798b730618cee200e1bfe76fde" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::CollectionUtils</scope><name>map</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1a09f6da278646fb5ddcaf8f7ab838c92a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::CollectionUtils</scope><name>map</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1ad1323b8440d8a6f8a37f21701d101c31" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::CollectionUtils</scope><name>map</name></member>
-      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils_1ab68e51c2fceb3e698b28a512635bc9a3" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::utils::CollectionUtils</scope><name>test</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

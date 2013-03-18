@@ -75,6 +75,6 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/ThreadUtils.java"/>
   </compounddef>
 </doxygen>

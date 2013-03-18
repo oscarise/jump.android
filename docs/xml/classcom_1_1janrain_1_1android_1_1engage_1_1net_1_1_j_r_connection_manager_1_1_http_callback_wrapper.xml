@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="234" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="234" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="235" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="235" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="236" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="236" bodyend="238"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="237" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="237" bodyend="239"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_wrapper_1a13a43e6d814de94978c515cb084873b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -46,14 +46,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="240" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="240" bodyend="256"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="241" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="241" bodyend="257"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="233" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="233" bodyend="257"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" line="234" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="234" bodyend="258"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_wrapper_1a5a742af15bd0064db66c17bfc248ad99" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::HttpCallbackWrapper</scope><name>HttpCallbackWrapper</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_wrapper_1af367e2a8d5e7fe859f527d263664e0a8" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::HttpCallbackWrapper</scope><name>mConnectionData</name></member>

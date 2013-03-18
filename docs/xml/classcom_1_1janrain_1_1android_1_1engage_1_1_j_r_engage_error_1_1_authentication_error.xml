@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="171" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="171" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="171" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="171" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -33,7 +33,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="181" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="181" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="181" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="181" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_authentication_error_1a18c2296e5a22102d9071c365020e693a" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -47,7 +47,7 @@
 <para>Authentication failed to reach the token URL </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="186" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="186" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="186" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_authentication_error_1a98b475356a69311f634e8dbcd4c2b092" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -61,14 +61,14 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="191" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="191" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="191" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="191" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Container for error code constants related to authentication. See <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1adc00833722df4f26a365c53a43a04631" kindref="member">JREngageError.mCode</ref> for more information. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="170" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="170" bodyend="192"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="170" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="170" bodyend="192"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_authentication_error_1a98b475356a69311f634e8dbcd4c2b092" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageError::AuthenticationError</scope><name>AUTHENTICATION_CANCELED</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_authentication_error_1a2a7bcbe1d3c039bfdd57b21077249ec7" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageError::AuthenticationError</scope><name>AUTHENTICATION_FAILED</name></member>

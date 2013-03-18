@@ -14,15 +14,15 @@
 </variablelist>
 </para><para><anchor id="deprecated_1_deprecated000005"/> <variablelist>
 <varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1af5dd5f8d3dde2c0253ca32f9607751f1" kindref="member">JREngage.showAuthenticationDialog</ref> (Boolean skipReturningUserLandingPage, String provider, Class&lt;?extends JRCustomInterface &gt; uiCustomization) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, Boolean skipReturningUserLandingPage, String provider, Class&lt;? extends JRCustomInterface&gt; uiCustomiztion) instead. </para></listitem>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, Boolean skipReturningUserLandingPage, String provider, Class&lt;? extends JRCustomInterface&gt; uiCustomization) instead. </para></listitem>
 </variablelist>
 </para><para><anchor id="deprecated_1_deprecated000004"/> <variablelist>
 <varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a486c62246d6692956ae66a1641a15a5a" kindref="member">JREngage.showAuthenticationDialog</ref> (Boolean skipReturningUserLandingPage, String provider) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead</para></listitem>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead </para></listitem>
 </variablelist>
 </para><para><anchor id="deprecated_1_deprecated000003"/> <variablelist>
 <varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aba2688da1ad7a1e0a7c4522f568ad95e" kindref="member">JREngage.showAuthenticationDialog</ref> (String provider) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead</para></listitem>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead </para></listitem>
 </variablelist>
 </para><para><anchor id="deprecated_1_deprecated000002"/> <variablelist>
 <varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ad1f8c683188718a475f7bb6276b6d45b" kindref="member">JREngage.showAuthenticationDialog</ref> (boolean skipReturningUserLandingPage) </term></varlistentry>

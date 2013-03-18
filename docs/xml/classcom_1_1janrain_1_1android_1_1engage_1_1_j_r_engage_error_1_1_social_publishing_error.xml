@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="199" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="199" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="199" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="199" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -31,7 +31,7 @@
 <para>Social publishing failed because of an unknown reason. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="204" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="204" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="204" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="204" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a0bc55b82f9bcb7072bc60bb5f89bcdbf" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -45,7 +45,7 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="209" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="209" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="209" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a65c492b37ed4b4a3e65909d4764e41ce" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -59,7 +59,7 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="214" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="214" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="214" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="214" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1acd85e4691c280ae3f20e558e87db1208" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="219" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="219" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="219" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="219" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1adaf31df23558a9d47724310b3cd74675" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -87,7 +87,7 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="224" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="224" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="224" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a889725c98dfc5e954079a2a73c744b7f" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -101,7 +101,7 @@
 <para>There was a bad connection while publishing. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="229" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="229" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="229" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="229" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a62ac6fdae4d0364fa0ba10a85df2f0ac" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -115,7 +115,7 @@
 <para>Social publishing failed because of a missing parameter. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="234" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="234" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="234" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="234" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a0ca7943d34ac5428e6a50f792f5657a1" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -129,7 +129,7 @@
 <para>Social publishing failed because of a missing Engage API key. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="240" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="240" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="240" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="240" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1ac4e276040d0d463211eaa56b16480315" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -143,7 +143,7 @@
 <para>Character limit exceeded. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="245" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="245" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="245" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a19f57ceb0ef92efad8f6aefff83c0aff" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -157,7 +157,7 @@
 <para>Generic Facebook error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="250" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="250" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="250" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="250" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a70d5a0bab0ddd1fe4e777e243fd12b50" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -171,7 +171,7 @@
 <para>Invalid Facebook session. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="255" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="255" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="255" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="255" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a072cddedcbc3e66e1b226b50f822010f" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -185,7 +185,7 @@
 <para>Invalid Facebook media. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="260" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="260" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="260" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="260" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a8d5368f74f4694588e7c9b933fbc4e75" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -199,7 +199,7 @@
 <para>Generic Twitter error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="265" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="265" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="265" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="265" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a439570f460717f08c4a2430fac3cf728" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -213,7 +213,7 @@
 <para>Duplicate Twitter status update error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="270" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="270" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="270" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="270" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1ad5dd4fa02864e3785faf23a6f182025f" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -227,7 +227,7 @@
 <para>Generic LinkedIn error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="275" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="275" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="275" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="275" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1ab9cc142d6323684c192856aac84524a7" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -241,7 +241,7 @@
 <para>Generic Myspace error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="280" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="280" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="280" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="280" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a9a9515b13e3e4095f3d3503d2c2615ce" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -255,7 +255,7 @@
 <para>Generic Yahoo error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="285" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="285" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="285" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="285" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a03ee812583965aa5c6174a7ce3a46782" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -269,7 +269,7 @@
 <para>Facebook feed action request over-limit error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="290" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="290" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="290" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="290" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a1662b58ed1f81b95e3794ce3df252844" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -283,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="296" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="296" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="296" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="296" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a5201c4729f0d1eba2ef74bb9124f90eb" prot="public" static="yes" mutable="no">
         <type>final int</type>
@@ -297,14 +297,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="302" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="302" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="302" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="302" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Container for error code constants related to social publishing. See <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1adc00833722df4f26a365c53a43a04631" kindref="member">JREngageError.mCode</ref> for more information. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="198" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="198" bodyend="303"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="198" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="198" bodyend="303"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a0bc55b82f9bcb7072bc60bb5f89bcdbf" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageError::SocialPublishingError</scope><name>ACTIVITY_NIL</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_social_publishing_error_1a65c492b37ed4b4a3e65909d4764e41ce" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageError::SocialPublishingError</scope><name>ACTIVITY_NULL</name></member>

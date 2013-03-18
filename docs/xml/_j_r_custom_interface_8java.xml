@@ -46,6 +46,6 @@
 <codeline lineno="39" refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">abstract</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface" kindref="compound" tooltip="Super type for UI customizations The abstract superclass of classes which define UI customizations fo...">JRCustomInterface</ref><sp/>{</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java"/>
   </compounddef>
 </doxygen>

@@ -9,24 +9,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="63">
+      <node id="65">
         <label>JRCustomInterfaceView</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view"/>
-        <childnode refid="61" relation="public-inheritance">
+        <childnode refid="63" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="61">
+      <node id="63">
         <label>JRCustomInterface</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface"/>
       </node>
-      <node id="62">
+      <node id="64">
         <label>JRCustomInterfaceConfiguration</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration"/>
-        <childnode refid="61" relation="public-inheritance">
+        <childnode refid="63" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java" line="39" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java" bodystart="39" bodyend="40"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java" line="39" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java" bodystart="39" bodyend="40"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

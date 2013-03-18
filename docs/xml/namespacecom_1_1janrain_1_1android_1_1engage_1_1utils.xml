@@ -3,16 +3,17 @@
   <compounddef id="namespacecom_1_1janrain_1_1android_1_1engage_1_1utils" kind="namespace">
     <compoundname>com::janrain::android::engage::utils</compoundname>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_android_utils" prot="public">com::janrain::android::engage::utils::AndroidUtils</innerclass>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_apache_set_from_map_3_01_e_01_4" prot="public">com::janrain::android::engage::utils::ApacheSetFromMap&lt; E &gt;</innerclass>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_archiver" prot="public">com::janrain::android::engage::utils::Archiver</innerclass>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_collection_utils" prot="public">com::janrain::android::engage::utils::CollectionUtils</innerclass>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_i_o_utils" prot="public">com::janrain::android::engage::utils::IOUtils</innerclass>
-    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_prefs" prot="public">com::janrain::android::engage::utils::Prefs</innerclass>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_pref_utils" prot="public">com::janrain::android::engage::utils::PrefUtils</innerclass>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_string_utils" prot="public">com::janrain::android::engage::utils::StringUtils</innerclass>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1utils_1_1_thread_utils" prot="public">com::janrain::android::engage::utils::ThreadUtils</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="51"/>
+<para>Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to You under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at</para><para><ulink url="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</ulink></para><para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>    </detaileddescription>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/AndroidUtils.java" line="51"/>
   </compounddef>
 </doxygen>

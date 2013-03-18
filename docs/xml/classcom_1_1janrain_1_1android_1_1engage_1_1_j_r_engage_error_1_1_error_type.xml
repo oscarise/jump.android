@@ -15,7 +15,7 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="54" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="54" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="54" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1a078b2c779a2f510dcc5f8b0b0fb2b607" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -29,7 +29,7 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="59" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="59" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="59" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1a74562a95119dde5b8da65f071adba5b5" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -43,7 +43,7 @@
 <para>Reserved </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="64" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="64" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="64" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1ac2837260a237df9c11feebf84d26fd3d" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -57,7 +57,7 @@
 <para>The Engage configuration query failed </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="69" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="69" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="69" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="69" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1a5b437058532046ab521d6511a81b7847" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -71,7 +71,7 @@
 <para>There are no providers configured on the Engage dashboard for the Engage app </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="74" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="74" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="74" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1aa68ab1ad27fd39a9d45d1838bd849b15" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -87,7 +87,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="84" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="84" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="84" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1a300bb87da77e1fe095e344c7a62568e2" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -103,7 +103,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="93" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="93" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="93" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1aa3ee11055506ccb85af37ce26086b16d" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -117,7 +117,7 @@
 <para>The social publishing failed because the OAuth publishing token associated with the mobile device token has expired or is otherwise no longer valid. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="99" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="99" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="99" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1a958d71a06cc65ebc2fa08c44bd1d0901" prot="public" static="yes" mutable="no">
         <type>final String</type>
@@ -133,14 +133,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="110" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="110" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="110" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="110" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>String based error categorizations. See <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1a84262b4adb38cc036235e6f973b922fe" kindref="member">JREngageError.mType</ref> for more information. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="50" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="50" bodyend="111"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" line="50" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageError.java" bodystart="50" bodyend="111"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1aa68ab1ad27fd39a9d45d1838bd849b15" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageError::ErrorType</scope><name>AUTHENTICATION_FAILED</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error_1_1_error_type_1ac2837260a237df9c11feebf84d26fd3d" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageError::ErrorType</scope><name>CONFIGURATION_FAILED</name></member>

@@ -124,6 +124,6 @@
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="245"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java"/>
   </compounddef>
 </doxygen>

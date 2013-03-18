@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="88" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="88" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="88" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1a46271af1bf04293304a24ba410b861a3" prot="private" static="yes" mutable="no">
         <type>final String</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="89" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="89" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="89" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1a742ca9d36b1320256957f44170631429" prot="private" static="yes" mutable="no">
         <type>final String</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="90" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="90" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="90" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1a94a33eb971478d949ae4746a84a6adc1" prot="private" static="yes" mutable="no">
         <type>final String</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="91" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="91" bodyend="-1"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="91" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="91" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -74,14 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="93" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="93" bodyend="93"/>
+        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="93" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="93" bodyend="93"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="87" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="87" bodyend="416"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="87" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="87" bodyend="416"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1ab9114ea86dbb39b4ab0c644a409a8ada" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient</scope><name>AsyncHttpClient</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1a94a33eb971478d949ae4746a84a6adc1" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::AsyncHttpClient</scope><name>ENCODING_GZIP</name></member>

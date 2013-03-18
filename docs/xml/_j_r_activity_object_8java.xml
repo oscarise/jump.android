@@ -300,7 +300,7 @@
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>jsonEncodedUrlsMap<sp/>=<sp/>jss.toString();</highlight></codeline>
 <codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>String<sp/>urlEncodedJson<sp/>=<sp/>AndroidUtils.urlEncode(jsonEncodedUrlsMap);</highlight></codeline>
 <codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>getUrlsUrl<sp/>=</highlight></codeline>
-<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.getBaseUrl()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/openid/get_urls?&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.getRpBaseUrl()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/openid/get_urls?&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;urls=&quot;</highlight><highlight class="normal"><sp/>+<sp/>urlEncodedJson</highlight></codeline>
 <codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&amp;app_name=&quot;</highlight><highlight class="normal"><sp/>+<sp/>session.getUrlEncodedAppName()</highlight></codeline>
 <codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&amp;device=android&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -374,6 +374,6 @@
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="727"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActivityObject.java"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActivityObject.java"/>
   </compounddef>
 </doxygen>

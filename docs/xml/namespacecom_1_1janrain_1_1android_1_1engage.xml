@@ -10,62 +10,10 @@
     <innernamespace refid="namespacecom_1_1janrain_1_1android_1_1engage_1_1types">com::janrain::android::engage::types</innernamespace>
     <innernamespace refid="namespacecom_1_1janrain_1_1android_1_1engage_1_1ui">com::janrain::android::engage::ui</innernamespace>
     <innernamespace refid="namespacecom_1_1janrain_1_1android_1_1engage_1_1utils">com::janrain::android::engage::utils</innernamespace>
-      <sectiondef kind="enum">
-      <memberdef kind="enum" id="namespacecom_1_1janrain_1_1android_1_1engage_1a7d3ee258af7a2e6f2928a726ef91db2c" prot="public" static="no">
-        <name>JREnvironment</name>
-        <enumvalue id="namespacecom_1_1janrain_1_1android_1_1engage_1a7d3ee258af7a2e6f2928a726ef91db2c" prot="public">
-          <name>PRODUCTION</name>
-          <initializer>(R.string.jr_server_url_production)</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespacecom_1_1janrain_1_1android_1_1engage_1a7d3ee258af7a2e6f2928a726ef91db2c" prot="public">
-          <name>STAGING</name>
-          <initializer>(R.string.jr_server_url_staging)</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespacecom_1_1janrain_1_1android_1_1engage_1a7d3ee258af7a2e6f2928a726ef91db2c" prot="public">
-          <name>TESTING</name>
-          <initializer>(R.string.jr_server_url_testing)</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespacecom_1_1janrain_1_1android_1_1engage_1a7d3ee258af7a2e6f2928a726ef91db2c" prot="public">
-          <name>LILLI</name>
-          <initializer>(R.string.jr_server_url_lilli)</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespacecom_1_1janrain_1_1android_1_1engage_1a7d3ee258af7a2e6f2928a726ef91db2c" prot="public">
-          <name>NATHAN</name>
-          <initializer>(R.string.jr_server_url_nathan)</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREnvironment.java" line="40" bodyfile="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREnvironment.java" bodystart="40" bodyend="57"/>
-      </memberdef>
-      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/nathan/android-code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="32"/>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="32"/>
   </compounddef>
 </doxygen>

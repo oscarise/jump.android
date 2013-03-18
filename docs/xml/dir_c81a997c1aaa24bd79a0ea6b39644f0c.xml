@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_c81a997c1aaa24bd79a0ea6b39644f0c" kind="dir">
+    <compoundname>/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/</compoundname>
+    <innerfile refid="_android_utils_8java">AndroidUtils.java</innerfile>
+    <innerfile refid="_apache_set_from_map_8java">ApacheSetFromMap.java</innerfile>
+    <innerfile refid="_archiver_8java">Archiver.java</innerfile>
+    <innerfile refid="_collection_utils_8java">CollectionUtils.java</innerfile>
+    <innerfile refid="_i_o_utils_8java">IOUtils.java</innerfile>
+    <innerfile refid="_pref_utils_8java">PrefUtils.java</innerfile>
+    <innerfile refid="_string_utils_8java">StringUtils.java</innerfile>
+    <innerfile refid="_thread_utils_8java">ThreadUtils.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/utils/"/>
+  </compounddef>
+</doxygen>
