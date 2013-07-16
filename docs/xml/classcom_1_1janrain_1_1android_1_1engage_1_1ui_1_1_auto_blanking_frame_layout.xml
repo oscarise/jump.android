@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_auto_blanking_frame_layout" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::AutoBlankingFrameLayout</compoundname>
     <basecompoundref prot="public" virt="non-virtual">FrameLayout</basecompoundref>
@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="48" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="48" bodyend="50"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="48" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="48" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_auto_blanking_frame_layout_1a630ee52ea81a544311a8573ce990e191" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="52" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="52" bodyend="54"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="52" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="52" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_auto_blanking_frame_layout_1a68a9cfafdb56ed3788de169ca86a0aff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="56" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="56" bodyend="58"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="56" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="56" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_auto_blanking_frame_layout_1a25bca9a1352e622b784056afad242b25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -82,14 +82,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="61" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="61" bodyend="78"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="61" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="61" bodyend="78"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="47" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="47" bodyend="79"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" line="47" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/AutoBlankingFrameLayout.java" bodystart="47" bodyend="79"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_auto_blanking_frame_layout_1a0c0f4809dc104afdf95adb0985295d6d" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::AutoBlankingFrameLayout</scope><name>AutoBlankingFrameLayout</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_auto_blanking_frame_layout_1a630ee52ea81a544311a8573ce990e191" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::AutoBlankingFrameLayout</scope><name>AutoBlankingFrameLayout</name></member>

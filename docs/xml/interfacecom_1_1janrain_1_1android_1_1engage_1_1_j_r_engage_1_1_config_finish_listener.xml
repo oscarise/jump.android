@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener" kind="interface" prot="private">
     <compoundname>com::janrain::android::engage::JREngage::ConfigFinishListener</compoundname>
-      <sectiondef kind="package-func">
-      <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener_1a9726b6fffd0c5ee93e73663f1c315674" prot="package" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener_1a9726b6fffd0c5ee93e73663f1c315674" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void configDidFinish</definition>
         <argsstring>()</argsstring>
@@ -14,16 +14,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="692"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="691"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="691" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="691" bodyend="693"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="690" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="690" bodyend="692"/>
     <listofallmembers>
-      <member refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener_1a9726b6fffd0c5ee93e73663f1c315674" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::JREngage::ConfigFinishListener</scope><name>configDidFinish</name></member>
+      <member refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener_1a9726b6fffd0c5ee93e73663f1c315674" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage::ConfigFinishListener</scope><name>configDidFinish</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

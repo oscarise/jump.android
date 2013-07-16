@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::session::JRAuthenticatedUser</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Serializable</basecompoundref>
@@ -11,112 +11,112 @@
         <definition>final String TAG</definition>
         <argsstring></argsstring>
         <name>TAG</name>
-        <initializer> JRAuthenticatedUser.class.getSimpleName()</initializer>
+        <initializer>= JRAuthenticatedUser.class.getSimpleName()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="62" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="62" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="62" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1af36d45f3448b2bad5d2f07f025611f89" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_DEVICE_TOKEN</definition>
         <argsstring></argsstring>
         <name>KEY_DEVICE_TOKEN</name>
-        <initializer>&quot;device_token&quot;</initializer>
+        <initializer>= &quot;device_token&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="63" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="63" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="63" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a9ddeb492505754f8a849b221687ccc02" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_PHOTO</definition>
         <argsstring></argsstring>
         <name>KEY_PHOTO</name>
-        <initializer>&quot;photo&quot;</initializer>
+        <initializer>= &quot;photo&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="64" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="64" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="64" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a24c0ce0d0907db19023c160e0bac27c5" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_PREFERRED_USERNAME</definition>
         <argsstring></argsstring>
         <name>KEY_PREFERRED_USERNAME</name>
-        <initializer>&quot;preferred_username&quot;</initializer>
+        <initializer>= &quot;preferred_username&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="65" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="65" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="65" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a503526eca09c1cb7feac95597f956b95" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_IDENTIFIER</definition>
         <argsstring></argsstring>
         <name>KEY_IDENTIFIER</name>
-        <initializer>&quot;identifier&quot;</initializer>
+        <initializer>= &quot;identifier&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="66" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="66" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="66" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a9612d9e8e414904fe098a0aa8e43ca27" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_AUTH_INFO</definition>
         <argsstring></argsstring>
         <name>KEY_AUTH_INFO</name>
-        <initializer>&quot;auth_info&quot;</initializer>
+        <initializer>= &quot;auth_info&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="67" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="67" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="67" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a72ab14d5e325fd6d36e9a4c87773787d" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_PROFILE</definition>
         <argsstring></argsstring>
         <name>KEY_PROFILE</name>
-        <initializer>&quot;profile&quot;</initializer>
+        <initializer>= &quot;profile&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="68" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="68" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="68" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1ae908f43d6d5d1ba9465e7644940adbc3" prot="public" static="yes" mutable="no">
         <type>final String</type>
         <definition>final String KEY_DISPLAY_NAME</definition>
         <argsstring></argsstring>
         <name>KEY_DISPLAY_NAME</name>
-        <initializer>&quot;displayName&quot;</initializer>
+        <initializer>= &quot;displayName&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="69" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="69" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="69" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="69" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="71" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="71" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="71" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a4f86b4d67a16b9ec95c3b531326016c9" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="72" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="72" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="72" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a688bfe8761df5e02f25080ffac47c8ab" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="73" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="73" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="73" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1aaa686bd65aa19ca8fea7479f39e8a36f" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -170,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="74" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="74" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="74" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1aba0db6fc5a0da7bd836991a291f98e55" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="75" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="75" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="75" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1ada33af550035ca0cd07cafb7d68341e6" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="76" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="76" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="76" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1aac879d7c7addf6e974dfff566b992808" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -209,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="77" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="77" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="77" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="77" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -236,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="81" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="79" bodyend="94"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="81" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="79" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1af089dbeb23931b760f04111f70ae7df5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="96" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="96" bodyend="98"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="96" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="96" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1ad962ba24257128533bb0092116b51512" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -262,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="100" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="100" bodyend="102"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="100" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="100" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1ad78d4ed99ba798e1f3f3ca744bb57fb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="104" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="104" bodyend="106"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="104" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="104" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a034a4121b14ae238845a1a951ccbb9da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -288,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="108" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="108" bodyend="110"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="108" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="108" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1ae151df64ed9709b56ffeba6ae4fe8c14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -301,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="112" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="112" bodyend="114"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="112" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="112" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a9eca77861be85352314c33a08a7c4d66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -314,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="116" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="116" bodyend="118"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="116" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="116" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a5145d5bf53eb7f38f335b18823acd11f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -327,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="120" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="120" bodyend="122"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="120" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="120" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a68bb9491b870c980fa603d1377b3c9b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -344,7 +344,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="136" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="136" bodyend="144"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="136" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="136" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1aed75449a9f4b41336e625b7582c73068" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -357,7 +357,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="212" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="212" bodyend="221"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="212" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="212" bodyend="221"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -373,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="126" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="126" bodyend="129"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="126" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="126" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a4193dd4462177faaa3f6277be6688d19" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Context</type>
@@ -386,7 +386,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="131" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="131" bodyend="133"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="131" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="131" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1abc1bc428806c24b23e3502eb18bc9f70" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -407,14 +407,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="147" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="146" bodyend="209"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="147" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="146" bodyend="209"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="61" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="61" bodyend="226"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="61" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="61" bodyend="226"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1a68bb9491b870c980fa603d1377b3c9b0" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::session::JRAuthenticatedUser</scope><name>asyncDownloadProfilePic</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1aed75449a9f4b41336e625b7582c73068" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::session::JRAuthenticatedUser</scope><name>deleteCachedProfilePic</name></member>

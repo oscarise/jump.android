@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1_1_finish_receiver" kind="class" prot="private">
     <compoundname>com::janrain::android::engage::ui::JRUiFragment::FinishReceiver</compoundname>
     <basecompoundref prot="public" virt="non-virtual">BroadcastReceiver</basecompoundref>
@@ -9,14 +9,14 @@
         <definition>String TAG</definition>
         <argsstring></argsstring>
         <name>TAG</name>
-        <initializer>&quot;-&quot; + FinishReceiver.class.getSimpleName()</initializer>
+        <initializer>= JRUiFragment.this.TAG + &quot;-&quot; + FinishReceiver.class.getSimpleName()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java" line="106" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java" bodystart="106" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRUiFragment.java" line="107" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRUiFragment.java" bodystart="107" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -39,14 +39,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java" line="109" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java" bodystart="109" bodyend="119"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRUiFragment.java" line="110" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRUiFragment.java" bodystart="110" bodyend="120"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java" line="105" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRUiFragment.java" bodystart="105" bodyend="120"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRUiFragment.java" line="106" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRUiFragment.java" bodystart="106" bodyend="121"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1_1_finish_receiver_1afe2ab6137f59f9ff640f1e3b74080ad7" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRUiFragment::FinishReceiver</scope><name>onReceive</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1_1_finish_receiver_1ac6815b13487e4ebd97809fb2fc897510" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRUiFragment::FinishReceiver</scope><name>TAG</name></member>

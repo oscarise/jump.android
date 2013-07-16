@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::JRProviderListFragment</compoundname>
     <basecompoundref prot="public" virt="non-virtual">JRUiFragment</basecompoundref>
@@ -10,28 +10,28 @@
         <definition>final int RESULT_FAIL</definition>
         <argsstring></argsstring>
         <name>RESULT_FAIL</name>
-        <initializer> Activity.RESULT_FIRST_USER</initializer>
+        <initializer>= Activity.RESULT_FIRST_USER</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="66" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="66" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="66" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a9c48c50e0ffd37f00bc51b738346749f" prot="public" static="yes" mutable="no">
         <type>final int</type>
         <definition>final int RESULT_NATIVE_SIGNIN</definition>
         <argsstring></argsstring>
         <name>RESULT_NATIVE_SIGNIN</name>
-        <initializer> Activity.RESULT_FIRST_USER + 1</initializer>
+        <initializer>= Activity.RESULT_FIRST_USER + 1</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="67" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="67" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="67" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="67" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -40,14 +40,14 @@
         <definition>final int TIMER_MAX_ITERATIONS</definition>
         <argsstring></argsstring>
         <name>TIMER_MAX_ITERATIONS</name>
-        <initializer> 40</initializer>
+        <initializer>= 40</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="69" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="69" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="69" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="69" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="71" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="71" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="71" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aed8eac847605893faa91083d36c582ff" prot="private" static="no" mutable="no">
         <type>ProviderAdapter</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="72" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="72" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="72" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a1c10e5c66145e34cfe720dd128023094" prot="private" static="no" mutable="no">
         <type>Timer</type>
@@ -88,21 +88,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="73" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="73" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="73" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a3868113e2a6c5c66d59238ef4a32bead" prot="private" static="no" mutable="no">
         <type>int</type>
         <definition>int mTimerCount</definition>
         <argsstring></argsstring>
         <name>mTimerCount</name>
-        <initializer> 0</initializer>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="74" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="74" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="74" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1acd2d6eefd4c04637702456e9c2d2f18c" prot="private" static="no" mutable="no">
         <type>ListView</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="76" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="76" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="76" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a464009742ded1cb65c6a0b75f10cb7a2" prot="private" static="no" mutable="no">
         <type>TextView</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="77" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="77" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="77" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a52a9bf15ea9b5a650129b2c293f981eb" prot="private" static="no" mutable="no">
         <type>ProgressBar</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="78" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="78" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="78" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="78" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1af4bf3158672d7dc16699d90f5c232dd2" prot="private" static="no" mutable="no">
         <type>boolean</type>
@@ -154,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="80" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="80" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="80" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aba685f8c0a8fe7009880e3dd931dea8f" prot="private" static="no" mutable="no">
         <type>boolean</type>
@@ -167,14 +167,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="81" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="81" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="81" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a90bcf3440063885caffeb2f34db10ba6" prot="private" static="no" mutable="no">
         <type>Runnable</type>
         <definition>Runnable mNoProvidersFoundRunner</definition>
         <argsstring></argsstring>
         <name>mNoProvidersFoundRunner</name>
-        <initializer> new Runnable() {
+        <initializer>= new Runnable() {
         public void run() {
             mEmptyTextLabel.setVisibility(View.VISIBLE);
             mLoadingProgress.setVisibility(View.GONE);
@@ -188,14 +188,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="183" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="176" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="183" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a21123f3c3a1c2f6fe22c406d22819dbf" prot="private" static="no" mutable="no">
         <type>Runnable</type>
         <definition>Runnable mProvidersLoadedRunner</definition>
         <argsstring></argsstring>
         <name>mProvidersLoadedRunner</name>
-        <initializer> new Runnable() {
+        <initializer>= new Runnable() {
         public void run() {
             mListView.setVisibility(View.VISIBLE);
             mLoadingProgress.setVisibility(View.GONE);
@@ -211,15 +211,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="194" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="185" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="194" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a1dd1428027c0bf4240006e8b343eb777" prot="private" static="no" mutable="no">
         <type>ListView.OnItemClickListener</type>
         <definition>ListView.OnItemClickListener itemClickListener</definition>
         <argsstring></argsstring>
         <name>itemClickListener</name>
-        <initializer> new ListView.OnItemClickListener() {
+        <initializer>= new ListView.OnItemClickListener() {
         public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
@@ -238,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="276" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="263" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="290" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="263" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -253,7 +267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="196" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="196" bodyend="196"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="196" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="196" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a9feb4202611c5532fadd508bf1c3f6e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>View</type>
@@ -278,7 +292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="199" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="199" bodyend="254"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="199" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="199" bodyend="254"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a8a744b43949a3939f448facad211e3d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -291,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="257" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="257" bodyend="261"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="257" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="257" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a3bc85abb35d480f743e4b74d5de3d549" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -316,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="279" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="279" bodyend="333"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="293" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="293" bodyend="347"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ae8b5d98d22185abdd4893bc5e2e434c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -329,7 +343,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="402" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="402" bodyend="404"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="416" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="416" bodyend="418"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1a27d9d991257d0e31910ee2af58ea4d12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -342,7 +356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="406" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="406" bodyend="410"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="420" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="420" bodyend="424"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -357,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="335" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="335" bodyend="354"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="349" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="349" bodyend="368"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa158c1fcd9911530c5dd6b417da60c1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -370,7 +384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="361" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="361" bodyend="364"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="375" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="375" bodyend="378"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -385,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="357" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="357" bodyend="359"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="371" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="371" bodyend="373"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1ad9629307ceb5d9553b5e7305962b71ab" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -406,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="385" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="385" bodyend="400"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="399" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="399" bodyend="414"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa31bba749bd6c6359886716ebb40bea3" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>
@@ -419,7 +433,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="413" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="413" bodyend="417"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="427" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="427" bodyend="431"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-static-func">
@@ -438,14 +452,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="366" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="366" bodyend="383"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="380" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="380" bodyend="397"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="65" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="65" bodyend="418"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" line="65" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRProviderListFragment.java" bodystart="65" bodyend="432"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_provider_list_fragment_1aa158c1fcd9911530c5dd6b417da60c1a" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>cancelProviderList</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_ui_fragment_1a0e3207db4a5996afd5954478858e5419" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRProviderListFragment</scope><name>createProgressDialog</name></member>

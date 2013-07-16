@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="dir_c1f86b50f596a46b8978b384a314737e" kind="dir">
+    <compoundname>/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net</compoundname>
+    <innerdir refid="dir_61ba07c690279fa6174e4d0d0e4ef0cc">/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/async</innerdir>
+    <innerfile refid="_async_http_client_8java">AsyncHttpClient.java</innerfile>
+    <innerfile refid="_j_r_connection_manager_8java">JRConnectionManager.java</innerfile>
+    <innerfile refid="_j_r_connection_manager_delegate_8java">JRConnectionManagerDelegate.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/"/>
+  </compounddef>
+</doxygen>

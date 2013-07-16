@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_action_link" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::types::JRActionLink</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Serializable</basecompoundref>
@@ -19,7 +19,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="76" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="76" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="76" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_action_link_1a9207c3b8ef8469f1d9101379d48550ce" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -33,7 +33,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="84" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="84" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="84" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="84" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -81,7 +81,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="105" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="105" bodyend="111"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="105" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="105" bodyend="111"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -99,7 +99,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="136" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="136" bodyend="138"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="136" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="136" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_action_link_1a8043ef8d1352a42f35dceb50021a5923" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -113,7 +113,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="146" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="146" bodyend="148"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="146" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="146" bodyend="148"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="121" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="121" bodyend="123"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="121" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="121" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_action_link_1a985a1b0429a8a359a4783c7409b91e3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_dictionary" kindref="compound">JRDictionary</ref></type>
@@ -145,26 +145,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="155" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="155" bodyend="162"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="155" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="155" bodyend="162"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A link a user can use to take action on an activity update on the provider. </para>    </briefdescription>
     <detaileddescription>
-<para>Create an action link object, fill in the object&apos;s fields, and add the object the <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1a9808cd0aa65b882929ba8be9a974b496" kindref="member">JRActivityObject.mActionLinks</ref> array of your <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref>.</para><para>Each action link must contain a link: <emphasis>href</emphasis>, and some text describing what action will happen if someone clicks the link: <emphasis>text</emphasis>.</para><para><simplesect kind="par"><title>Example:</title><para><programlisting><codeline><highlight class="normal"><sp/>action_links:</highlight></codeline>
-<codeline><highlight class="normal"><sp/>[</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Rate<sp/>this<sp/>quiz<sp/>result&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;href&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http://example.com/quiz/12345/result/6789/rate&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/>},</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Take<sp/>this<sp/>quiz&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;href&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http://example.com/quiz/12345/take&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/>]</highlight></codeline>
+<para>Create an action link object, fill in the object&apos;s fields, and add the object the <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1a9808cd0aa65b882929ba8be9a974b496" kindref="member">JRActivityObject::mActionLinks</ref> array of your <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref>.</para><para>Each action link must contain a link: <emphasis>href</emphasis>, and some text describing what action will happen if someone clicks the link: <emphasis>text</emphasis>.</para><para><simplesect kind="par"><title>Example:</title><para><programlisting><codeline><highlight class="normal">action_links:</highlight></codeline>
+<codeline><highlight class="normal">[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Rate<sp/>this<sp/>quiz<sp/>result&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;href&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http://example.com/quiz/12345/result/6789/rate&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Take<sp/>this<sp/>quiz&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;href&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http://example.com/quiz/12345/take&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
 </programlisting> </para></simplesect>
 </para>    </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" line="63" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="63" bodyend="163"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" line="63" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActionLink.java" bodystart="63" bodyend="163"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_action_link_1a8043ef8d1352a42f35dceb50021a5923" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JRActionLink</scope><name>getHref</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_action_link_1afab766445043570e6a82c14851366933" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JRActionLink</scope><name>getText</name></member>

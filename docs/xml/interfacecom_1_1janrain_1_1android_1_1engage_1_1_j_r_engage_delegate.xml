@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" kind="interface" prot="public">
     <compoundname>com::janrain::android::engage::JREngageDelegate</compoundname>
+    <derivedcompoundref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate" prot="public" virt="non-virtual">JREngageDelegate.SimpleJREngageDelegate</derivedcompoundref>
+    <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate" prot="public">com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</innerclass>
       <sectiondef kind="user-defined">
       <header>Success notifications</header>
       <description><para>Messages sent by <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kindref="compound">JREngage</ref> notifying success </para></description>
@@ -36,23 +38,23 @@
 <para>The name of the provider on which the user authenticated. For a list of possible strings, please see the <ulink url="http://documentation.janrain.com/engage/sdks/ios/mobile-providers#basicProviders">List of Providers</ulink></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="note"><para>The structure of the <emphasis>auth_info</emphasis> JRDictionary (represented here in JSON) will be like the following: <programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;auth_info&quot;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;profile&quot;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;displayName&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;brian&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;preferredUsername&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;brian&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;url&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http:\/\/brian.myopenid.com\/&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;providerName&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Other&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;identifier&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http:\/\/brian.myopenid.com\/&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<simplesect kind="note"><para>The structure of the <emphasis>auth_info</emphasis> JRDictionary (represented here in JSON) will be like the following: <programlisting><codeline><highlight class="stringliteral">&quot;auth_info&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="stringliteral">&quot;profile&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;displayName&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;brian&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;preferredUsername&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;brian&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;url&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http:\/\/brian.myopenid.com\/&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;providerName&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Other&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;identifier&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;http:\/\/brian.myopenid.com\/&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para></simplesect>
 <simplesect kind="see"><para>For a full description of the dictionary and its fields, please see the <ulink url="http://documentation.janrain.com/engage/api/auth_info">auth_info response</ulink> section of the Janrain Engage API documentation. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="93"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="93"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a4b00beabacace5dd67a7bc60f133dcb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -110,7 +112,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="116"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="116"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1ace972ad01c27e01a5ccf27ad70a4d0d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -128,7 +130,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><anchor id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1didPublish"/> Notifies the delegate after the user successfully shares an activity on the given provider.</para><para><parameterlist kind="param"><parameteritem>
+<para><anchor id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1didPublish"/>Notifies the delegate after the user successfully shares an activity on the given provider.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>activity</parametername>
 </parameternamelist>
@@ -146,7 +148,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="132"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="132"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1afc069beff80daac09cc1e06566a45320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -159,7 +161,7 @@
 <para>Notifies the delegate after the social publishing dialog is closed (e.g., the user presses the back button) and publishing is complete. You may receive multiple <ref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1didPublish" kindref="member">void jrSocialDidPublishJRActivity(JRActivityObject activity, String provider)</ref> messages before the dialog is closed and publishing is complete. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="140"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="140"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -189,7 +191,7 @@
 The raison d&apos;etre for this delayed delegate delivery is to allow for the possibility that an application may speculatively configure the library, but never actually invoke any library Activies. In that case, no error is delivered to the application. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="167"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="167"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a388f6ea1d314132c85a215c952fb7901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -202,7 +204,7 @@ The raison d&apos;etre for this delayed delegate delivery is to allow for the po
 <para>Notifies the delegate that authorization was canceled for any reason other than an error. For example: The user pressed the back button, the cancelAuthentication method was called, or configuration of the library timed out. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="174"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="174"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a35444c1f8c0fec9d14274e9a615cba0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -239,7 +241,7 @@ The raison d&apos;etre for this delayed delegate delivery is to allow for the po
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="193"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="193"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a424d0bbf6dd2dbfe81a382406e5ac5ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -286,7 +288,7 @@ The raison d&apos;etre for this delayed delegate delivery is to allow for the po
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="211"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="211"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a5ef7762d503eb0f583d172d4a10f7869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -299,7 +301,7 @@ The raison d&apos;etre for this delayed delegate delivery is to allow for the po
 <para>Notifies the delegate if social publishing was canceled for any reason other than an error. For example, the user presses the back button, any class (e.g., the <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kindref="compound">JREngage</ref> delegate) calls the cancelPublishing method, or if configuration of the library times out. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="218"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="218"/>
       </memberdef>
       <memberdef kind="function" id="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a6abc64d6097987fd7e7d603b1b220650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -346,14 +348,26 @@ The raison d&apos;etre for this delayed delegate delivery is to allow for the po
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="236"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="236"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The interface implemented by an object in order to receive notifications when a user authenticates or publishes an activity to their social networks. </para>    </briefdescription>
     <detaileddescription>
 <para>The methods of this interface are invoked upon the success or failure of the Janrain Engage for Android Activities. They provide a conduit for the authenticated user&apos;s profile data, and if server-side authentication is configured, the data payload returned by your server&apos;s token URL. </para>    </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" line="49" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="49" bodyend="238"/>
+    <inheritancegraph>
+      <node id="69">
+        <label>JREngageDelegate.SimpleJREngageDelegate</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>JREngageDelegate</label>
+        <link refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="49" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="49" bodyend="280"/>
     <listofallmembers>
       <member refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a424d0bbf6dd2dbfe81a382406e5ac5ad" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate</scope><name>jrAuthenticationCallToTokenUrlDidFail</name></member>
       <member refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1a35444c1f8c0fec9d14274e9a615cba0a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate</scope><name>jrAuthenticationDidFailWithError</name></member>

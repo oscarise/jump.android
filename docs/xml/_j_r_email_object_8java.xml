@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="_j_r_email_object_8java" kind="file">
     <compoundname>JREmailObject.java</compoundname>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_email_object" prot="public">com::janrain::android::engage::types::JREmailObject</innerclass>
@@ -124,6 +124,6 @@
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="245"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JREmailObject.java"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JREmailObject.java"/>
   </compounddef>
 </doxygen>

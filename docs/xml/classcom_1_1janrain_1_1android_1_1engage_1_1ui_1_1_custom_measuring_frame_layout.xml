@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::CustomMeasuringFrameLayout</compoundname>
     <basecompoundref prot="public" virt="non-virtual">FrameLayout</basecompoundref>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="50" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="50" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="49" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a9996763c4677542528bf88f6d38bba96" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="51" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="51" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="50" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a986ac3700cefed4dc0c96949dc514c7f" prot="private" static="no" mutable="no">
         <type>Integer</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="52" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="52" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="51" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a52cb4106d1e80b526cbf77cce85efaf3" prot="private" static="no" mutable="no">
         <type>Integer</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="53" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="53" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="52" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a0955d62bfc6a1612a30e099025ca9165" prot="private" static="no" mutable="no">
         <type>Context</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="54" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="54" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="53" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="53" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="56" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="56" bodyend="60"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="55" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="55" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a34fbbd294ef37d12be65c381babbb8b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="62" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="62" bodyend="66"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="61" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="61" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a2702eb316255312c5914d6ca08972ec8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="68" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="68" bodyend="72"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="67" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="67" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a99886c63d860a431b2c462664bd717cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -153,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="79" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="79" bodyend="89"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="78" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="78" bodyend="88"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -172,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="74" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="74" bodyend="77"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="73" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="73" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a427efdc7f27d190c98b105eebe372f8a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="98" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="98" bodyend="106"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="97" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="97" bodyend="105"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="92" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="92" bodyend="96"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="91" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="91" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a7f200619ad9bddb43c695a84d1530515" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -225,14 +225,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="109" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="109" bodyend="149"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="108" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="108" bodyend="148"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="49" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="49" bodyend="150"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" line="48" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/CustomMeasuringFrameLayout.java" bodystart="48" bodyend="149"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a427efdc7f27d190c98b105eebe372f8a" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::CustomMeasuringFrameLayout</scope><name>computeTargetSize</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_custom_measuring_frame_layout_1a218b80c776d5f471ff28a7af3f35ec7f" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::CustomMeasuringFrameLayout</scope><name>CustomMeasuringFrameLayout</name></member>

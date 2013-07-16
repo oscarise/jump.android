@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::JRCustomInterface</compoundname>
     <derivedcompoundref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration" prot="public" virt="non-virtual">JRCustomInterfaceConfiguration</derivedcompoundref>
@@ -9,24 +9,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="65">
+      <node id="51">
         <label>JRCustomInterfaceView</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="49" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="63">
+      <node id="49">
         <label>JRCustomInterface</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface"/>
       </node>
-      <node id="64">
+      <node id="50">
         <label>JRCustomInterfaceConfiguration</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="49" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java" line="39" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterface.java" bodystart="39" bodyend="40"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterface.java" line="39" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterface.java" bodystart="39" bodyend="40"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

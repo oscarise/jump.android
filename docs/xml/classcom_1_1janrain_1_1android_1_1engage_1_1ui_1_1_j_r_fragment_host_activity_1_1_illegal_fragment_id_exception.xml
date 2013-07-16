@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1_1_illegal_fragment_id_exception" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::JRFragmentHostActivity::IllegalFragmentIdException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">RuntimeException</basecompoundref>
       <sectiondef kind="package-attrib">
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1_1_illegal_fragment_id_exception_1a243cefe689bfe4136f601a08daadbc4a" prot="package" static="no" mutable="no">
         <type>int</type>
@@ -14,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="259" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="259" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="259" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="259" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -33,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="261" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="261" bodyend="263"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="261" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="261" bodyend="263"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1_1_illegal_fragment_id_exception_1ad146fa8579a5f8a876c4688cc5a68520" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -46,14 +47,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="265" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="265" bodyend="267"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="265" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="265" bodyend="267"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="258" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="258" bodyend="268"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="258" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="258" bodyend="268"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1_1_illegal_fragment_id_exception_1a5722a7a8e144e39b3e42dac63b59e21b" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRFragmentHostActivity::IllegalFragmentIdException</scope><name>IllegalFragmentIdException</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1_1_illegal_fragment_id_exception_1a243cefe689bfe4136f601a08daadbc4a" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRFragmentHostActivity::IllegalFragmentIdException</scope><name>mFragId</name></member>

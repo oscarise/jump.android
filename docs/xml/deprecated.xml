@@ -1,35 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="deprecated" kind="page">
     <compoundname>deprecated</compoundname>
     <title>Deprecated List</title>
     <detaileddescription>
-<para><anchor id="deprecated_1_deprecated000008"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1a09645c0a971972737f7b0463cd8c5b9b" kindref="member">JRActivityObject.setMedia</ref> (JRMediaObject mediaObject) </term></varlistentry>
-<listitem><para>use #addMedia(JRMediaObject)</para></listitem>
-</variablelist>
-</para><para><anchor id="deprecated_1_deprecated000001"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0de1aa16e951a1b62e2ef459b1596e83" kindref="member">JREngage.showAuthenticationDialog</ref> () </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity) instead </para></listitem>
-</variablelist>
-</para><para><anchor id="deprecated_1_deprecated000005"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1af5dd5f8d3dde2c0253ca32f9607751f1" kindref="member">JREngage.showAuthenticationDialog</ref> (Boolean skipReturningUserLandingPage, String provider, Class&lt;?extends JRCustomInterface &gt; uiCustomization) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, Boolean skipReturningUserLandingPage, String provider, Class&lt;? extends JRCustomInterface&gt; uiCustomization) instead. </para></listitem>
-</variablelist>
-</para><para><anchor id="deprecated_1_deprecated000004"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a486c62246d6692956ae66a1641a15a5a" kindref="member">JREngage.showAuthenticationDialog</ref> (Boolean skipReturningUserLandingPage, String provider) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead </para></listitem>
-</variablelist>
-</para><para><anchor id="deprecated_1_deprecated000003"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aba2688da1ad7a1e0a7c4522f568ad95e" kindref="member">JREngage.showAuthenticationDialog</ref> (String provider) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead </para></listitem>
-</variablelist>
-</para><para><anchor id="deprecated_1_deprecated000002"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ad1f8c683188718a475f7bb6276b6d45b" kindref="member">JREngage.showAuthenticationDialog</ref> (boolean skipReturningUserLandingPage) </term></varlistentry>
-<listitem><para>use showAuthenticationDialog(Activity fromActivity, boolean skipReturningUserLandingPage) instead. </para></listitem>
-</variablelist>
-</para><para><anchor id="deprecated_1_deprecated000006"/> <variablelist>
-<varlistentry><term>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aef1ecf0e43afeed0eb0a779c67eff285" kindref="member">JREngage.showSocialPublishingDialog</ref> (JRActivityObject jrActivity) </term></varlistentry>
+<para><variablelist>
+<varlistentry><term><anchor id="deprecated_1_deprecated000008"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1a09645c0a971972737f7b0463cd8c5b9b" kindref="member">JRActivityObject.setMedia</ref>  (JRMediaObject mediaObject)</term></varlistentry>
+<listitem><para>use #addMedia(JRMediaObject) </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000001"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0de1aa16e951a1b62e2ef459b1596e83" kindref="member">JREngage.showAuthenticationDialog</ref>  ()</term></varlistentry>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity) instead  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000005"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1af5dd5f8d3dde2c0253ca32f9607751f1" kindref="member">JREngage.showAuthenticationDialog</ref>  (Boolean skipReturningUserLandingPage, String provider, Class&lt;?extends JRCustomInterface &gt; uiCustomization)</term></varlistentry>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, Boolean skipReturningUserLandingPage, String provider, Class&lt;? extends JRCustomInterface&gt; uiCustomization) instead.  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000004"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a486c62246d6692956ae66a1641a15a5a" kindref="member">JREngage.showAuthenticationDialog</ref>  (Boolean skipReturningUserLandingPage, String provider)</term></varlistentry>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000003"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aba2688da1ad7a1e0a7c4522f568ad95e" kindref="member">JREngage.showAuthenticationDialog</ref>  (String provider)</term></varlistentry>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, String provider) instead  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000002"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ad1f8c683188718a475f7bb6276b6d45b" kindref="member">JREngage.showAuthenticationDialog</ref>  (boolean skipReturningUserLandingPage)</term></varlistentry>
+<listitem><para>use showAuthenticationDialog(Activity fromActivity, boolean skipReturningUserLandingPage) instead.  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000006"/>Member <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aef1ecf0e43afeed0eb0a779c67eff285" kindref="member">JREngage.showSocialPublishingDialog</ref>  (JRActivityObject jrActivity)</term></varlistentry>
 <listitem><para>use showSocialPublishingDialog(Activity fromActivity, JRActivityObject activity) instead </para></listitem>
 </variablelist>
 </para>    </detaileddescription>

@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection" kind="class" prot="package">
+    <compoundname>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a9eebedb059501321d4e08171836ca46b" prot="private" static="no" mutable="no">
+        <type>final Object</type>
+        <definition>final Object mTag</definition>
+        <argsstring></argsstring>
+        <name>mTag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="147" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a805504cca7e9c69bc0844a71e92c9759" prot="private" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String mRequestUrl</definition>
+        <argsstring></argsstring>
+        <name>mRequestUrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="148" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a2539ed3c528c4e3321168d3c184cb628" prot="private" static="no" mutable="no">
+        <type>final byte[]</type>
+        <definition>final byte [] mPostData</definition>
+        <argsstring></argsstring>
+        <name>mPostData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="149" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a2a278fd086fd164475f2c500fd5b18a4" prot="private" static="no" mutable="no">
+        <type>final List&lt; NameValuePair &gt;</type>
+        <definition>final List&lt;NameValuePair&gt; mRequestHeaders</definition>
+        <argsstring></argsstring>
+        <name>mRequestHeaders</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="150" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1ad3fb7d6cc660e5986652fd8d1e6cdc71" prot="private" static="no" mutable="no">
+        <type>final boolean</type>
+        <definition>final boolean mFollowRedirects</definition>
+        <argsstring></argsstring>
+        <name>mFollowRedirects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="151" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a08c47f428ed6cae4aea633301c4833d1" prot="private" static="no" mutable="no">
+        <type>HttpUriRequest</type>
+        <definition>HttpUriRequest mHttpRequest</definition>
+        <argsstring></argsstring>
+        <name>mHttpRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="153" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a546a41033e0251b0b4296ca311d46bfb" prot="private" static="no" mutable="no">
+        <type>AsyncHttpClient.AsyncHttpResponse</type>
+        <definition>AsyncHttpClient.AsyncHttpResponse mResponse</definition>
+        <argsstring></argsstring>
+        <name>mResponse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="154" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1ac1a175f5b75fa3aac4998c03866e843c" prot="private" static="no" mutable="no">
+        <type>JRConnectionManagerDelegate</type>
+        <definition>JRConnectionManagerDelegate mDelegate</definition>
+        <argsstring></argsstring>
+        <name>mDelegate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="155" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a2764179cb1715d8e16a2adbf08b02733" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ManagedConnection</definition>
+        <argsstring>(JRConnectionManagerDelegate delegate, Object tag, String requestUrl, byte[] postData, List&lt; NameValuePair &gt; requestHeaders, boolean followRedirects)</argsstring>
+        <name>ManagedConnection</name>
+        <param>
+          <type>JRConnectionManagerDelegate</type>
+          <declname>delegate</declname>
+        </param>
+        <param>
+          <type>Object</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>requestUrl</declname>
+        </param>
+        <param>
+          <type>byte[]</type>
+          <declname>postData</declname>
+        </param>
+        <param>
+          <type>List&lt; NameValuePair &gt;</type>
+          <declname>requestHeaders</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>followRedirects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="161" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="157" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a19295b4f9c3218c90de6b0395b5cd7c9" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String getRequestUrl</definition>
+        <argsstring>()</argsstring>
+        <name>getRequestUrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="170" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="170" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1aa007376f29f1853ede76bcae404f40e6" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte [] getPostData</definition>
+        <argsstring>()</argsstring>
+        <name>getPostData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="174" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="174" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a6134068d5768a860e6705002a1b7e111" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; NameValuePair &gt;</type>
+        <definition>List&lt;NameValuePair&gt; getRequestHeaders</definition>
+        <argsstring>()</argsstring>
+        <name>getRequestHeaders</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="178" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="178" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1aed2f4a2902aa591a4a988670a685a4e4" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>HttpUriRequest</type>
+        <definition>HttpUriRequest getHttpRequest</definition>
+        <argsstring>()</argsstring>
+        <name>getHttpRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="182" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="182" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a148bf54631bf03fddf9723b8c6faa041" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean getFollowRedirects</definition>
+        <argsstring>()</argsstring>
+        <name>getFollowRedirects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="186" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="186" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1aa6c61850444163403800066e65adc568" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void setResponse</definition>
+        <argsstring>(AsyncHttpClient.AsyncHttpResponse response)</argsstring>
+        <name>setResponse</name>
+        <param>
+          <type>AsyncHttpClient.AsyncHttpResponse</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="190" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="190" bodyend="192"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="146" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="146" bodyend="193"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a148bf54631bf03fddf9723b8c6faa041" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>getFollowRedirects</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1aed2f4a2902aa591a4a988670a685a4e4" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>getHttpRequest</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1aa007376f29f1853ede76bcae404f40e6" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>getPostData</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a6134068d5768a860e6705002a1b7e111" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>getRequestHeaders</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a19295b4f9c3218c90de6b0395b5cd7c9" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>getRequestUrl</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a2764179cb1715d8e16a2adbf08b02733" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>ManagedConnection</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1ac1a175f5b75fa3aac4998c03866e843c" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mDelegate</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1ad3fb7d6cc660e5986652fd8d1e6cdc71" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mFollowRedirects</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a08c47f428ed6cae4aea633301c4833d1" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mHttpRequest</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a2539ed3c528c4e3321168d3c184cb628" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mPostData</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a2a278fd086fd164475f2c500fd5b18a4" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mRequestHeaders</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a805504cca7e9c69bc0844a71e92c9759" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mRequestUrl</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a546a41033e0251b0b4296ca311d46bfb" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mResponse</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1a9eebedb059501321d4e08171836ca46b" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>mTag</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_managed_connection_1aa6c61850444163403800066e65adc568" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::ManagedConnection</scope><name>setResponse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

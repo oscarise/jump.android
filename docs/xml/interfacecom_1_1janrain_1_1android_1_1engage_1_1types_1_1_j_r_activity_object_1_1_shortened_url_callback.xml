@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="interfacecom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1_1_shortened_url_callback" kind="interface" prot="public">
     <compoundname>com::janrain::android::engage::types::JRActivityObject::ShortenedUrlCallback</compoundname>
       <sectiondef kind="public-func">
@@ -18,14 +18,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActivityObject.java" line="612"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActivityObject.java" line="612"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActivityObject.java" line="611" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRActivityObject.java" bodystart="611" bodyend="613"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActivityObject.java" line="611" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRActivityObject.java" bodystart="611" bodyend="613"/>
     <listofallmembers>
       <member refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1_1_shortened_url_callback_1ac3d77734d891c6cf73949fcdee9c927c" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JRActivityObject::ShortenedUrlCallback</scope><name>setShortenedUrl</name></member>
     </listofallmembers>

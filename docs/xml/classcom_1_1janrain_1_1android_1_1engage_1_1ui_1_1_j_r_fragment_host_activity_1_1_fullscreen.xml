@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1_1_fullscreen" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::JRFragmentHostActivity::Fullscreen</compoundname>
     <basecompoundref prot="public" virt="non-virtual">JRFragmentHostActivity</basecompoundref>
@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="305" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="305" bodyend="305"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" line="305" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java" bodystart="305" bodyend="305"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1af5dcc889f25f2043b83aa81e99af5ff1" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRFragmentHostActivity::Fullscreen</scope><name>_setResult</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity_1a56d1aa9f923f19b1121151a3ac2e7a1a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRFragmentHostActivity::Fullscreen</scope><name>ACTION_FINISH_FRAGMENT</name></member>

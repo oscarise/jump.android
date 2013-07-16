@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="_j_r_fragment_host_activity_8java" kind="file">
     <compoundname>JRFragmentHostActivity.java</compoundname>
     <innerclass refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_fragment_host_activity" prot="public">com::janrain::android::engage::ui::JRFragmentHostActivity</innerclass>
@@ -56,10 +56,10 @@
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.View;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.Window;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.WindowManager;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.engage.JREngage;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.engage.R;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.engage.session.JRSession;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.engage.utils.AndroidUtils;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.R;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.engage.session.JRSession;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.utils.AndroidUtils;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.janrain.android.utils.LogUtils;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">JRFragmentHostActivity<sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>FragmentActivity<sp/>{</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>TAG<sp/>=<sp/>JRFragmentHostActivity.class.getSimpleName();</highlight></codeline>
@@ -89,7 +89,7 @@
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onCreate(Bundle<sp/>savedInstanceState)<sp/>{</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onCreate(savedInstanceState);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JREngage.logd(TAG,<sp/></highlight><highlight class="stringliteral">&quot;[onCreate]:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>getFragmentId());</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LogUtils.logd(TAG,<sp/></highlight><highlight class="stringliteral">&quot;[onCreate]:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>getFragmentId());</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JRSession<sp/>session<sp/>=<sp/>JRSession.getInstance();</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
@@ -205,7 +205,7 @@
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onActivityResult(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requestCode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resultCode,<sp/>Intent<sp/>data)<sp/>{</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JREngage.logd(TAG,<sp/></highlight><highlight class="stringliteral">&quot;requestCode:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>requestCode<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>resultCode:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>resultCode);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LogUtils.logd(TAG,<sp/></highlight><highlight class="stringliteral">&quot;requestCode:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>requestCode<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>resultCode:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>resultCode);</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onActivityResult(requestCode,<sp/>resultCode,<sp/>data);</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Sometimes<sp/>this<sp/>activity<sp/>starts<sp/>an<sp/>activity<sp/>by<sp/>proxy<sp/>for<sp/>its<sp/>fragment,<sp/>in<sp/>that<sp/>case<sp/>we</highlight></codeline>
 <codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>delegate<sp/>the<sp/>result<sp/>to<sp/>the<sp/>fragment<sp/>here.</highlight></codeline>
@@ -258,7 +258,7 @@
 <codeline lineno="250"><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onBackPressed()<sp/>{</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JREngage.logd(TAG,<sp/></highlight><highlight class="stringliteral">&quot;onBackPressed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LogUtils.logd(TAG,<sp/></highlight><highlight class="stringliteral">&quot;onBackPressed&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="254"><highlight class="normal"></highlight></codeline>
 <codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mUiFragment.onBackPressed();</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -313,6 +313,6 @@
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Fullscreen<sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>JRFragmentHostActivity<sp/>{}</highlight></codeline>
 <codeline lineno="306"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRFragmentHostActivity.java"/>
   </compounddef>
 </doxygen>

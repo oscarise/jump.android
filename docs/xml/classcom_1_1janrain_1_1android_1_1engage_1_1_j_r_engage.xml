@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::JREngage</compoundname>
     <innerclass refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1_1_config_finish_listener" prot="private">com::janrain::android::engage::JREngage::ConfigFinishListener</innerclass>
@@ -63,7 +63,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="191" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="188" bodyend="230"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="192" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="189" bodyend="227"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a9ce0c212c5efaf0f55bc44a36a1ac688" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kindref="compound">JREngage</ref></type>
@@ -77,7 +77,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="237" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="237" bodyend="239"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="234" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="234" bodyend="236"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -106,7 +106,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="303" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="303" bodyend="307"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="300" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="300" bodyend="304"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a7877c06caf812fc767c43352f0509380" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -119,7 +119,7 @@
 <para>Remove the user&apos;s credentials for all providers from the library. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="312" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="312" bodyend="316"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="309" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="309" bodyend="313"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a11ec9d4e5b5d2cbbbd8e02f95d799979" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -144,7 +144,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="325" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="325" bodyend="329"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="322" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="322" bodyend="326"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -161,7 +161,7 @@
 <para>Stops the authentication flow. This finishes all Engage for Android activities and returns the calling Activity to the top of the application&apos;s activity stack. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="343" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="343" bodyend="349"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="340" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="340" bodyend="346"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a45445132f9f15aa224c19e11bec26982" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -174,7 +174,7 @@
 <para>Stops the publishing flow. This finishes all Engage for Android activities and returns the calling Activity to the top of the application&apos;s activity stack. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="355" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="355" bodyend="361"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="352" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="352" bodyend="358"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -203,7 +203,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="387" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="387" bodyend="390"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="384" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="384" bodyend="387"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5485e26791f30f6cdd3b66d891c6e469" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -217,7 +217,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="396" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="396" bodyend="399"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="393" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="393" bodyend="396"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -246,7 +246,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="414" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="414" bodyend="417"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="411" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="411" bodyend="414"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0d40fb874a4b703ca00bcad051cff621" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>synchronized void</type>
@@ -271,7 +271,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="424" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="424" bodyend="427"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="421" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="421" bodyend="424"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -292,7 +292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="656" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="656" bodyend="661"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="653" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="653" bodyend="658"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a57c8975264243e96516c156a5d1d7bca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -309,13 +309,13 @@
 <para>Dries out whitespace in layout hierarchies, for use with platform spinner dialog with too much </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="669" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="669" bodyend="685"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="666" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="666" bodyend="682"/>
       </memberdef>
-      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a180a61557e4b2a8e45999b282c2bc016" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adbc24248ab9529f6cf61d8abde4da80e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void showDirectProviderFlowInternal</definition>
+        <definition>void showAuthFlowInternal</definition>
         <argsstring>(final Activity fromActivity, final String providerName, final Class&lt;?extends JRCustomInterface &gt; uiCustomization)</argsstring>
-        <name>showDirectProviderFlowInternal</name>
+        <name>showAuthFlowInternal</name>
         <param>
           <type>final Activity</type>
           <declname>fromActivity</declname>
@@ -334,7 +334,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="701" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="699" bodyend="726"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="700" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="698" bodyend="727"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1acfb917bb0144a7631e3176daa8ed176b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void checkNullActivity</definition>
+        <argsstring>(Activity fromActivity)</argsstring>
+        <name>checkNullActivity</name>
+        <param>
+          <type>Activity</type>
+          <declname>fromActivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="777" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="777" bodyend="781"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0de1aa16e951a1b62e2ef459b1596e83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -347,7 +364,7 @@
 <para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a59597ecae9c7d52af0f782cf51042ab0" kindref="member">showAuthenticationDialog(Activity fromActivity)</ref> instead </para></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="467" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="467" bodyend="471"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="464" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="464" bodyend="468"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a59597ecae9c7d52af0f782cf51042ab0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -372,7 +389,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="478" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="478" bodyend="480"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="475" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="475" bodyend="477"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aff41b4a309f4d8bb87da342a72dd00ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -408,7 +425,7 @@
 If the reference is to a JRCustomView subclass then the an instance of that custom view will be displayed as the header of the list of providers the user is presented with. This header is the usual place to include custom username/password authentication UI. </para><para>If the reference is to a JRCustomInterfaceConfiguration subclass then all of the customizations specified by an instance of that subclass will be applied. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="498" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="497" bodyend="500"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="495" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="494" bodyend="497"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ad1f8c683188718a475f7bb6276b6d45b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -433,7 +450,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a9e400edc0d74afefa657326842fff5c9" kindref="member">showAuthenticationDialog(Activity fromActivity, boolean skipReturningUserLandingPage)</ref> instead. </para></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="508" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="508" bodyend="510"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="505" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="505" bodyend="507"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a9e400edc0d74afefa657326842fff5c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -470,7 +487,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="524" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="524" bodyend="526"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="521" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="521" bodyend="523"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aba2688da1ad7a1e0a7c4522f568ad95e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -495,7 +512,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adc22882072908d141ae8b5bd0f6d2528" kindref="member">showAuthenticationDialog(Activity fromActivity, String provider)</ref> instead </para></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="532" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="532" bodyend="534"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="529" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="529" bodyend="531"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adc22882072908d141ae8b5bd0f6d2528" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -532,7 +549,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="547" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="547" bodyend="549"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="544" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="544" bodyend="546"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a486c62246d6692956ae66a1641a15a5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -568,7 +585,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adc22882072908d141ae8b5bd0f6d2528" kindref="member">showAuthenticationDialog(Activity fromActivity, String provider)</ref> instead </para></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="556" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="556" bodyend="558"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="553" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="553" bodyend="555"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0eb9c21c1765e88495f3a12e2b5df428" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -616,7 +633,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="578" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="576" bodyend="580"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="575" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="573" bodyend="577"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1af5dd5f8d3dde2c0253ca32f9607751f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -663,7 +680,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <xrefsect id="deprecated_1_deprecated000005"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use showAuthenticationDialog(Activity fromActivity, Boolean skipReturningUserLandingPage, String provider, Class&lt;? extends JRCustomInterface&gt; uiCustomization) instead. </para></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="591" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="589" bodyend="593"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="588" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="586" bodyend="590"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ae3ced35cf741064fcf171ae01ec1aca8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -722,7 +739,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="616" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="613" bodyend="650"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="613" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="610" bodyend="647"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aef1ecf0e43afeed0eb0a779c67eff285" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -747,7 +764,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a987c8557e2e8ba1fe767c604cef8f6cd" kindref="member">showSocialPublishingDialog(Activity fromActivity, JRActivityObject activity)</ref> instead </para></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="732" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="732" bodyend="734"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="733" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="733" bodyend="735"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a987c8557e2e8ba1fe767c604cef8f6cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -783,7 +800,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="743" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="743" bodyend="745"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="744" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="744" bodyend="746"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aef3601d155352edcad6e35f00914f335" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -830,43 +847,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="758" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="756" bodyend="773"/>
-      </memberdef>
-      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a656ea995846ce620248cbfadd0804afd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void showBetaDirectShareDialog</definition>
-        <argsstring>(Activity fromActivity, JRActivityObject jrActivity)</argsstring>
-        <name>showBetaDirectShareDialog</name>
-        <param>
-          <type>Activity</type>
-          <declname>fromActivity</declname>
-        </param>
-        <param>
-          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref></type>
-          <declname>jrActivity</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Launch the beta direct share widget</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fromActivity</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The Activity from which to show the sharing dialog </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>jrActivity</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The activity you wish to share </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="782" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="781" bodyend="789"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="759" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="757" bodyend="775"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a734639b284aeb8cdb17c210ee0d7e1fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -941,7 +922,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <parametername>transit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Select a standard transition animation for this transaction. See FragmentTransaction.setTransition. Null for not set </para></parameterdescription>
+<para>Select a standard transition animation for this transaction. See FragmentTransaction::setTransition. Null for not set </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -968,7 +949,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="817" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="810" bodyend="835"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="809" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="802" bodyend="827"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a492363eb60049b3df7c266b1fc80aa75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1015,7 +996,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="849" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="847" bodyend="851"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="841" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="839" bodyend="843"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ae7d6b57572b626432b15eb6aaa23b2c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_publish_fragment" kindref="compound">JRPublishFragment</ref></type>
@@ -1041,7 +1022,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="860" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="860" bodyend="871"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="852" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="852" bodyend="863"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -1070,7 +1051,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="995" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="995" bodyend="998"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="987" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="987" bodyend="990"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5beca6dbac03d8908c68d835e7a9c0a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1095,7 +1076,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1007" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1007" bodyend="1010"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="999" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="999" bodyend="1002"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a829461bffd37af3f69cc0291a3aefe16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1120,7 +1101,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1023" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1023" bodyend="1026"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="1015" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="1015" bodyend="1018"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ae3be62f39a48dfc810fcc9d767105a2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1145,50 +1126,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1036" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1036" bodyend="1039"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a844c5efdea72aa6bf76fb98b1072572a" prot="private" static="yes" mutable="no">
-        <type>final String</type>
-        <definition>final String TAG</definition>
-        <argsstring></argsstring>
-        <name>TAG</name>
-        <initializer> JREngage.class.getSimpleName()</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="132" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="132" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0e79e330becf07c873f03f14f3b8ace8" prot="private" static="yes" mutable="no">
-        <type>boolean</type>
-        <definition>boolean sInitializationComplete</definition>
-        <argsstring></argsstring>
-        <name>sInitializationComplete</name>
-        <initializer> false</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="140" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="140" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aa0d5707e9dcc35ed6506a27c4cbde3d8" prot="private" static="yes" mutable="no">
-        <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kindref="compound">JREngage</ref></type>
-        <definition>JREngage sInstance</definition>
-        <argsstring></argsstring>
-        <name>sInstance</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="141" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="141" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="1028" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="1028" bodyend="1031"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -1203,7 +1141,36 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <para>If not set library logging is automatically controlled via the &quot;debuggable&quot; flag for the application which is normally automatically set by the build system </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="138" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="138" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="139" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0e79e330becf07c873f03f14f3b8ace8" prot="private" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean sInitializationComplete</definition>
+        <argsstring></argsstring>
+        <name>sInitializationComplete</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="141" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aa0d5707e9dcc35ed6506a27c4cbde3d8" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kindref="compound">JREngage</ref></type>
+        <definition>JREngage sInstance</definition>
+        <argsstring></argsstring>
+        <name>sInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="142" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="142" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -1218,7 +1185,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="143" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="143" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="144" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="144" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5a5e67e60fec416a49051def200341d9" prot="private" static="no" mutable="no">
         <type>Activity</type>
@@ -1231,7 +1198,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="144" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="144" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="145" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="145" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a35a40b886acd0f82cc60bdcdf7bd72fa" prot="private" static="no" mutable="no">
         <type>JRSession</type>
@@ -1244,35 +1211,35 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="145" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="145" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="146" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="146" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a516872384ec149988f32cf02e4b201f4" prot="private" static="no" mutable="no">
         <type>final Set&lt; <ref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" kindref="compound">JREngageDelegate</ref> &gt;</type>
         <definition>final Set&lt;JREngageDelegate&gt; mDelegates</definition>
         <argsstring></argsstring>
         <name>mDelegates</name>
-        <initializer> new HashSet&lt;<ref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" kindref="compound">JREngageDelegate</ref>&gt;()</initializer>
+        <initializer>= new HashSet&lt;<ref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" kindref="compound">JREngageDelegate</ref>&gt;()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="146" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="146" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="147" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="147" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5b0a629eb9910fd35bb6cf285d3881ad" prot="private" static="no" mutable="no">
         <type>final Set&lt; ConfigFinishListener &gt;</type>
         <definition>final Set&lt;ConfigFinishListener&gt; mConfigFinishListeners</definition>
         <argsstring></argsstring>
         <name>mConfigFinishListeners</name>
-        <initializer> new HashSet&lt;ConfigFinishListener&gt;()</initializer>
+        <initializer>= new HashSet&lt;ConfigFinishListener&gt;()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="147" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="147" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="148" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0570337dc9260844b7d32e5770f2c72f" prot="private" static="no" mutable="no">
         <type>JRSessionDelegate</type>
@@ -1285,7 +1252,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1127" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1042" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="1119" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="1034" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -1308,7 +1275,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="149" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="149" bodyend="160"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="150" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="150" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1abbb84184bff9bb3752fd2f9fd5dec510" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1321,7 +1288,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="367" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="367" bodyend="372"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="364" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="364" bodyend="369"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a27038b64c4e8d9a2fb68baa8a31bbe50" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1338,7 +1305,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="430" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="430" bodyend="434"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="427" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="427" bodyend="431"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a90ec3f7e536c11e330a71a6dd255f470" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>
@@ -1351,7 +1318,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="436" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="436" bodyend="450"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="433" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="433" bodyend="447"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a3871172e2cd1e10585eadefd814d0a74" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1368,7 +1335,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="452" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="452" bodyend="454"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="449" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="449" bodyend="451"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aca0c20e51437c6d155728586ce1a86a1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1436,7 +1403,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <parametername>transit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Select a standard transition animation for this transaction. See FragmentTransaction.setTransition. Null for not set </para></parameterdescription>
+<para>Select a standard transition animation for this transaction. See FragmentTransaction::setTransition. Null for not set </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1478,7 +1445,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="956" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="949" bodyend="975"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="948" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="941" bodyend="967"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a3e746026f30432304348ccd24ee9e7c9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>synchronized List&lt; <ref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" kindref="compound">JREngageDelegate</ref> &gt;</type>
@@ -1491,7 +1458,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1129" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1129" bodyend="1131"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="1121" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="1121" bodyend="1123"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1507,7 +1474,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="246" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="246" bodyend="248"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="243" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="243" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a7dc8f558f74069797840008e0b547cd6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1532,7 +1499,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="258" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="258" bodyend="261"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="255" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="255" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a6816a1d4ddd8f8ade0d57ce8152a2bab" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1557,7 +1524,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="268" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="268" bodyend="271"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="265" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="265" bodyend="268"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a60a558dd48f5f06cdadf14a9308a6e59" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>synchronized void</type>
@@ -1570,53 +1537,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <para>Blocks the current thread until JRSession has finished initialization </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="279" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="279" bodyend="287"/>
-      </memberdef>
-      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a19aae02289538c1e055fffd69fe9cbf7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void logd</definition>
-        <argsstring>(String tag, String msg, Throwable tr)</argsstring>
-        <name>logd</name>
-        <param>
-          <type>String</type>
-          <declname>tag</declname>
-        </param>
-        <param>
-          <type>String</type>
-          <declname>msg</declname>
-        </param>
-        <param>
-          <type>Throwable</type>
-          <declname>tr</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1133" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1133" bodyend="1135"/>
-      </memberdef>
-      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adef642e5a202897d9a60a2af28adc2f1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void logd</definition>
-        <argsstring>(String tag, String msg)</argsstring>
-        <name>logd</name>
-        <param>
-          <type>String</type>
-          <declname>tag</declname>
-        </param>
-        <param>
-          <type>String</type>
-          <declname>msg</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="1137" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="1137" bodyend="1139"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="276" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="276" bodyend="284"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1626,20 +1547,21 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
 <listitem><para>Call <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a469d808d2464c065bc16dedec7a2cc23" kindref="member">JREngage.initInstance</ref></para></listitem><listitem><para>Save the returned <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage" kindref="compound">JREngage</ref> object</para></listitem><listitem><para>Invoke <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0de1aa16e951a1b62e2ef459b1596e83" kindref="member">showAuthenticationDialog()</ref> or <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aef1ecf0e43afeed0eb0a779c67eff285" kindref="member">showSocialPublishingDialog(JRActivityObject activity)</ref></para></listitem><listitem><para>You may implement <ref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" kindref="compound">JREngageDelegate</ref> to receive responses </para></listitem></itemizedlist>
 </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="81">
+      <node id="67">
         <label>JREngage</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage"/>
-        <childnode refid="81" relation="usage">
+        <childnode refid="67" relation="usage">
           <edgelabel>sInstance</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" line="131" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/JREngage.java" bodystart="131" bodyend="1140"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" line="134" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngage.java" bodystart="134" bodyend="1124"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ac65be7ecc11892e4d850c4d3cf6c2547" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>addDelegate</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a60a558dd48f5f06cdadf14a9308a6e59" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>blockOnInitialization</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5d37932565edbaf3d879f5848a7bc889" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>cancelAuthentication</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a45445132f9f15aa224c19e11bec26982" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>cancelPublishing</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1acfb917bb0144a7631e3176daa8ed176b" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>checkNullActivity</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a3871172e2cd1e10585eadefd814d0a74" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>checkNullJRActivity</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a90ec3f7e536c11e330a71a6dd255f470" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>checkSessionDataError</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a57c8975264243e96516c156a5d1d7bca" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>collapseViewLayout</name></member>
@@ -1653,8 +1575,6 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5485e26791f30f6cdd3b66d891c6e469" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>getTokenUrl</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a469d808d2464c065bc16dedec7a2cc23" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>initInstance</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a13c56a1c4f4fc177488d8206655183b9" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>JREngage</name></member>
-      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a19aae02289538c1e055fffd69fe9cbf7" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>logd</name></member>
-      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adef642e5a202897d9a60a2af28adc2f1" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>logd</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5a5e67e60fec416a49051def200341d9" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>mActivityContext</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1abd22793840c432bb906c9105d1453e8d" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>mApplicationContext</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a5b0a629eb9910fd35bb6cf285d3881ad" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>mConfigFinishListeners</name></member>
@@ -1681,8 +1601,7 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0eb9c21c1765e88495f3a12e2b5df428" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showAuthenticationDialog</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1af5dd5f8d3dde2c0253ca32f9607751f1" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showAuthenticationDialog</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ae3ced35cf741064fcf171ae01ec1aca8" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showAuthenticationDialog</name></member>
-      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a656ea995846ce620248cbfadd0804afd" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showBetaDirectShareDialog</name></member>
-      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a180a61557e4b2a8e45999b282c2bc016" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showDirectProviderFlowInternal</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1adbc24248ab9529f6cf61d8abde4da80e" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showAuthFlowInternal</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aca0c20e51437c6d155728586ce1a86a1" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showFragment</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aef1ecf0e43afeed0eb0a779c67eff285" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showSocialPublishingDialog</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a987c8557e2e8ba1fe767c604cef8f6cd" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>showSocialPublishingDialog</name></member>
@@ -1694,7 +1613,6 @@ If the reference is to a JRCustomView subclass then the an instance of that cust
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a0e79e330becf07c873f03f14f3b8ace8" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>sInitializationComplete</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1aa0d5707e9dcc35ed6506a27c4cbde3d8" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>sInstance</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1ac74fe348ed740a519bdaf89d4f5af22d" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>sLoggingEnabled</name></member>
-      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_1a844c5efdea72aa6bf76fb98b1072572a" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::JREngage</scope><name>TAG</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::ColorButton</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Button</basecompoundref>
@@ -10,28 +10,28 @@
         <definition>final String TAG</definition>
         <argsstring></argsstring>
         <name>TAG</name>
-        <initializer> ColorButton.class.getSimpleName()</initializer>
+        <initializer>= ColorButton.class.getSimpleName()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="63" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="63" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="62" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a46fb271e64bda06233e75097d7b40538" prot="public" static="yes" mutable="no">
         <type>boolean</type>
         <definition>boolean sEnabled</definition>
         <argsstring></argsstring>
         <name>sEnabled</name>
-        <initializer> true</initializer>
+        <initializer>= true</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="64" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="64" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="63" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="63" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="65" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="65" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="64" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="64" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="67" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="67" bodyend="69"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="66" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="66" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a92d96eb6acb7c252f58c0a203f6796b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="71" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="71" bodyend="74"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="70" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1acd0b65b543191ffb0922b690c723fe2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="76" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="76" bodyend="79"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="75" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="75" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a75b9cb32ff80bf061791beb01a8433d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="98" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="98" bodyend="127"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="97" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="97" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a5c6616f7d56ce3a12982df1efd46ca47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="169" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="169" bodyend="172"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="168" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="168" bodyend="171"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="81" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="81" bodyend="96"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="80" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="80" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a99346d6654fd231b5e171fa27d3a2095" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -181,14 +181,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="129" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="129" bodyend="166"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="128" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="128" bodyend="165"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" line="62" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="62" bodyend="346"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" line="61" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/ColorButton.java" bodystart="61" bodyend="345"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a75710d8635eceedab497bc83c2c95d4e" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::ColorButton</scope><name>ColorButton</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_color_button_1a92d96eb6acb7c252f58c0a203f6796b8" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::ui::ColorButton</scope><name>ColorButton</name></member>

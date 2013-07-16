@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</compoundname>
     <basecompoundref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface" prot="public" virt="non-virtual">JRCustomInterface</basecompoundref>
@@ -15,7 +15,7 @@
 <para>A custom title for the provider list activity </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="53" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="53" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="53" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a4d4bac8c7cf1da358bd1008366589f62" prot="public" static="no" mutable="no">
         <type>String</type>
@@ -28,7 +28,7 @@
 <para>A custom title for the return experience and OpenID landing activity </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="58" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="58" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="58" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a5b8331345dc5f9d5124c9e9a98fbc726" prot="public" static="no" mutable="no">
         <type>String</type>
@@ -41,7 +41,7 @@
 <para>A custom title for the WebView activity </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="63" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="63" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="63" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a1b32ae60ab6fe954a36e35146d10e502" prot="public" static="no" mutable="no">
         <type>String</type>
@@ -54,7 +54,7 @@
 <para>A custom title for the sharing activity </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="68" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="68" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="68" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a1296df75b9a7a3c05582acaf94cd2478" prot="public" static="no" mutable="no">
         <type>Boolean</type>
@@ -67,7 +67,7 @@
 <para>Controls the display of the provider list title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="73" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="73" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="73" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aff34636189753687577bd52e3f4e7c1a" prot="public" static="no" mutable="no">
         <type>Boolean</type>
@@ -80,7 +80,7 @@
 <para>Controls the display of the return experience / OpenID landing page title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="79" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="79" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="79" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a286d6d2c5d6f00f12f3ff932eacb5e58" prot="public" static="no" mutable="no">
         <type>Boolean</type>
@@ -93,7 +93,7 @@
 <para>Controls the display of the WebView title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="84" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="84" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="84" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1ad535b9d8f191a722918a00ae308561c6" prot="public" static="no" mutable="no">
         <type>Boolean</type>
@@ -106,7 +106,7 @@
 <para>Controls the display of the sharing title/ActionBar when running in dialog mode on a tablet </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="89" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="89" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="89" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a8afd805cad9510a909be67607e393680" prot="public" static="no" mutable="no">
         <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref></type>
@@ -119,7 +119,7 @@
 <para>Provides a custom ListView header for the provider list. This can be used to implement your own username/password sign-in </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="95" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="95" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="95" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a6e536dfb5bc43c29e54a24ad7095afea" prot="public" static="no" mutable="no">
         <type>String</type>
@@ -132,7 +132,7 @@
 <para>Provides a custom section header displayed below the provider list header and above the list of providers. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="101" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="101" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="101" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aad31e002dabe2163e020f7b1af57948a" prot="public" static="no" mutable="no">
         <type>String</type>
@@ -145,7 +145,7 @@
 <para>Provides a custom section footer displayed below the provider list and above the provider list footer. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="106" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="106" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="106" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a6d6e51d8a2e5b189f455aa353cf16389" prot="public" static="no" mutable="no">
         <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view" kindref="compound">JRCustomInterfaceView</ref></type>
@@ -158,7 +158,7 @@
 <para>Provides a custom ListView footer for the provider list. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="111" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="111" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="111" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1aec719aa4f7f4b2f14303bb89920d431a" prot="public" static="no" mutable="no">
         <type>Boolean</type>
@@ -171,7 +171,7 @@
 <para>Controls the use of the default system tabs displayed in the sharing UI </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="121" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="121" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="121" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a277f4a4466125cdfb7da23a5e94fae09" prot="public" static="no" mutable="no">
         <type>Boolean</type>
@@ -184,7 +184,7 @@
 <para>Controls coloring of buttons displayed by the library </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="126" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="126" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="126" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="126" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -203,7 +203,7 @@
 <para>Called when the ListView for the provider list is created, but before the Adapter is set on it. You can use this method to customize the ListView </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="167" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="167" bodyend="167"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="167" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="167" bodyend="167"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -218,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="169" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="169" bodyend="171"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="169" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="169" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1acbaa4990a92b17fecf143c8e7af5c722" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>final void</type>
@@ -231,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="173" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="173" bodyend="175"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="173" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="173" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3b88c4c5613ee0a7f7d9de351819b606" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>final void</type>
@@ -248,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="177" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="177" bodyend="179"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="177" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="177" bodyend="179"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a23e1ee896bb598b685a29c30eea119b0" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>final void</type>
@@ -261,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="181" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="181" bodyend="183"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="181" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="181" bodyend="183"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -276,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="185" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="185" bodyend="190"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="185" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="185" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3ccddf4bf1899f5f0ec938265e5d4983" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -297,7 +297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="192" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="192" bodyend="194"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="192" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="192" bodyend="194"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -305,40 +305,40 @@
     <detaileddescription>
 <para>Extend this class and implement a public default constructor. In that constructor assign values to the fields you wish to use in your custom UI configuration.</para><para>This class also supplies event hooks to further control the look and feel of the Engage library. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="68">
+      <node id="54">
         <label>JRCustomInterface</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface"/>
       </node>
-      <node id="67">
+      <node id="53">
         <label>JRCustomInterfaceConfiguration</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration"/>
-        <childnode refid="68" relation="public-inheritance">
+        <childnode refid="54" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="71">
+      <node id="57">
         <label>JRCustomInterfaceView</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_view"/>
-        <childnode refid="70" relation="public-inheritance">
+        <childnode refid="56" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="70">
+      <node id="56">
         <label>JRCustomInterface</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface"/>
       </node>
-      <node id="69">
+      <node id="55">
         <label>JRCustomInterfaceConfiguration</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration"/>
-        <childnode refid="70" relation="public-inheritance">
+        <childnode refid="56" relation="public-inheritance">
         </childnode>
-        <childnode refid="71" relation="usage">
+        <childnode refid="57" relation="usage">
           <edgelabel>mProviderListHeader</edgelabel>
           <edgelabel>mProviderListFooter</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="49" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="49" bodyend="195"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" line="49" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/ui/JRCustomInterfaceConfiguration.java" bodystart="49" bodyend="195"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a3ccddf4bf1899f5f0ec938265e5d4983" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>addIfNotNullAndViewCreated</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1ui_1_1_j_r_custom_interface_configuration_1a4411c20cc4339f692426ec9b122b9ff9" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::ui::JRCustomInterfaceConfiguration</scope><name>getNonNullCustomViews</name></member>

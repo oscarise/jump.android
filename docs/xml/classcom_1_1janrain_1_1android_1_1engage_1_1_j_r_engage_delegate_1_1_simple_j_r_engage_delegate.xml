@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate" kind="class" prot="public">
+    <compoundname>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</compoundname>
+    <basecompoundref refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate" prot="public" virt="non-virtual">JREngageDelegate</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a589d849b42af1061bac4697ab9982bba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrAuthenticationDidSucceedForUser</definition>
+        <argsstring>(JRDictionary auth_info, String provider)</argsstring>
+        <name>jrAuthenticationDidSucceedForUser</name>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_dictionary" kindref="compound">JRDictionary</ref></type>
+          <declname>auth_info</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="243" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="243" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a4b00beabacace5dd67a7bc60f133dcb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrAuthenticationDidReachTokenUrl</definition>
+        <argsstring>(String tokenUrl, HttpResponseHeaders response, String tokenUrlPayload, String provider)</argsstring>
+        <name>jrAuthenticationDidReachTokenUrl</name>
+        <param>
+          <type>String</type>
+          <declname>tokenUrl</declname>
+        </param>
+        <param>
+          <type>HttpResponseHeaders</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>tokenUrlPayload</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="249" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="246" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1ace972ad01c27e01a5ccf27ad70a4d0d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrSocialDidPublishJRActivity</definition>
+        <argsstring>(JRActivityObject activity, String provider)</argsstring>
+        <name>jrSocialDidPublishJRActivity</name>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref></type>
+          <declname>activity</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="252" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="252" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1afc069beff80daac09cc1e06566a45320" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrSocialDidCompletePublishing</definition>
+        <argsstring>()</argsstring>
+        <name>jrSocialDidCompletePublishing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="255" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="255" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1acd5e5b9fdaeeec8deca0cf60ae3f2ec7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrEngageDialogDidFailToShowWithError</definition>
+        <argsstring>(JREngageError error)</argsstring>
+        <name>jrEngageDialogDidFailToShowWithError</name>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error" kindref="compound">JREngageError</ref></type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="258" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="258" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a388f6ea1d314132c85a215c952fb7901" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrAuthenticationDidNotComplete</definition>
+        <argsstring>()</argsstring>
+        <name>jrAuthenticationDidNotComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="261" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="261" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a35444c1f8c0fec9d14274e9a615cba0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrAuthenticationDidFailWithError</definition>
+        <argsstring>(JREngageError error, String provider)</argsstring>
+        <name>jrAuthenticationDidFailWithError</name>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error" kindref="compound">JREngageError</ref></type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="264" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="264" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a424d0bbf6dd2dbfe81a382406e5ac5ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrAuthenticationCallToTokenUrlDidFail</definition>
+        <argsstring>(String tokenUrl, JREngageError error, String provider)</argsstring>
+        <name>jrAuthenticationCallToTokenUrlDidFail</name>
+        <param>
+          <type>String</type>
+          <declname>tokenUrl</declname>
+        </param>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error" kindref="compound">JREngageError</ref></type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="269" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="267" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a5ef7762d503eb0f583d172d4a10f7869" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrSocialDidNotCompletePublishing</definition>
+        <argsstring>()</argsstring>
+        <name>jrSocialDidNotCompletePublishing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="272" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="272" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a6abc64d6097987fd7e7d603b1b220650" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jrSocialPublishJRActivityDidFail</definition>
+        <argsstring>(JRActivityObject activity, JREngageError error, String provider)</argsstring>
+        <name>jrSocialPublishJRActivityDidFail</name>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref></type>
+          <declname>activity</declname>
+        </param>
+        <param>
+          <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_error" kindref="compound">JREngageError</ref></type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="277" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="275" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An empty implementation suitable for subclassing and selective method implementation. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="148">
+        <label>JREngageDelegate.SimpleJREngageDelegate</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>JREngageDelegate</label>
+        <link refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="150">
+        <label>JREngageDelegate.SimpleJREngageDelegate</label>
+        <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate"/>
+        <childnode refid="151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>JREngageDelegate</label>
+        <link refid="interfacecom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" line="242" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/JREngageDelegate.java" bodystart="242" bodyend="279"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a424d0bbf6dd2dbfe81a382406e5ac5ad" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrAuthenticationCallToTokenUrlDidFail</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a35444c1f8c0fec9d14274e9a615cba0a" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrAuthenticationDidFailWithError</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a388f6ea1d314132c85a215c952fb7901" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrAuthenticationDidNotComplete</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a4b00beabacace5dd67a7bc60f133dcb4" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrAuthenticationDidReachTokenUrl</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a589d849b42af1061bac4697ab9982bba" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrAuthenticationDidSucceedForUser</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1acd5e5b9fdaeeec8deca0cf60ae3f2ec7" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrEngageDialogDidFailToShowWithError</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1afc069beff80daac09cc1e06566a45320" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrSocialDidCompletePublishing</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a5ef7762d503eb0f583d172d4a10f7869" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrSocialDidNotCompletePublishing</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1ace972ad01c27e01a5ccf27ad70a4d0d9" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrSocialDidPublishJRActivity</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage_delegate_1_1_simple_j_r_engage_delegate_1a6abc64d6097987fd7e7d603b1b220650" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::JREngageDelegate::SimpleJREngageDelegate</scope><name>jrSocialPublishJRActivityDidFail</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

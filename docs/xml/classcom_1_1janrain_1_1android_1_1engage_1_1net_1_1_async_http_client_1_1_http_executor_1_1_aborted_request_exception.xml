@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_async_http_client_1_1_http_executor_1_1_aborted_request_exception" kind="class" prot="private">
     <compoundname>com::janrain::android::engage::net::AsyncHttpClient::HttpExecutor::AbortedRequestException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Exception</basecompoundref>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="286" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="286" bodyend="286"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/AsyncHttpClient.java" line="277" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/AsyncHttpClient.java" bodystart="277" bodyend="277"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

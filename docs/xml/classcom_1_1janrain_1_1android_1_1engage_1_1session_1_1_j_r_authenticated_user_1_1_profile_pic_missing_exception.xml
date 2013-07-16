@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1session_1_1_j_r_authenticated_user_1_1_profile_pic_missing_exception" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::session::JRAuthenticatedUser::ProfilePicMissingException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Exception</basecompoundref>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="124" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="124" bodyend="124"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" line="124" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/session/JRAuthenticatedUser.java" bodystart="124" bodyend="124"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

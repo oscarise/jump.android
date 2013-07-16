@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="_providers" kind="page">
     <compoundname>Providers</compoundname>
     <detaileddescription>
@@ -22,13 +22,13 @@
     style=&quot;border:none; overflow:hidden;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;
   Your browser does not support iFrames.
 &lt;/iframe&gt;
-</htmlonly></para><para><anchor id="_providers_1basicProviders"/> <htmlonly> 
+</htmlonly></para><para><anchor id="_providers_1basicProviders"/><htmlonly> 
 &lt;iframe id=&quot;basic&quot; src=&quot;../mobile_providers?list=basic&amp;device=android&quot; width=&quot;100%&quot; height=&quot;100%&quot;
     style=&quot;border:none; overflow:hidden;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;
   Your browser does not support iFrames.
   &lt;a href=&quot;../mobile_providers?list=basic&amp;device=android&quot;&gt;List of Providers&lt;/a&gt;
 &lt;/iframe&gt;&lt;/p&gt;
-</htmlonly></para><para><anchor id="_providers_1socialProviders"/> <htmlonly> 
+</htmlonly></para><para><anchor id="_providers_1socialProviders"/><htmlonly> 
 &lt;iframe id=&quot;social&quot; src=&quot;../mobile_providers?list=social&amp;device=android&quot; width=&quot;100%&quot; height=&quot;100%&quot;
     style=&quot;border:none; overflow:hidden;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;
   Your browser does not support iFrames.

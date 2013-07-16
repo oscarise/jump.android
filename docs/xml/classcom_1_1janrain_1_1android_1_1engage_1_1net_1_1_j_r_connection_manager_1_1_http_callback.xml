@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback" kind="class" prot="package">
+    <compoundname>com::janrain::android::engage::net::JRConnectionManager::HttpCallback</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Runnable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_1a0a8a23b31bb888a8d8707ceeab3e7a42" prot="private" static="no" mutable="no">
+        <type>final ManagedConnection</type>
+        <definition>final ManagedConnection mConn</definition>
+        <argsstring></argsstring>
+        <name>mConn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="196" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_1a00af7dc145e073afddeef27ed758d08d" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HttpCallback</definition>
+        <argsstring>(ManagedConnection cd)</argsstring>
+        <name>HttpCallback</name>
+        <param>
+          <type>ManagedConnection</type>
+          <declname>cd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="198" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="198" bodyend="200"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_1a13a43e6d814de94978c515cb084873b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="202" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="202" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" line="195" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/net/JRConnectionManager.java" bodystart="195" bodyend="218"/>
+    <listofallmembers>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_1a00af7dc145e073afddeef27ed758d08d" prot="package" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::HttpCallback</scope><name>HttpCallback</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_1a0a8a23b31bb888a8d8707ceeab3e7a42" prot="private" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::HttpCallback</scope><name>mConn</name></member>
+      <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1net_1_1_j_r_connection_manager_1_1_http_callback_1a13a43e6d814de94978c515cb084873b1" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::net::JRConnectionManager::HttpCallback</scope><name>run</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

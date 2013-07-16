@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object" kind="class" prot="public">
     <compoundname>com::janrain::android::engage::types::JRImageMediaObject</compoundname>
     <basecompoundref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_media_object" prot="public" virt="non-virtual">JRMediaObject</basecompoundref>
@@ -18,7 +18,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="65" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="65" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="65" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1a9207c3b8ef8469f1d9101379d48550ce" prot="private" static="no" mutable="no">
         <type>String</type>
@@ -32,7 +32,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="73" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="73" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="73" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="73" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -80,7 +80,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="99" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="99" bodyend="103"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="99" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="99" bodyend="103"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -98,7 +98,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="139" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="139" bodyend="141"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="139" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="139" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1a8043ef8d1352a42f35dceb50021a5923" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -112,7 +112,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="149" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="149" bodyend="151"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="149" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="149" bodyend="151"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="80" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="80" bodyend="-1"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="80" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="80" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="119" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="119" bodyend="126"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="119" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="119" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1aa35d8f551eaf3515c78e7493c5f02ee7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Bitmap</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="155" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="155" bodyend="157"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="155" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="155" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1a25540df8a46ce2c9df1cab038150f983" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -176,35 +176,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="159" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="159" bodyend="161"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="159" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="159" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1aced99e4192a47fe0592231db2e10f27c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>
         <definition>boolean hasThumbnail</definition>
         <argsstring>()</argsstring>
         <name>hasThumbnail</name>
-        <reimplements refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_media_object_1aced99e4192a47fe0592231db2e10f27c">hasThumbnail</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="164" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="164" bodyend="166"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="164" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="164" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1ac086e95fc7fdfe34853c5bcf18ba62a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
         <definition>String getThumbnail</definition>
         <argsstring>()</argsstring>
         <name>getThumbnail</name>
-        <reimplements refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_media_object_1ac086e95fc7fdfe34853c5bcf18ba62a6">getThumbnail</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="170" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="170" bodyend="172"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="170" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="170" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1a68adac94351807681f1b2828b9c68734" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>String</type>
@@ -218,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="175" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="175" bodyend="177"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="175" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="175" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1a985a1b0429a8a359a4783c7409b91e3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_dictionary" kindref="compound">JRDictionary</ref></type>
@@ -232,39 +230,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="180" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="180" bodyend="188"/>
+        <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="180" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="180" bodyend="188"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Image object to be included in a post to a user&apos;s stream. </para>    </briefdescription>
     <detaileddescription>
-<para>Create an image media object, fill in the object&apos;s fields, and add the object to the <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1a3d89cbb011a9839da0b559556acad5f3" kindref="member">JRActivityObject.mMedia</ref> array in your <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref>. How the images get presented and whether or not they are used, depend on the provider.</para><para>Each image must contain a <emphasis>src</emphasis> URL, which maps to the photo&apos;s URL, and an <emphasis>href</emphasis> URL, which maps to the URL where a user should be taken if he or she clicks the photo.</para><para><simplesect kind="see"><para>Format and rules are identical to those described on the <ulink url="http://developers.facebook.com/docs/guides/attachments">Facebook Developer page on Attachments</ulink>. </para></simplesect>
+<para>Create an image media object, fill in the object&apos;s fields, and add the object to the <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object_1a3d89cbb011a9839da0b559556acad5f3" kindref="member">JRActivityObject::mMedia</ref> array in your <ref refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object" kindref="compound">JRActivityObject</ref>. How the images get presented and whether or not they are used, depend on the provider.</para><para>Each image must contain a <emphasis>src</emphasis> URL, which maps to the photo&apos;s URL, and an <emphasis>href</emphasis> URL, which maps to the URL where a user should be taken if he or she clicks the photo.</para><para><simplesect kind="see"><para>Format and rules are identical to those described on the <ulink url="http://developers.facebook.com/docs/guides/attachments">Facebook Developer page on Attachments</ulink>. </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="93">
+      <node id="80">
         <label>JRMediaObject</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_media_object"/>
       </node>
-      <node id="92">
+      <node id="79">
         <label>JRImageMediaObject</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object"/>
-        <childnode refid="93" relation="public-inheritance">
+        <childnode refid="80" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="95">
+      <node id="82">
         <label>JRMediaObject</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_media_object"/>
       </node>
-      <node id="94">
+      <node id="81">
         <label>JRImageMediaObject</label>
         <link refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object"/>
-        <childnode refid="95" relation="public-inheritance">
+        <childnode refid="82" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="52" bodyfile="/Users/mitch/code/engage.android/JREngage/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="52" bodyend="189"/>
+    <location file="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" line="52" bodyfile="/Users/nathan2/android-code/engage.android/Jump/src/com/janrain/android/engage/types/JRImageMediaObject.java" bodystart="52" bodyend="189"/>
     <listofallmembers>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_media_object_1a69a942495a0864024e78ba629b005b41" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JRImageMediaObject</scope><name>downloadThumbnail</name></member>
       <member refid="classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_image_media_object_1a8043ef8d1352a42f35dceb50021a5923" prot="public" virt="non-virtual"><scope>com::janrain::android::engage::types::JRImageMediaObject</scope><name>getHref</name></member>
