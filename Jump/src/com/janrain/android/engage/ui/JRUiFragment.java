@@ -56,6 +56,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import com.janrain.android.R;
+import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
 
@@ -563,6 +564,16 @@ public abstract class JRUiFragment extends Fragment {
                         .setTransition(FragmentTransaction.TRANSIT_NONE)
                         .commit();
             }
+        }
+    }
+
+    /*package*/ void startWebViewAuthForProvider(JRProvider provider) {
+        if (provider.requiresInput() ||
+                (mSession.getAuthenticatedUserForProvider(provider) != null &&
+                        !provider.getForceReauth()) && !mSession.getAlwaysForceReauth()) {
+            showUserLanding();
+        } else {
+            showWebView();
         }
     }
 

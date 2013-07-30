@@ -49,6 +49,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.R;
+import com.janrain.android.engage.JRNativeAuth;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
@@ -276,15 +277,29 @@ public class JRProviderListFragment extends JRUiFragment {
             // The row ID is sometimes offset by one because the adapter inserts one view in front of the
             //   superclass's views.
             //
-            JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
+            final JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
-            if (provider.requiresInput() ||
-                    (mSession.getAuthenticatedUserForProvider(provider) != null &&
-                    !provider.getForceReauth()) && !mSession.getAlwaysForceReauth()) {
-                showUserLanding();
+            if (JRNativeAuth.canHandleProvider(provider)) {
+                JRNativeAuth.startAuthOnProvider(provider, getActivity(), new JRNativeAuth.NativeAuthCallback() {
+                    @Override
+                    public void onSuccess() {
+                        finishFragmentWithResult(Activity.RESULT_OK);
+                    }
+
+                    @Override
+                    public void onFailure(
+                            String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
+                        LogUtils.logd("Native Auth Error: " + errorCode + " " + message
+                                + (exception != null ? " " + exception : ""));
+
+                        if (! errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
+                            startWebViewAuthForProvider(provider);
+                        }
+                    }
+                });
             } else {
-                showWebView();
+                startWebViewAuthForProvider(provider);
             }
         }
     };
@@ -332,6 +347,8 @@ public class JRProviderListFragment extends JRUiFragment {
                 break;
             default:
                 Log.e(TAG, "Unrecognized request/result code " + requestCode + "/" + resultCode);
+
+            JRNativeAuth.facebookOnActivityResult(getActivity(), requestCode, resultCode, data);
         }
 
         //See the comment about specific provider flow in JRFragmentHostActivity#onCreate

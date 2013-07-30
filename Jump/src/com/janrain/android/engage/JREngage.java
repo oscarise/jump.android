@@ -84,6 +84,7 @@ import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
+import com.janrain.android.engage.JRNativeAuth;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.engage.session.JRSessionDelegate;
@@ -698,8 +699,44 @@ public class JREngage {
     private void showAuthFlowInternal(final Activity fromActivity,
                                       final String providerName,
                                       final Class<? extends JRCustomInterface> uiCustomization) {
-        Intent i;
         JRProvider provider = mSession.getProviderByName(providerName);
+
+        if (provider != null && JRNativeAuth.canHandleProvider(provider)) {
+            showNativeAuthFlowInternal(fromActivity, provider, uiCustomization);
+        } else {
+            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
+        }
+    }
+
+    private void showNativeAuthFlowInternal(final Activity fromActivity,
+                                            final JRProvider provider,
+                                            final Class<? extends JRCustomInterface> uiCustomization) {
+        JRNativeAuth.startAuthOnProvider(provider, fromActivity, new JRNativeAuth.NativeAuthCallback() {
+            @Override
+            public void onSuccess() {
+                return;
+            }
+
+            @Override
+            public void onFailure(String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
+                LogUtils.logd("Native Auth Error: " + errorCode + " " + message
+                              + (exception != null ? " " + exception : ""));
+
+                if (! errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
+                    showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
+                }
+            }
+        });
+
+        mSession.setCurrentlyAuthenticatingProvider(provider);
+    }
+
+    private void showWebAuthFlowInternal(final Activity fromActivity,
+                                         final String providerName,
+                                         final JRProvider provider,
+                                         final Class<? extends JRCustomInterface> uiCustomization) {
+
+        Intent i;
         if (provider != null) {
             if (provider.requiresInput()) {
                 i = JRFragmentHostActivity.createUserLandingIntent(fromActivity);

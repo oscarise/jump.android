@@ -852,17 +852,22 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public void triggerAuthenticationDidCompleteWithPayload(JRDictionary rpx_result) {
-        JRAuthenticatedUser user = new JRAuthenticatedUser(
-                rpx_result,
-                mCurrentlyAuthenticatingProvider.getName(),
-                getWelcomeMessageFromCookieString());
-        mAuthenticatedUsersByProvider.put(mCurrentlyAuthenticatingProvider.getName(), user);
-        Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
+        JRAuthenticatedUser user = null;
+        if (!rpx_result.getAsDictionary("auth_info").isEmpty()) {
+            user = new JRAuthenticatedUser(
+                    rpx_result,
+                    mCurrentlyAuthenticatingProvider.getName(),
+                    getWelcomeMessageFromCookieString());
+            mAuthenticatedUsersByProvider.put(mCurrentlyAuthenticatingProvider.getName(), user);
+            Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
+        }
 
         String authInfoToken = rpx_result.getAsString("token");
         JRDictionary authInfoDict = rpx_result.getAsDictionary("auth_info");
         authInfoDict.put("token", authInfoToken);
-        authInfoDict.put("device_token", user.getDeviceToken());
+        if (user != null) {
+            authInfoDict.put("device_token", user.getDeviceToken());
+        }
 
         for (JRSessionDelegate delegate : getDelegatesCopy()) {
             delegate.authenticationDidComplete(
