@@ -33,23 +33,27 @@
 package com.janrain.android.engage;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.LogUtils;
-import org.json.JSONException;
+import com.janrain.android.utils.UiUtils;
 import org.json.JSONObject;
 
-import java.lang.reflect.*;
-import java.lang.Exception;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 public class JRNativeAuth {
 
     private static Class<?> fbSessionClass;
     private static Class fbCallbackClass;
     private static Class fbCanceledExceptionClass;
+    private static Dialog progressDialog;
 
     public static boolean canHandleProvider(JRProvider provider) {
         return provider.getName().equals("facebook") && loadNativeFacebookDependencies();
@@ -104,7 +108,7 @@ public class JRNativeAuth {
 
     private static void fbNativeAuthWithCompletion(
             Activity fromActivity, NativeAuthCallback completion) {
-        Object fbCallback = getFacebookCallBack(completion);
+        Object fbCallback = getFacebookCallBack(fromActivity, completion);
         NativeAuthError authError = NativeAuthError.CANNOT_INVOKE_FACEBOOK_OPEN_SESSION_METHODS;
 
         try {
@@ -113,7 +117,7 @@ public class JRNativeAuth {
 
             if (session != null && isFacebookSessionOpened(session)) {
                 String accessToken = getFacebookAccessToken(session);
-                getAuthInfoTokenForFacebookAccessToken(accessToken, "facebook", completion);
+                getAuthInfoTokenForFacebookAccessToken(fromActivity, accessToken, "facebook", completion);
             } else {
                 Method openActiveSession = fbSessionClass.getMethod("openActiveSession",
                         Activity.class, boolean.class, fbCallbackClass);
@@ -129,7 +133,8 @@ public class JRNativeAuth {
         }
     }
 
-    private static Object getFacebookCallBack(final NativeAuthCallback completion) {
+    private static Object getFacebookCallBack(
+            final Activity fromActivity, final NativeAuthCallback completion) {
         InvocationHandler handler = new InvocationHandler() {
             @Override
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
@@ -140,20 +145,18 @@ public class JRNativeAuth {
 
                     if (isFacebookSessionOpened(fbSession)) {
                         String accessToken = getFacebookAccessToken(fbSession);
-                        getAuthInfoTokenForFacebookAccessToken(accessToken, "facebook", completion);
+                        getAuthInfoTokenForFacebookAccessToken(fromActivity, accessToken, "facebook", completion);
                     } else if (isFacebookSessionClosed(fbSession)){
                         if (fbCanceledExceptionClass.isInstance(exception)) {
                             completion.onFailure(
                                     "Facebook login canceled",
                                     NativeAuthError.LOGIN_CANCELED,
-                                    exception
-                            );
+                                    exception);
                         } else {
                             completion.onFailure(
                                     "Could not open Facebook Session",
                                     NativeAuthError.FACEBOOK_SESSION_IS_CLOSED,
-                                    exception
-                            );
+                                    exception);
                         }
                     }
                 }
@@ -207,21 +210,40 @@ public class JRNativeAuth {
     }
 
     private static void getAuthInfoTokenForFacebookAccessToken(
-            String accessToken, String provider, final NativeAuthCallback completion) {
+            Activity fromActivity, String accessToken, String provider, final NativeAuthCallback completion) {
         ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
             public void run(JSONObject json) {
-                if (json == null) return;
+                hideProgressDialog();
 
-                String auth_token = null;
-                try {
-                    auth_token = json.getString("token");
-                } catch (JSONException e) {
-                    LogUtils.logd("Native auth error: %@", e);
-                    completion.onFailure(
-                            "Could not get auth_token from oauth_token response",
-                            NativeAuthError.ENGAGE_ERROR, e);
+                if (json == null) {
+                    JRSession.getInstance().triggerAuthenticationDidFail(new JREngageError(
+                            "JSON response is null",
+                            JREngageError.ConfigurationError.JSON_ERROR,
+                            JREngageError.ErrorType.CONFIGURATION_FAILED
+                    ));
                     return;
                 }
+
+                String status = json.optString("stat");
+                if (status == null) {
+                    JRSession.getInstance().triggerAuthenticationDidFail(new JREngageError(
+                            "Could not get 'stat' from JSON response",
+                            JREngageError.ConfigurationError.JSON_ERROR,
+                            JREngageError.ErrorType.CONFIGURATION_FAILED
+                    ));
+                    return;
+                }
+
+                if (!status.equals("ok")) {
+                    JRSession.getInstance().triggerAuthenticationDidFail(new JREngageError(
+                            json.toString(),
+                            JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
+                            JREngageError.ErrorType.CONFIGURATION_FAILED
+                    ));
+                    return;
+                }
+
+                String auth_token = json.optString("token");
 
                 JRDictionary payload = new JRDictionary();
                 payload.put("token", auth_token);
@@ -233,11 +255,29 @@ public class JRNativeAuth {
             }
         };
 
+        showProgressDialog(fromActivity);
+
         ApiConnection connection =
                 new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
 
         connection.addAllToParams("token", accessToken, "provider", provider);
         connection.fetchResponseAsJson(handler);
+    }
+
+    private static void showProgressDialog(Activity fromActivity) {
+
+        if (progressDialog == null) {
+            progressDialog = UiUtils.getProgressDialog(fromActivity);
+        }
+
+        progressDialog.show();
+    }
+
+    private static void hideProgressDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
     }
 
     public static enum NativeAuthError {
