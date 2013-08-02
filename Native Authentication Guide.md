@@ -1,4 +1,4 @@
-# Engage Custom Provider Guide
+# Native Authentication Guide
 
 This guide describes the process of integrating with native Android authentication systems. The Engage library
 has historically supported authentication by means of a WebView running a traditional web OAuth flow. Support
