@@ -94,7 +94,11 @@ import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
 import com.janrain.android.utils.UiUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import static com.janrain.android.R.string.jr_git_describe;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
@@ -659,7 +663,8 @@ public class JREngage {
                                             final Class<? extends JRCustomInterface> uiCustomization) {
         JRNativeAuth.startAuthOnProvider(provider, fromActivity, new JRNativeAuth.NativeAuthCallback() {
             @Override
-            public void onSuccess() {
+            public void onSuccess(JRDictionary payload) {
+                mSession.triggerAuthenticationDidCompleteWithPayload(payload);
                 return;
             }
 
@@ -670,6 +675,11 @@ public class JREngage {
 
                 if (errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
                     mSession.triggerAuthenticationDidCancel();
+                } else if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
+                    mSession.triggerAuthenticationDidFail(new JREngageError(
+                            message,
+                            JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
+                            JREngageError.ErrorType.CONFIGURATION_FAILED));
                 } else {
                     showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
                 }

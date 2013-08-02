@@ -50,10 +50,12 @@ import java.lang.reflect.Proxy;
 
 public class JRNativeAuth {
 
+    // XXX the <?> fixes a warning when getMethod is called
+    //     unchecked call to getMethod(java.lang.String,java.lang.Class<?>...)
+    //         as a member of the raw type java.lang.Class
     private static Class<?> fbSessionClass;
     private static Class fbCallbackClass;
     private static Class fbCanceledExceptionClass;
-    private static Dialog progressDialog;
 
     public static boolean canHandleProvider(JRProvider provider) {
         return provider.getName().equals("facebook") && loadNativeFacebookDependencies();
@@ -68,10 +70,8 @@ public class JRNativeAuth {
 
     public static void facebookOnActivityResult(
             Activity activity, int requestCode, int resultCode, Intent data) {
-        JRProvider currentProvider =
-            JRSession.getInstance().getCurrentlyAuthenticatingProvider();
 
-        if (currentProvider.getName().equals("facebook") && fbSessionClass != null) {
+        if (fbSessionClass != null) {
             try {
                 Method getActiveSession = fbSessionClass.getMethod("getActiveSession");
                 Object session = getActiveSession.invoke(fbSessionClass);
@@ -168,14 +168,14 @@ public class JRNativeAuth {
     }
 
     private static boolean isFacebookSessionOpened(Object session) {
-        return getBoolForFBSessionAndMethod(session, "isOpened");
+        return getBoolForFbSessionAndMethod(session, "isOpened");
     }
 
     private static boolean isFacebookSessionClosed(Object session) {
-        return getBoolForFBSessionAndMethod(session, "isClosed");
+        return getBoolForFbSessionAndMethod(session, "isClosed");
     }
 
-    private static boolean getBoolForFBSessionAndMethod(Object session, String methodName) {
+    private static boolean getBoolForFbSessionAndMethod(Object session, String methodName) {
         boolean out = false;
 
         try {
@@ -211,35 +211,17 @@ public class JRNativeAuth {
 
     private static void getAuthInfoTokenForFacebookAccessToken(
             Activity fromActivity, String accessToken, String provider, final NativeAuthCallback completion) {
+
+        final Dialog progressDialog = UiUtils.getProgressDialog(fromActivity);
+
         ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
             public void run(JSONObject json) {
-                hideProgressDialog();
-
-                if (json == null) {
-                    JRSession.getInstance().triggerAuthenticationDidFail(new JREngageError(
-                            "JSON response is null",
-                            JREngageError.ConfigurationError.JSON_ERROR,
-                            JREngageError.ErrorType.CONFIGURATION_FAILED
-                    ));
-                    return;
-                }
+                progressDialog.dismiss();
 
                 String status = json.optString("stat");
-                if (status == null) {
-                    JRSession.getInstance().triggerAuthenticationDidFail(new JREngageError(
-                            "Could not get 'stat' from JSON response",
-                            JREngageError.ConfigurationError.JSON_ERROR,
-                            JREngageError.ErrorType.CONFIGURATION_FAILED
-                    ));
-                    return;
-                }
 
-                if (!status.equals("ok")) {
-                    JRSession.getInstance().triggerAuthenticationDidFail(new JREngageError(
-                            json.toString(),
-                            JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
-                            JREngageError.ErrorType.CONFIGURATION_FAILED
-                    ));
+                if (json == null || json.optString("stat") == null || !json.optString("stat").equals("ok")) {
+                    completion.onFailure("Bad Json: " + json, NativeAuthError.ENGAGE_ERROR, null);
                     return;
                 }
 
@@ -249,35 +231,17 @@ public class JRNativeAuth {
                 payload.put("token", auth_token);
                 payload.put("auth_info", new JRDictionary());
 
-                JRSession session = JRSession.getInstance();
-                session.triggerAuthenticationDidCompleteWithPayload(payload);
-                completion.onSuccess();
+                completion.onSuccess(payload);
             }
         };
 
-        showProgressDialog(fromActivity);
+        progressDialog.show();
 
         ApiConnection connection =
                 new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
 
         connection.addAllToParams("token", accessToken, "provider", provider);
         connection.fetchResponseAsJson(handler);
-    }
-
-    private static void showProgressDialog(Activity fromActivity) {
-
-        if (progressDialog == null) {
-            progressDialog = UiUtils.getProgressDialog(fromActivity);
-        }
-
-        progressDialog.show();
-    }
-
-    private static void hideProgressDialog() {
-        if (progressDialog != null && progressDialog.isShowing()) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
     }
 
     public static enum NativeAuthError {
@@ -288,7 +252,7 @@ public class JRNativeAuth {
     }
 
     public static interface NativeAuthCallback {
-        public void onSuccess();
+        public void onSuccess(JRDictionary payload);
         public void onFailure(String message, NativeAuthError errorCode, Exception exception);
     }
 }
