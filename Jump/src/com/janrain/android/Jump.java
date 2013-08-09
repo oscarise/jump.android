@@ -161,7 +161,7 @@ public class Jump {
         state.captureLocale = jumpConfig.captureLocale;
         state.captureTraditionalSignInFormName = jumpConfig.captureTraditionalSignInFormName;
         state.backplaneChannelUrl = jumpConfig.backplaneChannelUrl;
-        state.captureResponseType = "token";
+        state.captureResponseType = "code_and_token";
 
         final Context tempContext = context;
         ThreadUtils.executeInBg(new Runnable() {
@@ -316,9 +316,9 @@ public class Jump {
         String authInfoToken = auth_info.getAsString("token");
 
         Capture.performSocialSignIn(authInfoToken, new Capture.SignInResultHandler() {
-            public void onSuccess(CaptureRecord record) {
+            public void onSuccess(CaptureRecord record, JSONObject response) {
                 state.signedInUser = record;
-                Jump.fireHandlerOnSuccess();
+                Jump.fireHandlerOnSuccess(response);
             }
 
             public void onFailure(CaptureApiError error) {
@@ -351,12 +351,12 @@ public class Jump {
     }
 
     // Package level because of use from TradSignInUi:
-    /*package*/ static void fireHandlerOnSuccess() {
+    /*package*/ static void fireHandlerOnSuccess(JSONObject response) {
         SignInResultHandler handler_ = state.signInHandler;
         state.signInHandler = null;
-        if (handler_ != null) handler_.onSuccess();
-
+        if (handler_ != null) invokeHandlerOnSuccess(handler_, response);
     }
+
 
     public enum TraditionalSignInType { EMAIL, USERNAME }
 
@@ -378,9 +378,9 @@ public class Jump {
         Capture.performTraditionalSignIn(signInName, password, state.traditionalSignInType,
                 new Capture.SignInResultHandler() {
                     @Override
-                    public void onSuccess(CaptureRecord record) {
+                    public void onSuccess(CaptureRecord record, JSONObject response) {
                         state.signedInUser = record;
-                        handler.onSuccess();
+                        invokeHandlerOnSuccess(handler, response);
                     }
 
                     @Override
@@ -388,6 +388,14 @@ public class Jump {
                         handler.onFailure(new SignInError(CAPTURE_API_ERROR, error, null));
                     }
                 }, mergeToken);
+    }
+
+    private static void invokeHandlerOnSuccess(SignInResultHandler handler, JSONObject response) {
+        if (handler instanceof SignInResultHandlerWithResponse) {
+            ((SignInResultHandlerWithResponse)handler).onSuccess(response);
+        } else {
+            handler.onSuccess();
+        }
     }
 
     /**
@@ -417,8 +425,8 @@ public class Jump {
         }
 
         Capture.performRegistration(newUser, socialRegistrationToken, new Capture.SignInResultHandler(){
-            public void onSuccess(CaptureRecord registeredUser) {
-                registrationResultHandler.onSuccess();
+            public void onSuccess(CaptureRecord registeredUser, JSONObject result) {
+                invokeHandlerOnSuccess(registrationResultHandler, result);
             }
 
             public void onFailure(CaptureApiError error) {
@@ -495,6 +503,24 @@ public class Jump {
          * @param error the error which caused the failure
          */
         void onFailure(SignInError error);
+    }
+
+    public static abstract class SignInResultHandlerWithResponse implements SignInResultHandler {
+        /**
+         * Called when Capture sign-in has succeeded. At this point Jump.getCaptureUser will return the
+         * CaptureRecord instance for the user.
+         *
+         * @response
+         *    The JSON response returned by the API endpoint
+         */
+        public abstract void onSuccess(JSONObject response);
+
+        /**
+         * Use onSuccess(JSONObject response) instead, onSuccess() will not be called
+         */
+        final public void onSuccess() {
+            throw(new RuntimeException("Use onSuccess(JSONObject response) instead"));
+        }
     }
 
     /**

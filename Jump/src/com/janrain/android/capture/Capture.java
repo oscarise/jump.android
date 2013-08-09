@@ -64,7 +64,7 @@ public class Capture {
         CaptureApiConnection connection = new CaptureApiConnection("/oauth/auth_native_traditional");
         connection.addAllToParams("client_id", getCaptureClientId(),
                 "locale", Jump.getCaptureLocale(),
-                "response_type", "token",
+                "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
                 signInNameAttrName, username,
                 "password", password,
@@ -129,7 +129,7 @@ public class Capture {
         CaptureApiConnection c = new CaptureApiConnection("/oauth/auth_native");
         c.addAllToParams("client_id", getCaptureClientId(),
                 "locale", Jump.getCaptureLocale(),
-                "response_type", "token",
+                "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
                 "token", authInfoToken,
                 "thin_registration", String.valueOf(Jump.getCaptureEnableThinRegistration())
@@ -230,7 +230,7 @@ public class Capture {
                     String accessToken = response.optString("access_token");
                     //String refreshSecret = response.optString("refresh_secret");
                     CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken, null);
-                    onSuccess(record);
+                    onSuccess(record, response);
                 } else {
                     onFailure(CaptureApiError.INVALID_API_RESPONSE);
                 }
@@ -239,7 +239,7 @@ public class Capture {
             }
         }
 
-        public abstract void onSuccess(CaptureRecord record);
+        public abstract void onSuccess(CaptureRecord record, JSONObject response);
 
         public abstract void onFailure(CaptureApiError error);
     }
