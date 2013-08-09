@@ -14,7 +14,7 @@
     <orderEntry type="jdk" jdkName="Android 4.0.3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="JREngagePhonegapPlugin" />
-    <orderEntry type="library" name="cordova-2.3.0" level="project" />
+    <orderEntry type="library" name="cordova-2.7.0" level="project" />
   </component>
 </module>
 
