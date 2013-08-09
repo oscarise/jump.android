@@ -105,8 +105,8 @@ public class RegistrationActivity extends Activity {
             throw new RuntimeException("Unexpected", e);
         }
 
-        Jump.registerNewUser(newUser, socialRegistrationToken, new Jump.SignInResultHandler() {
-            public void onSuccess() {
+        Jump.registerNewUser(newUser, socialRegistrationToken, new Jump.SignInResultHandlerWithResponse() {
+            public void onSuccess(JSONObject response) {
                 Toast.makeText(RegistrationActivity.this, "Registration Complete", Toast.LENGTH_LONG).show();
                 finish();
             }

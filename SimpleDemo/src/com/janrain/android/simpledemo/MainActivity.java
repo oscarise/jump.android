@@ -57,8 +57,8 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 
 public class MainActivity extends FragmentActivity {
-    private final Jump.SignInResultHandler signInResultHandler = new Jump.SignInResultHandler() {
-        public void onSuccess() {
+    private final Jump.SignInResultHandler signInResultHandler = new Jump.SignInResultHandlerWithResponse() {
+        public void onSuccess(JSONObject response) {
             AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
             b.setMessage("Sign-in complete.");
             b.setNeutralButton("Dismiss", null);
