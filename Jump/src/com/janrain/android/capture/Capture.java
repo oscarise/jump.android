@@ -134,8 +134,9 @@ public class Capture {
                 "token", authInfoToken,
                 "thin_registration", String.valueOf(Jump.getCaptureEnableThinRegistration())
         );
+
         c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
-        c.maybeAddParam("flow_name", Jump.getCaptureFlowName());
+        c.maybeAddParam("flow", Jump.getCaptureFlowName());
         c.maybeAddParam("registration_form", Jump.getCaptureSocialRegistrationFormName());
         c.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
         c.maybeAddParam("merge_token", mergeToken);
@@ -194,7 +195,7 @@ public class Capture {
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
-                "flow_name", Jump.getCaptureFlowName(),
+                "flow", Jump.getCaptureFlowName(),
                 "form", registrationForm
                 //"refresh_secret", refreshSecret
                 );

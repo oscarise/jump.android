@@ -81,6 +81,9 @@ public abstract class JRUiFragment extends Fragment {
     public static final String JR_FRAGMENT_FLOW_MODE = "jr_fragment_flow_mode";
     public static final int JR_FRAGMENT_FLOW_AUTH = 0;
     public static final int JR_FRAGMENT_FLOW_SHARING = 1;
+    /**
+     * deprecated
+     */
     public static final int JR_FRAGMENT_FLOW_BETA_DIRECT_SHARE = 2;
 
     public static final int REQUEST_LANDING = 1;
@@ -127,8 +130,6 @@ public abstract class JRUiFragment extends Fragment {
         transient Bundle mOptions;
         boolean mShowing;
     }
-
-    /* These overrides are declared in the exact order they're called */
 
     @Override
     public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {

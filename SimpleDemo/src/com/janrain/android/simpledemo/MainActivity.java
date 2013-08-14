@@ -91,6 +91,7 @@ public class MainActivity extends FragmentActivity {
                 Intent i = new Intent(MainActivity.this, RegistrationActivity.class);
                 JSONObject prefilledRecord = error.captureApiError.getPreregistrationRecord();
                 i.putExtra("preregistrationRecord", prefilledRecord.toString());
+                i.putExtra("socialRegistrationToken", error.captureApiError.getSocialRegistrationToken());
                 MainActivity.this.startActivity(i);
             } else {
                 AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
@@ -106,6 +107,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         //enableStrictMode();
+
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -120,6 +122,7 @@ public class MainActivity extends FragmentActivity {
                         new JRActivityObject("aslkdfj", "http://google.com"));
             }
         });
+
         //Button refreshAccesstoken = addButton(linearLayout, "Refresh Access Token");
 
         addButton(linearLayout, "Traditional Registration").setOnClickListener(new View.OnClickListener() {
