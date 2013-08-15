@@ -391,8 +391,9 @@ public class Jump {
     }
 
     private static void invokeHandlerOnSuccess(SignInResultHandler handler, JSONObject response) {
-        if (handler instanceof SignInResultHandlerWithResponse) {
-            ((SignInResultHandlerWithResponse)handler).onSuccess(response);
+        if (handler instanceof SignInResultHandlerWithCode) {
+            String code = response.optString("authorization_code");
+            ((SignInResultHandlerWithCode)handler).onSuccess(code);
         } else {
             handler.onSuccess();
         }
@@ -505,21 +506,22 @@ public class Jump {
         void onFailure(SignInError error);
     }
 
-    public static abstract class SignInResultHandlerWithResponse implements SignInResultHandler {
+    public static abstract class SignInResultHandlerWithCode implements SignInResultHandler {
         /**
          * Called when Capture sign-in has succeeded. At this point Jump.getCaptureUser will return the
          * CaptureRecord instance for the user.
          *
-         * @response
-         *    The JSON response returned by the API endpoint
+         * @param code
+         *   An OAuth Authorization Code, this short lived code can be used to get an Access Token for use
+         *   with a server side application like Drupal.
          */
-        public abstract void onSuccess(JSONObject response);
+        public abstract void onSuccess(String code);
 
         /**
-         * Use onSuccess(JSONObject response) instead, onSuccess() will not be called
+         * Use onSuccess(String code) instead, onSuccess() will not be called
          */
         final public void onSuccess() {
-            throw(new RuntimeException("Use onSuccess(JSONObject response) instead"));
+            throw(new RuntimeException("Use onSuccess(String code) instead"));
         }
     }
 

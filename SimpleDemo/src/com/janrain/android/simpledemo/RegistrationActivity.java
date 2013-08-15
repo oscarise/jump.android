@@ -39,7 +39,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.janrain.android.Jump;
-import com.janrain.android.capture.CaptureApiError;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -105,8 +104,8 @@ public class RegistrationActivity extends Activity {
             throw new RuntimeException("Unexpected", e);
         }
 
-        Jump.registerNewUser(newUser, socialRegistrationToken, new Jump.SignInResultHandlerWithResponse() {
-            public void onSuccess(JSONObject response) {
+        Jump.registerNewUser(newUser, socialRegistrationToken, new Jump.SignInResultHandlerWithCode() {
+            public void onSuccess(String code) {
                 Toast.makeText(RegistrationActivity.this, "Registration Complete", Toast.LENGTH_LONG).show();
                 finish();
             }
