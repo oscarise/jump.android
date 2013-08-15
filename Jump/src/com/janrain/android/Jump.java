@@ -391,11 +391,11 @@ public class Jump {
     }
 
     private static void invokeHandlerOnSuccess(SignInResultHandler handler, JSONObject response) {
-        if (handler instanceof SignInResultHandlerWithCode) {
+        handler.onSuccess();
+
+        if (handler instanceof SignInCodeHandler) {
             String code = response.optString("authorization_code");
-            ((SignInResultHandlerWithCode)handler).onSuccess(code);
-        } else {
-            handler.onSuccess();
+            ((SignInCodeHandler)handler).onCode(code);
         }
     }
 
@@ -439,6 +439,7 @@ public class Jump {
     /**
      * An interface to implement to receive callbacks notifying the completion of a sign-in flow.
      */
+
     public interface SignInResultHandler {
         /**
          * Errors that may be sent upon failure of the sign-in flow
@@ -492,13 +493,11 @@ public class Jump {
                         + " engageError: " + engageError + ">";
             }
         }
-
         /**
          * Called when Capture sign-in has succeeded. At this point Jump.getCaptureUser will return the
          * CaptureRecord instance for the user.
          */
         void onSuccess();
-
         /**
          * Called when Capture sign-in has failed.
          * @param error the error which caused the failure
@@ -506,23 +505,15 @@ public class Jump {
         void onFailure(SignInError error);
     }
 
-    public static abstract class SignInResultHandlerWithCode implements SignInResultHandler {
+    public interface SignInCodeHandler {
         /**
-         * Called when Capture sign-in has succeeded. At this point Jump.getCaptureUser will return the
-         * CaptureRecord instance for the user.
+         * Called when Capture sign-in has succeeded.
          *
          * @param code
          *   An OAuth Authorization Code, this short lived code can be used to get an Access Token for use
          *   with a server side application like Drupal.
          */
-        public abstract void onSuccess(String code);
-
-        /**
-         * Use onSuccess(String code) instead, onSuccess() will not be called
-         */
-        final public void onSuccess() {
-            throw(new RuntimeException("Use onSuccess(String code) instead"));
-        }
+        void onCode(String code);
     }
 
     /**

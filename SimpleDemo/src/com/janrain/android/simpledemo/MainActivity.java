@@ -57,12 +57,17 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 
 public class MainActivity extends FragmentActivity {
-    private final Jump.SignInResultHandler signInResultHandler = new Jump.SignInResultHandlerWithCode() {
-        public void onSuccess(String code) {
+
+    private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
+        public void onSuccess() {
             AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
             b.setMessage("Sign-in complete.");
             b.setNeutralButton("Dismiss", null);
             b.show();
+        }
+
+        public void onCode(String code) {
+            Toast.makeText(MainActivity.this, "Access Code: " + code, Toast.LENGTH_LONG).show();
         }
 
         public void onFailure(SignInError error) {
@@ -82,7 +87,7 @@ public class MainActivity extends FragmentActivity {
                 // Jump.performTraditionalSignIn, or you can call Jump.showSignInDialog(..., "capture") and
                 // a library-provided dialog will be provided.)
 
-                Jump.startDefaultMergeFlowUi(MainActivity.this, error, signInResultHandler);
+                Jump.startDefaultMergeFlowUi(MainActivity.this, error, new MySignInResultHandler());
             } else if (error.reason == SignInError.FailureReason.CAPTURE_API_ERROR &&
                     error.captureApiError.isTwoStepRegFlowError()) {
                 // Called when a user cannot sign in because they have no record, but a two-step social
@@ -136,7 +141,7 @@ public class MainActivity extends FragmentActivity {
 
         testAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
+                Jump.showSignInDialog(MainActivity.this, null, new MySignInResultHandler(), null);
             }
         });
 

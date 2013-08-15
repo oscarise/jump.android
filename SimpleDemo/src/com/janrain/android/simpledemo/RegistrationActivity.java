@@ -104,28 +104,7 @@ public class RegistrationActivity extends Activity {
             throw new RuntimeException("Unexpected", e);
         }
 
-        Jump.registerNewUser(newUser, socialRegistrationToken, new Jump.SignInResultHandlerWithCode() {
-            public void onSuccess(String code) {
-                Toast.makeText(RegistrationActivity.this, "Registration Complete", Toast.LENGTH_LONG).show();
-                finish();
-            }
-
-            public void onFailure(SignInError error) {
-                AlertDialog.Builder adb = new AlertDialog.Builder(RegistrationActivity.this);
-                if (error.captureApiError.isFormValidationError()) {
-                    adb.setTitle("Invalid Fields");
-                    Map<String, Object> messages =
-                            (Map) error.captureApiError.getLocalizedValidationErrorMessages();
-                    String message = collectionToHumanReadableString(messages);
-                    adb.setMessage(message);
-                } else {
-                    adb.setTitle("Unrecognized error");
-                    adb.setMessage(error.toString());
-                }
-                adb.show();
-                registerButton.setEnabled(true);
-            }
-        });
+        Jump.registerNewUser(newUser, socialRegistrationToken, new MySignInResultHandler());
 
         registerButton.setEnabled(false);
     }
@@ -143,5 +122,32 @@ public class RegistrationActivity extends Activity {
         super.onPause();
         // Don't need to call Jump.saveToDisk here, there's no state since the user isn't signed in until
         // after they are registered.
+    }
+
+    private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
+        public void onSuccess() {
+            Toast.makeText(RegistrationActivity.this, "Registration Complete", Toast.LENGTH_LONG).show();
+            finish();
+        }
+
+        public void onCode(String code) {
+            Toast.makeText(RegistrationActivity.this, "Access Code: " + code, Toast.LENGTH_LONG).show();
+        }
+
+        public void onFailure(SignInError error) {
+            AlertDialog.Builder adb = new AlertDialog.Builder(RegistrationActivity.this);
+            if (error.captureApiError.isFormValidationError()) {
+                adb.setTitle("Invalid Fields");
+                Map<String, Object> messages =
+                        (Map) error.captureApiError.getLocalizedValidationErrorMessages();
+                String message = collectionToHumanReadableString(messages);
+                adb.setMessage(message);
+            } else {
+                adb.setTitle("Unrecognized error");
+                adb.setMessage(error.toString());
+            }
+            adb.show();
+            registerButton.setEnabled(true);
+        }
     }
 }
