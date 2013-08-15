@@ -160,15 +160,19 @@ Initialize the library by calling `Jump#init` method. For example:
 
 Once the Jump library has been initialized, your application can start the sign-in flow by calling the
 sign-in dialog display method, `com.janrain.android.Jump#showSignInDialog`. You will need to define a
-callback handler which implements the `com.janrain.android.Jump.SignInResultHandler` interface. For example
-the SimpleDemo project does this:
+callback handler which implements the `com.janrain.android.Jump.SignInResultHandler` interface. For example:
 
-    Jump.showSignInDialog(MainActivity.this, null, new Jump.SignInResultHandler() {
+    private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
         public void onSuccess() {
             AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
-            b.setMessage("success");
+            b.setMessage("Sign-in complete.");
             b.setNeutralButton("Dismiss", null);
             b.show();
+        }
+
+        // Part of the com.janrain.android.Jump.SignInCodeHandler interface
+        public void onCode(String code) {
+            // Do something with the Access Code
         }
 
         public void onFailure(SignInError error) {
@@ -177,7 +181,15 @@ the SimpleDemo project does this:
             b.setNeutralButton("Dismiss", null);
             b.show();
         }
-    });
+    };
+
+Then call `com.janrain.android.Jump#showSignInDialog` with an instance of your callback handler class.
+
+    Jump.showSignInDialog(MainActivity.this, null, new MySignInResultHandler);
+
+Implementing the `com.janrain.android.Jump.SignInCodeHandler` interface is optional. `onCode(String code)` is
+called, when the sign in has succeeded, with an Authorization Code that can be used by a server side
+application (e.g. Drupal) to retrieve an Access Token.
 
 ### Traditional Sign-In and Social Sign-In
 
