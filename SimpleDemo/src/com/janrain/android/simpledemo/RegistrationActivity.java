@@ -131,7 +131,7 @@ public class RegistrationActivity extends Activity {
         }
 
         public void onCode(String code) {
-            Toast.makeText(RegistrationActivity.this, "Access Code: " + code, Toast.LENGTH_LONG).show();
+            Toast.makeText(RegistrationActivity.this, "Authorization Code: " + code, Toast.LENGTH_LONG).show();
         }
 
         public void onFailure(SignInError error) {

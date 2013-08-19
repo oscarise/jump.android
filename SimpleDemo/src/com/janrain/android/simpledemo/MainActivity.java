@@ -67,7 +67,7 @@ public class MainActivity extends FragmentActivity {
         }
 
         public void onCode(String code) {
-            Toast.makeText(MainActivity.this, "Access Code: " + code, Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Authorization Code: " + code, Toast.LENGTH_LONG).show();
         }
 
         public void onFailure(SignInError error) {

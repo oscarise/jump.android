@@ -99,7 +99,7 @@ public class Jump {
         // Transient state values:
         /*
          * Every method that performs a sign-in or registration must set signInHandler and call
-         * fireHandlerOnFailure and fireHandlerOnSuccess when
+         * fireHandlerOnFailure and fireHandlerOnSuccess when the operation has completed.
          */
         /*package*/ SignInResultHandler signInHandler;
         public boolean initCalled;
@@ -516,7 +516,7 @@ public class Jump {
     }
 
     /**
-     * An interface to receive a callback which handles the Capture Oauth Access Code that is generated on
+     * An interface to receive a callback which handles the Capture OAuth Access Code that is generated on
      * the completion of the sign-in flow. Implement this interface in your sign in result handler if you
      * would like to receive the code.
      * See the Start Sign-in section of the jump.android/Docs/Jump_Integration_Guide.md for more information.

@@ -181,14 +181,14 @@ callback handler which implements the `com.janrain.android.Jump.SignInResultHand
             b.setNeutralButton("Dismiss", null);
             b.show();
         }
-    };
+    }
 
 Then call `com.janrain.android.Jump#showSignInDialog` with an instance of your callback handler class.
 
-    Jump.showSignInDialog(MainActivity.this, null, new MySignInResultHandler);
+    Jump.showSignInDialog(MainActivity.this, null, new MySignInResultHandler());
 
 Implementing the `com.janrain.android.Jump.SignInCodeHandler` interface is optional. `onCode(String code)` is
-called, when the sign in has succeeded, with a Capture Oauth Authorization Code that can be used by a server
+called, when the sign in has succeeded, with a Capture OAuth Authorization Code that can be used by a server
 side application (e.g. The Capture Drupal Plugin) to retrieve an Access Token.
 
 ### Traditional Sign-In and Social Sign-In
