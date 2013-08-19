@@ -87,7 +87,7 @@ public class MainActivity extends FragmentActivity {
                 // Jump.performTraditionalSignIn, or you can call Jump.showSignInDialog(..., "capture") and
                 // a library-provided dialog will be provided.)
 
-                Jump.startDefaultMergeFlowUi(MainActivity.this, error, new MySignInResultHandler());
+                Jump.startDefaultMergeFlowUi(MainActivity.this, error, signInResultHandler);
             } else if (error.reason == SignInError.FailureReason.CAPTURE_API_ERROR &&
                     error.captureApiError.isTwoStepRegFlowError()) {
                 // Called when a user cannot sign in because they have no record, but a two-step social
@@ -106,6 +106,8 @@ public class MainActivity extends FragmentActivity {
             }
         }
     };
+
+    private final MySignInResultHandler signInResultHandler = new MySignInResultHandler();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -141,7 +143,7 @@ public class MainActivity extends FragmentActivity {
 
         testAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Jump.showSignInDialog(MainActivity.this, null, new MySignInResultHandler(), null);
+                Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
             }
         });
 

@@ -188,8 +188,8 @@ Then call `com.janrain.android.Jump#showSignInDialog` with an instance of your c
     Jump.showSignInDialog(MainActivity.this, null, new MySignInResultHandler);
 
 Implementing the `com.janrain.android.Jump.SignInCodeHandler` interface is optional. `onCode(String code)` is
-called, when the sign in has succeeded, with an Authorization Code that can be used by a server side
-application (e.g. Drupal) to retrieve an Access Token.
+called, when the sign in has succeeded, with a Capture Oauth Authorization Code that can be used by a server
+side application (e.g. The Capture Drupal Plugin) to retrieve an Access Token.
 
 ### Traditional Sign-In and Social Sign-In
 
