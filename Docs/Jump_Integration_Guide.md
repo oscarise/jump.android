@@ -31,7 +31,7 @@ Basic use flow:
 2. Declare the library project dependency, and add the required elements to your `AndroidManifest.xml` file.
 3. Initialize the library
 4. Start a sign-in
-5. Modify the profile
+5. Read and modify the record
 6. Send record updates
 7. Persist the local user object
 
@@ -308,22 +308,28 @@ Plurals contain collections of objects. Each element in a plural is an object or
 plural has the same set of attributes, which are defined in the schema. Think of a plural as an object that may have
 zero-or-more instances.
 
-### Retrieving and Using the Capture Record Model
+### Read and Modify the Capture Record Model
 
 You can retrieve the signed-in Capture user's account record via `Jump.getSignedInUser()`. The record is
-an instance of `org.json.JSONObject`, with some additional methods defined by a subclass. You can read
-and write to the record via the usual `JSONObject` methods.
+an instance of `org.json.JSONObject`, with some additional methods defined by the `CaptureRecord` subclass.
+You can read and write to the record via the usual `JSONObject` methods.
 
 For example, to read the aboutMe attribute in the record:
 
     Jump.getSignedInUser().optString("aboutMe")
 
+You can make changes too, for example to write to the aboutMe attribute in the record:
+
+    try {
+        Jump.getSignedInUser().put("aboutMe", "Bacon, the healthiest of all vegetables.");
+    } catch (JSONException e) {
+        throw new RuntimeException("Unexpected", e);
+    }
+
 Any changes made to the record must still obey the entity type schema from Capture. So, e.g. you cannot add
 dynamic new attributes, but you can add additional elements to plurals in the schema.
 
-For example, to write the aboutMe attribute in the record:
-
-    Jump.getSignedInUser().put("aboutMe", "It is good to be well-liked.");
+### Send Record Updates to Capture
 
 To push local changes to the Capture server call `com.janrain.android.capture.CaptureRecord#synchronize`.
 
