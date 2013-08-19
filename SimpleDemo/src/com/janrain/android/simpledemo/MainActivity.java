@@ -57,12 +57,17 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 
 public class MainActivity extends FragmentActivity {
-    private final Jump.SignInResultHandler signInResultHandler = new Jump.SignInResultHandler() {
+
+    private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
         public void onSuccess() {
             AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
             b.setMessage("Sign-in complete.");
             b.setNeutralButton("Dismiss", null);
             b.show();
+        }
+
+        public void onCode(String code) {
+            Toast.makeText(MainActivity.this, "Authorization Code: " + code, Toast.LENGTH_LONG).show();
         }
 
         public void onFailure(SignInError error) {
@@ -101,6 +106,8 @@ public class MainActivity extends FragmentActivity {
             }
         }
     };
+
+    private final MySignInResultHandler signInResultHandler = new MySignInResultHandler();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

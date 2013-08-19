@@ -94,10 +94,13 @@ public class Jump {
         /*package*/ String captureSocialRegistrationFormName;
         /*package*/ String captureTraditionalRegistrationFormName;
         /*package*/ TraditionalSignInType traditionalSignInType;
-        /*package*/ String captureResponseType;
         /*package*/ String backplaneChannelUrl;
 
         // Transient state values:
+        /*
+         * Every method that performs a sign-in or registration must set signInHandler and call
+         * fireHandlerOnFailure and fireHandlerOnSuccess when the operation has completed.
+         */
         /*package*/ SignInResultHandler signInHandler;
         public boolean initCalled;
     }
@@ -161,7 +164,6 @@ public class Jump {
         state.captureLocale = jumpConfig.captureLocale;
         state.captureTraditionalSignInFormName = jumpConfig.captureTraditionalSignInFormName;
         state.backplaneChannelUrl = jumpConfig.backplaneChannelUrl;
-        state.captureResponseType = "token";
 
         final Context tempContext = context;
         ThreadUtils.executeInBg(new Runnable() {
@@ -209,7 +211,12 @@ public class Jump {
     }
 
     public static String getResponseType() {
-        return state.captureResponseType;
+        SignInResultHandler handler = state.signInHandler;
+
+        if (handler instanceof SignInCodeHandler) {
+            return "code_and_token";
+        }
+        return "token";
     }
 
     public static String getCaptureAppId() {
@@ -316,9 +323,9 @@ public class Jump {
         String authInfoToken = auth_info.getAsString("token");
 
         Capture.performSocialSignIn(authInfoToken, new Capture.SignInResultHandler() {
-            public void onSuccess(CaptureRecord record) {
+            public void onSuccess(CaptureRecord record, JSONObject response) {
                 state.signedInUser = record;
-                Jump.fireHandlerOnSuccess();
+                Jump.fireHandlerOnSuccess(response);
             }
 
             public void onFailure(CaptureApiError error) {
@@ -351,12 +358,19 @@ public class Jump {
     }
 
     // Package level because of use from TradSignInUi:
-    /*package*/ static void fireHandlerOnSuccess() {
+    /*package*/ static void fireHandlerOnSuccess(JSONObject response) {
         SignInResultHandler handler_ = state.signInHandler;
         state.signInHandler = null;
-        if (handler_ != null) handler_.onSuccess();
+        if (handler_ != null) {
+            handler_.onSuccess();
 
+            if (handler_ instanceof SignInCodeHandler) {
+                String code = response.optString("authorization_code");
+                ((SignInCodeHandler)handler_).onCode(code);
+            }
+        }
     }
+
 
     public enum TraditionalSignInType { EMAIL, USERNAME }
 
@@ -375,17 +389,19 @@ public class Jump {
             return;
         }
 
+        state.signInHandler = handler;
+
         Capture.performTraditionalSignIn(signInName, password, state.traditionalSignInType,
                 new Capture.SignInResultHandler() {
                     @Override
-                    public void onSuccess(CaptureRecord record) {
+                    public void onSuccess(CaptureRecord record, JSONObject response) {
                         state.signedInUser = record;
-                        handler.onSuccess();
+                        fireHandlerOnSuccess(response);
                     }
 
                     @Override
                     public void onFailure(CaptureApiError error) {
-                        handler.onFailure(new SignInError(CAPTURE_API_ERROR, error, null));
+                        fireHandlerOnFailure(new SignInError(CAPTURE_API_ERROR, error, null));
                     }
                 }, mergeToken);
     }
@@ -416,19 +432,21 @@ public class Jump {
             return;
         }
 
+        state.signInHandler = registrationResultHandler;
+
         Capture.performRegistration(newUser, socialRegistrationToken, new Capture.SignInResultHandler(){
-            public void onSuccess(CaptureRecord registeredUser) {
-                registrationResultHandler.onSuccess();
+            public void onSuccess(CaptureRecord registeredUser, JSONObject result) {
+                fireHandlerOnSuccess(result);
             }
 
             public void onFailure(CaptureApiError error) {
-                registrationResultHandler.onFailure(new SignInError(CAPTURE_API_ERROR, error, null));
+                fireHandlerOnFailure(new SignInError(CAPTURE_API_ERROR, error, null));
             }
         });
     }
 
     /**
-     * An interface to implement to receive callbacks notifying the completion of a sign-in flow.
+     * An interface to receive callbacks notifying the completion of a sign-in flow.
      */
     public interface SignInResultHandler {
         /**
@@ -495,6 +513,22 @@ public class Jump {
          * @param error the error which caused the failure
          */
         void onFailure(SignInError error);
+    }
+
+    /**
+     * An interface to receive a callback which handles the Capture OAuth Access Code that is generated on
+     * the completion of the sign-in flow. Implement this interface in your sign in result handler if you
+     * would like to receive the code.
+     * See the Start Sign-in section of the jump.android/Docs/Jump_Integration_Guide.md for more information.
+     */
+    public interface SignInCodeHandler {
+        /**
+         * Called when Capture sign-in has succeeded.
+         *
+         * @param code An OAuth Authorization Code, this short lived code can be used to get an Access Token
+         *   for use with a server side application like the Capture Drupal Plugin.
+         */
+        void onCode(String code);
     }
 
     /**

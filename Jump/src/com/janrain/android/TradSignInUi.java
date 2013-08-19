@@ -152,9 +152,9 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
         public void onClick(View v) {
             final Capture.SignInResultHandler handler = new Capture.SignInResultHandler() {
-                public void onSuccess(CaptureRecord record) {
+                public void onSuccess(CaptureRecord record, JSONObject response) {
                     Jump.state.signedInUser = record;
-                    Jump.fireHandlerOnSuccess();
+                    Jump.fireHandlerOnSuccess(response);
                     dismissProgressIndicator();
                     finishJrSignin();
                 }
@@ -185,9 +185,9 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
         public void onStandAloneClick() {
             final Capture.SignInResultHandler handler = new Capture.SignInResultHandler() {
-                public void onSuccess(CaptureRecord record) {
+                public void onSuccess(CaptureRecord record, JSONObject response) {
                     Jump.state.signedInUser = record;
-                    Jump.fireHandlerOnSuccess();
+                    Jump.fireHandlerOnSuccess(response);
                     dialog.dismiss();
                 }
 
