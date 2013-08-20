@@ -56,6 +56,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import com.janrain.android.R;
+import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
 
@@ -132,8 +133,6 @@ public abstract class JRUiFragment extends Fragment {
 
     @Override
     public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         super.onInflate(activity, attrs, savedInstanceState);
 
         if (JRSession.getInstance() == null) {
@@ -145,8 +144,6 @@ public abstract class JRUiFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
 
         if (mFinishReceiver == null) mFinishReceiver = new FinishReceiver();
         getActivity().registerReceiver(mFinishReceiver, JRFragmentHostActivity.FINISH_INTENT_FILTER);
@@ -204,8 +201,6 @@ public abstract class JRUiFragment extends Fragment {
 
     @Override
     public void onStart() {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         super.onStart();
     }
 
@@ -220,15 +215,11 @@ public abstract class JRUiFragment extends Fragment {
     @Override
     public void onPause() {
         if (mCustomInterfaceConfiguration != null) mCustomInterfaceConfiguration.onPause();
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         super.onPause();
     }
 
     @Override
     public void onStop() {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         super.onStop();
     }
 
@@ -261,8 +252,6 @@ public abstract class JRUiFragment extends Fragment {
 
     @Override
     public void onDetach() {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         if (mFinishReceiver != null) getActivity().unregisterReceiver(mFinishReceiver);
 
         super.onDetach();
@@ -271,8 +260,6 @@ public abstract class JRUiFragment extends Fragment {
     /* May be called at any time before onDestroy() */
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
 
         Bundle[] dialogOptions = new Bundle[mManagedDialogs.size()];
         int x = 0;
@@ -293,15 +280,11 @@ public abstract class JRUiFragment extends Fragment {
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         super.onConfigurationChanged(newConfig);
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
-        LogUtils.logd(TAG, "[" + new Object() {
-        }.getClass().getEnclosingMethod().getName() + "]");
         super.onHiddenChanged(hidden);
     }
     //--
@@ -564,6 +547,16 @@ public abstract class JRUiFragment extends Fragment {
                         .setTransition(FragmentTransaction.TRANSIT_NONE)
                         .commit();
             }
+        }
+    }
+
+    /*package*/ void startWebViewAuthForProvider(JRProvider provider) {
+        if (provider.requiresInput() ||
+                (mSession.getAuthenticatedUserForProvider(provider) != null &&
+                        !provider.getForceReauth()) && !mSession.getAlwaysForceReauth()) {
+            showUserLanding();
+        } else {
+            showWebView();
         }
     }
 

@@ -68,7 +68,7 @@ package com.janrain.android.engage;
  **/
 
 import android.app.Activity;
-import android.app.ProgressDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -77,12 +77,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
@@ -96,6 +92,7 @@ import com.janrain.android.engage.ui.JRUiFragment;
 import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
+import com.janrain.android.utils.UiUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -620,68 +617,22 @@ public class JREngage {
         }
 
         if (provider != null && mSession.getProviderByName(provider) == null && !mSession.isConfigDone()) {
-            final ProgressDialog pd = new ProgressDialog(fromActivity);
-            pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            pd.setIndeterminate(true);
-            pd.setCancelable(false);
-            pd.show();
+            final Dialog progressDialog = UiUtils.getProgressDialog(fromActivity);
+            progressDialog.show();
 
-            // Fix up the progress dialog's appearance
-            View message = pd.findViewById(android.R.id.message);
-            if (message != null) message.setVisibility(View.GONE);
-
-            View progressBar = pd.findViewById(android.R.id.progress);
-            if (progressBar != null) collapseViewLayout(findViewHierarchyRoot(progressBar));
 
             mConfigFinishListeners.add(new ConfigFinishListener() {
                 public void configDidFinish() {
                     mConfigFinishListeners.remove(this);
                     checkSessionDataError();
                     showAuthFlowInternal(fromActivity, provider, uiCustomization);
-                    pd.dismiss();
+                    progressDialog.dismiss();
                 }
             });
         } else {
             showAuthFlowInternal(fromActivity, provider, uiCustomization);
         }
     }
-
-    /**
-     * @internal
-     * @hide
-     */
-    private ViewGroup findViewHierarchyRoot(View v) {
-        ViewParent parent = v.getParent();
-        if (parent != null && parent instanceof ViewGroup) return findViewHierarchyRoot((View) parent);
-        if (v instanceof ViewGroup) return (ViewGroup) v;
-        return null;
-    }
-
-    /**
-     * Dries out whitespace in layout hierarchies, for use with platform spinner dialog with too much
-     *
-     * @internal
-     * @hide
-     */
-    private void collapseViewLayout(View v) {
-        if (v.getLayoutParams() != null) {
-            v.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
-            v.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
-            if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-                ((ViewGroup.MarginLayoutParams) v.getLayoutParams()).setMargins(0, 0, 0, 0);
-            }
-            if (v.getLayoutParams() instanceof LinearLayout.LayoutParams) {
-                ((LinearLayout.LayoutParams) v.getLayoutParams()).gravity = Gravity.CENTER;
-            }
-        }
-
-        if (v instanceof ViewGroup) {
-            int childCount = ((ViewGroup) v).getChildCount();
-            for (int i = 0; i < childCount; i++) collapseViewLayout(((ViewGroup) v).getChildAt(i));
-        }
-    }
-
-
 
     /**
      * @internal
@@ -698,8 +649,52 @@ public class JREngage {
     private void showAuthFlowInternal(final Activity fromActivity,
                                       final String providerName,
                                       final Class<? extends JRCustomInterface> uiCustomization) {
-        Intent i;
         JRProvider provider = mSession.getProviderByName(providerName);
+
+        if (provider != null && JRNativeAuth.canHandleProvider(provider)) {
+            showNativeAuthFlowInternal(fromActivity, provider, uiCustomization);
+        } else {
+            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
+        }
+    }
+
+    private void showNativeAuthFlowInternal(final Activity fromActivity,
+                                            final JRProvider provider,
+                                            final Class<? extends JRCustomInterface> uiCustomization) {
+        JRNativeAuth.startAuthOnProvider(provider, fromActivity, new JRNativeAuth.NativeAuthCallback() {
+            @Override
+            public void onSuccess(JRDictionary payload) {
+                mSession.triggerAuthenticationDidCompleteWithPayload(payload);
+                return;
+            }
+
+            @Override
+            public void onFailure(String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
+                LogUtils.logd("Native Auth Error: " + errorCode + " " + message
+                              + (exception != null ? " " + exception : ""));
+
+                if (errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
+                    mSession.triggerAuthenticationDidCancel();
+                } else if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
+                    mSession.triggerAuthenticationDidFail(new JREngageError(
+                            message,
+                            JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
+                            JREngageError.ErrorType.CONFIGURATION_FAILED));
+                } else {
+                    showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
+                }
+            }
+        });
+
+        mSession.setCurrentlyAuthenticatingProvider(provider);
+    }
+
+    private void showWebAuthFlowInternal(final Activity fromActivity,
+                                         final String providerName,
+                                         final JRProvider provider,
+                                         final Class<? extends JRCustomInterface> uiCustomization) {
+
+        Intent i;
         if (provider != null) {
             if (provider.requiresInput()) {
                 i = JRFragmentHostActivity.createUserLandingIntent(fromActivity);

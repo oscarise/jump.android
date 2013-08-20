@@ -88,6 +88,8 @@ public class ApiConnection {
             LogUtils.logd("unrecognized content type: " + headers.getContentType());
             LogUtils.logd(json);
             return json;
+        } catch (NullPointerException ignore) {
+            return json;
         } catch (JSONException ignore) {
             return json;
         } catch (UnsupportedEncodingException e) {
@@ -141,8 +143,9 @@ public class ApiConnection {
                                                   String requestUrl,
                                                   Object tag) {
                         int responseCode = responseHeaders == null ? -1 : responseHeaders.getResponseCode();
-                        LogUtils.loge("failed request (" + responseCode + " ): " + requestUrl, ex);
-                        callback.run(null);
+                        LogUtils.loge("failed request (" + responseCode + "): " + requestUrl, ex);
+                        Object response = connectionManagerGetJsonContent(responseHeaders, payload);
+                        callback.run(response);
                     }
                 };
 
