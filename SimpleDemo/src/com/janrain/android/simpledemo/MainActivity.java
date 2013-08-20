@@ -120,6 +120,11 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         Button testAuth = addButton(linearLayout, "Capture Sign-In");
+        addButton(linearLayout, "Test Direct Auth").setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Jump.showSignInDialog(MainActivity.this, "linkedin", signInResultHandler, null);
+            }
+        });
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button touchRecord = addButton(linearLayout, "Edit 'About Me' Attribute");
         Button syncRecord = addButton(linearLayout, "Update Record");

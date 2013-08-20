@@ -694,17 +694,17 @@ public class JRSession implements JRConnectionManagerDelegate {
 
         String fullStartUrl;
 
-        boolean forceReauth = mAlwaysForceReauth || mCurrentlyAuthenticatingProvider.getForceReauth();
-        if (forceReauth) {
-            deleteWebViewCookiesForDomains(getApplicationContext(),
-                    mCurrentlyAuthenticatingProvider.getCookieDomains());
+        boolean forceReauthUrlFlag = mAlwaysForceReauth ||
+                mCurrentlyAuthenticatingProvider.getForceReauthUrlFlag();
+        if (forceReauthUrlFlag) {
+            mCurrentlyAuthenticatingProvider.clearCookiesOnCookieDomains(getApplicationContext());
         }
 
         fullStartUrl = String.format("%s%s?%s%sdevice=android&extended=true&installation_id=%s",
                 mRpBaseUrl,
                 mCurrentlyAuthenticatingProvider.getStartAuthenticationUrl(),
                 oid,
-                (forceReauth ? "force_reauth=true&" : ""),
+                (forceReauthUrlFlag ? "force_reauth=true&" : ""),
                 AndroidUtils.urlEncode(mUniqueIdentifier)
         );
 
@@ -737,20 +737,23 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public void signOutUserForProvider(String providerName) {
-        if (mAllProviders == null) throwDebugException(new IllegalStateException());
+        if (mAllProviders == null) {
+            throwDebugException(new IllegalStateException());
+            return;
+        }
+
         JRProvider provider = mAllProviders.get(providerName);
         if (provider == null) {
             throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
-        } else {
-            List<String> cookieDomains = provider.getCookieDomains();
-            if (cookieDomains.size() == 0) {
-                provider.setForceReauth(true); // MOB-135
-            } else {
-                deleteWebViewCookiesForDomains(getApplicationContext(), cookieDomains);
-            }
+            return;
         }
 
-        if (mAuthenticatedUsersByProvider == null) throwDebugException(new IllegalStateException());
+        provider.forceReauth(getApplicationContext()); // MOB-135 and MOB-181
+
+        if (mAuthenticatedUsersByProvider == null) {
+            throwDebugException(new IllegalStateException());
+            return;
+        }
 
         if (mAuthenticatedUsersByProvider.containsKey(providerName)) {
             mAuthenticatedUsersByProvider.get(providerName).deleteCachedProfilePic();
@@ -896,7 +899,7 @@ public class JRSession implements JRConnectionManagerDelegate {
             makeCallToTokenUrl(mTokenUrl, authInfoToken, mCurrentlyAuthenticatingProvider.getName());
         }
 
-        mCurrentlyAuthenticatingProvider.setForceReauth(false);
+        mCurrentlyAuthenticatingProvider.clearForceReauth();
         setCurrentlyAuthenticatingProvider(null);
     }
 
