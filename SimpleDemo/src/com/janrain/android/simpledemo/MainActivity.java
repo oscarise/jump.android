@@ -119,11 +119,11 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        Button testAuth = addButton(linearLayout, "Test Capture Auth");
+        Button testAuth = addButton(linearLayout, "Capture Sign-In");
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
-        Button touchRecord = addButton(linearLayout, "Edit About Me Attribute");
-        Button syncRecord = addButton(linearLayout, "Sync Record");
-        addButton(linearLayout, "Test Share").setOnClickListener(new View.OnClickListener() {
+        Button touchRecord = addButton(linearLayout, "Edit 'About Me' Attribute");
+        Button syncRecord = addButton(linearLayout, "Update Record");
+        addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
                         new JRActivityObject("aslkdfj", "http://google.com"));
