@@ -284,13 +284,11 @@ public class JRProviderListFragment extends JRUiFragment {
 
             if (JRNativeAuth.canHandleProvider(provider)) {
                 JRNativeAuth.startAuthOnProvider(provider, getActivity(), new JRNativeAuth.NativeAuthCallback() {
-                    @Override
                     public void onSuccess(JRDictionary payload) {
                         mSession.triggerAuthenticationDidCompleteWithPayload(payload);
                         finishFragmentWithResult(Activity.RESULT_OK);
                     }
 
-                    @Override
                     public void onFailure(
                             String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
                         LogUtils.logd("Native Auth Error: " + errorCode + " " + message
@@ -409,7 +407,7 @@ public class JRProviderListFragment extends JRUiFragment {
                 && !session.getSkipLandingPage()
                 && returningAuthProvider != null
                 && !session.getAlwaysForceReauth()
-                && !returningAuthProvider.getForceReauth()
+                && !returningAuthProvider.getForceReauthUrlFlag()
                 && session.getAuthProviders().contains(returningAuthProvider)
                 && session.getAuthenticatedUserForProvider(returningAuthProvider) != null
                 && session.getEnabledAuthenticationProviders().contains(session.getReturningAuthProvider()));

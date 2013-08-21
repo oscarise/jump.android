@@ -553,7 +553,7 @@ public abstract class JRUiFragment extends Fragment {
     /*package*/ void startWebViewAuthForProvider(JRProvider provider) {
         if (provider.requiresInput() ||
                 (mSession.getAuthenticatedUserForProvider(provider) != null &&
-                        !provider.getForceReauth()) && !mSession.getAlwaysForceReauth()) {
+                        !provider.getForceReauthUrlFlag()) && !mSession.getAlwaysForceReauth()) {
             showUserLanding();
         } else {
             showWebView();

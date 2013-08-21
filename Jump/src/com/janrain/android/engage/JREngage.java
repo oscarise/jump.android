@@ -662,13 +662,10 @@ public class JREngage {
                                             final JRProvider provider,
                                             final Class<? extends JRCustomInterface> uiCustomization) {
         JRNativeAuth.startAuthOnProvider(provider, fromActivity, new JRNativeAuth.NativeAuthCallback() {
-            @Override
             public void onSuccess(JRDictionary payload) {
                 mSession.triggerAuthenticationDidCompleteWithPayload(payload);
-                return;
             }
 
-            @Override
             public void onFailure(String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
                 LogUtils.logd("Native Auth Error: " + errorCode + " " + message
                               + (exception != null ? " " + exception : ""));
@@ -693,7 +690,6 @@ public class JREngage {
                                          final String providerName,
                                          final JRProvider provider,
                                          final Class<? extends JRCustomInterface> uiCustomization) {
-
         Intent i;
         if (provider != null) {
             if (provider.requiresInput()) {

@@ -45,6 +45,7 @@ import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.PrefUtils;
 import com.janrain.android.utils.ThreadUtils;
+import com.janrain.android.utils.WebViewUtils;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -161,7 +162,7 @@ public class JRProvider implements Serializable {
     private JRDictionary mSocialSharingProperties;
     private JRDictionary mWebViewOptions;
 
-    private transient boolean mForceReauth;   // <- these two user parameters get preserved
+    private transient boolean mForceReauthStartUrlFlag;   // <- these two user parameters get preserved
     private transient String mUserInput = ""; // <- across cached provider reloads
     private transient boolean mCurrentlyDownloading;
 
@@ -234,14 +235,14 @@ public class JRProvider implements Serializable {
         return mWebViewOptions;
     }
 
-    public boolean getForceReauth() {
-        return mForceReauth;
+    public boolean getForceReauthUrlFlag() {
+        return mForceReauthStartUrlFlag;
     }
 
-    public void setForceReauth(boolean forceReauth) {
-        this.mForceReauth = forceReauth;
+    private void setForceReauthFlag(boolean forceReauth) {
+        this.mForceReauthStartUrlFlag = forceReauth;
 
-        PrefUtils.putBoolean(PrefUtils.KEY_JR_FORCE_REAUTH + this.mName, this.mForceReauth);
+        PrefUtils.putBoolean(PrefUtils.KEY_JR_FORCE_REAUTH + this.mName, this.mForceReauthStartUrlFlag);
     }
 
     public String getUserInput() {
@@ -252,6 +253,22 @@ public class JRProvider implements Serializable {
         mUserInput = userInput;
 
         PrefUtils.putString(PrefUtils.KEY_JR_USER_INPUT + this.mName, this.mUserInput);
+    }
+
+    public void clearForceReauth() {
+        mForceReauthStartUrlFlag = false;
+    }
+
+    public void clearCookiesOnCookieDomains(Context c) {
+        WebViewUtils.deleteWebViewCookiesForDomains(c, getCookieDomains());
+    }
+
+    public void forceReauth(Context c) {
+        if (getCookieDomains().size() > 0) {
+            clearCookiesOnCookieDomains(c);
+        } else {
+            setForceReauthFlag(true);
+        }
     }
 
     private Drawable getDrawable(Context c,
@@ -377,7 +394,7 @@ public class JRProvider implements Serializable {
 
     public void loadDynamicVariables() {
         mUserInput = PrefUtils.getString(PrefUtils.KEY_JR_USER_INPUT + mName, "");
-        mForceReauth = PrefUtils.getBoolean(PrefUtils.KEY_JR_FORCE_REAUTH + mName, false);
+        mForceReauthStartUrlFlag = PrefUtils.getBoolean(PrefUtils.KEY_JR_FORCE_REAUTH + mName, false);
     }
 
     public String toString() {
