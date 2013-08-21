@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.janrain.sample.phonegap_2_3_0;
+package com.janrain.sample.phonegap_2_7_0;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -30,6 +30,9 @@ public class PhonegapSample extends DroidGap
     {
         super.onCreate(savedInstanceState);
         super.loadUrl("file:///android_asset/www/index.html");
-    }
+ 
+
+  
+ }
 }
 
