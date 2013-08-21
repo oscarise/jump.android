@@ -1,0 +1,17 @@
+#!/bin/sh
+branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+if [ "$branch" == "master" ]
+then
+  echo $GIT_DIR
+  echo `pwd`
+  echo \<\?xml version=\"1.0\" encoding=\"utf-8\" \?\> > jr_git_describe.xml
+  echo \<resources\> >> jr_git_describe.xml
+  echo \ \ \ \ \<string name=\"jr_git_describe\"\>`git describe --always`\</string\> >> jr_git_describe.xml
+  echo \</resources\> >> jr_git_describe.xml
+  if [ -d ~/android-code/engage.android/JREngage/res/values/ ]
+  then    
+    mv jr_git_describe.xml ~/android-code/engage.android/JREngage/res/values/
+    git add ~/android-code/engage.android/JREngage/res/values/
+  fi      
+fi      
+
