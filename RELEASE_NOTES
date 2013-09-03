@@ -1,3 +1,7 @@
+v4.3.0:
+ - Update Android Phonegap plugin for Phongap 2.7.0
+ - Support for Facebook native mobile SSO with Android SDK
+ - Supports for code_and_token
 v4.2.0:
  - Adds support for user registration (two-step social registration, as well as
    traditional registration.) See Docs/User_Registration_Guide.md
