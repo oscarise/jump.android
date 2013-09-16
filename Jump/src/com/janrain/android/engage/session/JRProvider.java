@@ -72,11 +72,14 @@ public class JRProvider implements Serializable {
     public static final String KEY_FRIENDLY_NAME = "friendly_name";
     public static final String KEY_INPUT_PROMPT = "input_prompt";
     public static final String KEY_OPENID_IDENTIFIER = "openid_identifier";
+    public static final String KEY_SAML_PROVIDER = "saml_provider";
+    public static final String KEY_OPX_BLOB = "opx_blob";
     public static final String KEY_URL = "url";
     public static final String KEY_REQUIRES_INPUT = "requires_input";
     public static final String KEY_SOCIAL_SHARING_PROPERTIES = "social_sharing_properties";
     public static final String KEY_COOKIE_DOMAINS = "cookie_domains";
     public static final String KEY_ANDROID_WEBVIEW_OPTIONS = "android_webview_options";
+    public static final String KEY_ICON_RESOURCE_ID = "icon_resource_id";
 
     private static final String TAG = JRProvider.class.getSimpleName();
 
@@ -166,10 +169,13 @@ public class JRProvider implements Serializable {
     private String mUserInputDescriptor;
     private boolean mRequiresInput;
     private String mOpenIdentifier;
+    private String mSamlProvider;
+    private String mOpxBlob;
     private String mStartAuthenticationUrl;
     private List<String> mCookieDomains;
     private JRDictionary mSocialSharingProperties;
     private JRDictionary mWebViewOptions;
+    private Integer mIconResourceId;
 
     private transient boolean mForceReauthStartUrlFlag;   // <- these two user parameters get preserved
     private transient String mUserInput = ""; // <- across cached provider reloads
@@ -180,11 +186,14 @@ public class JRProvider implements Serializable {
         mFriendlyName = dictionary.getAsString(KEY_FRIENDLY_NAME);
         mInputHintText = dictionary.getAsString(KEY_INPUT_PROMPT);
         mOpenIdentifier = dictionary.getAsString(KEY_OPENID_IDENTIFIER);
+        mSamlProvider = dictionary.getAsString(KEY_SAML_PROVIDER);
+        mOpxBlob = dictionary.getAsString(KEY_OPX_BLOB);
         mStartAuthenticationUrl = dictionary.getAsString(KEY_URL);
         mRequiresInput = dictionary.getAsBoolean(KEY_REQUIRES_INPUT);
         mCookieDomains = dictionary.getAsListOfStrings(KEY_COOKIE_DOMAINS, true);
         mSocialSharingProperties = dictionary.getAsDictionary(KEY_SOCIAL_SHARING_PROPERTIES);
         mWebViewOptions = dictionary.getAsDictionary(KEY_ANDROID_WEBVIEW_OPTIONS, true);
+        mIconResourceId = dictionary.getAsInt(KEY_ICON_RESOURCE_ID);
 
         loadDynamicVariables();
 
@@ -230,6 +239,14 @@ public class JRProvider implements Serializable {
 
     public String getOpenIdentifier() {
         return mOpenIdentifier;
+    }
+
+    public String getSamlProvider() {
+        return mSamlProvider;
+    }
+
+    public String getOpxBlob() {
+        return mOpxBlob;
     }
 
     public String getStartAuthenticationUrl() {
@@ -297,6 +314,15 @@ public class JRProvider implements Serializable {
             Drawable r = c.getResources().getDrawable(resourceMap.get(drawableName));
             drawableMap.put(drawableName, new SoftReference<Drawable>(r));
             return r;
+        } else if (mIconResourceId != null) {
+            int id = mIconResourceId.intValue();
+            try {
+                Drawable r = c.getResources().getDrawable(id);
+                drawableMap.put(drawableName, new SoftReference<Drawable>(r));
+                return r;
+            } catch (Resources.NotFoundException e) {
+                LogUtils.logd("Could not find resource for " + drawableName);
+            }
         }
 
         if (AndroidUtils.isCupcake()) {

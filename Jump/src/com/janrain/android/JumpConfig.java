@@ -33,6 +33,13 @@
 package com.janrain.android;
 
 import android.content.Context;
+import com.janrain.android.engage.session.JRProvider;
+import com.janrain.android.engage.types.JRDictionary;
+import com.janrain.android.utils.AndroidUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A 'POJO' -- plain old java object, used to contain your configuration for the JUMP library, to be passed
@@ -112,4 +119,56 @@ public final class JumpConfig {
      * Can be used in conjunction with the Livefyre native app support.
      */
     public String backplaneChannelUrl;
+
+    /**
+     * A list of custom identity providers. See `Engage_Custom_Provider_Guide.md` for details on
+     * configuring custom providers
+     */
+    public final Map<String, JRDictionary> customProviders = new HashMap<String, JRDictionary>();
+
+    /**
+     * Adds a custom SAML provider for Engage authentication
+     * @param providerId A short string which will be used to refer to the custom provider
+     * @param friendlyName A string representing the user-facing name of the provider
+     * @param samlProvider The name of the SAML implementation in Engage for your custom SAML provider
+     * @param iconResourceId an optional Resource ID of a 30x30 icon for your custom provider
+     */
+    public void addCustomSamlProvider(String providerId, String friendlyName, String samlProvider,
+                                      int iconResourceId) {
+        JRDictionary providerMap = new JRDictionary();
+        providerMap.put(JRProvider.KEY_FRIENDLY_NAME, friendlyName);
+        providerMap.put(JRProvider.KEY_SAML_PROVIDER, samlProvider);
+
+        if (iconResourceId != 0) {
+            providerMap.put(JRProvider.KEY_ICON_RESOURCE_ID, new Integer(iconResourceId));
+        }
+
+        customProviders.put(providerId, providerMap);
+    }
+
+    /**
+     * Adds a custom OpenID provider for Engage authentication
+     * @param providerId A short string which will be used to refer to the custom provider
+     * @param friendlyName A string representing the user-facing name of the provider
+     * @param openIdIdentifier The OpenID identifier of your for your custom OpenID provider
+     * @param opxBlob An optional custom "opx_blob" parameter for use with Janrain Identity Service's OpenID
+                      providers
+     * @param iconResourceId an optional Resource ID of a 30x30 icon for your custom provider
+     */
+    public void addCustomOpenIdProvider(String providerId, String friendlyName,
+                                               String openIdIdentifier, String opxBlob,
+                                               int iconResourceId) {
+        JRDictionary providerMap = new JRDictionary();
+        providerMap.put(JRProvider.KEY_FRIENDLY_NAME, friendlyName);
+        providerMap.put(JRProvider.KEY_OPENID_IDENTIFIER, openIdIdentifier);
+
+        if (iconResourceId != 0) {
+            providerMap.put(JRProvider.KEY_ICON_RESOURCE_ID, new Integer(iconResourceId));
+        }
+        if (opxBlob != null) {
+            providerMap.put(JRProvider.KEY_OPX_BLOB, opxBlob);
+        }
+
+        customProviders.put(providerId, providerMap);
+    }
 }

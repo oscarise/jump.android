@@ -66,7 +66,6 @@ import java.util.Map;
 import java.util.UUID;
 
 import static com.janrain.android.utils.LogUtils.throwDebugException;
-import static com.janrain.android.utils.WebViewUtils.deleteWebViewCookiesForDomains;
 
 public class JRSession implements JRConnectionManagerDelegate {
     private static final String ARCHIVE_ALL_PROVIDERS = "allProviders";
@@ -96,12 +95,14 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String mReturningAuthProvider;
     private String mReturningSharingProvider;
 
+    private Map<String, JRProvider> mProviders;
     private Map<String, JRProvider> mAllProviders;
     private List<String> mAuthProviders;
     private List<String> mEnabledAuthenticationProviders;
     private List<String> mEnabledSharingProviders;
     private List<String> mSharingProviders;
     private Map<String, JRAuthenticatedUser> mAuthenticatedUsersByProvider;
+    private List<JRProvider> mCustomProviders;
 
     private JRActivityObject mActivity;
     private String mTokenUrl;
@@ -142,6 +143,44 @@ public class JRSession implements JRConnectionManagerDelegate {
         }
 
         return sInstance;
+    }
+
+    public void setCustomProviders(Map<String, JRDictionary> customProviders) {
+        if (customProviders == null) return;
+
+        mCustomProviders = new ArrayList<JRProvider>();
+
+        for (Map.Entry<String, JRDictionary>providerSpec : customProviders.entrySet()) {
+            JRDictionary dict = providerSpec.getValue();
+            if (dict.containsKey(JRProvider.KEY_SAML_PROVIDER)) {
+                mCustomProviders.add(customSamlProvider(providerSpec.getKey(), dict));
+            } else if (dict.containsKey(JRProvider.KEY_OPENID_IDENTIFIER)) {
+                mCustomProviders.add(customOpenIdProvider(providerSpec.getKey(), dict));
+            }
+        }
+    }
+
+    private JRProvider customSamlProvider(String providerId, JRDictionary dictionary) {
+        JRDictionary dict = new JRDictionary(dictionary);
+        dict.put(JRProvider.KEY_URL, "/saml2/sso/start");
+        dict.put(JRProvider.KEY_SAML_PROVIDER,
+                 AndroidUtils.urlEncode(dict.getAsString(JRProvider.KEY_SAML_PROVIDER)));
+
+        return new JRProvider(providerId, dict);
+    }
+
+    private JRProvider customOpenIdProvider(String providerId, JRDictionary dictionary) {
+        JRDictionary dict = new JRDictionary(dictionary);
+        dict.put(JRProvider.KEY_URL, "/openid/start");
+        dict.put(JRProvider.KEY_OPENID_IDENTIFIER,
+                 AndroidUtils.urlEncode(dict.getAsString(JRProvider.KEY_OPENID_IDENTIFIER)));
+
+        if (dict.containsKey(JRProvider.KEY_OPX_BLOB)) {
+            dict.put(JRProvider.KEY_OPX_BLOB,
+                     AndroidUtils.urlEncode(dict.getAsString(JRProvider.KEY_OPX_BLOB)));
+        }
+
+        return new JRProvider(providerId, dict);
     }
 
     private JRSession(String appId, String tokenUrl, JRSessionDelegate delegate) {
@@ -186,10 +225,10 @@ public class JRSession implements JRConnectionManagerDelegate {
 
             /* Load the library state from disk */
             mAuthenticatedUsersByProvider = Archiver.load(ARCHIVE_AUTH_USERS_BY_PROVIDER);
-            mAllProviders = Archiver.load(ARCHIVE_ALL_PROVIDERS);
+            mProviders = Archiver.load(ARCHIVE_ALL_PROVIDERS);
 
             /* Fix up the provider objects with data that isn't serialized along with them */
-            for (Object provider : mAllProviders.values()) ((JRProvider)provider).loadDynamicVariables();
+            for (Object provider : mProviders.values()) ((JRProvider)provider).loadDynamicVariables();
 
             /* Load the list of auth providers */
             mAuthProviders = Archiver.load(ARCHIVE_AUTH_PROVIDERS);
@@ -227,7 +266,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
             // Note that these values are removed from the settings when resetting state to prevent
             // uninitialized state from being read on startup as valid state
-            mAllProviders = new HashMap<String, JRProvider>();
+            mProviders = new HashMap<String, JRProvider>();
             Archiver.delete(ARCHIVE_ALL_PROVIDERS);
             mAuthProviders = new ArrayList<String>();
             Archiver.delete(ARCHIVE_AUTH_PROVIDERS);
@@ -299,11 +338,27 @@ public class JRSession implements JRConnectionManagerDelegate {
                 // Filter by enabled provider list if available
                 if (mEnabledAuthenticationProviders != null &&
                         !mEnabledAuthenticationProviders.contains(name)) continue;
-                providerList.add(mAllProviders.get(name));
+                providerList.add(mProviders.get(name));
+            }
+        }
+        if (mCustomProviders != null) providerList.addAll(mCustomProviders);
+
+        return providerList;
+    }
+
+    private Map<String, JRProvider> getAllProviders() {
+        if (mAllProviders == null) {
+            mAllProviders = new HashMap<String, JRProvider>();
+            mAllProviders.putAll(mProviders);
+
+            if (mCustomProviders != null) {
+                for (JRProvider provider : mCustomProviders) {
+                    mAllProviders.put(provider.getName(), provider);
+                }
             }
         }
 
-        return providerList;
+        return mAllProviders;
     }
 
     /**
@@ -319,7 +374,7 @@ public class JRSession implements JRConnectionManagerDelegate {
                 // Filter by enabled provider list if available
                 if (mEnabledSharingProviders != null &&
                         !mEnabledSharingProviders.contains(name)) continue;
-                providerList.add(mAllProviders.get(name));
+                providerList.add(getAllProviders().get(name));
             }
         }
 
@@ -607,12 +662,12 @@ public class JRSession implements JRConnectionManagerDelegate {
         mRpBaseUrl = StringUtils.chomp(jsonDict.getAsString("baseurl", ""), "/");
         PrefUtils.putString(PrefUtils.KEY_JR_RP_BASE_URL, mRpBaseUrl);
 
-        mAllProviders = new HashMap<String, JRProvider>();
+        mProviders = new HashMap<String, JRProvider>();
         JRDictionary providerInfo = jsonDict.getAsDictionary("provider_info");
         for (String name : providerInfo.keySet()) {
-            mAllProviders.put(name, new JRProvider(name, providerInfo.getAsDictionary(name)));
+            mProviders.put(name, new JRProvider(name, providerInfo.getAsDictionary(name)));
         }
-        Archiver.asyncSave(ARCHIVE_ALL_PROVIDERS, mAllProviders);
+        Archiver.asyncSave(ARCHIVE_ALL_PROVIDERS, mProviders);
 
         mAuthProviders = jsonDict.getAsListOfStrings("enabled_providers");
         mSharingProviders = jsonDict.getAsListOfStrings("social_providers");
@@ -678,7 +733,8 @@ public class JRSession implements JRConnectionManagerDelegate {
         // can happen on Android process restart:
         if (mCurrentlyAuthenticatingProvider == null) return null;
 
-        String oid; /* open identifier */
+        String oid = ""; /* open identifier */
+        String extraParamString = "";
 
         if (!TextUtils.isEmpty(mCurrentlyAuthenticatingProvider.getOpenIdentifier())) {
             oid = String.format("openid_identifier=%s&",
@@ -688,8 +744,15 @@ public class JRSession implements JRConnectionManagerDelegate {
             } else {
                 oid = oid.replaceAll("%@", "");
             }
-        } else {
-            oid = "";
+
+            if (!TextUtils.isEmpty(mCurrentlyAuthenticatingProvider.getOpxBlob())) {
+                extraParamString =
+                        String.format("opx_blob=%s&", mCurrentlyAuthenticatingProvider.getOpxBlob());
+            }
+
+        } else if (!TextUtils.isEmpty(mCurrentlyAuthenticatingProvider.getSamlProvider())) {
+            extraParamString =
+                    String.format("saml_provider=%s&", mCurrentlyAuthenticatingProvider.getSamlProvider());
         }
 
         String fullStartUrl;
@@ -700,10 +763,11 @@ public class JRSession implements JRConnectionManagerDelegate {
             mCurrentlyAuthenticatingProvider.clearCookiesOnCookieDomains(getApplicationContext());
         }
 
-        fullStartUrl = String.format("%s%s?%s%sdevice=android&extended=true&installation_id=%s",
+        fullStartUrl = String.format("%s%s?%s%s%sdevice=android&extended=true&installation_id=%s",
                 mRpBaseUrl,
                 mCurrentlyAuthenticatingProvider.getStartAuthenticationUrl(),
                 oid,
+                extraParamString,
                 (forceReauthUrlFlag ? "force_reauth=true&" : ""),
                 AndroidUtils.urlEncode(mUniqueIdentifier)
         );
@@ -737,12 +801,12 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public void signOutUserForProvider(String providerName) {
-        if (mAllProviders == null) {
+        if (getAllProviders() == null) {
             throwDebugException(new IllegalStateException());
             return;
         }
 
-        JRProvider provider = mAllProviders.get(providerName);
+        JRProvider provider = getAllProviders().get(providerName);
         if (provider == null) {
             throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
             return;
@@ -764,11 +828,11 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public void signOutAllAuthenticatedUsers() {
-        for (String p : mAllProviders.keySet()) signOutUserForProvider(p);
+        for (String p : getAllProviders().keySet()) signOutUserForProvider(p);
     }
 
     public JRProvider getProviderByName(String name) {
-        return mAllProviders.get(name);
+        return getAllProviders().get(name);
     }
 
     public void notifyEmailSmsShare(String method) {
