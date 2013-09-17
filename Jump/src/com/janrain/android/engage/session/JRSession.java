@@ -96,7 +96,6 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String mReturningSharingProvider;
 
     private Map<String, JRProvider> mProviders;
-    private Map<String, JRProvider> mAllProviders;
     private List<String> mAuthProviders;
     private List<String> mEnabledAuthenticationProviders;
     private List<String> mEnabledSharingProviders;
@@ -347,18 +346,16 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     private Map<String, JRProvider> getAllProviders() {
-        if (mAllProviders == null) {
-            mAllProviders = new HashMap<String, JRProvider>();
-            mAllProviders.putAll(mProviders);
+        Map<String, JRProvider> providers = new HashMap<String, JRProvider>();
+        providers.putAll(mProviders);
 
-            if (mCustomProviders != null) {
-                for (JRProvider provider : mCustomProviders) {
-                    mAllProviders.put(provider.getName(), provider);
-                }
+        if (mCustomProviders != null) {
+            for (JRProvider provider : mCustomProviders) {
+                providers.put(provider.getName(), provider);
             }
         }
 
-        return mAllProviders;
+        return providers;
     }
 
     /**
