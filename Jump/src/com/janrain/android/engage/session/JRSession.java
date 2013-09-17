@@ -150,7 +150,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
         mCustomProviders = new ArrayList<JRProvider>();
 
-        for (Map.Entry<String, JRDictionary>providerSpec : customProviders.entrySet()) {
+        for (Map.Entry<String, JRDictionary> providerSpec : customProviders.entrySet()) {
             JRDictionary dict = providerSpec.getValue();
             if (dict.containsKey(JRProvider.KEY_SAML_PROVIDER)) {
                 mCustomProviders.add(customSamlProvider(providerSpec.getKey(), dict));

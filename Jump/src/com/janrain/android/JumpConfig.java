@@ -35,10 +35,8 @@ package com.janrain.android;
 import android.content.Context;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
-import com.janrain.android.utils.AndroidUtils;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -156,8 +154,8 @@ public final class JumpConfig {
      * @param iconResourceId an optional Resource ID of a 30x30 icon for your custom provider
      */
     public void addCustomOpenIdProvider(String providerId, String friendlyName,
-                                               String openIdIdentifier, String opxBlob,
-                                               int iconResourceId) {
+                                        String openIdIdentifier, String opxBlob,
+                                        int iconResourceId) {
         JRDictionary providerMap = new JRDictionary();
         providerMap.put(JRProvider.KEY_FRIENDLY_NAME, friendlyName);
         providerMap.put(JRProvider.KEY_OPENID_IDENTIFIER, openIdIdentifier);
