@@ -60,6 +60,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+import java.util.Date;
 
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 import static com.janrain.android.capture.Capture.InvalidApidChangeException;
@@ -351,4 +354,32 @@ public class CaptureRecord extends JSONObject {
         }
         return JsonUtils.collectionToJson(preregAttributes);
     }
+    public void  refreshAccessToken()
+    {
+        String date =  GetUTCdatetimeAsString();
+        String accessToken =  this.accessToken;
+        String refreshSecret = this.refreshSecret;
+        String domain = Jump.getBackplaneChannelUrl();
+        String refreshUrl = "%@/oauth/refresh_access_token";
+        String signature = "";//self base64SignatureForRefreshWithDate:date refreshSecret:refreshSecret  accessToken:accessToken;
+
+    }
+    static final String DATEFORMAT = "yyyy-MM-dd HH:mm:ss" ;
+    public static String GetUTCdatetimeAsString()
+    {
+        final SimpleDateFormat sdf = new SimpleDateFormat(DATEFORMAT);
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        final String utcTime = sdf.format(new Date());
+
+        return utcTime;
+    }
+    public String base64SignatureForRefreshWithDate(String dateString, String refreshSecret)
+
+    {
+
+
+        return null;
+    }
+
+
 }
