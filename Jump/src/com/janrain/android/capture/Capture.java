@@ -244,6 +244,31 @@ public class Capture {
         c.fetchResponseAsJson(handler);
         return c;
     }
+    /**
+     * Capture Forgot password performer
+     */
+    public static CaptureApiConnection performForgotPassword(String emailAddress,
+                                                             final ForgotPasswordResultHandler handler) {
+        handler.authenticationToken = Jump.getResponseType();
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/forgot_password_native");
+        c.addAllToParams("client_id", getCaptureClientId(),
+                "locale", Jump.getCaptureLocale(),
+                "response_type", Jump.getResponseType(),
+                "redirect_uri", Jump.getRedirectUri(),
+                "email", emailAddress
+
+        );
+
+        c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
+        c.maybeAddParam("flow", Jump.getCaptureFlowName());
+        c.maybeAddParam("form", Jump.getCaptureForgotPasswordFormName());
+        c.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
+        // c.maybeAddParam("merge_token", "");    // merge token as null
+        // c.maybeAddParam("email", emailAddress);
+        c.fetchResponseAsJson(handler);
+        return c;
+    }
+
 
     private static String generateAndStoreRefreshSecret() {
         final int SECRET_LENGTH = 40;
@@ -341,6 +366,36 @@ public class Capture {
         }
 
         public abstract void onSuccess(CaptureRecord record, JSONObject response);
+
+        public abstract void onFailure(CaptureApiError error);
+    }
+
+    /**
+     * @internal
+     */
+    public static abstract class ForgotPasswordResultHandler implements ApiConnection.FetchJsonCallback {
+        private boolean canceled = false;
+        private String authenticationToken;
+        private String identityProvider;
+
+        public void cancel() {
+            canceled = true;
+        }
+
+        public final void run(JSONObject response) {
+
+
+            if (canceled) return;
+            if (response == null) {
+                onFailure(CaptureApiError.INVALID_API_RESPONSE);
+            } else if ("ok".equals(response.opt("stat"))) {
+                onSuccess();
+            } else {
+                onFailure(new CaptureApiError(response, authenticationToken, identityProvider));
+            }
+        }
+
+        public abstract void onSuccess();
 
         public abstract void onFailure(CaptureApiError error);
     }

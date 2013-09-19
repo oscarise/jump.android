@@ -174,4 +174,7 @@ public final class JumpConfig {
 
         customProviders.put(providerId, providerMap);
     }
+
+    public String captureForgotPasswordFormName;
+
 }

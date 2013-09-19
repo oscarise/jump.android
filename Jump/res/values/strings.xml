@@ -88,4 +88,19 @@
     </string>
     <string name="jr_merge_flow_default_merge_button">Merge</string>
 
+    <!-- JRForgotPasswordView strings -->
+    <string name="jr_capture_forgotpassword_link_text">Forgot your password ?</string>
+    <string name="jr_capture_forgotpassword_dialog_header">Confirm Your Email Address</string>
+    <string name="jr_capture_forgotpassword_send_button">Send</string>
+    <string name="jr_capture_forgotpassword_dismiss_button">Dismiss</string>
+    <string name="jr_capture_forgotpassword_forgotpass_button">ForgotPassword</string>
+    <string name="jr_capture_forgotpassword_view_failuremsg">Could Not Reset Password</string>
+    <string name="jr_capture_forgotpassword_user_displaymsg">
+        We will send you a link to create a new password
+    </string>
+    <string name="jr_capture_forgotpassword_success_msg">Reset Password Email Sent</string>
+    <string name="jr_capture_forgotpassword_error_msg">Incorrect EmailId or Password</string>
+    <string name="jr_capture_forgotpassword_reset_error_msg">Could Not Reset Password</string>
+
+
 </resources>

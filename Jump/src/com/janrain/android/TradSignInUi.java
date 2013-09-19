@@ -135,6 +135,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
         private EditText userName, password;
         private String mergeToken;
         private TextView messages;
+        private static String userEmailAddress;
 
         @Override
         public View onCreateView(Context context,
@@ -161,15 +162,27 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
                 public void onFailure(CaptureApiError error) {
                     dismissProgressIndicator();
-                    AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
-                    b.setNeutralButton(jr_dialog_dismiss, null);
-                    if (error.isInvalidPassword()) {
-                        b.setMessage(jr_capture_trad_signin_bad_password);
-                    } else {
-                        b.setMessage(jr_capture_trad_signin_unrecognized_error);
-                        LogUtils.loge(error.toString());
-                    }
-                    b.show();
+                    AlertDialog.Builder adb = new AlertDialog.Builder(getActivity())
+                            .setTitle(getResources().getString(
+                                    R.string.jr_capture_forgotpassword_error_msg))
+                            .setNegativeButton(getResources().getString(
+                                    R.string.jr_capture_forgotpassword_dismiss_button),
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    })
+                            .setPositiveButton(getResources().getString(
+                                    R.string.jr_capture_forgotpassword_forgotpass_button),
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            //Calls AlertDialog Forgot password flow
+                                            AlertDialog myForgotPasswordDialog = forgotPassword();
+                                            myForgotPasswordDialog.show();
+                                            dialog.cancel();
+                                        }
+                                    });
+                    adb.show();
                 }
             };
 
@@ -225,6 +238,92 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
             return Capture.performTraditionalSignIn(userName.getText().toString(),
                     password.getText().toString(),
                     handler, mergeToken);
+        }
+
+        /**
+         * Receive a callback which handles the Capture recoverPassword flow
+         */
+        private class ForgotPasswordResultHandler implements Jump.ForgotPasswordResultHandler {
+
+            //forgot password result  success handler
+            public void onSuccess() {
+                dismissProgressIndicator();
+                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+                adb
+                        .setTitle(getResources().getString(R.string.jr_capture_forgotpassword_success_msg))
+                        .setPositiveButton(getResources().getString(
+                                R.string.jr_capture_forgotpassword_dismiss_button),
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                adb.show();
+            }
+
+            //forgot password result failure handler
+            public void onFailure(ForgetPasswordError error) {
+                dismissProgressIndicator();
+                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+                adb
+                        .setTitle(getResources().getString(
+                                R.string.jr_capture_forgotpassword_reset_error_msg))
+                        .setPositiveButton(getResources().getString(
+                                R.string.jr_capture_forgotpassword_dismiss_button),
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                adb.show();
+            }
+        }
+
+        /**
+         * Alert Dialog For Forgot Password  Flow setPositiveButton for send setNegativeButton for dismiss
+         * emailAddress - EditText field for providing emailAddress
+         */
+
+        private AlertDialog forgotPassword() {
+
+            LayoutInflater li = LayoutInflater.from(getActivity());
+            // set alert dialog builder
+            View promptsView = li.inflate(R.layout.jr_capture_forgotpassword, null);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    getActivity());
+            userEmailAddress = userName.getText().toString();
+            final EditText emailAddress = (EditText) promptsView
+                    .findViewById(R.id.emailAddress_edit);
+            emailAddress.setText(userEmailAddress);
+            alertDialogBuilder
+                    .setView(promptsView)
+                    .setTitle(getResources().getString(R.string.jr_capture_forgotpassword_dialog_header))
+                    .setNegativeButton(getResources().getString(
+                            android.R.string.cancel),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            })
+                    .setPositiveButton(getResources().getString(
+                            R.string.jr_capture_forgotpassword_send_button),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //performForgotPassword Forgot Password
+                                    Jump.performForgotPassword(userEmailAddress,
+                                            new ForgotPasswordResultHandler());
+                                    showProgressIndicator(true, new DialogInterface.OnCancelListener() {
+                                        public void onCancel(DialogInterface dialog) {
+                                        }
+                                    });
+                                    dialog.cancel();
+                                }
+                            });
+
+            // return dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.setInverseBackgroundForced(true);
+            return alertDialog;
         }
     }
 }
