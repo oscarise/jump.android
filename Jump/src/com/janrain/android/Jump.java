@@ -79,6 +79,7 @@ public class Jump {
         /*package*/ CaptureRecord signedInUser;
         /*package*/ JREngage jrEngage;
         /*package*/ Map<String, Object> captureFlow;
+        /*package*/ String refreshSecret;
 
         // Configured values:
         /*package*/ Context context;
@@ -169,6 +170,7 @@ public class Jump {
         ThreadUtils.executeInBg(new Runnable() {
             public void run() {
                 loadUserFromDiskInternal(tempContext);
+                loadRefreshSecretFromDiskInternal(tempContext);
 
                 if (state.captureLocale != null && state.captureFlowName != null &&
                         state.captureAppId != null) {
@@ -229,6 +231,15 @@ public class Jump {
 
     public static Map<String, Object> getCaptureFlow() {
         return state.captureFlow;
+    }
+
+    public static String getRefreshSecret() {
+        return state.refreshSecret;
+    }
+
+    public static void setRefreshSecret(String secret) {
+        state.refreshSecret = secret;
+        saveToken(secret, Capture.JR_REFRESH_SECRET);
     }
 
     public static String getRedirectUri() {
@@ -348,6 +359,7 @@ public class Jump {
      */
     public static void signOutCaptureUser(Context applicationContext) {
         state.signedInUser = null;
+        state.refreshSecret = null;
         CaptureRecord.deleteFromDisk(applicationContext);
     }
 
@@ -542,6 +554,35 @@ public class Jump {
         state.signedInUser = CaptureRecord.loadFromDisk(context);
     }
 
+    private static void loadRefreshSecretFromDiskInternal(Context context) {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = state.context.openFileInput(Capture.JR_REFRESH_SECRET);
+            ois = new ObjectInputStream(fis);
+            state.refreshSecret = (String) ois.readObject();
+        } catch (ClassCastException e) {
+            throwDebugException(e);
+        } catch (FileNotFoundException ignore) {
+        } catch (StreamCorruptedException e) {
+            throwDebugException(new RuntimeException(e));
+        } catch (IOException e) {
+            throwDebugException(new RuntimeException(e));
+        } catch (ClassNotFoundException e) {
+            throwDebugException(new RuntimeException(e));
+        } finally {
+            try {
+                if (fis != null) fis.close();
+            } catch (IOException ignore) {
+            }
+
+            try {
+                if (ois != null) ois.close();
+            } catch (IOException ignore) {
+            }
+        }
+    }
+
     private static void loadFlow() {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
@@ -613,6 +654,35 @@ public class Jump {
             } catch (IOException ignore) {
             }
         }
+    }
+
+    private static void saveToken(final String token, final String tokenType) {
+        ThreadUtils.executeInBg(new Runnable() {
+            public void run() {
+                FileOutputStream fos = null;
+                ObjectOutputStream oos = null;
+
+                try {
+                    fos = state.context.openFileOutput(tokenType, Context.MODE_PRIVATE);
+                    oos = new ObjectOutputStream(fos);
+                    oos.writeObject(token);
+                } catch (FileNotFoundException e) {
+                    throwDebugException(new RuntimeException(e));
+                } catch (IOException e) {
+                    throwDebugException(new RuntimeException(e));
+                } finally {
+                    try {
+                        if (oos != null) oos.close();
+                    } catch (IOException ignore) {
+                    }
+
+                    try {
+                        if (fos != null) fos.close();
+                    } catch (IOException ignore) {
+                    }
+                }
+            }
+        });
     }
 
     /**

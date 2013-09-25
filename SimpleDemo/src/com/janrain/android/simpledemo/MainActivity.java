@@ -128,6 +128,7 @@ public class MainActivity extends FragmentActivity {
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button touchRecord = addButton(linearLayout, "Edit 'About Me' Attribute");
         Button syncRecord = addButton(linearLayout, "Update Record");
+        Button refreshToken = addButton(linearLayout, "Refresh Access Token");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
@@ -211,6 +212,29 @@ public class MainActivity extends FragmentActivity {
                 } catch (Capture.InvalidApidChangeException e) {
                     throw new RuntimeException("Unexpected", e);
                 }
+            }
+        });
+
+        refreshToken.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Jump.getSignedInUser() == null) {
+                    Toast.makeText(MainActivity.this, "Cannot refresh token without signed in user",
+                                   Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                Jump.getSignedInUser().refreshAccessToken(new CaptureApiRequestCallback() {
+                    public void onSuccess() {
+                        Toast.makeText(MainActivity.this, "Access Token Refreshed",
+                                Toast.LENGTH_LONG).show();
+                    }
+
+                    public void onFailure(CaptureApiError e) {
+                        Toast.makeText(MainActivity.this, "Failed to refresh access token",
+                                Toast.LENGTH_LONG).show();
+                        LogUtils.loge(e.toString());
+                    }
+                });
             }
         });
 
