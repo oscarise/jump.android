@@ -448,6 +448,7 @@ public class Jump {
 
         Capture.performRegistration(newUser, socialRegistrationToken, new Capture.SignInResultHandler(){
             public void onSuccess(CaptureRecord registeredUser, JSONObject result) {
+                state.signedInUser = registeredUser;
                 fireHandlerOnSuccess(result);
             }
 
