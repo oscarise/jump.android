@@ -37,6 +37,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
 import com.janrain.android.Jump;
+import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import org.json.JSONException;
@@ -381,5 +382,68 @@ public class CaptureRecord extends JSONObject {
         return null;
     }
 
+    public static void fetchRefreshAccessTokenForDelegate(JSONObject regUser,
+                                                          String signature,
+                                                          String accessToken,
+                                                          final refreshAccessTokenResultHandler handler) {
+        String date = GetUTCdatetimeAsString();
+        String domain = Jump.getBackplaneChannelUrl();
+        String registrationForm = accessToken != null ?
+                Jump.getCaptureSocialRegistrationFormName() :
+                Jump.getCaptureTraditionalRegistrationFormName();
+
+        String url = "/oauth/refresh_access_token";
+
+        CaptureApiConnection c = new CaptureApiConnection(url);
+
+        c.addAllToParams(CaptureFlowUtils.getFormFields(regUser, registrationForm, Jump.getCaptureFlow()));
+
+        c.addAllToParams(
+                "access_token", accessToken,
+                "signature", signature,
+                "date", date,
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale()
+
+                //"refresh_secret", refreshSecret
+        );
+        c.fetchResponseAsJson(handler);
+    }
+
+    /**
+     * @internal
+     */
+    public static abstract class refreshAccessTokenResultHandler implements ApiConnection.FetchJsonCallback {
+        private boolean canceled = false;
+        private String authenticationToken;
+        private String identityProvider;
+
+        public void cancel() {
+            canceled = true;
+        }
+
+        public final void run(JSONObject response) {
+            if (canceled) return;
+            if (response == null) {
+                onFailure(CaptureApiError.INVALID_API_RESPONSE);
+            } else if ("ok".equals(response.opt("stat"))) {
+                Object user = response.opt("capture_user");
+                if (user instanceof JSONObject) {
+                    String accessToken = response.optString("access_token");
+                    String refreshSecret = response.optString("refresh_secret");
+                    CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken, refreshSecret);
+                    onSuccess(record, response);
+                } else {
+                    onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                }
+            } else {
+                onFailure(new CaptureApiError(response, authenticationToken, identityProvider));
+            }
+        }
+
+        public abstract void onSuccess(CaptureRecord record, JSONObject response);
+
+        public abstract void onFailure(CaptureApiError error);
+    }
 
 }
