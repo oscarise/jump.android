@@ -57,7 +57,7 @@ public class CaptureFlowUtils {
         if (formName == null || captureFlow == null) return null;
         Map form = (Map) ((Map) captureFlow.get("fields")).get(formName);
         final List fieldNames = (List) form.get("fields");
-        Map fieldEntries = filter(((Map) captureFlow.get("fields")), new Function<Boolean, Map.Entry>() {
+              Map fieldEntries = filter(((Map) captureFlow.get("fields")), new Function<Boolean, Map.Entry>() {
             public Boolean operate(Map.Entry arg) {
                 return fieldNames.contains(arg.getKey());
             }
@@ -190,4 +190,22 @@ public class CaptureFlowUtils {
     public static Map<String, Object> getFieldDefinition(Map<String, Object> flow, String fieldName) {
         return (Map<String, Object>) ((Map<String, Object>) flow.get("fields")).get(fieldName);
     }
+
+    public static String getForgotPasswordFormField(String formName, Map<String, Object> captureFlow) {
+
+        if (formName == null || captureFlow == null) return null;
+        Map form = (Map) ((Map) captureFlow.get("fields")).get(formName);
+        final List fieldNames = (List) form.get("fields");
+        Map flowFieldNames = (Map) captureFlow.get("fields");
+        int size = flowFieldNames.size();
+        for (int i = 0; i < size - 1; i++) {
+            Map field = (Map) flowFieldNames.get(fieldNames.get(i));
+            String type = (String) field.get("type");
+            if (type.equals("email") || type.equals("text")) {
+                return (String) fieldNames.get(i);
+            }
+        }
+        return null;
+    }
+
 }
