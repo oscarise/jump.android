@@ -74,6 +74,11 @@ public class CaptureApiError {
     public static final int RECORD_NOT_FOUND = 310;
 
     /**
+     * Generic Error
+     */
+    public static final int GENERIC_ERROR = -1;
+
+    /**
      * Indicates an API response that could not be parsed. Has no meaningful field values.
      */
     public static final CaptureApiError INVALID_API_RESPONSE = new CaptureApiError();
@@ -123,6 +128,17 @@ public class CaptureApiError {
         raw_response = response;
         this.engageToken = engageToken;
         this.conflictingIdentityProvider = conflictingProvider;
+    }
+
+    /**
+     * Construct a generic CaptureApiError
+     * @param description description of the error
+     */
+    /*package*/ CaptureApiError(String description) {
+        code = GENERIC_ERROR;
+        error = null;
+        error_description = description;
+        raw_response = null;
     }
 
     public boolean isInvalidApiResponse() {

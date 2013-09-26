@@ -34,7 +34,10 @@ package com.janrain.android.capture;
 
 import com.janrain.android.Jump;
 import com.janrain.android.utils.ApiConnection;
+import com.janrain.android.utils.LogUtils;
 import org.json.JSONObject;
+
+import java.security.SecureRandom;
 
 import static com.janrain.android.Jump.TraditionalSignInType;
 import static com.janrain.android.Jump.TraditionalSignInType.EMAIL;
@@ -46,6 +49,9 @@ import static com.janrain.android.utils.LogUtils.throwDebugException;
  * It's not meant to be used directly, but rather through com.janrain.android.Jump
  */
 public class Capture {
+
+    final public static String JR_REFRESH_SECRET = "jr_capture_refresh_secret";
+
     private Capture() {}
 
     /**
@@ -62,13 +68,21 @@ public class Capture {
                                                                 String mergeToken) {
         String signInNameAttrName = type == EMAIL ? "email" : "username";
         CaptureApiConnection connection = new CaptureApiConnection("/oauth/auth_native_traditional");
+        String refreshSecret = generateAndStoreRefreshSecret();
+
+        if (refreshSecret == null) {
+            handler.onFailure(new CaptureApiError("Unable to generate secure random refresh secret"));
+            return null;
+        }
+
         connection.addAllToParams("client_id", getCaptureClientId(),
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
                 signInNameAttrName, username,
                 "password", password,
-                "form", Jump.getCaptureTraditionalSignInFormName());
+                "form", Jump.getCaptureTraditionalSignInFormName(),
+                "refresh_secret", refreshSecret);
         connection.maybeAddParam("merge_token", mergeToken);
         connection.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
         connection.fetchResponseAsJson(handler);
@@ -126,13 +140,22 @@ public class Capture {
                                                            String identityProvider, String mergeToken) {
         handler.authenticationToken = authInfoToken;
         handler.identityProvider = identityProvider;
+
+        String refreshSecret = generateAndStoreRefreshSecret();
+
+        if (refreshSecret == null) {
+            handler.onFailure(new CaptureApiError("Unable to generate secure random refresh secret"));
+            return null;
+        }
+
         CaptureApiConnection c = new CaptureApiConnection("/oauth/auth_native");
         c.addAllToParams("client_id", getCaptureClientId(),
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
                 "token", authInfoToken,
-                "thin_registration", String.valueOf(Jump.getCaptureEnableThinRegistration())
+                "thin_registration", String.valueOf(Jump.getCaptureEnableThinRegistration()),
+                "refresh_secret", refreshSecret
         );
 
         c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
@@ -181,14 +204,12 @@ public class Capture {
 
         c.addAllToParams(CaptureFlowUtils.getFormFields(newUser, registrationForm, Jump.getCaptureFlow()));
 
-        //NSString *refreshSecret = [JRCaptureData generateAndStoreRefreshSecret];
-        //if (!refreshSecret)
-        //{
-        //    [JRCapture maybeDispatch:@selector(registerUserDidFailWithError:) forDelegate:delegate
-        //    withArg:[JRCaptureError invalidInternalStateErrorWithDescription:@"unable to generate secure "
-        //    "random refresh secret"]];
-        //    return;
-        //}
+        String refreshSecret = generateAndStoreRefreshSecret();
+
+        if (refreshSecret == null) {
+            handler.onFailure(new CaptureApiError("Unable to generate secure random refresh secret"));
+            return null;
+        }
 
         c.addAllToParams(
                 "client_id", Jump.getCaptureClientId(),
@@ -196,8 +217,8 @@ public class Capture {
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
                 "flow", Jump.getCaptureFlowName(),
-                "form", registrationForm
-                //"refresh_secret", refreshSecret
+                "form", registrationForm,
+                "refresh_secret", refreshSecret
                 );
 
         c.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
@@ -206,6 +227,24 @@ public class Capture {
 
         c.fetchResponseAsJson(handler);
         return c;
+    }
+
+    private static String generateAndStoreRefreshSecret() {
+        final int SECRET_LENGTH = 40;
+
+        SecureRandom random = new SecureRandom();
+        StringBuilder buffer = new StringBuilder();
+
+        while (buffer.length() < SECRET_LENGTH) {
+            buffer.append(Integer.toHexString(random.nextInt()));
+        }
+
+        String refreshSecret = buffer.toString().substring(0, SECRET_LENGTH);
+
+        Jump.setRefreshSecret(refreshSecret);
+        LogUtils.logd("Refresh Secret " + refreshSecret);
+
+        return refreshSecret;
     }
 
     /**
@@ -229,7 +268,7 @@ public class Capture {
                 if (user instanceof JSONObject) {
                     String accessToken = response.optString("access_token");
                     //String refreshSecret = response.optString("refresh_secret");
-                    CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken, null);
+                    CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken);
                     onSuccess(record, response);
                 } else {
                     onFailure(CaptureApiError.INVALID_API_RESPONSE);
@@ -243,5 +282,6 @@ public class Capture {
 
         public abstract void onFailure(CaptureApiError error);
     }
+
 }
 

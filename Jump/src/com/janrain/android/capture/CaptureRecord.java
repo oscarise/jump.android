@@ -37,6 +37,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
 import com.janrain.android.Jump;
+import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import org.json.JSONException;
@@ -63,7 +64,6 @@ import java.util.TimeZone;
 
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 import static com.janrain.android.capture.Capture.InvalidApidChangeException;
-import static com.janrain.android.utils.AndroidUtils.urlEncode;
 import static com.janrain.android.utils.ApiConnection.FetchJsonCallback;
 import static com.janrain.android.utils.JsonUtils.copyJsonVal;
 import static com.janrain.android.utils.JsonUtils.unsafeJsonObjectToString;
@@ -81,21 +81,30 @@ public class CaptureRecord extends JSONObject {
     private JSONObject original;
 
     /*package*/ String accessToken;
-    /*package*/ String refreshSecret;
 
     private CaptureRecord(){}
 
     /**
      * Instantiates a new CaptureRecord model from a JSON representation of the record
      * @param jo a JSON representation of a Capture record, e.g. as from the response to oauth/auth_native
+     * @param accessToken the access token returned from the sign-on or registration
      */
-    /*package*/ CaptureRecord(JSONObject jo, String accessToken, String refreshSecret) {
+    /*package*/ CaptureRecord(JSONObject jo, String accessToken) {
         super();
 
         original = (JSONObject) copyJsonVal(jo);
         JsonUtils.deepCopy(original, this);
         this.accessToken = accessToken;
-        this.refreshSecret = refreshSecret;
+    }
+
+    /**
+     * @deprecated
+     *
+     * Instantiates a new CaptureRecord model from a JSON representation of the record
+     * @param jo a JSON representation of a Capture record, e.g. as from the response to oauth/auth_native
+     */
+    /*package*/ CaptureRecord(JSONObject jo, String accessToken, String refreshSecret) {
+        new CaptureRecord(jo, accessToken);
     }
 
     /**
@@ -130,7 +139,6 @@ public class CaptureRecord extends JSONObject {
         CaptureRecord inflatedRecord = new CaptureRecord();
         inflatedRecord.original = serializedVersion.getJSONObject("original");
         inflatedRecord.accessToken = serializedVersion.getString("accessToken");
-        inflatedRecord.refreshSecret = serializedVersion.optString("refreshSecret");
         JsonUtils.deepCopy(serializedVersion.getJSONObject("this"), inflatedRecord);
         return inflatedRecord;
     }
@@ -163,7 +171,6 @@ public class CaptureRecord extends JSONObject {
         JSONObject serializedVersion = new JSONObject();
         serializedVersion.put("original", original);
         serializedVersion.put("accessToken", accessToken);
-        serializedVersion.put("refreshSecret", refreshSecret);
         serializedVersion.put("this", this);
         return serializedVersion.toString().getBytes("UTF-8");
     }
@@ -176,43 +183,16 @@ public class CaptureRecord extends JSONObject {
         applicationContext.deleteFile(JR_CAPTURE_SIGNED_IN_USER_FILENAME);
     }
 
-    /**
-     * Uses this record's refresh secret to refresh its access token
-     * @param callback your handler, invoked upon completion
-     */
-    public void refreshAccessToken(final CaptureApiRequestCallback callback) {
-        CaptureApiConnection c = new CaptureApiConnection("/access/getAccessToken");
-        String date = CAPTURE_API_SIGNATURE_DATE_FORMAT.format(new Date());
-        Set<Pair<String, String>> params = new HashSet<Pair<String, String>>();
-        params.add(new Pair<String, String>("application_id", Jump.getCaptureAppId()));
-        params.add(new Pair<String, String>("access_token", accessToken));
-        params.add(new Pair<String, String>("Signature", urlEncode(getRefreshSignature(date))));
-        params.add(new Pair<String, String>("Date", urlEncode(date)));
-        c.addAllToParams(params);
-        c.fetchResponseAsJson(new FetchJsonCallback() {
-            public void run(JSONObject response) {
-                if (response == null) {
-                    if (callback != null) callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
-                    return;
-                }
-
-                if ("ok".equals(response.opt("stat"))) {
-                    accessToken = (String) response.opt("access_token");
-                    if (callback != null) callback.onSuccess();
-                } else {
-                    new CaptureApiError(response, null, null);
-                }
-            }
-        });
-    }
-
     private String getRefreshSignature(String date) {
+        if (Jump.getRefreshSecret() == null) return null;
+
         String stringToSign = "refresh_access_token\n" + date + "\n" + accessToken + "\n";
 
         byte[] hash;
         try {
             Mac mac = Mac.getInstance("HmacSHA1");
-            SecretKeySpec secret = new SecretKeySpec(refreshSecret.getBytes("UTF-8"), mac.getAlgorithm());
+            byte[] refreshSecret = Jump.getRefreshSecret().getBytes("UTF-8");
+            SecretKeySpec secret = new SecretKeySpec(refreshSecret, mac.getAlgorithm());
             mac.init(secret);
             hash = mac.doFinal(stringToSign.getBytes("UTF-8"));
         } catch (NoSuchAlgorithmException e) {
@@ -223,7 +203,7 @@ public class CaptureRecord extends JSONObject {
             throw new RuntimeException("Unexpected", e);
         }
 
-        return Base64.encodeToString(hash, Base64.DEFAULT);
+        return Base64.encodeToString(hash, Base64.NO_WRAP);
     }
 
     /**
@@ -351,4 +331,86 @@ public class CaptureRecord extends JSONObject {
         }
         return JsonUtils.collectionToJson(preregAttributes);
     }
+
+    private String getUTCdatetimeAsString()
+    {
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        final String utcTime = sdf.format(new Date());
+
+        return utcTime;
+    }
+
+    /**
+     * Uses the refresh secret to refresh the access token
+     * @param callback your handler, invoked upon completion
+     */
+    public void refreshAccessToken(final CaptureApiRequestCallback callback) {
+        String date = getUTCdatetimeAsString();
+        String signature = getRefreshSignature(date);
+
+        if (date == null || accessToken == null || signature == null) {
+            callback.onFailure(new CaptureApiError("Unable to generate signature"));
+            return;
+        }
+
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/refresh_access_token");
+
+        c.addAllToParams(
+                "access_token", accessToken,
+                "signature", signature,
+                "date", date,
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale()
+        );
+        c.fetchResponseAsJson(new FetchJsonCallback() {
+            public void run(JSONObject response) {
+                if (response == null) {
+                    callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                } else if ("ok".equals(response.opt("stat"))) {
+                    accessToken = (String) response.opt("access_token");
+                    callback.onSuccess();
+                } else {
+                    callback.onFailure(new CaptureApiError(response, accessToken, null));
+                }
+            }
+        });
+    }
+
+    /**
+     * @internal
+     */
+    public static abstract class refreshAccessTokenResultHandler implements ApiConnection.FetchJsonCallback {
+        private boolean canceled = false;
+        private String authenticationToken;
+        private String identityProvider;
+
+        public void cancel() {
+            canceled = true;
+        }
+
+        public final void run(JSONObject response) {
+            if (canceled) return;
+            if (response == null) {
+                onFailure(CaptureApiError.INVALID_API_RESPONSE);
+            } else if ("ok".equals(response.opt("stat"))) {
+                Object user = response.opt("capture_user");
+                if (user instanceof JSONObject) {
+                    String accessToken = response.optString("access_token");
+                    String refreshSecret = response.optString("refresh_secret");
+                    CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken, refreshSecret);
+                    onSuccess(record, response);
+                } else {
+                    onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                }
+            } else {
+                onFailure(new CaptureApiError(response, authenticationToken, identityProvider));
+            }
+        }
+
+        public abstract void onSuccess(CaptureRecord record, JSONObject response);
+
+        public abstract void onFailure(CaptureApiError error);
+    }
+
 }
