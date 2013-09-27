@@ -262,9 +262,6 @@ public class Capture {
         c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
         c.maybeAddParam("flow", Jump.getCaptureFlowName());
         c.maybeAddParam("form", Jump.getCaptureForgotPasswordFormName());
-        c.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
-        // c.maybeAddParam("merge_token", "");    // merge token as null
-        // c.maybeAddParam("email", emailAddress);
         c.fetchResponseAsJson(handler);
         return c;
     }

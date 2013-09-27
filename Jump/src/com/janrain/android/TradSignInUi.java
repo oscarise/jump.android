@@ -135,7 +135,6 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
         private EditText userName, password;
         private String mergeToken;
         private TextView messages;
-        private static String userEmailAddress;
 
         @Override
         public View onCreateView(Context context,
@@ -291,10 +290,9 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
             View promptsView = li.inflate(R.layout.jr_capture_forgotpassword, null);
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                     getActivity());
-            userEmailAddress = userName.getText().toString();
             final EditText emailAddress = (EditText) promptsView
                     .findViewById(R.id.emailAddress_edit);
-            emailAddress.setText(userEmailAddress);
+            emailAddress.setText(userName.getText());
             alertDialogBuilder
                     .setView(promptsView)
                     .setTitle(getResources().getString(R.string.jr_capture_forgotpassword_dialog_header))
@@ -310,7 +308,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //performForgotPassword Forgot Password
-                                    Jump.performForgotPassword(userEmailAddress,
+                                    Jump.performForgotPassword(emailAddress.getText().toString(),
                                             new ForgotPasswordResultHandler());
                                     showProgressIndicator(true, new DialogInterface.OnCancelListener() {
                                         public void onCancel(DialogInterface dialog) {

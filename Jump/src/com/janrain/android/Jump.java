@@ -71,8 +71,6 @@ import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswor
         FORGOTPASSWORD_JUMP_NOT_INITIALIZED;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
-import static com.janrain.android.utils.LogUtils.throwDebugException;
-
 /**
  * See jump.android/Jump_Integration_Guide.md for a developer's integration guide.
  */
@@ -838,6 +836,11 @@ public class Jump {
                  */
                 FORGOTPASSWORD_CAPTURE_API_ERROR,
 
+                /**
+                 * The forgot password failed when forgot-password form name is null
+                 */
+                FORGOTPASSWORD_FORM_NAME_NOT_INITIALIZED,
+
 
             }
         }
@@ -852,12 +855,12 @@ public class Jump {
     public static void performForgotPassword(String emailAddress, final ForgotPasswordResultHandler handler) {
 
         {
-            if (state.jrEngage == null || state.captureDomain == null) {
+            if (state.jrEngage == null || state.captureDomain == null ||
+                    Jump.getCaptureForgotPasswordFormName() == null) {
 
                 handler.onFailure(new ForgetPasswordError(FORGOTPASSWORD_JUMP_NOT_INITIALIZED, null));
                 return;
             }
-
             Capture.performForgotPassword(emailAddress, new Capture.ForgotPasswordResultHandler() {
 
                 @Override

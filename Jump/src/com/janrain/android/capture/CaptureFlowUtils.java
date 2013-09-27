@@ -57,7 +57,7 @@ public class CaptureFlowUtils {
         if (formName == null || captureFlow == null) return null;
         Map form = (Map) ((Map) captureFlow.get("fields")).get(formName);
         final List fieldNames = (List) form.get("fields");
-              Map fieldEntries = filter(((Map) captureFlow.get("fields")), new Function<Boolean, Map.Entry>() {
+        Map fieldEntries = filter(((Map) captureFlow.get("fields")), new Function<Boolean, Map.Entry>() {
             public Boolean operate(Map.Entry arg) {
                 return fieldNames.contains(arg.getKey());
             }
@@ -192,8 +192,10 @@ public class CaptureFlowUtils {
     }
 
     public static String getForgotPasswordFormField(String formName, Map<String, Object> captureFlow) {
-
         if (formName == null || captureFlow == null) return null;
+        if (formName == null ){
+            throwDebugException(new RuntimeException("Missing capture configuration setting forgottenPasswordFormName"));
+        }
         Map form = (Map) ((Map) captureFlow.get("fields")).get(formName);
         final List fieldNames = (List) form.get("fields");
         Map flowFieldNames = (Map) captureFlow.get("fields");
@@ -207,5 +209,5 @@ public class CaptureFlowUtils {
         }
         return null;
     }
-
 }
+
