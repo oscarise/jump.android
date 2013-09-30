@@ -33,13 +33,16 @@ package com.janrain.android.test.capture;
  */
 
 import android.test.AndroidTestCase;
+import org.junit.Test;
 
 public class CaptureTest extends AndroidTestCase {
 
+    @Test
     public void testSampleTest() {
         assertTrue(true);
     }
 
+    @Test
     public void testFailingTest() {
         assertTrue(false);
     }

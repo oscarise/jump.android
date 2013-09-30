@@ -35,6 +35,10 @@ package com.janrain.android.capture;
 import android.util.Pair;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -66,14 +70,67 @@ public class CaptureFlowUtils {
                 continue;
             }
 
-            String attrDothPath = (String) ((Map) fieldEntry.getValue()).get("schemaId");
-            String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(newUser, attrDothPath);
-            if (formFieldValue != null) {
-                retval.add(new Pair<String, String>((String) fieldEntry.getKey(), formFieldValue));
+            Object schemaId = ((Map) fieldEntry.getValue()).get("schemaId");
+
+            String key = (String) fieldEntry.getKey();
+
+            if (schemaId instanceof String) {
+                String dotPath = (String) schemaId;
+
+                String type = (String) ((Map) fieldEntry.getValue()).get("type");
+                if ("dateselect".equals(type)) {
+                    addDateForDotPathToParams(retval, dotPath, newUser, key);
+                } else {
+                    addValueForDotPathToParams(retval, dotPath, newUser, key);
+                }
+            } else if (Map.class.isAssignableFrom(schemaId.getClass())) {
+                for (Object schemaEntry_ : ((Map) schemaId).entrySet()) {
+                    Map.Entry schemaEntry = (Map.Entry) schemaEntry_;
+                    String dotPath = (String) schemaEntry.getValue();
+                    String subscript = (String) schemaEntry.getKey();
+                    String paramName = String.format("%s[%s]", key, subscript);
+
+                    addValueForDotPathToParams(retval, dotPath, newUser, paramName);
+                }
             }
         }
 
         return retval;
+    }
+
+    private static void addValueForDotPathToParams(Set<Pair<String, String>> params, String dotPath,
+                                                   JSONObject user, String key) {
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(user, dotPath);
+
+        if (formFieldValue != null) {
+            params.add(new Pair<String, String>(key, formFieldValue));
+        }
+    }
+
+    private static void addDateForDotPathToParams(Set<Pair<String, String>> params, String dotPath,
+                                                  JSONObject user, String key) {
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(user, dotPath);
+
+        if (formFieldValue != null) {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = null;
+            try {
+                // Make sure that the date is being set in the correct format
+                date = formatter.parse(formFieldValue);
+            } catch (ParseException e) {
+                throw(new RuntimeException(key + " must be in yyyy-MM-dd format"));
+            }
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+
+            params.add(new Pair<String, String>(key + "[dateselect_year]",
+                                                String.format("%04d", cal.get(Calendar.YEAR))));
+            params.add(new Pair<String, String>(key + "[dateselect_month]",
+                                                String.format("%02d", cal.get(Calendar.MONTH) + 1)));
+            params.add(new Pair<String, String>(key + "[dateselect_day]",
+                                                String.format("%02d", cal.get(Calendar.DAY_OF_MONTH))));
+        }
     }
 
     public static String getFlowVersion(Map<String, Object> captureFlow) {
