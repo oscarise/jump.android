@@ -1,7 +1,7 @@
 #Engage Custom Provider Guide
 
 This guide describes the process of configuring custom OpenID and custom SAML providers into the Engage
-library. This guide assumes you have already completed either the `Enage_Only_Integration_Guide.md` or the
+library. This guide assumes you have already completed either the `Engage_Only_Integration_Guide.md` or the
 `Jump_Integration_Guide.md`.
 
 ##The Big Picture
@@ -15,7 +15,7 @@ library. This guide assumes you have already completed either the `Enage_Only_In
 For each custom provider you wish to configure gather the following configuration details
 
 * Provider ID -- a short string which will be used to refer to the custom provider. E.g. the provider ID for
-  Yahoo! is "yahoo". This is used only in the context of the iOS app, and can be any arbitrary value you choose.
+  Yahoo! is "yahoo". This is used only in the context of the Android app, and can be any arbitrary value you choose.
 * Friendly name -- a string representing the user-facing name of the provider. E.g. the friendly name for
   Yahoo! is "Yahoo!".
 
@@ -23,7 +23,8 @@ For each custom provider you wish to configure gather the following configuratio
 
 In addition to the configuration details above you will need:
 
-* The OpenID identifier of your custom OpenID provider.
+* The OpenID identifier of your custom OpenID provider. For example
+  `https://my-custom-openid-provider.com/example-openid-identifier`.
 * Optionally, a custom "opx_blob" parameter for use with Janrain Identity Services' OpenID providers.
 
 ### Custom SAML
