@@ -1,4 +1,3 @@
-package com.janrain.android.test.capture;
 /*
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *  Copyright (c) 2011, Janrain, Inc.
@@ -31,11 +30,12 @@ package com.janrain.android.test.capture;
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
+package com.janrain.android.test.capture;
+
 import android.test.AndroidTestCase;
 import android.util.Pair;
 import com.janrain.android.capture.CaptureFlowUtils;
 import com.janrain.android.capture.CaptureRecord;
-import com.janrain.android.utils.LogUtils;
 import org.json.JSONObject;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
@@ -94,8 +94,8 @@ public class CaptureFlowUtilsTest extends AndroidTestCase {
 
         JSONObject userJson = new JSONObject("{ \"givenName\" : \"David\", " +
                                              "\"familyName\" : \"Bowman\" }");
-        Class<?>[] paramTypes = new Class<?>[]{JSONObject.class, String.class, String.class};
-        Object[] params = new Object[]{userJson, "12345689", "secret"};
+        Class<?>[] paramTypes = new Class<?>[]{JSONObject.class, String.class};
+        Object[] params = new Object[]{userJson, "12345689"};
         CaptureRecord user = Whitebox.invokeConstructor(CaptureRecord.class, paramTypes, params);
 
         Set<Pair<String, String>> expectedFormValues = new HashSet<Pair<String, String>>();
@@ -124,8 +124,8 @@ public class CaptureFlowUtilsTest extends AndroidTestCase {
 
         JSONObject userJson = new JSONObject("{ \"birthday\" : \"1959-04-22\" }");
 
-        Class<?>[] paramTypes = new Class<?>[]{JSONObject.class, String.class, String.class};
-        Object[] params = new Object[]{userJson, "12345689", "secret"};
+        Class<?>[] paramTypes = new Class<?>[]{JSONObject.class, String.class};
+        Object[] params = new Object[]{userJson, "12345689"};
         CaptureRecord user = Whitebox.invokeConstructor(CaptureRecord.class, paramTypes, params);
 
         Set<Pair<String, String>> expectedFormValues = new HashSet<Pair<String, String>>();
@@ -156,8 +156,8 @@ public class CaptureFlowUtilsTest extends AndroidTestCase {
 
         JSONObject userJson = new JSONObject("{ \"birthday\" : \"19590422\" }");
 
-        Class<?>[] paramTypes = new Class<?>[]{JSONObject.class, String.class, String.class};
-        Object[] params = new Object[]{userJson, "12345689", "secret"};
+        Class<?>[] paramTypes = new Class<?>[]{JSONObject.class, String.class};
+        Object[] params = new Object[]{userJson, "12345689"};
         CaptureRecord user = Whitebox.invokeConstructor(CaptureRecord.class, paramTypes, params);
 
         try {

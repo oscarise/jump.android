@@ -247,6 +247,53 @@ public class Capture {
         return refreshSecret;
     }
 
+    public static CaptureApiConnection updateUserProfile(CaptureRecord user,
+                                                         final CaptureApiRequestCallback handler) {
+
+        if (user == null) {
+            throwDebugException(new IllegalArgumentException("null user"));
+        }
+
+        CaptureApiConnection c = getUpdateUserProfileConnection(user);
+
+        c.fetchResponseAsJson(new ApiConnection.FetchJsonCallback() {
+            public void run(JSONObject response) {
+                if (response == null) {
+                    handler.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                } else if ("ok".equals(response.opt("stat"))) {
+                    handler.onSuccess();
+                } else {
+                    handler.onFailure(new CaptureApiError(response, null, null));
+                }
+            }
+        });
+
+        return c;
+    }
+
+    private static CaptureApiConnection getUpdateUserProfileConnection(CaptureRecord user) {
+        String editProfileForm = Jump.getCaptureEditUserProfileFormName();
+
+        if (editProfileForm == null) {
+            throwDebugException(new IllegalArgumentException("You must set captureEditUserProfileFormName"));
+        }
+
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/update_profile_native");
+
+        c.addAllToParams(CaptureFlowUtils.getFormFields(user, editProfileForm, Jump.getCaptureFlow()));
+
+        c.addAllToParams(
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale(),
+                "flow", Jump.getCaptureFlowName(),
+                "flow_version", Jump.getCaptureFlowVersion(),
+                "form", Jump.getCaptureEditUserProfileFormName(),
+                "access_token", user.accessToken
+        );
+
+        return c;
+    }
+
     /**
      * @internal
      */

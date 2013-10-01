@@ -32,7 +32,6 @@
 package com.janrain.android.simpledemo;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -40,16 +39,13 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.janrain.android.Jump;
-import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
@@ -126,8 +122,7 @@ public class MainActivity extends FragmentActivity {
             }
         });
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
-        Button touchRecord = addButton(linearLayout, "Edit 'About Me' Attribute");
-        Button syncRecord = addButton(linearLayout, "Update Record");
+        Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -135,8 +130,6 @@ public class MainActivity extends FragmentActivity {
                         new JRActivityObject("aslkdfj", "http://google.com"));
             }
         });
-
-        //Button refreshAccesstoken = addButton(linearLayout, "Refresh Access Token");
 
         addButton(linearLayout, "Traditional Registration").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -159,59 +152,15 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-        touchRecord.setOnClickListener(new View.OnClickListener() {
+        editProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (Jump.getSignedInUser() == null) {
                     Toast.makeText(MainActivity.this, "Can't edit without record instance.",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
-                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-
-                alert.setTitle("About Me");
-                alert.setMessage(Jump.getSignedInUser().optString("aboutMe"));
-
-                final EditText input = new EditText(MainActivity.this);
-                alert.setView(input);
-
-                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        try {
-                            Jump.getSignedInUser().put("aboutMe", input.getText().toString());
-                        } catch (JSONException e) {
-                            throw new RuntimeException("Unexpected", e);
-                        }
-                    }
-                });
-
-                alert.setNegativeButton("Cancel", null);
-                alert.show();
-            }
-        });
-
-        syncRecord.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                try {
-                    if (Jump.getSignedInUser() == null) {
-                        Toast.makeText(MainActivity.this, "Can't sync without record instance.",
-                                Toast.LENGTH_LONG).show();
-                        return;
-                    }
-
-                    Jump.getSignedInUser().synchronize(new CaptureApiRequestCallback() {
-                        public void onSuccess() {
-                            Toast.makeText(MainActivity.this, "Record updated", Toast.LENGTH_LONG).show();
-                        }
-
-                        public void onFailure(CaptureApiError e) {
-                            Toast.makeText(MainActivity.this, "Record update failed, error logged",
-                                    Toast.LENGTH_LONG).show();
-                            LogUtils.loge(e.toString());
-                        }
-                    });
-                } catch (Capture.InvalidApidChangeException e) {
-                    throw new RuntimeException("Unexpected", e);
-                }
+                Intent i = new Intent(MainActivity.this, UpdateProfileActivity.class);
+                MainActivity.this.startActivity(i);
             }
         });
 

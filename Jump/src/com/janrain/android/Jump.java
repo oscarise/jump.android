@@ -94,6 +94,7 @@ public class Jump {
         /*package*/ String captureTraditionalSignInFormName;
         /*package*/ String captureSocialRegistrationFormName;
         /*package*/ String captureTraditionalRegistrationFormName;
+        /*package*/ String captureEditUserProfileFormName;
         /*package*/ TraditionalSignInType traditionalSignInType;
         /*package*/ String backplaneChannelUrl;
 
@@ -155,6 +156,7 @@ public class Jump {
                 null, null);
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
+        state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;
         state.captureEnableThinRegistration = jumpConfig.captureEnableThinRegistration;
         state.captureFlowName = jumpConfig.captureFlowName;
         state.captureFlowVersion = jumpConfig.captureFlowVersion;
@@ -210,6 +212,10 @@ public class Jump {
 
     public static String getCaptureTraditionalRegistrationFormName() {
         return state.captureTraditionalRegistrationFormName;
+    }
+
+    public static String getCaptureEditUserProfileFormName() {
+        return state.captureEditUserProfileFormName;
     }
 
     public static String getResponseType() {
