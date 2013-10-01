@@ -320,6 +320,44 @@ Plurals contain collections of objects. Each element in a plural is an object or
 plural has the same set of attributes, which are defined in the schema. Think of a plural as an object that may have
 zero-or-more instances.
 
+### Updating the User Profile
+
+Update the properties of your `CaptureRecord` that correspond to the fields of the `editProfileForm` in your
+flow. For example: `givenName`, `familyName`, `birthdate`, `aboutMe`, etc.
+
+Call `Capture.updateUserProfile` with the `CaptureRecord` and a `CaptureApiRequestCallback` to update the
+user's profile.
+
+Upon a successful update the callback's `onSuccess` method will be called. If the update fails for any reason
+the callback's `onFailure` method will be called with an error.
+
+Below is how the SimpleDemo application updates a user's profile.
+
+        try {
+            user.put("email", email);
+            user.put("displayName", displayName);
+            user.put("givenName", firstName);
+            user.put("familyName", lastName);
+            user.put("aboutMe", about);
+        } catch (JSONException e) {
+            throw new RuntimeException("Unexpected ", e);
+        }
+
+        Capture.updateUserProfile(user, new Capture.CaptureApiRequestCallback() {
+
+            public void onSuccess() {
+                Toast.makeText(UpdateProfileActivity.this, "Profile Updated", Toast.LENGTH_LONG).show();
+                finish();
+            }
+
+            public void onFailure(CaptureApiError error) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(UpdateProfileActivity.this);
+                adb.setTitle("Error");
+                adb.setMessage(error.toString());
+                adb.show();
+            }
+        });
+
 ### Read and Modify the Capture Record Model
 
 You can retrieve the signed-in Capture user's account record via `Jump.getSignedInUser()`. The record is
