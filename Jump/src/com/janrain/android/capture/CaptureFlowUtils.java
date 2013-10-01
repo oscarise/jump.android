@@ -33,6 +33,7 @@
 package com.janrain.android.capture;
 
 import android.util.Pair;
+import com.janrain.android.Jump;
 import org.json.JSONObject;
 
 import java.text.ParseException;
@@ -96,6 +97,52 @@ public class CaptureFlowUtils {
         }
 
         return retval;
+    }
+
+    public static Set<Pair<String, String>> getTraditionalSignInCredentials(String user, String password) {
+        final String formName = Jump.getCaptureTraditionalSignInFormName();
+        final Map captureFlow = Jump.getCaptureFlow();
+
+        if (formName == null || captureFlow == null) {
+            throwDebugException(new RuntimeException("Cannot get traditional sign-in credentials without" +
+                                                     " captureTraditionalSignInFormName and a captureFlow"));
+            return null;
+        }
+
+        final Map fields = (Map) captureFlow.get("fields");
+        final Map form = (Map) fields.get(formName);
+        final List fieldNames = (List) form.get("fields");
+
+        if (fieldNames.size() != 2) {
+            throwDebugException(new RuntimeException("Sign-in form must have exactly two parameters"));
+            return null;
+        }
+
+        String passwordFieldName = null;
+        String userFieldName = null;
+
+        for (Object fieldName : fieldNames) {
+            Map field = (Map) fields.get(fieldName);
+            String type = (String) field.get("type");
+
+            if (type.equals("password")) {
+                passwordFieldName = (String) fieldName;
+            } else {
+                userFieldName = (String) fieldName;
+            }
+        }
+
+        if (passwordFieldName != null && userFieldName != null && user != null && password != null) {
+
+            HashSet<Pair<String, String>> out = new HashSet<Pair<String, String>>();
+            out.add(new Pair(passwordFieldName, password));
+            out.add(new Pair(userFieldName, user));
+            return out;
+        } else {
+            throwDebugException(new RuntimeException("Could not get traditional sign-in credentials from " +
+                                                     "form " + formName));
+            return null;
+        }
     }
 
     private static void addValueForDotPathToParams(Set<Pair<String, String>> params, String dotPath,

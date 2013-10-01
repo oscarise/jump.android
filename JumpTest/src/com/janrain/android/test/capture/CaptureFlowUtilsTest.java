@@ -34,6 +34,7 @@ package com.janrain.android.test.capture;
 
 import android.test.AndroidTestCase;
 import android.util.Pair;
+import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureFlowUtils;
 import com.janrain.android.capture.CaptureRecord;
 import org.json.JSONObject;
@@ -46,6 +47,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import static com.janrain.android.test.Asserts.assertRequestParamsEqual;
 
 public class CaptureFlowUtilsTest extends AndroidTestCase {
 
@@ -166,5 +169,39 @@ public class CaptureFlowUtilsTest extends AndroidTestCase {
         } catch (RuntimeException e) {
             assertEquals(e.getMessage(), "birthdate must be in yyyy-MM-dd format");
         }
+    }
+
+    @Test
+    public void test_getTraditionalSignInCredentials() {
+        Map<String, Object> flow = new HashMap<String, Object>() {{
+            put("version", "123456");
+            put("fields", new HashMap<String, Map>() {{
+                put("userInformationForm", new HashMap<String, List>() {{
+                    put("fields", Arrays.asList(new String[]{
+                        "traditionalSignIn_emailAddress",
+                        "traditionalSignIn_password"
+                    }));
+                }});
+                put("traditionalSignIn_emailAddress", new HashMap<String, Object>() {{
+                    put("type", "email");
+                }});
+                put("traditionalSignIn_password", new HashMap<String, Object>() {{
+                    put("type", "password");
+                }});
+            }});
+        }};
+
+        Object state = Whitebox.getInternalState(Jump.class, "state");
+        Whitebox.setInternalState(state, "captureFlow", flow);
+        Whitebox.setInternalState(state, "captureTraditionalSignInFormName", "userInformationForm");
+
+        Set<Pair<String, String>> expectedParams = new HashSet<Pair<String, String>>();
+        expectedParams.add(new Pair<String, String>("traditionalSignIn_emailAddress", "me@me.com"));
+        expectedParams.add(new Pair<String, String>("traditionalSignIn_password", "password"));
+
+        Set<Pair<String, String>> actualParams =
+            CaptureFlowUtils.getTraditionalSignInCredentials("me@me.com", "password");
+
+        assertRequestParamsEqual(expectedParams, actualParams);
     }
 }

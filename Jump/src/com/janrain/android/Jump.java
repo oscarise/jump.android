@@ -409,7 +409,7 @@ public class Jump {
 
         state.signInHandler = handler;
 
-        Capture.performTraditionalSignIn(signInName, password, state.traditionalSignInType,
+        Capture.performTraditionalSignIn(signInName, password,
                 new Capture.SignInResultHandler() {
                     @Override
                     public void onSuccess(CaptureRecord record, JSONObject response) {

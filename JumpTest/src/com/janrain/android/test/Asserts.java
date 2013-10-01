@@ -56,6 +56,8 @@ public class Asserts {
     }
 
     private static String paramSetToString(Set<Pair<String, String>> params) {
+        if (params == null) return "";
+
         List<String> out = new ArrayList<String>();
 
         for (Pair<String, String> p : params) {

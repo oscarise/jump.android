@@ -38,6 +38,7 @@ import com.janrain.android.utils.LogUtils;
 import org.json.JSONObject;
 
 import java.security.SecureRandom;
+import java.util.Set;
 
 import static com.janrain.android.Jump.TraditionalSignInType;
 import static com.janrain.android.Jump.TraditionalSignInType.EMAIL;
@@ -57,16 +58,13 @@ public class Capture {
     /**
      * @param username The username (or email address).
      * @param password The password
-     * @param type The type of traditional sign-in, which determines the key-field used to sign-in.
      * @param handler a call-back handler.
      * @return a connection handle
      */
     public static CaptureApiConnection performTraditionalSignIn(String username,
                                                                 String password,
-                                                                TraditionalSignInType type,
                                                                 SignInResultHandler handler,
                                                                 String mergeToken) {
-        String signInNameAttrName = type == EMAIL ? "email" : "username";
         CaptureApiConnection connection = new CaptureApiConnection("/oauth/auth_native_traditional");
         String refreshSecret = generateAndStoreRefreshSecret();
 
@@ -75,14 +73,21 @@ public class Capture {
             return null;
         }
 
+        Set flowCreds = CaptureFlowUtils.getTraditionalSignInCredentials(username, password);
+        if (flowCreds != null) {
+            connection.addAllToParams(flowCreds);
+        } else {
+            connection.addAllToParams("user", username, "password", password);
+        }
+
         connection.addAllToParams("client_id", getCaptureClientId(),
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
-                signInNameAttrName, username,
-                "password", password,
                 "form", Jump.getCaptureTraditionalSignInFormName(),
-                "refresh_secret", refreshSecret);
+                "refresh_secret", refreshSecret,
+                "flow", Jump.getCaptureFlowName(),
+                "flow_version", Jump.getCaptureFlowVersion());
         connection.maybeAddParam("merge_token", mergeToken);
         connection.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
         connection.fetchResponseAsJson(handler);
@@ -95,8 +100,19 @@ public class Capture {
     public static CaptureApiConnection performTraditionalSignIn(String username,
                                                                 String password,
                                                                 TraditionalSignInType type,
+                                                                SignInResultHandler handler,
+                                                                String mergeToken) {
+        return performTraditionalSignIn(username, password, handler, mergeToken);
+    }
+
+    /**
+     * @deprecated
+     */
+    public static CaptureApiConnection performTraditionalSignIn(String username,
+                                                                String password,
+                                                                TraditionalSignInType type,
                                                                 SignInResultHandler handler) {
-        return performTraditionalSignIn(username, password, type, handler, null);
+        return performTraditionalSignIn(username, password, handler, null);
     }
 
     /**
