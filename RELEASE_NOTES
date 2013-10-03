@@ -1,3 +1,5 @@
+v4.3.4
+ - Fixes crash when Jump fails to download flow
 v4.3.3:
  - New upgrade guides for the most commonly used versions
 v4.3.2:
