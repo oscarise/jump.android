@@ -32,11 +32,15 @@
 package com.janrain.android.simpledemo;
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -109,11 +113,25 @@ public class MainActivity extends FragmentActivity {
 
     private final MySignInResultHandler signInResultHandler = new MySignInResultHandler();
 
+    private final BroadcastReceiver messageReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
+            b.setMessage("Could not download flow.");
+            b.setNeutralButton("Dismiss", null);
+            b.show();
+        }
+    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //enableStrictMode();
+
+        IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
+        LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, filter);
 
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
@@ -276,5 +294,11 @@ public class MainActivity extends FragmentActivity {
                 .penaltyLog()
                 //.penaltyDeath()
                 .build());
+    }
+
+    @Override
+    protected void onDestroy() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(messageReceiver);
+        super.onDestroy();
     }
 }
