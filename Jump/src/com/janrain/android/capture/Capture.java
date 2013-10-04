@@ -242,7 +242,6 @@ public class Capture {
         String refreshSecret = buffer.toString().substring(0, SECRET_LENGTH);
 
         Jump.setRefreshSecret(refreshSecret);
-        LogUtils.logd("Refresh Secret " + refreshSecret);
 
         return refreshSecret;
     }
