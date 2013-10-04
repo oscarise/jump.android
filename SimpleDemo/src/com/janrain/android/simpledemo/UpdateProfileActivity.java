@@ -61,11 +61,11 @@ public class UpdateProfileActivity extends Activity {
 
         CaptureRecord user = Jump.getSignedInUser();
 
-        setEditTextString(update_profile_email, user.optString("email"));
-        setEditTextString(update_profile_display_name, user.optString("displayName"));
-        setEditTextString(update_profile_last_name, user.optString("familyName"));
-        setEditTextString(update_profile_first_name, user.optString("givenName"));
-        setEditTextString(update_profile_about, user.optString("aboutMe"));
+        setEditTextString(update_profile_email, getStringOrNullFromUser(user, "email"));
+        setEditTextString(update_profile_display_name, getStringOrNullFromUser(user, "displayName"));
+        setEditTextString(update_profile_last_name, getStringOrNullFromUser(user, "familyName"));
+        setEditTextString(update_profile_first_name, getStringOrNullFromUser(user, "givenName"));
+        setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
     }
 
     public void update(View view) {
@@ -101,6 +101,13 @@ public class UpdateProfileActivity extends Activity {
                 adb.show();
             }
         });
+    }
+
+    private String getStringOrNullFromUser(CaptureRecord user, String key) {
+        if (user.isNull(key)) {
+            return null;
+        }
+        return user.optString(key);
     }
 
     private String getEditTextString(int layoutId) {

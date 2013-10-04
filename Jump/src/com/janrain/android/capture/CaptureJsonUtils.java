@@ -287,6 +287,7 @@ public class CaptureJsonUtils {
             List val_ = JsonUtils.jsonArrayToList((JSONArray) val);
             for (Object elt : val_) {
                 if (!(elt instanceof JSONObject)) return null;
+                if (JSONObject.NULL.equals(elt)) return null;
                 if (((JSONObject) elt).opt("id").equals(pluralSplit[1])) {
                     return valueForAttrByDotPathComponents(elt, dotPathComponents);
                 }
@@ -294,6 +295,7 @@ public class CaptureJsonUtils {
             return null;
         } else {
             Object val = ((JSONObject) user).opt(head);
+            if (((JSONObject) user).isNull(head)) return null;
             return valueForAttrByDotPathComponents(val, dotPathComponents);
         }
     }

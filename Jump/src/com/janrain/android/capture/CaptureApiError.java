@@ -172,7 +172,7 @@ public class CaptureApiError {
         Map<String, List<String>> retval = new HashMap<String, List<String>>();
         List<String> keys = listFromIterator(invalid_fields.keys());
         for (String k : keys) {
-            JSONArray fieldMessagesJson = invalid_fields.optJSONObject(k).optJSONArray("messages");
+            JSONArray fieldMessagesJson = invalid_fields.optJSONArray(k);
             retval.put(k, ((List<String>) ((List) jsonArrayToList(fieldMessagesJson)))); // bleh
         }
 
