@@ -37,6 +37,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -53,6 +54,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
+import android.webkit.HttpAuthHandler;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -484,6 +487,25 @@ public class JRWebViewFragment extends JRUiFragment {
                     "Authentication failed: " + description,
                     JREngageError.AuthenticationError.AUTHENTICATION_FAILED,
                     JREngageError.ErrorType.AUTHENTICATION_FAILED));
+        }
+
+        @Override
+        public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
+            super.onReceivedSslError(view, handler, error);
+
+            hideProgressSpinner();
+            handler.cancel();
+
+            mIsFinishPending = true;
+            showAlertDialog(getString(R.string.jr_webview_error_dialog_title),
+                            getString(R.string.jr_webview_error_dialog_msg));
+
+            setFragmentResult(JRWebViewFragment.RESULT_FAIL_AND_STOP);
+            mSession.triggerAuthenticationDidFail(new JREngageError(
+                    "Authentication failed: " + error,
+                    JREngageError.AuthenticationError.AUTHENTICATION_FAILED,
+                    JREngageError.ErrorType.AUTHENTICATION_FAILED
+            ));
         }
     };
 

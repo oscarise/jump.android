@@ -98,6 +98,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import static com.janrain.android.R.string.jr_git_describe;
@@ -141,6 +142,7 @@ public class JREngage {
     private Context mApplicationContext;
     private Activity mActivityContext;
     private JRSession mSession;
+    private final List<JRProvider> mCustomProviders = new ArrayList<JRProvider>();
     private final Set<JREngageDelegate> mDelegates = new HashSet<JREngageDelegate>();
     private final Set<ConfigFinishListener> mConfigFinishListeners = new HashSet<ConfigFinishListener>();
 
@@ -187,6 +189,31 @@ public class JREngage {
                                         final String appId,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate) {
+        return JREngage.initInstance(context, appId, tokenUrl, delegate, null);
+    }
+
+    /**
+     * Initializes and returns the singleton instance of JREngage.
+     *
+     * @param context  The Android Context used to access to system resources (e.g. global
+     *                 preferences).  This value cannot be null
+     * @param appId    Your 20-character application ID.  You can find this on your application's
+     *                 Engage Dashboard at <a href="http://rpxnow.com">http://rpxnow.com</a>.  This value
+     *                 cannot be null
+     * @param tokenUrl The URL on your server where you wish to complete authentication, or null.  If
+     *                 provided, the JREngage library will post the user's authentication token to this URL
+     *                 where it can used for further authentication and processing.  When complete, the
+     *                 library will pass the server's response back to the your application
+     * @param delegate The delegate object that implements the JREngageDelegate interface
+     * @param customProviders Describes the configuration of custom identity providers
+     * @return The shared instance of the JREngage object initialized with the given
+     *         appId, tokenUrl, and delegate.  If the given appId is null, returns null
+     */
+    public static JREngage initInstance(final Context context,
+                                        final String appId,
+                                        final String tokenUrl,
+                                        final JREngageDelegate delegate,
+                                        final Map<String, JRDictionary> customProviders) {
         if (context == null) {
             throw new IllegalArgumentException("context parameter cannot be null.");
         }
@@ -207,6 +234,7 @@ public class JREngage {
             ThreadUtils.executeInBg(new Runnable() {
                 public void run() {
                     sInstance.mSession = JRSession.getInstance(appId, tokenUrl, sInstance.mJrsd);
+                    sInstance.mSession.setCustomProviders(customProviders);
 
                     // any use of the library is guarded by blockOnInitialization, which checks this ivar,
                     // acquires this lock and waits

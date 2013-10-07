@@ -69,6 +69,38 @@ public final class JRDictionary extends HashMap<String, Object> {
     public static final String KEY_USER_AGENT = "user_agent";
     public static final String KEY_USES_SET_STATUS = "uses_set_status_if_no_url";
 
+    public JRDictionary () { }
+
+    /**
+     * Copy constructor, makes a shallow copy of a JRDictionary
+     * @param dictionary the dictionary to copy
+     */
+    public JRDictionary (JRDictionary dictionary) {
+        for (String key : dictionary.keySet()) {
+            Object value = dictionary.get(key);
+
+            if (value instanceof String) {
+                this.put(key, (String)value);
+            } else if (value instanceof Integer) {
+                this.put(key, (Integer)value);
+            } else if (value instanceof Long) {
+                this.put(key, (Long)value);
+            } else if (value instanceof Double) {
+                this.put(key, (Double)value);
+            } else if (value instanceof JRDictionary) {
+                this.put(key, (JRDictionary)value);
+            } else if (value instanceof Object[]) {
+                this.put(key, (Object[])value);
+            } else if (value instanceof Boolean) {
+                this.put(key, (Boolean)value);
+            } else if (value instanceof Collection) {
+                this.put(key, (Collection)value);
+            } else if (value instanceof JRJsonifiable) {
+                this.put(key, (JRJsonifiable)value);
+            }
+        }
+    }
+
 /**
  * @name JSON Serialization
  * Methods that serialize/deserialize the JRDictionary to/from JSON
