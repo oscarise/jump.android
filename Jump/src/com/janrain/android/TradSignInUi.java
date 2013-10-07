@@ -224,7 +224,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
         private CaptureApiConnection startSignIn(Capture.SignInResultHandler handler) {
             return Capture.performTraditionalSignIn(userName.getText().toString(),
                     password.getText().toString(),
-                    Jump.state.traditionalSignInType, handler, mergeToken);
+                    handler, mergeToken);
         }
     }
 }

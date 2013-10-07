@@ -1,6 +1,6 @@
 /*
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *  Copyright (c) 2013, Janrain, Inc.
+ *  Copyright (c) 2011, Janrain, Inc.
  *
  *  All rights reserved.
  *
@@ -30,33 +30,41 @@
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-package com.janrain.android.simpledemo;
+package com.janrain.android.test;
 
-import android.app.Application;
-import com.janrain.android.Jump;
-import com.janrain.android.JumpConfig;
+import android.util.Pair;
 
-public class SimpleDemoApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
-        JumpConfig jumpConfig = new JumpConfig();
+import static org.junit.Assert.fail;
 
-        //capture prod
-        jumpConfig.engageAppId = "appcfamhnpkagijaeinl";
-        jumpConfig.captureDomain = "mobile-dev.janraincapture.com";
-        jumpConfig.captureClientId = "gpy4j6d8bcsepkb2kzm7zp5qkk8wrza6";
-        jumpConfig.captureLocale = "en-US";
-        jumpConfig.captureTraditionalSignInFormName = "userInformationForm";
-        jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
-        jumpConfig.captureAppId = "rz47skmnm48jpcv3bh4eguv4b8";
-        jumpConfig.captureFlowName = "standard_flow";
-        jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
-        jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";
-        jumpConfig.captureEditUserProfileFormName = "editProfileForm";
-        jumpConfig.captureEnableThinRegistration = false;
+public class Asserts {
+    public static void assertRequestParamsEqual(Set<Pair<String, String>> expected,
+                                                Set<Pair<String, String>> actual) {
 
-        Jump.init(this, jumpConfig);
+        if (expected == null && actual == null) {
+            return;
+        }
+        if (expected != null && expected.equals(actual)) {
+            return;
+        }
+
+        fail("Expected:<" + paramSetToString(expected) + "> but was:<" + paramSetToString(actual) + ">");
+    }
+
+    private static String paramSetToString(Set<Pair<String, String>> params) {
+        if (params == null) return "";
+
+        List<String> out = new ArrayList<String>();
+
+        for (Pair<String, String> p : params) {
+            out.add(String.format("(%s, %s)", p.first, p.second));
+        }
+
+        Collections.sort(out);
+        return out.toString();
     }
 }

@@ -104,7 +104,7 @@ public class CaptureRecord extends JSONObject {
      * @param jo a JSON representation of a Capture record, e.g. as from the response to oauth/auth_native
      */
     /*package*/ CaptureRecord(JSONObject jo, String accessToken, String refreshSecret) {
-        new CaptureRecord(jo, accessToken);
+        this(jo, accessToken);
     }
 
     /**
@@ -398,7 +398,7 @@ public class CaptureRecord extends JSONObject {
                 if (user instanceof JSONObject) {
                     String accessToken = response.optString("access_token");
                     String refreshSecret = response.optString("refresh_secret");
-                    CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken, refreshSecret);
+                    CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken);
                     onSuccess(record, response);
                 } else {
                     onFailure(CaptureApiError.INVALID_API_RESPONSE);

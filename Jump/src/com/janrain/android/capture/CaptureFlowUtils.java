@@ -33,8 +33,13 @@
 package com.janrain.android.capture;
 
 import android.util.Pair;
+import com.janrain.android.Jump;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -66,14 +71,113 @@ public class CaptureFlowUtils {
                 continue;
             }
 
-            String attrDothPath = (String) ((Map) fieldEntry.getValue()).get("schemaId");
-            String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(newUser, attrDothPath);
-            if (formFieldValue != null) {
-                retval.add(new Pair<String, String>((String) fieldEntry.getKey(), formFieldValue));
+            Object schemaId = ((Map) fieldEntry.getValue()).get("schemaId");
+
+            String key = (String) fieldEntry.getKey();
+
+            if (schemaId instanceof String) {
+                String dotPath = (String) schemaId;
+
+                String type = (String) ((Map) fieldEntry.getValue()).get("type");
+                if ("dateselect".equals(type)) {
+                    addDateForDotPathToParams(retval, dotPath, newUser, key);
+                } else {
+                    addValueForDotPathToParams(retval, dotPath, newUser, key);
+                }
+            } else if (Map.class.isAssignableFrom(schemaId.getClass())) {
+                for (Object schemaEntry_ : ((Map) schemaId).entrySet()) {
+                    Map.Entry schemaEntry = (Map.Entry) schemaEntry_;
+                    String dotPath = (String) schemaEntry.getValue();
+                    String subscript = (String) schemaEntry.getKey();
+                    String paramName = String.format("%s[%s]", key, subscript);
+
+                    addValueForDotPathToParams(retval, dotPath, newUser, paramName);
+                }
             }
         }
 
         return retval;
+    }
+
+    public static Set<Pair<String, String>> getTraditionalSignInCredentials(String user, String password) {
+        final String formName = Jump.getCaptureTraditionalSignInFormName();
+        final Map captureFlow = Jump.getCaptureFlow();
+
+        if (formName == null || captureFlow == null) {
+            throwDebugException(new RuntimeException("Cannot get traditional sign-in credentials without" +
+                                                     " captureTraditionalSignInFormName and a captureFlow"));
+            return null;
+        }
+
+        final Map fields = (Map) captureFlow.get("fields");
+        final Map form = (Map) fields.get(formName);
+        final List fieldNames = (List) form.get("fields");
+
+        if (fieldNames.size() != 2) {
+            throwDebugException(new RuntimeException("Sign-in form must have exactly two parameters"));
+            return null;
+        }
+
+        String passwordFieldName = null;
+        String userFieldName = null;
+
+        for (Object fieldName : fieldNames) {
+            Map field = (Map) fields.get(fieldName);
+            String type = (String) field.get("type");
+
+            if (type.equals("password")) {
+                passwordFieldName = (String) fieldName;
+            } else {
+                userFieldName = (String) fieldName;
+            }
+        }
+
+        if (passwordFieldName != null && userFieldName != null && user != null && password != null) {
+
+            HashSet<Pair<String, String>> out = new HashSet<Pair<String, String>>();
+            out.add(new Pair(passwordFieldName, password));
+            out.add(new Pair(userFieldName, user));
+            return out;
+        } else {
+            throwDebugException(new RuntimeException("Could not get traditional sign-in credentials from " +
+                                                     "form " + formName));
+            return null;
+        }
+    }
+
+    private static void addValueForDotPathToParams(Set<Pair<String, String>> params, String dotPath,
+                                                   JSONObject user, String key) {
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(user, dotPath);
+
+        if (formFieldValue != null) {
+            params.add(new Pair<String, String>(key, formFieldValue));
+        }
+    }
+
+    private static void addDateForDotPathToParams(Set<Pair<String, String>> params, String dotPath,
+                                                  JSONObject user, String key) {
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(user, dotPath);
+
+        if (formFieldValue != null) {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = null;
+            try {
+                // Make sure that the date is being set in the correct format
+                date = formatter.parse(formFieldValue);
+            } catch (ParseException e) {
+                throw(new RuntimeException(key + " must be in yyyy-MM-dd format"));
+            }
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+
+            params.add(new Pair<String, String>(key + "[dateselect_year]",
+                                                String.format("%04d", cal.get(Calendar.YEAR))));
+            params.add(new Pair<String, String>(key + "[dateselect_month]",
+                                                String.format("%02d", cal.get(Calendar.MONTH) + 1)));
+            params.add(new Pair<String, String>(key + "[dateselect_day]",
+                                                String.format("%02d", cal.get(Calendar.DAY_OF_MONTH))));
+        }
     }
 
     public static String getFlowVersion(Map<String, Object> captureFlow) {

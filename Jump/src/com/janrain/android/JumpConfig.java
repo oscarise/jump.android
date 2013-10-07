@@ -103,6 +103,11 @@ public final class JumpConfig {
     public String captureTraditionalRegistrationFormName;
 
     /**
+     * The name of the edit user profile form
+     */
+    public String captureEditUserProfileFormName;
+
+    /**
      * The type of traditional sign-in. I.e. username or email-address based
      */
     public Jump.TraditionalSignInType traditionalSignInType;
