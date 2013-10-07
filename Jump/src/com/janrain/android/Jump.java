@@ -35,6 +35,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureFlowUtils;
@@ -70,6 +72,8 @@ import static com.janrain.android.utils.LogUtils.throwDebugException;
  * See jump.android/Jump_Integration_Guide.md for a developer's integration guide.
  */
 public class Jump {
+    public static final String JR_FAILED_TO_DOWNLOAD_FLOW = "com.janrain.android.Jump.FAILED_TO_DOWNLOAD_FLOW";
+
     private static final String JR_CAPTURE_FLOW = "jr_capture_flow";
 
     /*package*/ enum State {
@@ -632,9 +636,16 @@ public class Jump {
         c.method = ApiConnection.Method.GET;
         c.fetchResponseAsJson(new ApiConnection.FetchJsonCallback() {
             public void run(JSONObject jsonObject) {
-                state.captureFlow = JsonUtils.jsonToCollection(jsonObject);
-                LogUtils.logd("Parsed flow, version: " + CaptureFlowUtils.getFlowVersion(state.captureFlow));
-                storeCaptureFlow();
+                if (jsonObject == null) {
+                    LogUtils.logd("Error downloading flow");
+                    Intent intent = new Intent(JR_FAILED_TO_DOWNLOAD_FLOW);
+                    intent.putExtra("message", "Error downloading flow");
+                    LocalBroadcastManager.getInstance(state.context).sendBroadcast(intent);
+                } else {
+                    state.captureFlow = JsonUtils.jsonToCollection(jsonObject);
+                    LogUtils.logd("Parsed flow, version: " + CaptureFlowUtils.getFlowVersion(state.captureFlow));
+                    storeCaptureFlow();
+                }
             }
         });
     }
