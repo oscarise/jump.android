@@ -34,6 +34,7 @@ package com.janrain.android.capture;
 
 import android.util.Pair;
 import com.janrain.android.Jump;
+import com.janrain.android.utils.LogUtils;
 import org.json.JSONObject;
 
 import java.text.ParseException;

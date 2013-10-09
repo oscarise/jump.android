@@ -255,7 +255,8 @@ public class Capture {
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
-                "email", emailAddress
+                CaptureFlowUtils.getForgotPasswordFormField(Jump.getCaptureForgotPasswordFormName(),
+                        Jump.getCaptureFlow()),  emailAddress
 
         );
 
