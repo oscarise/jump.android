@@ -113,7 +113,7 @@ validation errors.
 
 ## Forgotten Passwords
 
-When a user submits an incorrect email address or password in a traditional registration sign-in from, they
+When a user submits an incorrect email address or password in a traditional registration sign-in form, they
 are given the option to create new password. The AlertDialog that informs the user of the failed sign-in has
 a button to begin the forgotten password flow. Once the user taps "Forgot Password," another AlertDialog is
 presented asking the user to confirm their email address. If the user taps "Send," then an API call will be
