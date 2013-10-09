@@ -152,6 +152,7 @@ Initialize the library by calling `Jump#init` method. For example:
     String captureClientId = "your Capture Client ID";
     String captureLocale = "your Capture flow locale";
     String captureSignInFormName = "your Capture sign-in form's name";
+    String forgottenPasswordFormName = "your Capture forgot password form name";
     Jump.TraditionalSignInType signInType = Jump.TraditionalSignInType.EMAIL; // or USERNAME
     Jump.init(this, engageAppId, captureDomain, captureClientId, captureLocale, captureSignInFormName,
             signInType);

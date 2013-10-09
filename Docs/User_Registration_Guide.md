@@ -111,6 +111,19 @@ pre-registration record, and pass the social registration token in with the regi
 Social registration form validation errors are handled in the same way as traditional registration form
 validation errors.
 
+## Forgotten Passwords
+
+When a user submits an incorrect email address or password in a traditional registration sign-in form, they
+are given the option to create new password. The AlertDialog that informs the user of the failed sign-in has
+a button to begin the forgotten password flow. Once the user taps "Forgot Password," another AlertDialog is
+presented asking the user to confirm their email address. If the user taps "Send," then an API call will be
+made to capture that will trigger an email with instructions on how the user can reset their password.
+
+If you would like to trigger the forgotten password flow directly call -
+
+    Capture.performForgotPassword(emailAddress, new Capture.ForgotPasswordResultHandler() {..});
+
+
 ## Example
 
 In `SimpleDemo` see the `MainActivity` for an example of the `SignInResultHandler`, and see
