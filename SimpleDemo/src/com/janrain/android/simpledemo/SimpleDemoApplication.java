@@ -56,7 +56,7 @@ public class SimpleDemoApplication extends Application {
         jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";
         jumpConfig.captureEditUserProfileFormName = "editProfileForm";
         jumpConfig.captureEnableThinRegistration = false;
-        jumpConfig.captureForgotPasswordFormName="recoverPassword"  ;
+        jumpConfig.captureForgotPasswordFormName="forgotPasswordForm"  ;
 
         Jump.init(this, jumpConfig);
     }

@@ -267,6 +267,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                 adb
                         .setTitle(getResources().getString(
                                 R.string.jr_capture_forgotpassword_reset_error_msg))
+                        .setMessage(error.captureApiError.error_description)
                         .setPositiveButton(getResources().getString(
                                 R.string.jr_capture_forgotpassword_dismiss_button),
                                 new DialogInterface.OnClickListener() {

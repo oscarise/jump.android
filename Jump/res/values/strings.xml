@@ -99,7 +99,7 @@
         We will send you a link to create a new password
     </string>
     <string name="jr_capture_forgotpassword_success_msg">Reset Password Email Sent</string>
-    <string name="jr_capture_forgotpassword_error_msg">Incorrect EmailId or Password</string>
+    <string name="jr_capture_forgotpassword_error_msg">Incorrect Email or Password</string>
     <string name="jr_capture_forgotpassword_reset_error_msg">Could Not Reset Password</string>
 
 
