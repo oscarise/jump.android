@@ -201,18 +201,8 @@ public class JRWebViewFragment extends JRUiFragment {
         } else {
             mProvider = mSession.getCurrentlyAuthenticatingProvider();
             configureWebViewUa();
-            final Handler uiThread = new Handler();
-            ThreadUtils.executeInBg(new Runnable() {
-                public void run() {
-                    final URL startUrl = mSession.startUrlForCurrentlyAuthenticatingProvider();
-                    uiThread.post(new Runnable() {
-                        public void run() {
-                            if (startUrl == null) return;
-                            mWebView.loadUrl(startUrl.toString());
-                        }
-                    });
-                }
-            });
+            final URL startUrl = mSession.startUrlForCurrentlyAuthenticatingProvider();
+            mWebView.loadUrl(startUrl.toString());
         }
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
