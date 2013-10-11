@@ -1,3 +1,8 @@
+v4.4.0:
+ - Fixes bug when trying to perform traditional sign-in with the standard_flow
+ - Support for custom OpenID and SAML providers
+ - Support for initiating the forgot password flow
+ - Support for editing user profiles
 v4.3.4
  - Fixes crash when Jump fails to download flow
 v4.3.3:
