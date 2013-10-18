@@ -33,6 +33,8 @@ package com.janrain.android.engage.session;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.text.TextUtils;
 import android.webkit.CookieManager;
 import com.janrain.android.R;
@@ -116,6 +118,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String mSavedEtag;
     private String mNewEtag;
     private String mUrlEncodedLibraryVersion;
+    private String mUserAgent;
 
     private boolean mHidePoweredBy;
     private boolean mAlwaysForceReauth;
@@ -209,13 +212,21 @@ public class JRSession implements JRConnectionManagerDelegate {
         mUrlEncodedAppName = AndroidUtils.urlEncode(appName);
         mUrlEncodedLibraryVersion =
                 AndroidUtils.urlEncode(getApplicationContext().getString(R.string.jr_git_describe));
-
         try {
             if (!mUrlEncodedLibraryVersion.equals(PrefUtils.getString(PrefUtils.KEY_JR_ENGAGE_LIBRARY_VERSION,
                     ""))) {
                 // If the library versions don't match start with fresh state in order to break out of
                 // any invalid state.
                 throw new Archiver.LoadException("New library version with old serialized state");
+            }
+            String packageName = getApplicationContext().getPackageName();
+            PackageInfo info = null;
+            try {
+                info = getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
+                mUserAgent = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
+                mUserAgent += "/" + info.versionCode + " ";
+            } catch (PackageManager.NameNotFoundException e) {
+                throwDebugException(new RuntimeException("User agent create failed : ", e));
             }
 
             /* load the last used auth and social providers */
@@ -1086,6 +1097,10 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     private Context getApplicationContext() {
         return JREngage.getApplicationContext();
+    }
+
+    public String getCustomUserAgentContext() {
+        return mUserAgent;
     }
 
     /* package */ String getEngageBaseUrl() {

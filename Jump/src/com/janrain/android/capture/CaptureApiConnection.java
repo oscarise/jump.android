@@ -33,8 +33,10 @@
 package com.janrain.android.capture;
 
 import com.janrain.android.utils.ApiConnection;
+import com.janrain.android.utils.LogUtils;
 
 import static com.janrain.android.Jump.getCaptureDomain;
+import static com.janrain.android.Jump.getCustomUserAgentContext;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
 public class CaptureApiConnection extends ApiConnection {
@@ -44,5 +46,6 @@ public class CaptureApiConnection extends ApiConnection {
         if (!relativeUrl.startsWith("/")) {
             throwDebugException(new RuntimeException("bad looking relative URL. Should start with /"));
         }
+        addCustomUserAgent(getCustomUserAgentContext());
     }
 }

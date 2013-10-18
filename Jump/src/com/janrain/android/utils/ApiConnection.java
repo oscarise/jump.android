@@ -182,4 +182,9 @@ public class ApiConnection {
     public interface FetchCallback {
         void run(Object response);
     }
+
+    public void addCustomUserAgent(String customUserAgent) {
+         JRConnectionManager.setCustomUserAgent(customUserAgent);
+    }
+
 }

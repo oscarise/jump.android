@@ -85,9 +85,7 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
  * @class AsyncHttpClient
  */
 /*package*/ class AsyncHttpClient {
-    private static final String USER_AGENT =
-            "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Droid Build/FRG22D) AppleWebKit/533.1 " +
-                    "(KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
+    private static String USER_AGENT;
     private static final String HEADER_ACCEPT_ENCODING = "Accept-Encoding";
     private static final String ENCODING_GZIP = "gzip";
 
@@ -333,4 +331,15 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
             return (mException != null);
         }
     }
+
+    public static void setCustomUserAgent(String customUserAgent) {
+        if(customUserAgent!=null){
+            USER_AGENT = customUserAgent;
+        }
+        else{
+            USER_AGENT = "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Droid Build/FRG22D) AppleWebKit/533.1 " +
+            "(KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
+        }
+    }
+
 }
