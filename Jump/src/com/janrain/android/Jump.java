@@ -288,7 +288,6 @@ public class Jump {
     public static String getCustomUserAgentContext() {
         ApplicationInfo ai = AndroidUtils.getApplicationInfo();
         String packageName = state.context.getApplicationContext().getPackageName();
-        LogUtils.loge(packageName);
         PackageInfo info = null;
         try {
             info = state.context.getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
@@ -297,7 +296,6 @@ public class Jump {
         } catch (PackageManager.NameNotFoundException e) {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
         }
-        LogUtils.loge("state.userAgent"+state.userAgent);
         return state.userAgent;
     }
 

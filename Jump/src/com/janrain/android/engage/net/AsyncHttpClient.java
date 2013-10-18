@@ -341,5 +341,4 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
             "(KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
         }
     }
-
 }
