@@ -1065,6 +1065,13 @@ public class JREngage {
             }
         }
 
+        public void authenticationLinkAccountDidComplete(JRDictionary profile, String provider) {
+            LogUtils.logd();
+            for (JREngageDelegate d : getDelegatesCopy()) {
+                d.jrAuthenticationDidSucceedForLinkAccount(profile, provider);
+            }
+        }
+
         public void authenticationDidFail(JREngageError error, String provider) {
             LogUtils.logd();
             for (JREngageDelegate delegate : getDelegatesCopy()) {
@@ -1139,6 +1146,35 @@ public class JREngage {
 
     private synchronized List<JREngageDelegate> getDelegatesCopy() {
         return new ArrayList<JREngageDelegate>(mDelegates);
+    }
+
+    /**
+     * Begins authentication. The library will start a new Android Activity and take the user through the
+     * sign-in process.
+     *
+     * @param fromActivity The Activity from which to show the authentication dialog
+     * @param skipReturningUserLandingPage Prevents the dialog from opening to the returning-user landing page
+     * when \c true. That is, the dialog will always open straight to the
+     * list of providers. The dialog falls back to the default behavior
+     * when \c false
+     * @param provider Specify a provider to start authentication with. No provider
+     * selection list will be shown, the user will be brought directly to
+     * authentication with this provider. If null the user will be shown
+     * the provider list as usual.
+     * @param uiCustomization The custom sign-in object to display in the provider list. May be
+     * null for no custom sign-in.
+     * @param linkAccount The boolean to trigger account linking .This is true for account
+     * linking.
+     * @note If you always want to force the user to re-enter his/her credentials, pass \c true to the method
+     * setAlwaysForceReauthentication().
+     */
+    public void showAuthenticationDialog(final Activity fromActivity,
+                                         final Boolean skipReturningUserLandingPage,
+                                         final String provider,
+                                         final Class<? extends JRCustomInterface> uiCustomization,
+                                         final boolean linkAccount) {
+        mSession.setLinkAccount(linkAccount);
+        showAuthenticationDialog(fromActivity, skipReturningUserLandingPage, provider, uiCustomization);
     }
 }
 

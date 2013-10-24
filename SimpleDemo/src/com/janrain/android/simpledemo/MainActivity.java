@@ -159,6 +159,7 @@ public class MainActivity extends FragmentActivity {
                 MainActivity.this.startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
             }
         });
+
         Button signOut = addButton(linearLayout, "Sign Out");
 
         sv.addView(linearLayout);
@@ -210,13 +211,15 @@ public class MainActivity extends FragmentActivity {
                 });
             }
         });
-        
+
         link_unlinkAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               // ArrayList<HashMap<String, String>> tracking_users = Jump.getLinkedProfiles();
-               // LogUtils.loge(Integer.toString(tracking_users.size()));
-               // Jump.getSignedLoginType();
-              MainActivity.this.startActivity(new Intent(MainActivity.this, LinkListActivity.class));
+                if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
+                    MainActivity.this.startActivity(new Intent(MainActivity.this, LinkListActivity.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Please Login to Link Account",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 

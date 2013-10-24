@@ -210,5 +210,14 @@ public class CaptureFlowUtils {
         }
         return null;
     }
+
+    public static String getFormField(Map<String, Object> captureFlow) {
+        if (captureFlow == null) return null;
+        Map form = (Map) captureFlow.get("schema_info");
+        Map fieldNames = (Map) form.get("paths");
+        String type = (String) fieldNames.get("password");
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(Jump.getSignedInUser(), type);
+        return formFieldValue;
+    }
 }
 

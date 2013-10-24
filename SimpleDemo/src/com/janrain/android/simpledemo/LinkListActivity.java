@@ -169,7 +169,7 @@ public class LinkListActivity extends ListActivity {
 
                 } else {
                     LinkListActivity.this.startActivity(new Intent(LinkListActivity.this,
-                            LinkListActivity.class));
+                            MainActivity.class));
                 }
             }
         });
@@ -221,9 +221,10 @@ public class LinkListActivity extends ListActivity {
     }
 
     public void loadLinkedUnlinkedAccounts1() throws JSONException {
-        final Capture.CaptureApiResultHandler handler = new Capture.CaptureApiResultHandler() {
+        Jump.performFetchCaptureData(new Jump.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
+                //To change body of implemented methods use File | Settings | File Templates.
                 ArrayList<LinkData> linkUnlinkResults = new ArrayList<LinkData>();
                 JSONObject json = response;
                 try {
@@ -232,7 +233,7 @@ public class LinkListActivity extends ListActivity {
                         JSONObject profileData = profiles.getJSONObject(i);
                         LogUtils.loge(profileData.getString("domain"));
                         LinkData linkedRecords = new LinkData(profileData.getString("identifier"),
-                        profileData.getString("domain"));
+                                profileData.getString("domain"));
                         linkUnlinkResults.add(linkedRecords);
                         LogUtils.loge(profileData.getString("identifier"));
                     }
@@ -244,19 +245,14 @@ public class LinkListActivity extends ListActivity {
             }
 
             @Override
-            public void onFailure(CaptureApiError error) {
+            public void onFailure(CaptureAPIError error) {
                 //To change body of implemented methods use File | Settings | File Templates.
             }
-        };
-        startFetchCaptureData(handler);
+        });
     }
 
     public void validateSignedInUser() {
-        if (Jump.getSignedInUser() == null) {
-            Toast.makeText(LinkListActivity.this, "Please Login to Link Account",
-                    Toast.LENGTH_LONG).show();
-            LinkListActivity.this.startActivity(new Intent(LinkListActivity.this, LinkListActivity.class));
-        } else {
+        if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null){
             try {
                 loadLinkedUnlinkedAccounts1();
             } catch (JSONException e) {
@@ -269,10 +265,6 @@ public class LinkListActivity extends ListActivity {
 
     public void setPosition(int position) {
         this.position = position;
-    }
-
-    private CaptureApiConnection startFetchCaptureData(Capture.CaptureApiResultHandler handler) {
-        return Capture.performUpdateSignedUserData(handler);
     }
 
     private class MyCaptureApiResultHandler implements Jump.CaptureApiResultHandler {

@@ -119,10 +119,12 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String mNewEtag;
     private String mUrlEncodedLibraryVersion;
     private String mUserAgent;
+    private static String mLinkToken;
 
     private boolean mHidePoweredBy;
     private boolean mAlwaysForceReauth;
     private boolean mSkipLandingPage;
+    private boolean mLinkAccount = false;
     private int mUiShowingCount;
 
     private JREngageError mError;
@@ -962,9 +964,19 @@ public class JRSession implements JRConnectionManagerDelegate {
         }
 
         for (JRSessionDelegate delegate : getDelegatesCopy()) {
-            delegate.authenticationDidComplete(
-                    authInfoDict,
-                    mCurrentlyAuthenticatingProvider.getName());
+            if (getLinkAccount() == true) {
+                String token = rpx_result.getAsString("token");
+                setLinkToken(token);
+                delegate.authenticationLinkAccountDidComplete(
+                        authInfoDict,
+                        mCurrentlyAuthenticatingProvider.getName());
+            } else {
+                delegate.authenticationDidComplete(
+                        authInfoDict,
+                        mCurrentlyAuthenticatingProvider.getName());
+            }
+
+            if (getLinkAccount() == true) setLinkAccount(false);
         }
 
         if (!TextUtils.isEmpty(mTokenUrl)) {
@@ -1109,5 +1121,21 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     public String getTokenUrl() {
         return mTokenUrl;
+    }
+
+    public void setLinkToken(String token) {
+        mLinkToken = token;
+    }
+    public static String getLinkToken() {
+        return mLinkToken;
+
+    }
+
+    public void setLinkAccount(boolean linkAccount) {
+        mLinkAccount = linkAccount;
+    }
+
+    public boolean getLinkAccount() {
+        return mLinkAccount;
     }
 }
