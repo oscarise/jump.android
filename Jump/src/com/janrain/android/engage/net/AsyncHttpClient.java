@@ -333,12 +333,6 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
     }
 
     public static void setCustomUserAgent(String customUserAgent) {
-        if(customUserAgent!=null){
-            USER_AGENT = customUserAgent;
-        }
-        else{
-            USER_AGENT = "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Droid Build/FRG22D) AppleWebKit/533.1 " +
-            "(KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
-        }
+             USER_AGENT = customUserAgent;
     }
 }
