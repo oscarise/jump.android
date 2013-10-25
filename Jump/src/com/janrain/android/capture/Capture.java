@@ -353,7 +353,6 @@ public class Capture {
                 if (user instanceof JSONObject) {
                     String accessToken = response.optString("access_token");
                     //String refreshSecret = response.optString("refresh_secret");
-                    Jump.setAccessToken(accessToken);
                     CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken);
                     onSuccess(record, response);
                 } else {

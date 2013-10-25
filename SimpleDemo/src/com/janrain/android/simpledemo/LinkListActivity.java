@@ -220,7 +220,7 @@ public class LinkListActivity extends ListActivity {
         });
     }
 
-    public void loadLinkedUnlinkedAccounts1() throws JSONException {
+    public void loadLinkedUnlinkedAccounts() throws JSONException {
         Jump.performFetchCaptureData(new Jump.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
@@ -246,7 +246,9 @@ public class LinkListActivity extends ListActivity {
 
             @Override
             public void onFailure(CaptureAPIError error) {
-                //To change body of implemented methods use File | Settings | File Templates.
+                Toast.makeText(LinkListActivity.this,
+                        "Account LinkUnlink Failed.",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -254,7 +256,7 @@ public class LinkListActivity extends ListActivity {
     public void validateSignedInUser() {
         if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null){
             try {
-                loadLinkedUnlinkedAccounts1();
+                loadLinkedUnlinkedAccounts();
             } catch (JSONException e) {
                 Toast.makeText(LinkListActivity.this,
                         "Account LinkUnlink Failed.",
@@ -270,7 +272,7 @@ public class LinkListActivity extends ListActivity {
     private class MyCaptureApiResultHandler implements Jump.CaptureApiResultHandler {
         public void onSuccess(JSONObject response) {
             try {
-                loadLinkedUnlinkedAccounts1();
+                loadLinkedUnlinkedAccounts();
             } catch (JSONException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }

@@ -114,7 +114,6 @@ public class Jump {
         /*package*/ String captureForgotPasswordFormName;
         /*package*/ String userAgent;
         /*package*/ String accessToken;
-        /*package*/ boolean signUserType;
 
         // Transient state values:
         /*
@@ -306,23 +305,18 @@ public class Jump {
     }
 
     public static String getAccessToken() {
-        return state.accessToken;
-    }
-
-    public static void setAccessToken(String accessToken) {
-        state.accessToken = accessToken;
+        return state.signedInUser.signedUserAccessToken();
     }
 
     /**
      * @return the currently signed-in login type, or null
      */
     public static Boolean getSignedLoginType() {
-        String user = CaptureFlowUtils.getFormField(Jump.getCaptureFlow());
-        if(user == null || user == "null" || user.isEmpty()){
-            state.signUserType = true;
+        String user = CaptureFlowUtils.getPasswordValueFormFlow(Jump.getCaptureFlow());
+        if(user == null || user.isEmpty()){
+            return true;
         }
-        else state.signUserType = false;
-        return state.signUserType;
+        else return false;
     }
 
     /**

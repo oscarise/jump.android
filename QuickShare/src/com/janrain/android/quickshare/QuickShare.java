@@ -381,6 +381,10 @@ public class QuickShare extends Application {
 
         public void jrAuthenticationDidNotComplete() {}
 
+        public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+
         public void jrAuthenticationDidSucceedForUser(JRDictionary auth_info, String provider) {}
 
         public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {}

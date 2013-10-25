@@ -413,4 +413,7 @@ public class CaptureRecord extends JSONObject {
         public abstract void onFailure(CaptureApiError error);
     }
 
+    public String signedUserAccessToken(){
+        return accessToken;
+    }
 }
