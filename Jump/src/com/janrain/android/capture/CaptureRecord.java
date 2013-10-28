@@ -413,7 +413,15 @@ public class CaptureRecord extends JSONObject {
         public abstract void onFailure(CaptureApiError error);
     }
 
-    public String signedUserAccessToken(){
+    public String getAccessToken(){
         return accessToken;
+    }
+
+    public static boolean hasPassword(){
+        String user = CaptureFlowUtils.getPasswordValueFormFlow(Jump.getCaptureFlow());
+        if(user == null || user.isEmpty()){
+            return true;
+        }
+        else return false;
     }
 }

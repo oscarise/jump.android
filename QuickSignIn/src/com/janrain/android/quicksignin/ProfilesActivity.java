@@ -245,7 +245,6 @@ public class ProfilesActivity extends ListActivity implements JREngageDelegate {
     }
 
     public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {

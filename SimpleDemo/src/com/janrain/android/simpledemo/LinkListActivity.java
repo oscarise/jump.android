@@ -51,6 +51,7 @@ import com.janrain.android.Jump;
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiConnection;
 import com.janrain.android.capture.CaptureApiError;
+import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngageDelegate;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
@@ -191,7 +192,7 @@ public class LinkListActivity extends ListActivity {
                         b.setPositiveButton("Unlink", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 link_unlink = false;
-                                if (Jump.getSignedLoginType()) {
+                                if (CaptureRecord.hasPassword()) {
                                     if (link_account.getChildCount() > 1) {
                                         Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
                                                 captureApiResultHandler);

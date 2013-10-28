@@ -305,18 +305,7 @@ public class Jump {
     }
 
     public static String getAccessToken() {
-        return state.signedInUser.signedUserAccessToken();
-    }
-
-    /**
-     * @return the currently signed-in login type, or null
-     */
-    public static Boolean getSignedLoginType() {
-        String user = CaptureFlowUtils.getPasswordValueFormFlow(Jump.getCaptureFlow());
-        if(user == null || user.isEmpty()){
-            return true;
-        }
-        else return false;
+        return state.signedInUser.getAccessToken();
     }
 
     /**
