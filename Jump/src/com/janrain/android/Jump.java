@@ -36,6 +36,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.support.v4.content.LocalBroadcastManager;
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
@@ -46,6 +49,7 @@ import com.janrain.android.engage.JREngageDelegate;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
+import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
@@ -105,6 +109,7 @@ public class Jump {
         /*package*/ TraditionalSignInType traditionalSignInType;
         /*package*/ String backplaneChannelUrl;
         /*package*/ String captureForgotPasswordFormName;
+        /*package*/ String userAgent;
 
         // Transient state values:
         /*
@@ -278,6 +283,20 @@ public class Jump {
      */
     public static CaptureRecord getSignedInUser() {
         return state.signedInUser;
+    }
+
+    public static String getCustomUserAgentContext() {
+        ApplicationInfo ai = AndroidUtils.getApplicationInfo();
+        String packageName = state.context.getApplicationContext().getPackageName();
+        PackageInfo info = null;
+        try {
+            info = state.context.getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
+            state.userAgent = state.context.getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
+            state.userAgent += "/" + info.versionCode + " ";
+        } catch (PackageManager.NameNotFoundException e) {
+            throwDebugException(new RuntimeException("User agent create failed : ", e));
+        }
+        return state.userAgent;
     }
 
     /**
