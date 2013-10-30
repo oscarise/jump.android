@@ -417,11 +417,19 @@ public class CaptureRecord extends JSONObject {
         return accessToken;
     }
 
-    public static boolean hasPassword(){
-        String user = CaptureFlowUtils.getPasswordValueFormFlow(Jump.getCaptureFlow());
-        if(user == null || user.isEmpty()){
+    public static boolean hasPassword() {
+        String password = getPasswordSchemaInfoFromFlow(Jump.getCaptureFlow());
+        if (password == null || password.isEmpty()) {
             return true;
-        }
-        else return false;
+        } else return false;
+    }
+
+    public static String getPasswordSchemaInfoFromFlow(Map<String, Object> captureFlow) {
+        if (captureFlow == null) return null;
+        Map form = (Map) captureFlow.get("schema_info");
+        Map fieldNames = (Map) form.get("paths");
+        String type = (String) fieldNames.get("password");
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(Jump.getSignedInUser(), type);
+        return formFieldValue;
     }
 }
