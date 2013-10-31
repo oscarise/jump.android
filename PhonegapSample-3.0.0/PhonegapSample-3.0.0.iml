@@ -11,10 +11,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Android 4.2.2 Google APIs" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="JREngagePhonegapPlugin" />
-    <orderEntry type="library" name="cordova-2.9.0" level="project" />
+    <orderEntry type="module" module-name="Jump" />
+    <orderEntry type="library" name="cordova-3.0.0" level="project" />
   </component>
 </module>
 
