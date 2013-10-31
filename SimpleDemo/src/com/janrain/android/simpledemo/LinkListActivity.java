@@ -192,7 +192,7 @@ public class LinkListActivity extends ListActivity {
                         b.setPositiveButton("Unlink", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 link_unlink = false;
-                                if (CaptureRecord.hasPassword()) {
+                                if (Jump.getSignedInUser().hasPassword()) {
                                     if (link_account.getChildCount() > 1) {
                                         Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
                                                 captureApiResultHandler);
