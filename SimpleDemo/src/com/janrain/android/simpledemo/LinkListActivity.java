@@ -94,7 +94,6 @@ public class LinkListActivity extends ListActivity {
 
         @Override
         public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
-            //To change body of implemented methods use File | Settings | File Templates.
             String token = auth_info.getAsString("token");
             link_unlink = true;
             Jump.performLinkAccount(token, captureApiResultHandler);
@@ -225,7 +224,6 @@ public class LinkListActivity extends ListActivity {
         Jump.performFetchCaptureData(new Jump.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
-                //To change body of implemented methods use File | Settings | File Templates.
                 ArrayList<LinkData> linkUnlinkResults = new ArrayList<LinkData>();
                 JSONObject json = response;
                 try {
@@ -261,7 +259,7 @@ public class LinkListActivity extends ListActivity {
             } catch (JSONException e) {
                 Toast.makeText(LinkListActivity.this,
                         "Account LinkUnlink Failed.",
-                        Toast.LENGTH_LONG).show(); //To change body of catch statement use File | Settings | File Templates.
+                        Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -275,7 +273,7 @@ public class LinkListActivity extends ListActivity {
             try {
                 loadLinkedUnlinkedAccounts();
             } catch (JSONException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                e.printStackTrace();
             }
         }
 
