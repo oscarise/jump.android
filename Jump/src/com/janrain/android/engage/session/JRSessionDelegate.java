@@ -152,6 +152,15 @@ public interface JRSessionDelegate {
     void configDidFinish();
 
     /**
+     * Triggered when JRWebViewActivity recieves a link account success message from Engage.
+     *  @param profile
+     *   The profile received for the user from Engage
+     *  @param provider
+     *   The provider the user authenticated with
+     */
+    void authenticationLinkAccountDidComplete(JRDictionary profile, String provider);
+
+    /**
      * @internal
      * An empty implementation of JRSessionDelegate. Handy for subclassing, and overriding only
      * desirable message handlers.
@@ -160,6 +169,7 @@ public interface JRSessionDelegate {
         public void authenticationDidRestart() {}
         public void authenticationDidCancel() {}
         public void authenticationDidComplete(JRDictionary profile, String provider) {}
+        public void authenticationLinkAccountDidComplete(JRDictionary profile, String provider) {}
         public void authenticationDidFail(JREngageError error, String provider) {}
         public void authenticationDidReachTokenUrl(String tokenUrl,
                                                    HttpResponseHeaders responseHeaders,

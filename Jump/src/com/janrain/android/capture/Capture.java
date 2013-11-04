@@ -398,5 +398,103 @@ public class Capture {
         public abstract void onFailure(CaptureApiError error);
     }
 
+
+    /**
+     * @internal
+     */
+    public static abstract class CaptureApiResultHandler implements ApiConnection.FetchJsonCallback {
+        private boolean canceled = false;
+        private String authenticationToken;
+        private String identityProvider;
+
+        public void cancel() {
+            canceled = true;
+        }
+
+        public final void run(JSONObject response) {
+            if (canceled) return;
+            if (response == null) {
+                onFailure(CaptureApiError.INVALID_API_RESPONSE);
+            } else if ("ok".equals(response.opt("stat"))) {
+                onSuccess(response);
+            } else {
+                onFailure(CaptureApiError.INVALID_API_RESPONSE);
+            }
+        }
+
+        public abstract void onSuccess(JSONObject response);
+
+        public abstract void onFailure(CaptureApiError error);
+    }
+
+    /**
+     * Link new account
+     *
+     * @param token   token of the account that user wants to link
+     * @param handler the generic capture API result handler.
+     */
+    public static CaptureApiConnection performLinkAccount(String token,
+                                                          final CaptureApiResultHandler handler) {
+        if (token == null) {
+            handler.onFailure(new CaptureApiError(
+                    "Unable to perform link account : link account token is null"));
+            return null;
+        }
+        if (Jump.getAccessToken() == null) {
+            handler.onFailure(new CaptureApiError(
+                    "Unable to perform link account : capture account access token is null"));
+            return null;
+        }
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/link_account_native");
+        c.addAllToParams(
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale(),
+                "response_type", Jump.getResponseType(),
+                "redirect_uri", Jump.getRedirectUri(),
+                "access_token", Jump.getAccessToken(),
+                "token", token,
+                "flow", Jump.getCaptureFlowName(),
+                "flow_version", CaptureFlowUtils.getFlowVersion(Jump.getCaptureFlow())
+        );
+        c.fetchResponseAsJson(handler);
+        return c;
+    }
+
+    /**
+     * Link new account
+     *
+     * @param identifier identifier of the account that user wants to unlink
+     * @param handler    the generic capture API result handler.
+     */
+    public static CaptureApiConnection performUnlinkAccount(String identifier,
+                                                            final CaptureApiResultHandler handler) {
+        if (identifier == null) {
+            handler.onFailure(new CaptureApiError("Unable to perform unlink account"));
+            return null;
+        }
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/unlink_account_native");
+        c.addAllToParams(
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale(),
+                "identifier_to_remove", identifier,
+                "access_token", Jump.getAccessToken(),
+                "flow", Jump.getCaptureFlowName(),
+                "flow_version", CaptureFlowUtils.getFlowVersion(Jump.getCaptureFlow())
+        );
+        c.fetchResponseAsJson(handler);
+        return c;
+    }
+
+    /**
+     * Fetch signed user Data
+     *
+     * @param handler the generic capture API result handler.
+     */
+    public static CaptureApiConnection performUpdateSignedUserData(CaptureApiResultHandler handler) {
+        CaptureApiConnection c = new CaptureApiConnection("/entity");
+        c.addAllToParams("access_token", Jump.getAccessToken());
+        c.fetchResponseAsJson(handler);
+        return c;
+    }
 }
 

@@ -413,4 +413,23 @@ public class CaptureRecord extends JSONObject {
         public abstract void onFailure(CaptureApiError error);
     }
 
+    public String getAccessToken(){
+        return accessToken;
+    }
+
+    public boolean hasPassword() {
+        String password = getPasswordSchemaInfoFromFlow(Jump.getCaptureFlow());
+        if (password == null || password.isEmpty()) {
+            return true;
+        } else return false;
+    }
+
+    private String getPasswordSchemaInfoFromFlow(Map<String, Object> captureFlow) {
+        if (captureFlow == null) return null;
+        Map form = (Map) captureFlow.get("schema_info");
+        Map fieldNames = (Map) form.get("paths");
+        String type = (String) fieldNames.get("password");
+        String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(this, type);
+        return formFieldValue;
+    }
 }

@@ -41,9 +41,10 @@ import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
@@ -129,6 +130,9 @@ public class MainActivity extends FragmentActivity {
         IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
         LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, filter);
 
+        ScrollView sv = new ScrollView(this);
+        sv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -142,6 +146,7 @@ public class MainActivity extends FragmentActivity {
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
+        Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
@@ -154,9 +159,11 @@ public class MainActivity extends FragmentActivity {
                 MainActivity.this.startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
             }
         });
+
         Button signOut = addButton(linearLayout, "Sign Out");
 
-        setContentView(linearLayout);
+        sv.addView(linearLayout);
+        setContentView(sv);
 
         testAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -205,6 +212,17 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        link_unlinkAccount.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
+                    MainActivity.this.startActivity(new Intent(MainActivity.this, LinkListActivity.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Please Login to Link Account",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         signOut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Jump.signOutCaptureUser(MainActivity.this);
@@ -215,7 +233,7 @@ public class MainActivity extends FragmentActivity {
     private Button addButton(LinearLayout linearLayout, String label) {
         Button button = new Button(this);
         button.setText(label);
-        button.setLayoutParams(new ViewGroup.LayoutParams(MATCH_PARENT, WRAP_CONTENT));
+        button.setLayoutParams(new LayoutParams(MATCH_PARENT, WRAP_CONTENT));
         linearLayout.addView(button);
         return button;
     }

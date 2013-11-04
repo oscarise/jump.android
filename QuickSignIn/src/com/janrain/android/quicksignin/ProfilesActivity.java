@@ -244,6 +244,9 @@ public class ProfilesActivity extends ListActivity implements JREngageDelegate {
         Toast.makeText(this, "Authentication did not complete", Toast.LENGTH_SHORT).show();
     }
 
+    public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
+    }
+
     public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {
         String message = "Authentication failed, error: " +
                 ((error == null) ? "unknown" : error.getMessage());

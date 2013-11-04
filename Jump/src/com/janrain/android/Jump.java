@@ -54,6 +54,7 @@ import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileInputStream;
@@ -73,6 +74,8 @@ import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureRe
 import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswordError;
 import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswordError.FailureReason.
         FORGOTPASSWORD_JUMP_NOT_INITIALIZED;
+import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError;
+import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError.FailureReason.CAPTURE_API_FORMAT_ERROR;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
 /**
@@ -110,6 +113,7 @@ public class Jump {
         /*package*/ String backplaneChannelUrl;
         /*package*/ String captureForgotPasswordFormName;
         /*package*/ String userAgent;
+        /*package*/ String accessToken;
 
         // Transient state values:
         /*
@@ -117,6 +121,7 @@ public class Jump {
          * fireHandlerOnFailure and fireHandlerOnSuccess when the operation has completed.
          */
         /*package*/ SignInResultHandler signInHandler;
+        /*package*/ CaptureApiResultHandler captureAPIHandler;
         public boolean initCalled;
     }
 
@@ -297,6 +302,10 @@ public class Jump {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
         }
         return state.userAgent;
+    }
+
+    public static String getAccessToken() {
+        return state.signedInUser.getAccessToken();
     }
 
     /**
@@ -567,19 +576,65 @@ public class Jump {
     }
 
     /**
-     * An interface to receive a callback which handles the Capture OAuth Access Code that is generated on
-     * the completion of the sign-in flow. Implement this interface in your sign in result handler if you
-     * would like to receive the code.
-     * See the Start Sign-in section of the jump.android/Docs/Jump_Integration_Guide.md for more information.
+     * An interface to receive a callback which handles the Capture OAuth Access Code that is generated on the
+     * completion of the sign-in flow. Implement this interface in your sign in result handler if you would
+     * like to receive the code. See the Start Sign-in section of the jump.android/Docs/Jump_Integration_Guide.md
+     * for more information.
      */
     public interface SignInCodeHandler {
         /**
          * Called when Capture sign-in has succeeded.
          *
          * @param code An OAuth Authorization Code, this short lived code can be used to get an Access Token
-         *   for use with a server side application like the Capture Drupal Plugin.
+         *             for use with a server side application like the Capture Drupal Plugin.
          */
         void onCode(String code);
+    }
+
+    /**
+     * An interface to receive callbacks notifying the completion of a sign-in flow.
+     */
+    public interface CaptureApiResultHandler {
+        /**
+         * Called when Capture sign-in has succeeded. At this point Jump.getCaptureUser will return the
+         * CaptureRecord instance for the user.
+         */
+        void onSuccess(JSONObject response);
+
+        /**
+         * Called when Capture sign-in has failed.
+         *
+         * @param error the error which caused the failure
+         */
+        void onFailure(CaptureAPIError error);
+
+        /**
+         * Errors that may be sent upon failure of the sign-in flow
+         */
+        public static class CaptureAPIError {
+            public final FailureReason reason;
+            public final CaptureApiError captureApiError;
+            public final JREngageError engageError;
+
+            /*package*/ CaptureAPIError(FailureReason reason, CaptureApiError captureApiError,
+                                        JREngageError engageError) {
+                this.reason = reason;
+                this.captureApiError = captureApiError;
+                this.engageError = engageError;
+            }
+
+            public String toString() {
+                return "<" + super.toString() + " reason: " + reason + " captureApiError: " + captureApiError
+                        + " engageError: " + engageError + ">";
+            }
+
+            public enum FailureReason {
+                /**
+                 * The capture api request failed with invalid fields format
+                 */
+                CAPTURE_API_FORMAT_ERROR
+            }
+        }
     }
 
     /**
@@ -897,4 +952,105 @@ public class Jump {
         }
     }
 
+    /**
+     * Starts the Engage account linking flow. <p/> If the providerName parameter is not null and is a valid
+     * provider name string then authentication begins directly with that provider. <p/> If providerName is
+     * null than a list of available providers is displayed first.
+     *
+     * @param fromActivity the activity from which to start the dialog activity
+     * @param providerName the name of the provider to show the sign-in flow for. May be null. If null, a list
+     *                     of providers (and a traditional sign-in form) is displayed to the end-user.
+     * @param linkAccount  the boolean set to true for account linking
+     * @param mDelegate    an Engage Delegate to handle the JRSession response.
+     */
+
+    public static void showSocialSignInDialog(Activity fromActivity, String providerName,
+                                              boolean linkAccount, JREngageDelegate mDelegate) {
+        state.jrEngage.showAuthenticationDialog(fromActivity, null, providerName, null, linkAccount);
+        state.jrEngage.addDelegate(mDelegate);
+    }
+
+    /**
+     * Headless API for Capture link account
+     *
+     * @param token   token of the account that user wants to link
+     * @param handler your callback handler, invoked upon completion in the UI thread
+     */
+    public static void performLinkAccount(final String token, final CaptureApiResultHandler handler) {
+        state.captureAPIHandler = handler;
+        Capture.performLinkAccount(token, new Capture.CaptureApiResultHandler() {
+            @Override
+            public void onSuccess(JSONObject response) {
+                fireHandlerOnCaptureAPISuccess(response);
+            }
+
+            @Override
+            public void onFailure(CaptureApiError error) {
+                Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
+                        error,
+                        null));
+            }
+        });
+    }
+
+    /**
+     * Headless API for Capture unlink account
+     *
+     * @param identifier the identifier of the account that user wants to unlink
+     * @param handler    your result handler, called upon completion on the UI thread
+     */
+    public static void performUnlinkAccount(String identifier, final CaptureApiResultHandler handler) {
+        state.captureAPIHandler = handler;
+        Capture.performUnlinkAccount(identifier, new Capture.CaptureApiResultHandler() {
+            @Override
+            public void onSuccess(JSONObject response) {
+                fireHandlerOnCaptureAPISuccess(response);
+            }
+
+            @Override
+            public void onFailure(CaptureApiError error) {
+                Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
+                        error,
+                        null));
+            }
+        });
+    }
+
+    /**
+     * Headless API for fetching Capture Signed user data
+     *
+     * @param handler your result handler, called upon completion on the UI thread
+     */
+    public static void performFetchCaptureData(final CaptureApiResultHandler handler) {
+        state.captureAPIHandler = handler;
+        Capture.performUpdateSignedUserData(new Capture.CaptureApiResultHandler() {
+            @Override
+            public void onSuccess(JSONObject response) {
+                fireHandlerOnCaptureAPISuccess(response);
+            }
+
+            @Override
+            public void onFailure(CaptureApiError error) {
+                Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
+                        error,
+                        null));
+            }
+        });
+    }
+
+    /*package*/
+    static void fireHandlerOnCaptureAPIFailure(CaptureAPIError failureParam) {
+        CaptureApiResultHandler handler_ = state.captureAPIHandler;
+        state.captureAPIHandler = null;
+        if (handler_ != null) handler_.onFailure(failureParam);
+    }
+
+    /*package*/
+    static void fireHandlerOnCaptureAPISuccess(JSONObject response) {
+        CaptureApiResultHandler handler_ = state.captureAPIHandler;
+        state.captureAPIHandler = null;
+        if (handler_ != null) {
+            handler_.onSuccess(response);
+        }
+    }
 }
