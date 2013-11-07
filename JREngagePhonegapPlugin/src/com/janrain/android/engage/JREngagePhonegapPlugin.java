@@ -257,6 +257,10 @@ public class JREngagePhonegapPlugin extends CordovaPlugin implements JREngageDel
                 "User canceled authentication"));
     }
 
+    @Override
+    public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
+    }
+
     public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {
         LogUtils.logd(error.toString());
         // TODO: Test this on Android (auth fails as well as sharing fails)

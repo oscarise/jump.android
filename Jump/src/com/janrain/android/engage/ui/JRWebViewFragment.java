@@ -215,7 +215,7 @@ public class JRWebViewFragment extends JRUiFragment {
     }
 
     private void configureWebViewUa() {
-        String customUa = mSession.getCustomUserAgentContext() + System.getProperty("http.agent");
+        String customUa = mProvider.getWebViewOptions().getAsString(JRDictionary.KEY_USER_AGENT);
         //if (mUseDesktopUa) mWebViewSettings.setUserAgentString(getString(R.string.jr_desktop_browser_ua));
         if (customUa != null) mWebViewSettings.setUserAgentString(customUa);
     }
