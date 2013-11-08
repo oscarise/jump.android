@@ -221,8 +221,18 @@ public class JRSession implements JRConnectionManagerDelegate {
                 // any invalid state.
                 throw new Archiver.LoadException("New library version with old serialized state");
             }
-            mUserAgent = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString() +
-                    "/" + mUrlEncodedLibraryVersion + " ";
+            mUserAgent = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString() ;
+            PackageInfo info = null;
+            try {
+                String packageName = getApplicationContext().getPackageName();
+                info = getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
+                mUserAgent += "/" + info.versionCode+ " ";
+
+            } catch (PackageManager.NameNotFoundException e) {
+                throwDebugException(new RuntimeException("User agent create failed : ", e));
+            }
+
+
             JRConnectionManager.setCustomUserAgent(mUserAgent +  " " + System.getProperty("http.agent"));
 
 
