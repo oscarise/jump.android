@@ -226,7 +226,7 @@ public class JRSession implements JRConnectionManagerDelegate {
             try {
                 String packageName = getApplicationContext().getPackageName();
                 info = getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
-                mUserAgent += "/" + info.versionCode+ " ";
+                mUserAgent += "/" + info.versionCode + " ";
 
             } catch (PackageManager.NameNotFoundException e) {
                 throwDebugException(new RuntimeException("User agent create failed : ", e));
