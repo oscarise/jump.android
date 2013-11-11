@@ -40,7 +40,6 @@ import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -54,7 +53,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
-import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -71,7 +69,6 @@ import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.LogUtils;
-import com.janrain.android.utils.ThreadUtils;
 import org.json.JSONException;
 
 import java.net.URL;
@@ -248,6 +245,7 @@ public class JRWebViewFragment extends JRUiFragment {
             mWebView.setDownloadListener(null);
             mWebView.clearCache(true);
             mWebView.clearHistory();
+            mWebView.removeAllViews();
             mWebView.destroy();
         }
         super.onStop();

@@ -48,10 +48,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.Jump;
-import com.janrain.android.capture.Capture;
-import com.janrain.android.capture.CaptureApiConnection;
-import com.janrain.android.capture.CaptureApiError;
-import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngageDelegate;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
@@ -89,7 +85,7 @@ public class LinkListActivity extends ListActivity {
             String displayName = (profile == null) ? null : profile.getAsString("displayName");
             String message = "Authentication successful" + ((TextUtils.isEmpty(displayName))
                     ? "" : (" for user: " + displayName));
-            showResultDialog(message);
+            Toast.makeText(LinkListActivity.this, message, Toast.LENGTH_LONG).show();
         }
 
         @Override
@@ -106,7 +102,9 @@ public class LinkListActivity extends ListActivity {
             org.apache.http.Header[] headers = response.getHeaders();
             org.apache.http.cookie.Cookie[] cookies = response.getCookies();
             String firstCookieValue = response.getHeaderField("set-cookie");
-            showResultDialog("Token URL response", tokenUrlPayload);
+            Toast.makeText(LinkListActivity.this,
+                    "Token URL response " + tokenUrlPayload,
+                    Toast.LENGTH_LONG).show();
         }
 
         private void showResultDialog(String title, String message) {
@@ -118,32 +116,31 @@ public class LinkListActivity extends ListActivity {
                     .show();
         }
 
-        private void showResultDialog(String title) {
-            showResultDialog(title, null);
-        }
-
         public void jrAuthenticationDidNotComplete() {
-            showResultDialog("Authentication did not complete");
+            Toast.makeText(LinkListActivity.this,
+                    "Authentication did not complete",
+                    Toast.LENGTH_LONG).show();
         }
 
         public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {
             String message = ((error == null) ? "unknown" : error.getMessage());
-
-            showResultDialog("Authentication Failed.", message);
+            Toast.makeText(LinkListActivity.this,
+                    "Authentication Failed : " + message,
+                    Toast.LENGTH_LONG).show();
         }
 
         public void jrAuthenticationCallToTokenUrlDidFail(String tokenUrl,
                                                           JREngageError error,
                                                           String provider) {
-            showResultDialog("Failed to reach token URL");
+            Toast.makeText(LinkListActivity.this, "Failed to reach token URL", Toast.LENGTH_LONG).show();
         }
 
         public void jrSocialDidNotCompletePublishing() {
-            showResultDialog("Sharing did not complete");
+            Toast.makeText(LinkListActivity.this, "Sharing did not complete", Toast.LENGTH_LONG).show();
         }
 
         public void jrSocialDidCompletePublishing() {
-            showResultDialog("Sharing did complete");
+            Toast.makeText(LinkListActivity.this, "Sharing did complete", Toast.LENGTH_LONG).show();
         }
 
         public void jrSocialDidPublishJRActivity(JRActivityObject activity, String provider) {
@@ -164,7 +161,7 @@ public class LinkListActivity extends ListActivity {
         mLinkAccount = (Button) findViewById(R.id.btn_link_account);
         mLinkAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (Jump.getSignedInUser() != null) {
+                if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
                     Jump.showSocialSignInDialog(LinkListActivity.this, null, true, mJREngageDelegate);
 
                 } else {
@@ -253,7 +250,7 @@ public class LinkListActivity extends ListActivity {
     }
 
     public void validateSignedInUser() {
-        if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null){
+        if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
             try {
                 loadLinkedUnlinkedAccounts();
             } catch (JSONException e) {
