@@ -4,10 +4,6 @@
     <facet type="android" name="Android">
       <configuration>
         <option name="LIBRARY_PROJECT" value="true" />
-        <option name="PROGUARD_CFG_PATH" value="/proguard.cfg" />
-        <includeSystemProguardFile>false</includeSystemProguardFile>
-        <includeAssetsFromLibraries>true</includeAssetsFromLibraries>
-        <resOverlayFolders />
       </configuration>
     </facet>
   </component>
@@ -20,7 +16,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Jump" />
-    <orderEntry type="library" name="cordova-2.7.0" level="project" />
+    <orderEntry type="library" name="cordova-3.0.0" level="project" />
   </component>
 </module>
 

@@ -69,12 +69,12 @@ import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
-import org.apache.cordova.api.CallbackContext;
+import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import android.util.Log;
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -82,7 +82,7 @@ import java.util.ArrayList;
 import static com.janrain.android.engage.JREngageError.AuthenticationError;
 import static com.janrain.android.engage.JREngageError.ConfigurationError;
 import static com.janrain.android.engage.JREngageError.SocialPublishingError;
-import static org.apache.cordova.api.PluginResult.Status;
+import static org.apache.cordova.PluginResult.Status;
 
 public class JREngagePhonegapPlugin extends CordovaPlugin implements JREngageDelegate {
     private static final String TAG = JREngagePhonegapPlugin.class.getSimpleName();
@@ -255,6 +255,10 @@ public class JREngagePhonegapPlugin extends CordovaPlugin implements JREngageDel
         LogUtils.logd("User Canceled");
         postResultAndResetState(buildFailureResult(AuthenticationError.AUTHENTICATION_CANCELED,
                 "User canceled authentication"));
+    }
+
+    @Override
+    public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
     }
 
     public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {

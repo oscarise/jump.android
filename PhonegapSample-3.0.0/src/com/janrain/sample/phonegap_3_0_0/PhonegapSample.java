@@ -17,9 +17,8 @@
        under the License.
  */
 
-package com.janrain.sample.phonegap_2_7_0;
+package com.janrain.sample.phonegap_3_0_0;
 
-import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
 

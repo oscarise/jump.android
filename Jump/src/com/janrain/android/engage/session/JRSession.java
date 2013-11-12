@@ -221,15 +221,20 @@ public class JRSession implements JRConnectionManagerDelegate {
                 // any invalid state.
                 throw new Archiver.LoadException("New library version with old serialized state");
             }
-            String packageName = getApplicationContext().getPackageName();
+            mUserAgent = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString() ;
             PackageInfo info = null;
             try {
+                String packageName = getApplicationContext().getPackageName();
                 info = getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
-                mUserAgent = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
                 mUserAgent += "/" + info.versionCode + " ";
+
             } catch (PackageManager.NameNotFoundException e) {
                 throwDebugException(new RuntimeException("User agent create failed : ", e));
             }
+
+
+            JRConnectionManager.setCustomUserAgent(mUserAgent +  " " + System.getProperty("http.agent"));
+
 
             /* load the last used auth and social providers */
             mReturningSharingProvider = PrefUtils.getString(PrefUtils.KEY_JR_LAST_USED_SHARING_PROVIDER, "");
