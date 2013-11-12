@@ -275,6 +275,11 @@ public class LinkListActivity extends ListActivity {
         }
 
         public void onFailure(CaptureAPIError error) {
+            try {
+                loadLinkedUnlinkedAccounts();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             Toast.makeText(LinkListActivity.this, "Account LinkUnlink Failed.", Toast.LENGTH_LONG).show();
         }
     }

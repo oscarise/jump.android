@@ -243,10 +243,6 @@ public class JRWebViewFragment extends JRUiFragment {
             // the listener here.
             mWebView.setWebViewClient(null);
             mWebView.setDownloadListener(null);
-            mWebView.clearCache(true);
-            mWebView.clearHistory();
-            mWebView.removeAllViews();
-            mWebView.destroy();
         }
         super.onStop();
     }
