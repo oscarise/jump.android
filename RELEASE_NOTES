@@ -1,3 +1,6 @@
+v4.5.0:
+ - Updates the Android Phonegap plugin for Phonegap 3.0
+ - Support for linking and unlinking Capture accounts
 v4.4.0:
  - Fixes bug when trying to perform traditional sign-in with the standard_flow
  - Support for custom OpenID and SAML providers
