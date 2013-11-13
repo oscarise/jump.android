@@ -34,14 +34,12 @@ package com.janrain.android.capture;
 
 import com.janrain.android.Jump;
 import com.janrain.android.utils.ApiConnection;
-import com.janrain.android.utils.LogUtils;
 import org.json.JSONObject;
 
 import java.security.SecureRandom;
 import java.util.Set;
 
 import static com.janrain.android.Jump.TraditionalSignInType;
-import static com.janrain.android.Jump.TraditionalSignInType.EMAIL;
 import static com.janrain.android.Jump.getCaptureClientId;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
@@ -255,7 +253,7 @@ public class Capture {
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
-                CaptureFlowUtils.getUserIdentifyingFieldName(Jump.getCaptureForgotPasswordFormName(),
+                CaptureFlowUtils.getUserIdFieldName(Jump.getCaptureForgotPasswordFormName(),
                         Jump.getCaptureFlow()),  emailAddress
 
         );
@@ -281,7 +279,6 @@ public class Capture {
         }
 
         CaptureApiConnection c = getResendEmailVerificationConnection(emailAddress);
-
         c.fetchResponseAsJson(new ApiConnection.FetchJsonCallback() {
             public void run(JSONObject response) {
                 if (response == null) {
@@ -297,8 +294,7 @@ public class Capture {
     }
 
     private static CaptureApiConnection getResendEmailVerificationConnection(String emailAddress) {
-
-        String fieldName = CaptureFlowUtils.getUserIdentifyingFieldName(
+        String fieldName = CaptureFlowUtils.getUserIdFieldName(
                 Jump.getCaptureResendEmailVerificationFormName(), Jump.getCaptureFlow());
 
         CaptureApiConnection c = new CaptureApiConnection("/oauth/verify_email_native");
@@ -312,10 +308,8 @@ public class Capture {
 
         c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
         c.maybeAddParam("flow", Jump.getCaptureFlowName());
-
         return c;
     }
-
 
     private static String generateAndStoreRefreshSecret() {
         final int SECRET_LENGTH = 40;
