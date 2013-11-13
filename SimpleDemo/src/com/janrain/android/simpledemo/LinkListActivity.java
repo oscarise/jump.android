@@ -267,20 +267,13 @@ public class LinkListActivity extends ListActivity {
 
     private class MyCaptureApiResultHandler implements Jump.CaptureApiResultHandler {
         public void onSuccess(JSONObject response) {
-            try {
-                loadLinkedUnlinkedAccounts();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            validateSignedInUser();
         }
 
         public void onFailure(CaptureAPIError error) {
-            try {
-                loadLinkedUnlinkedAccounts();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            Toast.makeText(LinkListActivity.this, "Account LinkUnlink Failed.", Toast.LENGTH_LONG).show();
+            Toast.makeText(LinkListActivity.this,
+                    "Account LinkUnlink Failed.",
+                    Toast.LENGTH_LONG).show();
         }
     }
 

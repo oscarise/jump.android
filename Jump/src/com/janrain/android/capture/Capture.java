@@ -417,6 +417,8 @@ public class Capture {
                 onFailure(CaptureApiError.INVALID_API_RESPONSE);
             } else if ("ok".equals(response.opt("stat"))) {
                 onSuccess(response);
+            } else if ((response.opt("result"))!= null && String.valueOf(response.opt("result")).length()>0 ) {
+                onSuccess(response);
             } else {
                 onFailure(CaptureApiError.INVALID_API_RESPONSE);
             }
