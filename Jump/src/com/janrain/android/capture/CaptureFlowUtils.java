@@ -192,7 +192,7 @@ public class CaptureFlowUtils {
         return (Map<String, Object>) ((Map<String, Object>) flow.get("fields")).get(fieldName);
     }
 
-    public static String getForgotPasswordFormField(String formName, Map<String, Object> captureFlow) {
+    public static String getUserIdentifyingFieldName(String formName, Map<String, Object> captureFlow) {
         if (formName == null || captureFlow == null) return null;
         if (formName == null ){
             throwDebugException(new RuntimeException("Missing capture configuration setting forgottenPasswordFormName"));

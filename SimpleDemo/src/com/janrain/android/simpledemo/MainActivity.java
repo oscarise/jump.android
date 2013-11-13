@@ -34,15 +34,18 @@ package com.janrain.android.simpledemo;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -146,6 +149,7 @@ public class MainActivity extends FragmentActivity {
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
+        Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -212,6 +216,12 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        resendVerificationButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                promptForResendVerificationEmailAddress();
+            }
+        });
+
         link_unlinkAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
@@ -226,6 +236,38 @@ public class MainActivity extends FragmentActivity {
         signOut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Jump.signOutCaptureUser(MainActivity.this);
+            }
+        });
+    }
+
+    private void promptForResendVerificationEmailAddress() {
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+
+        AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
+        b.setView(input);
+        b.setTitle("Please confirm your email address");
+        b.setMessage("We'll resend your verification email.");
+        b.setNegativeButton("Cancel", null);
+        b.setPositiveButton("Send", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                String emailAddress = input.getText().toString();
+                sendVerificationEmail(emailAddress);
+            }
+        });
+        b.show();
+    }
+
+    private void sendVerificationEmail(String emailAddress) {
+        Jump.resendEmailVerification(emailAddress, new CaptureApiRequestCallback() {
+
+            public void onSuccess() {
+                Toast.makeText(MainActivity.this, "Verification email sent.", Toast.LENGTH_LONG).show();
+            }
+
+            public void onFailure(CaptureApiError e) {
+                Toast.makeText(MainActivity.this, "Failed to send verification email: " + e,
+                               Toast.LENGTH_LONG).show();
             }
         });
     }

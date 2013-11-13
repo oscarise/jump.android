@@ -112,6 +112,7 @@ public class Jump {
         /*package*/ TraditionalSignInType traditionalSignInType;
         /*package*/ String backplaneChannelUrl;
         /*package*/ String captureForgotPasswordFormName;
+        /*package*/ String captureResendEmailVerificationFormName;
         /*package*/ String userAgent;
         /*package*/ String accessToken;
 
@@ -186,6 +187,7 @@ public class Jump {
         state.captureTraditionalSignInFormName = jumpConfig.captureTraditionalSignInFormName;
         state.backplaneChannelUrl = jumpConfig.backplaneChannelUrl;
         state.captureForgotPasswordFormName = jumpConfig.captureForgotPasswordFormName;
+        state.captureResendEmailVerificationFormName = jumpConfig.captureResendEmailVerificationFormName;
 
         final Context tempContext = context;
         ThreadUtils.executeInBg(new Runnable() {
@@ -241,6 +243,10 @@ public class Jump {
         return state.captureForgotPasswordFormName;
     }
 
+    public static String getCaptureResendEmailVerificationFormName() {
+        return state.captureResendEmailVerificationFormName;
+    }
+
     public static String getResponseType() {
         SignInResultHandler handler = state.signInHandler;
 
@@ -292,6 +298,7 @@ public class Jump {
 
     public static String getCustomUserAgentContext() {
         ApplicationInfo ai = AndroidUtils.getApplicationInfo();
+        if (state.context == null) return null;
         String packageName = state.context.getApplicationContext().getPackageName();
         PackageInfo info = null;
         try {
@@ -950,6 +957,18 @@ public class Jump {
                 }
             });
         }
+    }
+
+
+   /**
+    * Resend email verification
+    *
+    * @param emailAddress the email address to verify
+    * @param callback a Capture Api Request Callback
+    */
+    public static void resendEmailVerification(String emailAddress,
+                                               final Capture.CaptureApiRequestCallback callback) {
+        Capture.resendEmailVerification(emailAddress, callback);
     }
 
     /**
