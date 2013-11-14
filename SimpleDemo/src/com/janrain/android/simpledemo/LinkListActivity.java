@@ -227,11 +227,9 @@ public class LinkListActivity extends ListActivity {
                     JSONArray profiles = json.getJSONObject("result").getJSONArray("profiles");
                     for (int i = 0; i < profiles.length(); i++) {
                         JSONObject profileData = profiles.getJSONObject(i);
-                        LogUtils.loge(profileData.getString("domain"));
                         LinkData linkedRecords = new LinkData(profileData.getString("identifier"),
                                 profileData.getString("domain"));
                         linkUnlinkResults.add(linkedRecords);
-                        LogUtils.loge(profileData.getString("identifier"));
                     }
                     mAdapter = new LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
                     link_account.setAdapter(mAdapter);
