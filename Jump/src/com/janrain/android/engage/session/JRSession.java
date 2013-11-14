@@ -975,11 +975,16 @@ public class JRSession implements JRConnectionManagerDelegate {
                 delegate.authenticationLinkAccountDidComplete(
                         authInfoDict,
                         mCurrentlyAuthenticatingProvider.getName());
-                mLinkAccount = false;
             } else {
                 delegate.authenticationDidComplete(
                         authInfoDict,
                         mCurrentlyAuthenticatingProvider.getName());
+            }
+
+            if (getLinkAccount() == true){
+                setLinkAccount(false);
+                mCurrentlyAuthenticatingProvider.clearForceReauth();
+                break;
             }
         }
 

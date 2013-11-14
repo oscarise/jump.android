@@ -70,7 +70,7 @@ public class LinkListActivity extends ListActivity {
     ImageView unlinkAccount;
     private Button mLinkAccount;
     private int position;
-    private boolean link_unlink;
+    private boolean link_unlink = false;
     private JREngageDelegate mJREngageDelegate = new JREngageDelegate() {
         public void jrEngageDialogDidFailToShowWithError(JREngageError error) {
             String message = "Simpledemo:\nJREngage dialog failed to show.\nError: " +
@@ -91,8 +91,9 @@ public class LinkListActivity extends ListActivity {
         @Override
         public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
             String token = auth_info.getAsString("token");
-            link_unlink = true;
+            if(link_unlink == true){
             Jump.performLinkAccount(token, captureApiResultHandler);
+            }
         }
 
         public void jrAuthenticationDidReachTokenUrl(String tokenUrl,
@@ -162,6 +163,7 @@ public class LinkListActivity extends ListActivity {
         mLinkAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
+                    link_unlink = true;
                     Jump.showSocialSignInDialog(LinkListActivity.this, null, true, mJREngageDelegate);
 
                 } else {
@@ -227,9 +229,11 @@ public class LinkListActivity extends ListActivity {
                     JSONArray profiles = json.getJSONObject("result").getJSONArray("profiles");
                     for (int i = 0; i < profiles.length(); i++) {
                         JSONObject profileData = profiles.getJSONObject(i);
+                        LogUtils.loge(profileData.getString("domain"));
                         LinkData linkedRecords = new LinkData(profileData.getString("identifier"),
                                 profileData.getString("domain"));
                         linkUnlinkResults.add(linkedRecords);
+                        LogUtils.loge(profileData.getString("identifier"));
                     }
                     mAdapter = new LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
                     link_account.setAdapter(mAdapter);
@@ -264,11 +268,14 @@ public class LinkListActivity extends ListActivity {
     }
 
     private class MyCaptureApiResultHandler implements Jump.CaptureApiResultHandler {
+
         public void onSuccess(JSONObject response) {
+            link_unlink = false;
             validateSignedInUser();
         }
 
         public void onFailure(CaptureAPIError error) {
+            link_unlink = false;
             Toast.makeText(LinkListActivity.this,
                     "Account LinkUnlink Failed.",
                     Toast.LENGTH_LONG).show();
