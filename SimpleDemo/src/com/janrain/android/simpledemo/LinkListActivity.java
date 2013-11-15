@@ -268,7 +268,6 @@ public class LinkListActivity extends ListActivity {
     }
 
     private class MyCaptureApiResultHandler implements Jump.CaptureApiResultHandler {
-
         public void onSuccess(JSONObject response) {
             link_unlink = false;
             validateSignedInUser();
