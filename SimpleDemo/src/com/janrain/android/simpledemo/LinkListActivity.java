@@ -280,5 +280,4 @@ public class LinkListActivity extends ListActivity {
                     Toast.LENGTH_LONG).show();
         }
     }
-
 }
