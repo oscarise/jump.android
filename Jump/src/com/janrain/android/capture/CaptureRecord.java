@@ -233,7 +233,9 @@ public class CaptureRecord extends JSONObject {
 
         FetchJsonCallback jsonCallback = new FetchJsonCallback() {
             public void run(JSONObject content) {
-                if (content.opt("stat").equals("ok")) {
+                if (content == null) {
+                    if (callback != null) callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                } else if (content.opt("stat").equals("ok")) {
                     LogUtils.logd("Capture", change.toString());
                     LogUtils.logd("Capture", unsafeJsonObjectToString(content, 2));
                     fireNextChange(changeList.subList(1, changeList.size()), callback);
