@@ -162,14 +162,14 @@ public class AndroidUtils {
     
     public static void activitySetFinishOnTouchOutside(Activity activity, boolean finish) {
         try {
-            Method m = activity.getClass().getMethod("activitySetFinishOnTouchOutside", boolean.class);
+            Method m = activity.getClass().getMethod("setFinishOnTouchOutside", boolean.class);
             m.invoke(activity, finish);
         } catch (NoSuchMethodException e) {
-            Log.e(TAG, "[activitySetFinishOnTouchOutside]", e);
+            Log.e(TAG, "[setFinishOnTouchOutside]", e);
         } catch (InvocationTargetException e) {
-            Log.e(TAG, "[activitySetFinishOnTouchOutside]", e);
+            Log.e(TAG, "[setFinishOnTouchOutside]", e);
         } catch (IllegalAccessException e) {
-            Log.e(TAG, "[activitySetFinishOnTouchOutside]", e);
+            Log.e(TAG, "[setFinishOnTouchOutside]", e);
         }
     }
 
