@@ -354,7 +354,7 @@ public class JRProviderListFragment extends JRUiFragment {
             default:
                 Log.e(TAG, "Unrecognized request/result code " + requestCode + "/" + resultCode);
 
-            JRNativeAuth.facebookOnActivityResult(getActivity(), requestCode, resultCode, data);
+            JRNativeAuth.onActivityResult(getActivity(), requestCode, resultCode, data);
         }
 
         //See the comment about specific provider flow in JRFragmentHostActivity#onCreate
