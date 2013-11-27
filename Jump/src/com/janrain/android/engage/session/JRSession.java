@@ -981,7 +981,11 @@ public class JRSession implements JRConnectionManagerDelegate {
                         mCurrentlyAuthenticatingProvider.getName());
             }
 
-            if (getLinkAccount() == true) setLinkAccount(false);
+            if (getLinkAccount() == true){
+                setLinkAccount(false);
+                mCurrentlyAuthenticatingProvider.clearForceReauth();
+                break;
+            }
         }
 
         if (!TextUtils.isEmpty(mTokenUrl)) {
