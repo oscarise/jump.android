@@ -175,6 +175,13 @@ public final class JumpConfig {
         customProviders.put(providerId, providerMap);
     }
 
+    /**
+     * The name of the form used to start the reset password flow
+     */
     public String captureForgotPasswordFormName;
 
+    /**
+     * The name of the form used for resending the verification email
+     */
+    public String captureResendEmailVerificationFormName;
 }

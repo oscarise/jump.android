@@ -192,7 +192,14 @@ public class CaptureFlowUtils {
         return (Map<String, Object>) ((Map<String, Object>) flow.get("fields")).get(fieldName);
     }
 
-    public static String getForgotPasswordFormField(String formName, Map<String, Object> captureFlow) {
+    /**
+     * Returns the first field of type email or text in the form
+     * Usually this is the email address field, but it could be a login id or something else
+     * @param formName
+     * @param captureFlow
+     * @return
+     */
+    public static String getUserIdFieldName(String formName, Map<String, Object> captureFlow) {
         if (formName == null || captureFlow == null) return null;
         if (formName == null ){
             throwDebugException(new RuntimeException("Missing capture configuration setting forgottenPasswordFormName"));

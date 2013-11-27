@@ -46,6 +46,11 @@ public class CaptureApiConnection extends ApiConnection {
         if (!relativeUrl.startsWith("/")) {
             throwDebugException(new RuntimeException("bad looking relative URL. Should start with /"));
         }
+    }
+
+    @Override
+    public void fetchResponseMaybeJson(final FetchCallback callback) {
         addCustomUserAgent(getCustomUserAgentContext());
+        super.fetchResponseMaybeJson(callback);
     }
 }

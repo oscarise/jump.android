@@ -103,4 +103,48 @@ public class CaptureTest extends AndroidTestCase {
         assertEquals(expectedUri, actualUri);
         assertRequestParamsEqual(expectedParams, actualParams);
     }
+
+    @Test
+    public void test_resendVerificationEmail() throws Exception {
+        Map<String, Object> flow = new HashMap<String, Object>() {{
+            put("version", "123456");
+            put("fields", new HashMap<String, Map>() {{
+                put("resendVerificationForm", new HashMap<String, List>() {{
+                    put("fields", Arrays.asList(new String[]{"traditionalSignIn_emailAddress"}));
+                }});
+                put("traditionalSignIn_emailAddress", new HashMap<String, String>() {{
+                    put("type", "email");
+                }});
+            }});
+        }};
+
+        Object state = Whitebox.getInternalState(Jump.class, "state");
+        Whitebox.setInternalState(state, "captureClientId", "abc123");
+        Whitebox.setInternalState(state, "captureLocale", "US-en");
+        Whitebox.setInternalState(state, "captureDomain", "base.uri");
+        Whitebox.setInternalState(state, "captureFlowName", "standard_flow");
+        Whitebox.setInternalState(state, "captureFlow", flow);
+        Whitebox.setInternalState(state, "captureResendEmailVerificationFormName", "resendVerificationForm");
+
+        String expectedUri = "https://base.uri/oauth/verify_email_native";
+        Set<Pair<String, String>> expectedParams = new HashSet<Pair<String, String>>();
+        expectedParams.add(new Pair<String, String>("client_id", "abc123"));
+        expectedParams.add(new Pair<String, String>("response_type", "token"));
+        expectedParams.add(new Pair<String, String>("redirect_uri", "http://android.library"));
+        expectedParams.add(new Pair<String, String>("locale", "US-en"));
+        expectedParams.add(new Pair<String, String>("form", "resendVerificationForm"));
+        expectedParams.add(new Pair<String, String>("flow", "standard_flow"));
+        expectedParams.add(new Pair<String, String>("flow_version", "123456"));
+        expectedParams.add(new Pair<String, String>("traditionalSignIn_emailAddress", "me@mydomain.name"));
+
+        CaptureApiConnection c = Whitebox.invokeMethod(Capture.class,
+                                                       "getResendEmailVerificationConnection",
+                                                       "me@mydomain.name");
+
+        String actualUri = Whitebox.getInternalState(c, "url");
+        Set<Pair<String, String>> actualParams = Whitebox.getInternalState(c, "params");
+
+        assertEquals(expectedUri, actualUri);
+        assertRequestParamsEqual(expectedParams, actualParams);
+    }
 }

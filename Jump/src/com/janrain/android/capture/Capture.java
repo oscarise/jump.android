@@ -34,14 +34,12 @@ package com.janrain.android.capture;
 
 import com.janrain.android.Jump;
 import com.janrain.android.utils.ApiConnection;
-import com.janrain.android.utils.LogUtils;
 import org.json.JSONObject;
 
 import java.security.SecureRandom;
 import java.util.Set;
 
 import static com.janrain.android.Jump.TraditionalSignInType;
-import static com.janrain.android.Jump.TraditionalSignInType.EMAIL;
 import static com.janrain.android.Jump.getCaptureClientId;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
@@ -255,7 +253,7 @@ public class Capture {
                 "locale", Jump.getCaptureLocale(),
                 "response_type", Jump.getResponseType(),
                 "redirect_uri", Jump.getRedirectUri(),
-                CaptureFlowUtils.getForgotPasswordFormField(Jump.getCaptureForgotPasswordFormName(),
+                CaptureFlowUtils.getUserIdFieldName(Jump.getCaptureForgotPasswordFormName(),
                         Jump.getCaptureFlow()),  emailAddress
 
         );
@@ -267,6 +265,51 @@ public class Capture {
         return c;
     }
 
+    /**
+     * Resend email verification
+     *
+     * @param emailAddress the email address to verify
+     * @param callback a Capture Api Request Callback
+     * @return
+     */
+    public static CaptureApiConnection resendEmailVerification(String emailAddress,
+                                                               final CaptureApiRequestCallback callback) {
+        if (Jump.getCaptureResendEmailVerificationFormName() == null) {
+            throwDebugException(new IllegalArgumentException("null captureResendEmailVerificationFormName"));
+        }
+
+        CaptureApiConnection c = getResendEmailVerificationConnection(emailAddress);
+        c.fetchResponseAsJson(new ApiConnection.FetchJsonCallback() {
+            public void run(JSONObject response) {
+                if (response == null) {
+                    callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                } else if ("ok".equals(response.opt("stat"))) {
+                    callback.onSuccess();
+                } else {
+                    callback.onFailure(new CaptureApiError(response, null, null));
+                }
+            }
+        });
+        return c;
+    }
+
+    private static CaptureApiConnection getResendEmailVerificationConnection(String emailAddress) {
+        String fieldName = CaptureFlowUtils.getUserIdFieldName(
+                Jump.getCaptureResendEmailVerificationFormName(), Jump.getCaptureFlow());
+
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/verify_email_native");
+        c.addAllToParams(
+                "client_id", getCaptureClientId(),
+                "locale", Jump.getCaptureLocale(),
+                "response_type", "token",
+                "redirect_uri", Jump.getRedirectUri(),
+                "form", Jump.getCaptureResendEmailVerificationFormName(),
+                fieldName, emailAddress);
+
+        c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
+        c.maybeAddParam("flow", Jump.getCaptureFlowName());
+        return c;
+    }
 
     private static String generateAndStoreRefreshSecret() {
         final int SECRET_LENGTH = 40;
