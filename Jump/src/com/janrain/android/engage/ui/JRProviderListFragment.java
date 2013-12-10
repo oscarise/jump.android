@@ -51,6 +51,7 @@ import android.widget.Toast;
 import com.janrain.android.R;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.JRNativeAuth;
+import com.janrain.android.engage.NativeGooglePlus;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.engage.types.JRDictionary;
@@ -82,6 +83,8 @@ public class JRProviderListFragment extends JRUiFragment {
 
     private boolean mSectionHeaderEnabled;
     private boolean mSectionFooterEnabled;
+
+    private JRNativeAuth.NativeProvider nativeProvider;
 
     /**
      * @internal
@@ -283,25 +286,16 @@ public class JRProviderListFragment extends JRUiFragment {
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
             if (JRNativeAuth.canHandleProvider(provider)) {
-                JRNativeAuth.startAuthOnProvider(provider, getActivity(), new JRNativeAuth.NativeAuthCallback() {
+                nativeProvider = JRNativeAuth.createNativeProvider(provider);
+                nativeProvider.startAuthentication(getActivity(), new JRNativeAuth.NativeAuthCallback() {
                     public void onSuccess(JRDictionary payload) {
+                        mSession.saveLastUsedAuthProvider();
                         mSession.triggerAuthenticationDidCompleteWithPayload(payload);
                         finishFragmentWithResult(Activity.RESULT_OK);
                     }
 
-                    public void onFailure(
-                            String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
-                        LogUtils.logd("Native Auth Error: " + errorCode + " " + message
-                                + (exception != null ? " " + exception : ""));
-
-                        if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
-                            mSession.triggerAuthenticationDidFail(new JREngageError(
-                                    message,
-                                    JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
-                                    JREngageError.ErrorType.CONFIGURATION_FAILED));
-                        } else if (! errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
-                            startWebViewAuthForProvider(provider);
-                        }
+                    public void tryWebViewAuthentication() {
+                        startWebViewAuthForProvider(provider);
                     }
                 });
             } else {
@@ -354,7 +348,12 @@ public class JRProviderListFragment extends JRUiFragment {
             default:
                 Log.e(TAG, "Unrecognized request/result code " + requestCode + "/" + resultCode);
 
-            JRNativeAuth.onActivityResult(getActivity(), requestCode, resultCode, data);
+            if (nativeProvider != null && nativeProvider.provider().equals("googleplus")) {
+                ((NativeGooglePlus)nativeProvider).onActivityResult(requestCode, resultCode, data);
+            } else {
+                //FIXME facebook should probably be more like Google+ here
+                JRNativeAuth.onActivityResult(getActivity(), requestCode, resultCode, data);
+            }
         }
 
         //See the comment about specific provider flow in JRFragmentHostActivity#onCreate

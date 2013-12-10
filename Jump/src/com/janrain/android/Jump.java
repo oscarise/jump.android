@@ -172,6 +172,8 @@ public class Jump {
         state.context = context;
         state.jrEngage = JREngage.initInstance(context.getApplicationContext(), jumpConfig.engageAppId,
                 null, null, jumpConfig.customProviders);
+        state.jrEngage.setTryWebViewAuthenticationWhenGooglePlayIsUnavailable(
+                jumpConfig.tryWebViewAuthenticationWhenGooglePlayIsUnavailable);
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
         state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;

@@ -124,6 +124,21 @@ public final class JumpConfig {
     public String backplaneChannelUrl;
 
     /**
+     * Set this to "true" if you want the Janrain SDK to silently fail, then attempt WebView authentication
+     * when the Google+ SDK is integrated but Google Play Services is unavailable.
+     *
+     * When false, if the Google Play error is SERVICE_MISSING, SERVICE_VERSION_UPDATE_REQUIRE, or
+     * SERVICE_DISABLED, then the SDK will present Google's dialog suggesting that the user install or update
+     * Google Play Services. After the dialog is dismissed it will call your onFailure method. If the Google
+     * Play error is something else, then the SDK will silently fail and attempt WebView authentication.
+     *
+     * Reference: https://developer.android.com/google/play-services/setup.html#ensure
+     *
+     * This defaults to true.
+     */
+     public Boolean tryWebViewAuthenticationWhenGooglePlayIsUnavailable = true;
+
+    /**
      * A list of custom identity providers. See `Engage_Custom_Provider_Guide.md` for details on
      * configuring custom providers
      */

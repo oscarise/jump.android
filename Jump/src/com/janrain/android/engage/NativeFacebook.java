@@ -60,21 +60,19 @@ public class NativeFacebook extends NativeProvider {
         }
     }
 
-    /*package*/ NativeFacebook(JRNativeAuth.NativeAuthCallback callback, Activity activity) {
-        super(callback, activity);
-    }
-
-    /*package*/ static Boolean canHandleAuthentication() {
+    /*package*/ static boolean canHandleAuthentication() {
         return fbSessionClass != null && fbCallbackClass != null && fbCanceledExceptionClass != null;
     }
 
     @Override
-    /*package*/ String provider() {
+    public String provider() {
         return "facebook";
     }
 
     @Override
-    /*package*/ void startAuthentication() {
+    public void startAuthentication(Activity activity, JRNativeAuth.NativeAuthCallback callback)  {
+        super.startAuthentication(activity, callback);
+
         Object fbCallback = getFacebookCallBack();
         NativeAuthError authError = NativeAuthError.CANNOT_INVOKE_FACEBOOK_OPEN_SESSION_METHODS;
 

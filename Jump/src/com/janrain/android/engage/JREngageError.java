@@ -161,6 +161,11 @@ public class JREngageError {
          * There was an error configuring JREngage for the JREngage Phonegap plugin: JREngage was null.
          */
         public static final int GENERIC_CONFIGURATION_ERROR = START + 8;
+
+        /**
+         * Google play services are unavailable
+         */
+        public static final int GOOGLE_PLAY_UNAVAILABLE = START + 9;
     }
 
     /**
