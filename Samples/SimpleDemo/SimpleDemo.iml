@@ -2,12 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android" name="Android">
-      <configuration>
-        <option name="PROGUARD_CFG_PATH" value="/proguard.cfg" />
-        <includeSystemProguardFile>false</includeSystemProguardFile>
-        <includeAssetsFromLibraries>true</includeAssetsFromLibraries>
-        <resOverlayFolders />
-      </configuration>
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -16,10 +11,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" />
     </content>
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Jump" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="libs-for-android" level="project" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="android-support-v4" level="project" />
+    <orderEntry type="module" module-name="Jump" />
+    <orderEntry type="module" module-name="JREngagePhonegapPlugin" />
   </component>
 </module>
 
