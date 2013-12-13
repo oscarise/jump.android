@@ -149,6 +149,8 @@ public class NativeGooglePlus extends NativeProvider {
             fragmentTransaction.add(googlePlusFragment, "com.janrain.android.googleplusfragment");
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE);
             fragmentTransaction.commit();
+        } else {
+            completion.onFailure("Google Play is unavailable", null);
         }
     }
 
@@ -162,6 +164,8 @@ public class NativeGooglePlus extends NativeProvider {
             fragmentTransaction.add(googlePlusFragment, "com.janrain.android.googleplusfragment");
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE);
             fragmentTransaction.commit();
+        } else {
+            completion.onFailure("Google Play is unavailable", null);
         }
     }
 
