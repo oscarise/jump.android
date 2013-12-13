@@ -33,6 +33,7 @@ package com.janrain.android.engage;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import com.janrain.android.utils.LogUtils;
 
 import java.lang.reflect.InvocationHandler;
@@ -64,15 +65,17 @@ public class NativeFacebook extends NativeProvider {
         return fbSessionClass != null && fbCallbackClass != null && fbCanceledExceptionClass != null;
     }
 
+    /*package*/ NativeFacebook(FragmentActivity activity, JRNativeAuth.NativeAuthCallback callback) {
+        super(activity, callback);
+    }
+
     @Override
     public String provider() {
         return "facebook";
     }
 
     @Override
-    public void startAuthentication(Activity activity, JRNativeAuth.NativeAuthCallback callback)  {
-        super.startAuthentication(activity, callback);
-
+    public void startAuthentication()  {
         Object fbCallback = getFacebookCallBack();
         NativeAuthError authError = NativeAuthError.CANNOT_INVOKE_FACEBOOK_OPEN_SESSION_METHODS;
 
@@ -98,8 +101,8 @@ public class NativeFacebook extends NativeProvider {
         }
     }
 
-    /*package*/ static void onActivityResult(
-            Activity activity, int requestCode, int resultCode, Intent data) {
+    @Override
+    public void onActivityResult(int requestCode, int responseCode, Intent data) {
         if (fbSessionClass != null) {
             try {
                 Method getActiveSession = fbSessionClass.getMethod("getActiveSession");
@@ -108,7 +111,7 @@ public class NativeFacebook extends NativeProvider {
                 Method onActivityResult = fbSessionClass.getMethod(
                         "onActivityResult", Activity.class, int.class, int.class, Intent.class);
 
-                onActivityResult.invoke(session, activity, requestCode, resultCode, data);
+                onActivityResult.invoke(session, fromActivity, requestCode, responseCode, data);
             } catch (NoSuchMethodException e) {
                 throw new RuntimeException(e);
             } catch (InvocationTargetException e) {
@@ -166,7 +169,7 @@ public class NativeFacebook extends NativeProvider {
         try {
             Method isOpened = session.getClass().getMethod(methodName);
             Boolean result = (Boolean) isOpened.invoke(session.getClass().cast(session));
-            out = result.booleanValue();
+            out = result;
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

@@ -142,7 +142,7 @@ public class JREngage {
     private Context mApplicationContext;
     private Activity mActivityContext;
     private JRSession mSession;
-    private JRNativeAuth.NativeProvider nativeProvider;
+    private Class<? extends JRCustomInterface> mUiCustomization;
     private boolean tryWebViewAuthenticationWhenGooglePlayIsUnavailable = true;
     private final List<JRProvider> mCustomProviders = new ArrayList<JRProvider>();
     private final Set<JREngageDelegate> mDelegates = new HashSet<JREngageDelegate>();
@@ -665,6 +665,23 @@ public class JREngage {
     }
 
     /**
+     * Sign out of the Native Google+ SDK
+     * @param fromActivity
+     */
+    public void signOutNativeGooglePlus(Activity fromActivity) {
+        mSession.signOutNativeProviders(fromActivity);
+    }
+
+    /**
+     * Revoke the Google+ access token and disconnect the app
+     * After calling this you must delete whatever information you've obtained from Google+
+     * @param fromActivity
+     */
+    public void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
+        mSession.revokeAndDisconnectNativeGooglePlus(fromActivity);
+    }
+
+    /**
      * @internal
      * @hide
      */
@@ -691,9 +708,19 @@ public class JREngage {
     private void showNativeAuthFlowInternal(final Activity fromActivity,
                                             final JRProvider provider,
                                             final Class<? extends JRCustomInterface> uiCustomization) {
-        nativeProvider = JRNativeAuth.createNativeProvider(provider);
         mSession.setCurrentlyAuthenticatingProvider(provider);
-        nativeProvider.startAuthentication(fromActivity, new JRNativeAuth.NativeAuthCallback() {
+        mUiCustomization = uiCustomization;
+
+        Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
+        i.putExtra(JRFragmentHostActivity.JR_PROVIDER, provider.getName());
+        fromActivity.startActivity(i);
+    }
+
+    public JRNativeAuth.NativeAuthCallback getNativeAuthCallback(final Activity fromActivity,
+            final Class<? extends JRCustomInterface> uiCustomization) {
+        final JRProvider provider = mSession.getCurrentlyAuthenticatingProvider();
+
+        return new JRNativeAuth.NativeAuthCallback() {
             public void onSuccess(JRDictionary payload) {
                 mSession.saveLastUsedAuthProvider();
                 mSession.triggerAuthenticationDidCompleteWithPayload(payload);
@@ -706,7 +733,7 @@ public class JREngage {
             public void tryWebViewAuthentication() {
                 showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
             }
-        });
+        };
     }
 
     private void showWebAuthFlowInternal(final Activity fromActivity,

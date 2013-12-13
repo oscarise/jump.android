@@ -54,7 +54,6 @@ import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileInputStream;
@@ -410,6 +409,23 @@ public class Jump {
         state.signedInUser = null;
         state.refreshSecret = null;
         CaptureRecord.deleteFromDisk(applicationContext);
+    }
+
+    /**
+     * Sign out of the Native Google+ SDK
+     * @param fromActivity
+     */
+    public static void signOutNativeGooglePlus(Activity fromActivity) {
+        state.jrEngage.signOutNativeGooglePlus(fromActivity);
+    }
+
+    /**
+     * Revoke the Google+ access token and disconnect the app
+     * After calling this you must delete whatever information you've obtained from Google+
+     * @param fromActivity
+     */
+    public static void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
+        state.jrEngage.revokeAndDisconnectNativeGooglePlus(fromActivity);
     }
 
     /*package*/ static void fireHandlerOnFailure(SignInError failureParam) {

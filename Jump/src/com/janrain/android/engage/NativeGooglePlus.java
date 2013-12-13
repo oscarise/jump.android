@@ -33,11 +33,16 @@ package com.janrain.android.engage;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.text.TextUtils;
 import com.janrain.android.utils.LogUtils;
 
@@ -51,7 +56,6 @@ import java.lang.reflect.Proxy;
 import static com.janrain.android.engage.JRNativeAuth.NativeProvider;
 import static com.janrain.android.engage.JRNativeAuth.NativeAuthError;
 
-
 public class NativeGooglePlus extends NativeProvider {
     private static Class plusClientClass;
     private static Class plusClientBuilderClass;
@@ -62,6 +66,7 @@ public class NativeGooglePlus extends NativeProvider {
     private static Class googleAuthUtilClass;
     private static Class userRecoverableAuthExceptionClass;
     private static Class googleAuthExceptionClass;
+    private static Class onAccessRevokedListenerClass;
     private static boolean didLoadClasses = false;
 
     private static final int REQUEST_CODE_RESOLVE_ERROR = 9000;
@@ -71,29 +76,28 @@ public class NativeGooglePlus extends NativeProvider {
     private static final int SERVICE_VERSION_UPDATE_REQUIRED_CONNECTION_RESULT = 2;
     private static final int SERVICE_DISABLED_CONNECTION_RESULT = 3;
 
-    private Object plusClient;
-    private Object connectionResult;
+    private GooglePlusFragment googlePlusFragment;
     private String[] scopes;
     private boolean isConnecting = false;
 
     static {
-        ClassLoader classLoader = NativeProvider.class.getClassLoader();
-
         try {
-            plusClientClass = classLoader.loadClass("com.google.android.gms.plus.PlusClient");
-            plusClientBuilderClass = classLoader.loadClass("com.google.android.gms.plus.PlusClient$Builder");
-            connectionCallbackClass = classLoader.loadClass(
+            plusClientClass = Class.forName("com.google.android.gms.plus.PlusClient");
+            plusClientBuilderClass = Class.forName("com.google.android.gms.plus.PlusClient$Builder");
+            connectionCallbackClass = Class.forName(
                     "com.google.android.gms.common.GooglePlayServicesClient$ConnectionCallbacks");
-            connectionFailedListenerClass = classLoader.loadClass(
+            connectionFailedListenerClass = Class.forName(
                     "com.google.android.gms.common.GooglePlayServicesClient$OnConnectionFailedListener");
-            connectionResultClass = classLoader.loadClass("com.google.android.gms.common.ConnectionResult");
-            playServicesUtilClass = classLoader.loadClass(
+            connectionResultClass = Class.forName("com.google.android.gms.common.ConnectionResult");
+            playServicesUtilClass = Class.forName(
                     "com.google.android.gms.common.GooglePlayServicesUtil");
-            googleAuthUtilClass = classLoader.loadClass("com.google.android.gms.auth.GoogleAuthUtil");
-            userRecoverableAuthExceptionClass = classLoader.loadClass(
+            googleAuthUtilClass = Class.forName("com.google.android.gms.auth.GoogleAuthUtil");
+            userRecoverableAuthExceptionClass = Class.forName(
                     "com.google.android.gms.auth.UserRecoverableAuthException");
-            googleAuthExceptionClass = classLoader.loadClass(
+            googleAuthExceptionClass = Class.forName(
                     "com.google.android.gms.auth.GoogleAuthException");
+            onAccessRevokedListenerClass = Class.forName(
+                    "com.google.android.gms.plus.PlusClient$OnAccessRevokedListener");
             didLoadClasses = true;
         } catch (ClassNotFoundException e) {
             LogUtils.logd("Could not load Native Google+ SDK" + e);
@@ -104,7 +108,8 @@ public class NativeGooglePlus extends NativeProvider {
         return didLoadClasses;
     }
 
-    /*package*/ NativeGooglePlus() {
+    /*package*/ NativeGooglePlus(FragmentActivity activity, JRNativeAuth.NativeAuthCallback callback) {
+        super(activity, callback);
         scopes = new String[] {"https://www.googleapis.com/auth/plus.login"};
     }
 
@@ -114,22 +119,8 @@ public class NativeGooglePlus extends NativeProvider {
     }
 
     @Override
-    public void startAuthentication(Activity activity, JRNativeAuth.NativeAuthCallback callback) {
-        super.startAuthentication(activity, callback);
-
-        int isGooglePlayAvailable = 0;
-        try {
-            Method isGooglePlayServicesAvailable =
-                    playServicesUtilClass.getMethod("isGooglePlayServicesAvailable", Context.class);
-            Object isAvailable = isGooglePlayServicesAvailable.invoke(playServicesUtilClass, fromActivity);
-            isGooglePlayAvailable = ((Integer)isAvailable).intValue();
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
+    public void startAuthentication() {
+        int isGooglePlayAvailable = isGooglePlayAvailable();
 
         if (isGooglePlayAvailable != RESULT_SUCCESS) {
             if (shouldShowUnavailableDialog(isGooglePlayAvailable)) {
@@ -138,56 +129,54 @@ public class NativeGooglePlus extends NativeProvider {
                 completion.onFailure("Google Play unavailable", NativeAuthError.GOOGLE_PLAY_UNAVAILABLE, true);
             }
         } else {
-            if (getPlusClient() == null) {
-                completion.onFailure("Could not instantiate Google Plus Client",
-                                     NativeAuthError.CANNOT_INSTANTIATE_GOOGLE_PLAY_CLIENT);
-                return;
-            }
-
-            plusClientConnect();
-
-            if (!isPlusClientConnected()) {
-                if (connectionResult == null) {
-                    isConnecting = true;
-                } else {
-                    startResolutionForResult();
-                }
-
-            }
+            googlePlusFragment = new GooglePlusFragment();
+            googlePlusFragment.shouldSignIn = true;
+            FragmentManager fragmentManager = fromActivity.getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(googlePlusFragment, "com.janrain.android.googleplusfragment");
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE);
+            fragmentTransaction.commit();
         }
     }
 
+    @Override
     public void signOut() {
-        if (isPlusClientConnected()) {
-            try {
-                Method clearDefaultAccount = plusClientClass.getMethod("clearDefaultAccount");
-                clearDefaultAccount.invoke(getPlusClient());
-
-                Method disconnect = plusClientClass.getMethod("disconnect");
-                disconnect.invoke(getPlusClient());
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
+        if (isGooglePlayAvailable() == RESULT_SUCCESS) {
+            googlePlusFragment = new GooglePlusFragment();
+            googlePlusFragment.shouldSignOut = true;
+            FragmentManager fragmentManager = fromActivity.getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(googlePlusFragment, "com.janrain.android.googleplusfragment");
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE);
+            fragmentTransaction.commit();
         }
     }
 
-    public void onActivityResult(int requestCode, int responseCode, Intent intent) {
-        // FIXME This should get called when the fromActivity's onActivityRequest gets called.
-        if (requestCode == REQUEST_CODE_RESOLVE_ERROR && responseCode == RESULT_OK) {
-            connectionResult = null;
-            plusClientConnect();
+    @Override
+    public void revoke() {
+        if (isGooglePlayAvailable() == RESULT_SUCCESS) {
+            googlePlusFragment = new GooglePlusFragment();
+            googlePlusFragment.shouldDisconnect = true;
+            FragmentManager fragmentManager = fromActivity.getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(googlePlusFragment, "com.janrain.android.googleplusfragment");
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE);
+            fragmentTransaction.commit();
         }
     }
 
-    private void plusClientConnect() {
-        LogUtils.logd("plusClientConnect");
+    @Override
+    public void onActivityResult(int requestCode, int responseCode, Intent data) {
+        googlePlusFragment.onActivityResult(requestCode, responseCode, data);
+    }
+
+    private int isGooglePlayAvailable() {
+        int isGooglePlayAvailable = 0;
         try {
-            Method connect = plusClientClass.getMethod("connect");
-            connect.invoke(getPlusClient());
+            Method isGooglePlayServicesAvailable =
+                    playServicesUtilClass.getMethod("isGooglePlayServicesAvailable", Context.class);
+            Object isAvailable = isGooglePlayServicesAvailable.invoke(playServicesUtilClass, fromActivity);
+            isGooglePlayAvailable = (Integer)isAvailable;
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -195,6 +184,8 @@ public class NativeGooglePlus extends NativeProvider {
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         }
+
+        return isGooglePlayAvailable;
     }
 
     private boolean shouldShowUnavailableDialog(int googlePlayAvailabilityStatus) {
@@ -232,15 +223,277 @@ public class NativeGooglePlus extends NativeProvider {
         }
     }
 
-    private Object getPlusClient() {
-        if (plusClient == null) {
+    private class GooglePlusFragment extends Fragment {
+        private GooglePlusClient mPlusClient;
+        private Object mConnectionResult;
+        private boolean isSigningIn = false;
+
+        public boolean shouldSignIn = false;
+        public boolean shouldSignOut = false;
+        public boolean shouldDisconnect = false;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            LogUtils.logd("GooglePlusFragment onCreate");
+            mPlusClient = new GooglePlusClient(fromActivity, getConnectionCallback(),
+                    getOnConnectFailedListener(), scopes);
+
+            if (shouldSignIn) {
+                signInPlusClient();
+            }
+        }
+
+        @Override
+        public void onStart() {
+            super.onStart();
+            LogUtils.logd("GooglePlusFragment onStart");
+
+            mPlusClient.connect();
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+            LogUtils.logd("GooglePlusFragment onStart");
+
+            mPlusClient.disconnect();
+        }
+
+        @Override
+        public void onActivityResult(int requestCode, int responseCode, Intent data) {
+            if (requestCode == REQUEST_CODE_RESOLVE_ERROR) {
+                if (responseCode == RESULT_OK) {
+                    mConnectionResult = null;
+                    mPlusClient.connect();
+                } else {
+                    completion.onFailure("Could not resolve Google+ result",
+                                         NativeAuthError.COULD_NOT_RESOLVE_GOOGLE_PLUS_RESULT);
+                }
+            }
+        }
+
+        public void signInPlusClient() {
+            if (mPlusClient == null) {
+                completion.onFailure("Could not instantiate Google Plus Client",
+                                     NativeAuthError.CANNOT_INSTANTIATE_GOOGLE_PLAY_CLIENT);
+                return;
+            }
+
+            isSigningIn = true;
+
+            if (!mPlusClient.isConnected()) {
+                if (mConnectionResult == null) {
+                    isConnecting = true;
+                } else {
+                    startResolutionForResult();
+                }
+            } else {
+                isSigningIn = false;
+                new GetAccessTokenTask().execute();
+            }
+        }
+
+        private void signOutPlusClient() {
+            if (mPlusClient.isConnected()) {
+                mPlusClient.clearDefaultAccount();
+                mPlusClient.disconnect();
+                mPlusClient.connect();
+            }
+            completion.onSuccess(null);
+        }
+
+        private void disconnectGooglePlusClient() {
+            if (mPlusClient.isConnected()) {
+                mPlusClient.clearDefaultAccount();
+                mPlusClient.revokeAccessAndDisconnect(getAccessRevokedListener());
+            }
+        }
+
+        private Object getConnectionCallback() {
+            InvocationHandler handler = new InvocationHandler() {
+                @Override
+                public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                    LogUtils.logd("Method Name: " + method.getName());
+                    if (method.getName().equals("onConnected")) {
+                        // onConnected(Bundle connectionHint)
+                        LogUtils.logd("onConnected");
+                        isConnecting = false;
+                        if (isSigningIn) {
+                            new GetAccessTokenTask().execute();
+                            isSigningIn = false;
+                        }
+                        if (shouldSignOut) {
+                            signOutPlusClient();
+                        }
+                        if (shouldDisconnect) {
+                            disconnectGooglePlusClient();
+                        }
+                    } else if (method.getName().equals("onDisconnected")) {
+                        // onDisconnected()
+                        LogUtils.logd("onDisconnected");
+                        completion.onFailure("Google Plus Disconnected",
+                                             NativeAuthError.GOOGLE_PLUS_DISCONNECTED);
+                    }
+                    return null;
+                }
+            };
+
+            return Proxy.newProxyInstance(
+                    connectionCallbackClass.getClassLoader(),
+                    new Class[]{connectionCallbackClass}, handler);
+        }
+
+        private Object getOnConnectFailedListener() {
+            InvocationHandler handler = new InvocationHandler() {
+                @Override
+                public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                    if (method.getName().equals("onConnectionFailed")) {
+                        // onConnectionFailed(ConnectionResult result)
+                        mConnectionResult = objects[0];
+
+                        if (isConnecting && connectionResultHasResolution()) {
+                            startResolutionForResult();
+                        } else {
+                            completion.onFailure("Could not resolve Google+ result",
+                                    NativeAuthError.COULD_NOT_RESOLVE_GOOGLE_PLUS_RESULT);
+                        }
+                    } else if (method.getName().equals("equals")) {
+                        return (o == objects[0]);
+                    }
+                    return null;
+                }
+            };
+            return Proxy.newProxyInstance(
+                    connectionFailedListenerClass.getClassLoader(),
+                    new Class[]{connectionFailedListenerClass}, handler);
+        }
+
+        private Object getAccessRevokedListener() {
+            InvocationHandler handler = new InvocationHandler() {
+                @Override
+                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    if (method.getName().equals("onAccessRevoked")) {
+                        // onAccessRevoked(ConnectionResult status)
+                        completion.onSuccess(null);
+                    }
+                    return null;
+                }
+            };
+
+            return Proxy.newProxyInstance(
+                    onAccessRevokedListenerClass.getClassLoader(),
+                    new Class[]{onAccessRevokedListenerClass}, handler);
+        }
+
+        private Boolean connectionResultHasResolution() {
+            Object hasResolution = false;
+
+            try {
+                Method resultHasResolution = connectionResultClass.getMethod("hasResolution");
+                hasResolution = resultHasResolution.invoke(mConnectionResult);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+
+            return (Boolean)hasResolution;
+        }
+
+        private void startResolutionForResult() {
+            try {
+                Method startResolution = connectionResultClass.getMethod("startResolutionForResult",
+                        Activity.class, int.class);
+                startResolution.invoke(mConnectionResult, fromActivity, REQUEST_CODE_RESOLVE_ERROR);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                if (e.getCause() instanceof IntentSender.SendIntentException) {
+                    // Try connecting again
+                    mConnectionResult = null;
+                    mPlusClient.connect();
+                } else {
+                    throw new RuntimeException(e);
+                }
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        private void handleUserRecoverableAuthException(InvocationTargetException exception) {
+            Intent intent = null;
+
+            try {
+                Method getIntent = userRecoverableAuthExceptionClass.getMethod("getIntent");
+                intent = (Intent)getIntent.invoke(userRecoverableAuthExceptionClass);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+
+            fromActivity.startActivityForResult(intent, REQUEST_CODE_RESOLVE_ERROR);
+        }
+
+        private class GetAccessTokenTask extends AsyncTask<Void, Void, String> {
+
+            @Override
+            protected String doInBackground(Void... params) {
+                Object token = null;
+
+                try {
+                    Method getToken = googleAuthUtilClass.getMethod("getToken", Context.class, String.class,
+                            String.class);
+                    token = getToken.invoke(googleAuthUtilClass, fromActivity, mPlusClient.accountName(),
+                            "oauth2:" + TextUtils.join(" ", scopes));
+                } catch (NoSuchMethodException e) {
+                    throw new RuntimeException(e);
+                } catch (InvocationTargetException e) {
+                    if (e.getCause() instanceof  IOException) {
+                        completion.onFailure("Could not get Google+ Access Token",
+                                NativeAuthError.CANNOT_GET_GOOGLE_PLUS_ACCESS_TOKEN, e);
+                        return null;
+                    } else if (userRecoverableAuthExceptionClass.isInstance(e.getCause())) {
+                        LogUtils.logd("UserRecoverableAuthException");
+                        token = null;
+                        handleUserRecoverableAuthException(e);
+                    } else if (googleAuthExceptionClass.isInstance(e.getCause())) {
+                        throw new RuntimeException(e);
+                    }
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+
+                LogUtils.logd("token: " + (String)token);
+                return (String)token;
+            }
+
+            @Override
+            protected void onPostExecute(String token) {
+                LogUtils.logd("Got the token: " + token);
+                getAuthInfoTokenForAccessToken(token);
+            }
+        }
+    }
+
+    private class GooglePlusClient {
+        Object plusClient;
+
+        public GooglePlusClient(Context context, Object connectionCallback, Object onConnectFailedListener,
+                String[] scopes) {
 
             try {
                 Constructor constructor = plusClientBuilderClass.getConstructor(Context.class,
-                                                                                connectionCallbackClass,
-                                                                                connectionFailedListenerClass);
-                Object builder = constructor.newInstance(fromActivity, getConnectionCallback(),
-                                                         getOnConnectFailedListener());
+                        connectionCallbackClass,
+                        connectionFailedListenerClass);
+                Object builder = constructor.newInstance(fromActivity, connectionCallback,
+                        onConnectFailedListener);
 
                 Method setScopes = plusClientBuilderClass.getMethod("setScopes", String[].class);
                 setScopes.invoke(builder, new Object[] {scopes});
@@ -262,185 +515,97 @@ public class NativeGooglePlus extends NativeProvider {
             }
         }
 
-        return plusClient;
-    }
-
-    private Boolean isPlusClientConnected() {
-        if (getPlusClient() == null) return false;
-
-        Object isConnected;
-
-        try {
-            Method isClientConnected = plusClientClass.getMethod("isConnected");
-            isConnected = isClientConnected.invoke(getPlusClient());
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-
-        return (Boolean)isConnected;
-    }
-
-    private String getPlusAccountName() {
-
-        Object accountName;
-
-        try {
-            Method getAccountName = plusClientClass.getMethod("getAccountName");
-            accountName = getAccountName.invoke(getPlusClient());
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-
-        return (String)accountName;
-    }
-
-    private Object getConnectionCallback() {
-        InvocationHandler handler = new InvocationHandler() {
-            @Override
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                LogUtils.logd("Method Name: " + method.getName());
-                if (method.getName().equals("onConnected")) {
-                    // onConnected(Bundle connectionHint)
-                    LogUtils.logd("onConnected");
-                    isConnecting = false;
-                    new GetAccessTokenTask().execute();
-                } else if (method.getName().equals("onDisconnected")) {
-                    // onDisconnected()
-                    LogUtils.logd("onDisconnected");
-                }
-                return null;
-            }
-        };
-
-        return Proxy.newProxyInstance(
-                connectionCallbackClass.getClassLoader(),
-                new Class[]{connectionCallbackClass}, handler);
-    }
-
-    private Object getOnConnectFailedListener() {
-        InvocationHandler handler = new InvocationHandler() {
-            @Override
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                LogUtils.logd("Method: " + method.getName());
-                if (method.getName().equals("onConnectionFailed")) {
-                    // onConnectionFailed(ConnectionResult result)
-                    connectionResult = objects[0];
-
-                    if (isConnecting) {
-                        if (connectionResultHasResolution()) {
-                            startResolutionForResult();
-                        }
-                    }
-                } else if (method.getName().equals("equals")) {
-                    return (o == objects[0]);
-                }
-                return null;
-            }
-        };
-        return Proxy.newProxyInstance(
-                connectionFailedListenerClass.getClassLoader(),
-                new Class[]{connectionFailedListenerClass}, handler);
-    }
-
-    private Boolean connectionResultHasResolution() {
-        Object hasResolution = false;
-
-        try {
-            Method resultHasResolution = connectionResultClass.getMethod("hasResolution");
-            hasResolution = resultHasResolution.invoke(connectionResult);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-
-        return (Boolean)hasResolution;
-    }
-
-    private void startResolutionForResult() {
-
-        try {
-            Method startResolution = connectionResultClass.getMethod("startResolutionForResult",
-                    Activity.class, int.class);
-            startResolution.invoke(connectionResult, fromActivity, REQUEST_CODE_RESOLVE_ERROR);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            if (e.getCause() instanceof IntentSender.SendIntentException) {
-                // Try connecting again
-                connectionResult = null;
-                plusClientConnect();
-            } else {
-                throw new RuntimeException(e);
-            }
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private class GetAccessTokenTask extends AsyncTask<Void, Void, String> {
-
-        @Override
-        protected String doInBackground(Void... params) {
-            Object token = null;
+        public void connect() {
+            LogUtils.logd("plusClient Connect");
 
             try {
-                Method getToken = googleAuthUtilClass.getMethod("getToken", Context.class, String.class,
-                                                                String.class);
-                token = getToken.invoke(googleAuthUtilClass, fromActivity, getPlusAccountName(),
-                                        "oauth2:" + TextUtils.join(" ", scopes));
+                Method connect = plusClientClass.getMethod("connect");
+                connect.invoke(plusClient);
             } catch (NoSuchMethodException e) {
                 throw new RuntimeException(e);
             } catch (InvocationTargetException e) {
-                if (e.getCause() instanceof  IOException) {
-                    completion.onFailure("Could not get Google+ Access Token",
-                                         NativeAuthError.CANNOT_GET_GOOGLE_PLUS_ACCESS_TOKEN, e);
-                    return null;
-                } else if (userRecoverableAuthExceptionClass.isInstance(e.getCause())) {
-                    LogUtils.logd("UserRecoverableAuthException");
-                    token = null;
-                    handleUserRecoverableAuthException(e);
-                } else if (googleAuthExceptionClass.isInstance(e.getCause())) {
-                    throw new RuntimeException(e);
-                }
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        public void disconnect() {
+            LogUtils.logd("plusClient disconnect");
+            try {
+                Method disconnect = plusClientClass.getMethod("disconnect");
+                disconnect.invoke(plusClient);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
 
-            LogUtils.logd("token: " + (String)token);
-            return (String)token;
         }
 
-        @Override
-        protected void onPostExecute(String token) {
-            LogUtils.logd("Got the token: " + token);
-        }
-    }
-
-    private void handleUserRecoverableAuthException(InvocationTargetException exception) {
-        Intent intent = null;
-
-        try {
-            Method getIntent = userRecoverableAuthExceptionClass.getMethod("getIntent");
-            intent = (Intent)getIntent.invoke(userRecoverableAuthExceptionClass);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+        public void revokeAccessAndDisconnect(Object listener) {
+            try {
+                Method revokeAccessAndDisconnect =
+                    plusClientClass.getMethod("revokeAccessAndDisconnect", onAccessRevokedListenerClass);
+                revokeAccessAndDisconnect.invoke(plusClient, listener);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
         }
 
-        fromActivity.startActivityForResult(intent, REQUEST_CODE_RESOLVE_ERROR);
+        public void clearDefaultAccount() {
+            LogUtils.logd("plusClient clearDefaultAccount");
+            try {
+                Method clearDefaultAccount = plusClientClass.getMethod("clearDefaultAccount");
+                clearDefaultAccount.invoke(plusClient);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+        public Boolean isConnected() {
+            Object isConnected = false;
+            try {
+                Method isClientConnected = plusClientClass.getMethod("isConnected");
+                isConnected = isClientConnected.invoke(plusClient);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
+
+            return (Boolean)isConnected;
+        }
+
+        private String accountName() {
+
+            Object accountName;
+
+            try {
+                Method getAccountName = plusClientClass.getMethod("getAccountName");
+                accountName = getAccountName.invoke(plusClient);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
+
+            return (String)accountName;
+        }
     }
 }

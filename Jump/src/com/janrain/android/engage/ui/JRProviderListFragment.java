@@ -49,12 +49,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.R;
-import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.JRNativeAuth;
-import com.janrain.android.engage.NativeGooglePlus;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
-import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
 
 import java.util.ArrayList;
@@ -286,18 +283,7 @@ public class JRProviderListFragment extends JRUiFragment {
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
             if (JRNativeAuth.canHandleProvider(provider)) {
-                nativeProvider = JRNativeAuth.createNativeProvider(provider);
-                nativeProvider.startAuthentication(getActivity(), new JRNativeAuth.NativeAuthCallback() {
-                    public void onSuccess(JRDictionary payload) {
-                        mSession.saveLastUsedAuthProvider();
-                        mSession.triggerAuthenticationDidCompleteWithPayload(payload);
-                        finishFragmentWithResult(Activity.RESULT_OK);
-                    }
-
-                    public void tryWebViewAuthentication() {
-                        startWebViewAuthForProvider(provider);
-                    }
-                });
+                startNativeAuth();
             } else {
                 startWebViewAuthForProvider(provider);
             }
@@ -347,13 +333,6 @@ public class JRProviderListFragment extends JRUiFragment {
                 break;
             default:
                 Log.e(TAG, "Unrecognized request/result code " + requestCode + "/" + resultCode);
-
-            if (nativeProvider != null && nativeProvider.provider().equals("googleplus")) {
-                ((NativeGooglePlus)nativeProvider).onActivityResult(requestCode, resultCode, data);
-            } else {
-                //FIXME facebook should probably be more like Google+ here
-                JRNativeAuth.onActivityResult(getActivity(), requestCode, resultCode, data);
-            }
         }
 
         //See the comment about specific provider flow in JRFragmentHostActivity#onCreate

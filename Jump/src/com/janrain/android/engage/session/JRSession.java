@@ -31,7 +31,9 @@
  */
 package com.janrain.android.engage.session;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -43,11 +45,13 @@ import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.JREngageError.ConfigurationError;
 import com.janrain.android.engage.JREngageError.ErrorType;
 import com.janrain.android.engage.JREngageError.SocialPublishingError;
+import com.janrain.android.engage.JRNativeAuth;
 import com.janrain.android.engage.net.JRConnectionManager;
 import com.janrain.android.engage.net.JRConnectionManagerDelegate;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
+import com.janrain.android.engage.ui.JRFragmentHostActivity;
 import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.Archiver;
 import com.janrain.android.utils.CollectionUtils;
@@ -63,8 +67,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import static com.janrain.android.utils.LogUtils.throwDebugException;
@@ -74,6 +80,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private static final String ARCHIVE_AUTH_PROVIDERS = "authProviders";
     private static final String ARCHIVE_SHARING_PROVIDERS = "sharingProviders";
     private static final String ARCHIVE_AUTH_USERS_BY_PROVIDER = "jrAuthenticatedUsersByProvider";
+    private static final String ARCHIVE_AUTH_NATIVE_PROVIDERS = "jrAuthenticatedNativeProviders";
 
     private static final String RPXNOW_BASE_URL = "https://rpxnow.com";
     private static String mEngageBaseUrl = RPXNOW_BASE_URL;
@@ -93,6 +100,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     private JRProvider mCurrentlyAuthenticatingProvider;
     private JRProvider mCurrentlyPublishingProvider;
+    private JRNativeAuth.NativeProvider mCurrentNativeProvider;
 
     private String mReturningAuthProvider;
     private String mReturningSharingProvider;
@@ -103,6 +111,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private List<String> mEnabledSharingProviders;
     private List<String> mSharingProviders;
     private Map<String, JRAuthenticatedUser> mAuthenticatedUsersByProvider;
+    private Set<String> mAuthenticatedNativeAuthProviders;
     private List<JRProvider> mCustomProviders;
 
     private JRActivityObject mActivity;
@@ -242,6 +251,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
             /* Load the library state from disk */
             mAuthenticatedUsersByProvider = Archiver.load(ARCHIVE_AUTH_USERS_BY_PROVIDER);
+            mAuthenticatedNativeAuthProviders = Archiver.load(ARCHIVE_AUTH_NATIVE_PROVIDERS);
             mProviders = Archiver.load(ARCHIVE_ALL_PROVIDERS);
 
             /* Fix up the provider objects with data that isn't serialized along with them */
@@ -280,6 +290,8 @@ public class JRSession implements JRConnectionManagerDelegate {
             /* Blank slate */
             mAuthenticatedUsersByProvider = new HashMap<String, JRAuthenticatedUser>();
             Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
+            mAuthenticatedNativeAuthProviders = new HashSet<String>();
+            Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
 
             // Note that these values are removed from the settings when resetting state to prevent
             // uninitialized state from being read on startup as valid state
@@ -815,6 +827,11 @@ public class JRSession implements JRConnectionManagerDelegate {
         return mAuthenticatedUsersByProvider.get(provider.getName());
     }
 
+    public void addNativeProvider(String providerName) {
+        mAuthenticatedNativeAuthProviders.add(providerName);
+        Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
+    }
+
     public void signOutUserForProvider(String providerName) {
         if (getAllProviders() == null) {
             throwDebugException(new IllegalStateException());
@@ -839,6 +856,41 @@ public class JRSession implements JRConnectionManagerDelegate {
             mAuthenticatedUsersByProvider.remove(providerName);
             Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
             triggerUserWasSignedOut(providerName);
+        }
+    }
+
+    public void signOutNativeProviders(Activity fromActivity) {
+        String providerName = "googleplus";
+        if (mAuthenticatedNativeAuthProviders.contains(providerName)) {
+            mAuthenticatedNativeAuthProviders.clear();
+            Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
+
+            JRProvider provider = getAllProviders().get(providerName);
+            if (provider == null) {
+                throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
+                return;
+            }
+
+            if (JRNativeAuth.canHandleProvider(provider) && fromActivity != null) {
+                Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
+                i.putExtra(JRFragmentHostActivity.JR_SIGN_OUT_PROVIDER, provider.getName());
+                fromActivity.startActivity(i);
+            }
+        }
+    }
+
+    public void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
+        String providerName = "googleplus";
+        JRProvider provider = getAllProviders().get(providerName);
+        if (provider == null) {
+            throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
+            return;
+        }
+
+        if (JRNativeAuth.canHandleProvider(provider) && fromActivity != null) {
+            Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
+            i.putExtra(JRFragmentHostActivity.JR_REVOKE_PROVIDER, provider.getName());
+            fromActivity.startActivity(i);
         }
     }
 
@@ -1142,5 +1194,13 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     public boolean getLinkAccount() {
         return mLinkAccount;
+    }
+
+    public void setCurrentNativeProvider(JRNativeAuth.NativeProvider nativeProvider) {
+        mCurrentNativeProvider = nativeProvider;
+    }
+
+    public JRNativeAuth.NativeProvider getCurrentNativeProvider() {
+        return mCurrentNativeProvider;
     }
 }

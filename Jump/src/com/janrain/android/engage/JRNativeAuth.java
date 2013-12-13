@@ -36,6 +36,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.engage.types.JRDictionary;
@@ -45,6 +46,7 @@ import com.janrain.android.utils.UiUtils;
 import org.json.JSONObject;
 
 public class JRNativeAuth {
+    public static final int REQUEST_CODE_TRY_WEBVIEW = 9999;
 
     public static boolean canHandleProvider(JRProvider provider) {
         if (provider.getName().equals("facebook") && NativeFacebook.canHandleAuthentication()) {
@@ -56,23 +58,19 @@ public class JRNativeAuth {
         return false;
     }
 
-    public static NativeProvider createNativeProvider(JRProvider provider) {
+    public static NativeProvider createNativeProvider(JRProvider provider, FragmentActivity activity,
+                                                      NativeAuthCallback callback) {
         NativeProvider nativeProvider = null;
 
         if (provider.getName().equals("facebook")) {
-            nativeProvider = new NativeFacebook();
+            nativeProvider = new NativeFacebook(activity, callback);
         } else if (provider.getName().equals("googleplus")) {
-            nativeProvider = new NativeGooglePlus();
+            nativeProvider = new NativeGooglePlus(activity, callback);
         } else {
             throw new RuntimeException("Unexpected native auth provider " + provider);
         }
 
         return nativeProvider;
-    }
-
-    public static void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-        NativeFacebook.onActivityResult(activity, requestCode, resultCode, data);
-        //NativeGooglePlus.onActivityResult(activity, requestCode, resultCode, data);
     }
 
     public static enum NativeAuthError {
@@ -82,10 +80,14 @@ public class JRNativeAuth {
         LOGIN_CANCELED,
         GOOGLE_PLAY_UNAVAILABLE,
         CANNOT_INSTANTIATE_GOOGLE_PLAY_CLIENT,
-        CANNOT_GET_GOOGLE_PLUS_ACCESS_TOKEN
+        CANNOT_GET_GOOGLE_PLUS_ACCESS_TOKEN,
+        GOOGLE_PLUS_DISCONNECTED,
+        COULD_NOT_RESOLVE_GOOGLE_PLUS_RESULT
     }
 
     public static abstract class NativeAuthCallback {
+        private boolean hasFailed = false;
+
         public abstract void onSuccess(JRDictionary payload);
 
         public boolean shouldTriggerAuthenticationDidCancel() {
@@ -110,6 +112,9 @@ public class JRNativeAuth {
                               boolean shouldTryWebViewAuthentication) {
             LogUtils.logd("Native Auth Error: " + errorCode + " " + message
                     + (exception != null ? " " + exception : ""));
+
+            if (hasFailed) return;
+            hasFailed = true;
 
             final JRSession session = JRSession.getInstance();
             if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
@@ -142,9 +147,12 @@ public class JRNativeAuth {
 
     public static abstract class NativeProvider {
         /*package*/ NativeAuthCallback completion;
-        /*package*/ Activity fromActivity;
+        /*package*/ FragmentActivity fromActivity;
 
-        /*package*/ NativeProvider() {}
+        /*package*/ NativeProvider(FragmentActivity activity, JRNativeAuth.NativeAuthCallback callback) {
+            completion = callback;
+            fromActivity = activity;
+        }
 
         /*package*/ static boolean canHandleAuthentication() {
             return false;
@@ -152,17 +160,24 @@ public class JRNativeAuth {
 
         public abstract String provider();
 
-        public void startAuthentication(Activity activity, NativeAuthCallback callback) {
-            completion = callback;
-            fromActivity = activity;
+        public abstract void startAuthentication();
+
+        public void signOut() {
+            // Optional
         }
 
+        public void revoke() {
+            // Optional
+        }
+
+        public abstract void onActivityResult(int requestCode, int resultCode, Intent data);
+
         /*package*/ void getAuthInfoTokenForAccessToken(String accessToken) {
-            final Dialog progressDialog = UiUtils.getProgressDialog(fromActivity);
 
             ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
                 public void run(JSONObject json) {
-                    progressDialog.dismiss();
+
+                    if (json == null) completion.onFailure("Bad Response", null);
 
                     String status = json.optString("stat");
 
@@ -180,8 +195,6 @@ public class JRNativeAuth {
                     completion.onSuccess(payload);
                 }
             };
-
-            progressDialog.show();
 
             ApiConnection connection =
                     new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");

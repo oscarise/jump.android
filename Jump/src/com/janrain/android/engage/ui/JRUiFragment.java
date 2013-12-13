@@ -76,7 +76,7 @@ public abstract class JRUiFragment extends Fragment {
     private static final String KEY_MANAGED_DIALOG_OPTIONS = "jr_dialog_options";
     private static final String KEY_DIALOG_PROGRESS_TEXT = "jr_progress_dialog_text";
     private static final String KEY_DIALOG_PROGRESS_CANCELABLE = "jr_progress_dialog_cancelable";
-    private static final String PARENT_FRAGMENT_EMBEDDED = "jr_parent_fragment_embedded";
+    protected static final String PARENT_FRAGMENT_EMBEDDED = "jr_parent_fragment_embedded";
     
     public static final String JR_FRAGMENT_FLOW_MODE = "jr_fragment_flow_mode";
     public static final int JR_FRAGMENT_FLOW_AUTH = 0;
@@ -88,6 +88,7 @@ public abstract class JRUiFragment extends Fragment {
 
     public static final int REQUEST_LANDING = 1;
     public static final int REQUEST_WEBVIEW = 2;
+    public static final int REQUEST_NATIVE = 3;
     public static final int DIALOG_ABOUT = 1000;
     public static final int DIALOG_PROGRESS = 1001;
     public static final String JR_ACTIVITY_JSON = "JRActivityJson";
@@ -470,7 +471,7 @@ public abstract class JRUiFragment extends Fragment {
         return getResources().getColor(colorId);
     }
 
-    private void startActivityForFragId(int fragId, int requestCode, Bundle opts) {
+    /*package*/ void startActivityForFragId(int fragId, int requestCode, Bundle opts) {
         boolean showTitle;
         switch (fragId) {
             case JRFragmentHostActivity.JR_LANDING:
@@ -487,10 +488,13 @@ public abstract class JRUiFragment extends Fragment {
         i.putExtra(JRUiFragment.PARENT_FRAGMENT_EMBEDDED, isEmbeddedMode());
         i.putExtra(JR_FRAGMENT_FLOW_MODE, getFragmentFlowMode());
         if (opts != null) i.putExtras(opts);
+        if (isSpecificProviderFlow()) {
+            i.putExtra(JRFragmentHostActivity.JR_PROVIDER, getSpecificProvider());
+        }
         startActivityForResult(i, requestCode);
     }
     
-    private int getFragmentFlowMode() {
+    protected int getFragmentFlowMode() {
         return getArguments().getInt(JR_FRAGMENT_FLOW_MODE);
     }
     
@@ -558,6 +562,10 @@ public abstract class JRUiFragment extends Fragment {
         } else {
             showWebView();
         }
+    }
+
+    /*package*/ void startNativeAuth() {
+        showFragment(JRNativeAuthFragment.class, REQUEST_NATIVE);
     }
 
     /*package*/ void showUserLanding() {

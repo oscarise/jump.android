@@ -54,10 +54,13 @@ public class JRFragmentHostActivity extends FragmentActivity {
     public static final String JR_UI_CUSTOMIZATION_CLASS = "jr_ui_customization_class";
     public static final String JR_FRAGMENT_ID = "com.janrain.android.engage.JR_FRAGMENT_ID";
     public static final String JR_PROVIDER = "JR_PROVIDER";
-    public static final int JR_PROVIDER_LIST = 4;
+    public static final String JR_SIGN_OUT_PROVIDER = "JR_SIGN_OUT_PROVIDER";
+    public static final String JR_REVOKE_PROVIDER = "JR_REVOKE_PROVIDER";
     public static final int JR_LANDING = 1;
     public static final int JR_WEBVIEW = 2;
     public static final int JR_PUBLISH = 3;
+    public static final int JR_PROVIDER_LIST = 4;
+    public static final int JR_NATIVE_AUTH = 5;
     private static final String JR_OPERATION_MODE = "JR_OPERATION_MODE";
     private static final int JR_DIALOG = 0;
     private static final int JR_FULLSCREEN = 1;
@@ -103,6 +106,9 @@ public class JRFragmentHostActivity extends FragmentActivity {
                 break;
             case JR_PUBLISH:
                 mUiFragment = new JRPublishFragment();
+                break;
+            case JR_NATIVE_AUTH:
+                mUiFragment = new JRNativeAuthFragment();
                 break;
             default:
                 throw new IllegalFragmentIdException(getFragmentId());
@@ -202,6 +208,11 @@ public class JRFragmentHostActivity extends FragmentActivity {
          * the request code up two bytes. This method doesn't handle such request codes; they dispatch
          * by the Fragment API path.
          */
+
+        JRSession session = JRSession.getInstance();
+        if (session != null && session.getCurrentNativeProvider() != null) {
+            session.getCurrentNativeProvider().onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override
@@ -298,6 +309,12 @@ public class JRFragmentHostActivity extends FragmentActivity {
     public static Intent createWebViewIntent(Activity activity) {
         Intent i = createIntentForCurrentScreen(activity, false);
         i.putExtra(JR_FRAGMENT_ID, JR_WEBVIEW);
+        return i;
+    }
+
+    public static Intent createNativeAuthIntent(Activity activity) {
+        Intent i = createIntentForCurrentScreen(activity, false);
+        i.putExtra(JR_FRAGMENT_ID, JR_NATIVE_AUTH);
         return i;
     }
 
