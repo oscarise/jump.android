@@ -142,6 +142,8 @@ public class JREngage {
     private Context mApplicationContext;
     private Activity mActivityContext;
     private JRSession mSession;
+    private Class<? extends JRCustomInterface> mUiCustomization;
+    private boolean tryWebViewAuthenticationWhenGooglePlayIsUnavailable = true;
     private final List<JRProvider> mCustomProviders = new ArrayList<JRProvider>();
     private final Set<JREngageDelegate> mDelegates = new HashSet<JREngageDelegate>();
     private final Set<ConfigFinishListener> mConfigFinishListeners = new HashSet<ConfigFinishListener>();
@@ -663,6 +665,23 @@ public class JREngage {
     }
 
     /**
+     * Sign out of the Native Google+ SDK
+     * @param fromActivity
+     */
+    public void signOutNativeGooglePlus(Activity fromActivity) {
+        mSession.signOutNativeProviders(fromActivity);
+    }
+
+    /**
+     * Revoke the Google+ access token and disconnect the app
+     * After calling this you must delete whatever information you've obtained from Google+
+     * @param fromActivity
+     */
+    public void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
+        mSession.revokeAndDisconnectNativeGooglePlus(fromActivity);
+    }
+
+    /**
      * @internal
      * @hide
      */
@@ -689,29 +708,32 @@ public class JREngage {
     private void showNativeAuthFlowInternal(final Activity fromActivity,
                                             final JRProvider provider,
                                             final Class<? extends JRCustomInterface> uiCustomization) {
-        JRNativeAuth.startAuthOnProvider(provider, fromActivity, new JRNativeAuth.NativeAuthCallback() {
+        mSession.setCurrentlyAuthenticatingProvider(provider);
+        mUiCustomization = uiCustomization;
+
+        Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
+        i.putExtra(JRFragmentHostActivity.JR_PROVIDER, provider.getName());
+        fromActivity.startActivity(i);
+    }
+
+    public JRNativeAuth.NativeAuthCallback getNativeAuthCallback(final Activity fromActivity,
+            final Class<? extends JRCustomInterface> uiCustomization) {
+        final JRProvider provider = mSession.getCurrentlyAuthenticatingProvider();
+
+        return new JRNativeAuth.NativeAuthCallback() {
             public void onSuccess(JRDictionary payload) {
+                mSession.saveLastUsedAuthProvider();
                 mSession.triggerAuthenticationDidCompleteWithPayload(payload);
             }
 
-            public void onFailure(String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
-                LogUtils.logd("Native Auth Error: " + errorCode + " " + message
-                              + (exception != null ? " " + exception : ""));
-
-                if (errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
-                    mSession.triggerAuthenticationDidCancel();
-                } else if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
-                    mSession.triggerAuthenticationDidFail(new JREngageError(
-                            message,
-                            JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
-                            JREngageError.ErrorType.CONFIGURATION_FAILED));
-                } else {
-                    showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
-                }
+            public boolean shouldTriggerAuthenticationDidCancel() {
+                return true;
             }
-        });
 
-        mSession.setCurrentlyAuthenticatingProvider(provider);
+            public void tryWebViewAuthentication() {
+                showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
+            }
+        };
     }
 
     private void showWebAuthFlowInternal(final Activity fromActivity,
@@ -1049,6 +1071,29 @@ public class JREngage {
         mSession.setEnabledSharingProviders(Arrays.asList(enabledSharingProviders));
     }
 /*@}*/
+
+
+    /**
+     * Set this to "true" if you want the Janrain SDK to silently fail, then attempt WebView authentication
+     * when the Google+ SDK is integrated but Google Play Services is unavailable.
+     *
+     * When false, if the Google Play error is SERVICE_MISSING, SERVICE_VERSION_UPDATE_REQUIRE, or
+     * SERVICE_DISABLED, then the SDK will present Google's dialog suggesting that the user install or update
+     * Google Play Services. After the dialog is dismissed it will call your onFailure method. If the Google
+     * Play error is something else, then the SDK will silently fail and attempt WebView authentication.
+     *
+     * Reference: https://developer.android.com/google/play-services/setup.html#ensure
+     *
+     * This defaults to true.
+     */
+
+    public void setTryWebViewAuthenticationWhenGooglePlayIsUnavailable(boolean newValue) {
+        tryWebViewAuthenticationWhenGooglePlayIsUnavailable = newValue;
+    }
+
+    public static boolean shouldTryWebViewAuthenticationWhenGooglePlayIsUnavailable() {
+        return getInstance().tryWebViewAuthenticationWhenGooglePlayIsUnavailable;
+    }
 
     private JRSessionDelegate mJrsd = new JRSessionDelegate.SimpleJRSessionDelegate() {
         public void authenticationDidCancel() {

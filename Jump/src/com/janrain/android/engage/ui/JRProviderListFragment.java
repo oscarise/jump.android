@@ -49,11 +49,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.R;
-import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.JRNativeAuth;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
-import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
 
 import java.util.ArrayList;
@@ -82,6 +80,8 @@ public class JRProviderListFragment extends JRUiFragment {
 
     private boolean mSectionHeaderEnabled;
     private boolean mSectionFooterEnabled;
+
+    private JRNativeAuth.NativeProvider nativeProvider;
 
     /**
      * @internal
@@ -283,27 +283,7 @@ public class JRProviderListFragment extends JRUiFragment {
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
             if (JRNativeAuth.canHandleProvider(provider)) {
-                JRNativeAuth.startAuthOnProvider(provider, getActivity(), new JRNativeAuth.NativeAuthCallback() {
-                    public void onSuccess(JRDictionary payload) {
-                        mSession.triggerAuthenticationDidCompleteWithPayload(payload);
-                        finishFragmentWithResult(Activity.RESULT_OK);
-                    }
-
-                    public void onFailure(
-                            String message, JRNativeAuth.NativeAuthError errorCode, Exception exception) {
-                        LogUtils.logd("Native Auth Error: " + errorCode + " " + message
-                                + (exception != null ? " " + exception : ""));
-
-                        if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
-                            mSession.triggerAuthenticationDidFail(new JREngageError(
-                                    message,
-                                    JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
-                                    JREngageError.ErrorType.CONFIGURATION_FAILED));
-                        } else if (! errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
-                            startWebViewAuthForProvider(provider);
-                        }
-                    }
-                });
+                startNativeAuth();
             } else {
                 startWebViewAuthForProvider(provider);
             }
@@ -353,8 +333,6 @@ public class JRProviderListFragment extends JRUiFragment {
                 break;
             default:
                 Log.e(TAG, "Unrecognized request/result code " + requestCode + "/" + resultCode);
-
-            JRNativeAuth.facebookOnActivityResult(getActivity(), requestCode, resultCode, data);
         }
 
         //See the comment about specific provider flow in JRFragmentHostActivity#onCreate
