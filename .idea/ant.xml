@@ -4,9 +4,6 @@
     <buildFile url="file://$PROJECT_DIR$/Jump/build.xml">
       <antCommandLine value="debug" />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/SimpleDemo/build.xml">
-      <antCommandLine value="debug" />
-    </buildFile>
   </component>
 </project>
 
