@@ -1,3 +1,9 @@
+v4.6.0:
+ - Added support for Google+ sign-in using the Google Play SDK
+ - Added ability to resend email verification email
+ - Fixed crash in SimpleDemo
+ - No longer using reflection to call nonexistent Activity method. Thanks Varun (Github issue #4)
+ - Removed old Engage sample apps
 v4.5.1:
  - Fixes crash when updating capture record returns a bad response
 v4.5.0:
