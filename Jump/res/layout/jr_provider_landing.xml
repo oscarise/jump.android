@@ -24,19 +24,36 @@
         android:orientation="vertical"
         style="?jrCustomLandingStyle"
         >
-
+        <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp">
         <ImageView
             android:id="@+id/jr_landing_logo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:focusable="false"
+            android:padding="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             />
+        <TextView
+            android:id="@+id/jr_row_provider_label"
+            android:layout_height="65dp"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:focusable="false"
+            android:text="This is a test text"
+            android:layout_alignParentTop="true"
+            android:singleLine="true"
+            android:textSize="35dip"
+            android:layout_marginLeft="65dp"
+            android:textColorHint="@color/jr_text_color_hint"
 
+            />
+        </RelativeLayout>
         <EditText
             android:id="@+id/jr_landing_edit"
             android:layout_height="wrap_content"
@@ -63,9 +80,12 @@
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
             android:layout_marginLeft="4dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
 
             android:singleLine="true"
-            android:textSize="26dip"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
             />
 
         <LinearLayout
