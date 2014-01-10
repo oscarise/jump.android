@@ -76,6 +76,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -135,6 +136,11 @@ public class JREngage {
      * which is normally automatically set by the build system
      */
     public static Boolean sLoggingEnabled;
+
+    public static String JR_FAILED_TO_UPDATE_ENGAGE_APP_ID
+            = "com.janrain.android.Jump.FAILED_TO_UPDATE_ENGAGE_APP_ID";
+    public static String JR_SUCCESSFULLY_UPDATED_ENGAGE_APP_ID
+            = "com.janrain.android.Jump.SUCCESSFULLY_UPDATED_ENGAGE_APP_ID";
 
     private static boolean sInitializationComplete = false;
     private static JREngage sInstance;
@@ -679,6 +685,35 @@ public class JREngage {
      */
     public void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
         mSession.revokeAndDisconnectNativeGooglePlus(fromActivity);
+    }
+
+    /**
+     * Change the engage app ID and reload the Engage configuration data
+     * @param engageAppId
+     *   The new Engage app id
+     */
+    public void changeEngageAppId(String engageAppId) {
+        blockOnInitialization();
+
+        mConfigFinishListeners.add(new ConfigFinishListener() {
+            @Override
+            public void configDidFinish() {
+                mConfigFinishListeners.remove(this);
+                JREngageError error = mSession.getError();
+                LocalBroadcastManager manager = LocalBroadcastManager.getInstance(mActivityContext);
+
+                if (error == null) {
+                    Intent intent = new Intent(JR_SUCCESSFULLY_UPDATED_ENGAGE_APP_ID);
+                    intent.putExtra("message", "Successfully updated Engage App ID");
+                    manager.sendBroadcast(intent);
+                } else {
+                    Intent intent = new Intent(JR_FAILED_TO_UPDATE_ENGAGE_APP_ID);
+                    intent.putExtra("message", "Failed to change Engage AppID");
+                    manager.sendBroadcast(intent);
+                }
+            }
+        });
+        JRSession.getInstance().tryToReconfigureLibraryWithNewAppId(engageAppId);
     }
 
     /**

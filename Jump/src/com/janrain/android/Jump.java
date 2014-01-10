@@ -209,8 +209,26 @@ public class Jump {
         return state.captureDomain;
     }
 
+    /**
+     * Change the Capture Domain that will be used as the base URL for Capture request
+     * @param domain
+     *   The new Capture domain
+     */
+    public static void setCaptureDomain(String domain) {
+        state.captureDomain = domain;
+    }
+
     public static String getCaptureClientId() {
         return state.captureClientId;
+    }
+
+    /**
+     * Change the Capture Client ID that will be used in requests to Capture
+     * @param clientId
+     *   The new Capture Client ID
+     */
+    public static void setCaptureClientId(String clientId) {
+        state.captureClientId = clientId;
     }
 
     public static String getCaptureLocale() {
@@ -219,6 +237,15 @@ public class Jump {
 
     public static String getCaptureTraditionalSignInFormName() {
         return state.captureTraditionalSignInFormName;
+    }
+
+    /**
+     * Change the engage app ID and reload the Engage configuration data
+     * @param engageAppId
+     *   The new Engage app ID
+     */
+    public static void reconfigureWithNewEngageAppId(String engageAppId) {
+        state.jrEngage.changeEngageAppId(engageAppId);
     }
 
     /**
