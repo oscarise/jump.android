@@ -24,36 +24,42 @@
         android:orientation="vertical"
         style="?jrCustomLandingStyle"
         >
-        <RelativeLayout
-        android:orientation="vertical"
+    <RelativeLayout
+        android:id="@+id/linear"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="50dp">
-        <ImageView
-            android:id="@+id/jr_landing_logo"
-            android:layout_width="75dp"
-            android:layout_height="65dp"
-            android:focusable="false"
-            android:padding="5dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            />
-        <TextView
-            android:id="@+id/jr_row_provider_label"
-            android:layout_height="65dp"
-            android:layout_width="match_parent"
-            android:padding="5dp"
-            android:focusable="false"
-            android:text="This is a test text"
-            android:layout_alignParentTop="true"
-            android:singleLine="true"
-            android:textSize="35dip"
-            android:layout_marginLeft="65dp"
-            android:textColorHint="@color/jr_text_color_hint"
+        android:layout_height="wrap_content"
+        >
 
-            />
-        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/jr_landing_logo"
+                android:layout_width="75dip"
+                android:layout_height="65dip"
+                android:layout_marginTop="5dip"/>
+
+            <TextView
+                android:id="@+id/jr_row_provider_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dip"
+                android:focusable="false"
+                android:layout_alignParentTop="true"
+                android:singleLine="true"
+                android:textSize="35dip"
+                android:textColorHint="@color/jr_text_color_hint"            android:text="This is a test text"
+                android:layout_marginBottom="5dip"
+                android:gravity="left"
+
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
         <EditText
             android:id="@+id/jr_landing_edit"
             android:layout_height="wrap_content"
