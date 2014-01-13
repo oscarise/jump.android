@@ -284,30 +284,8 @@ public class JRSession implements JRConnectionManagerDelegate {
             mOldEtag = PrefUtils.getString(PrefUtils.KEY_JR_CONFIGURATION_ETAG, "");
             //throw new Archiver.LoadException(null);
         } catch (Archiver.LoadException e) {
-            //LogUtils.logd("LoadException loading serialized configuration, initializing from empty state. " +
-            //         " Version: " + mUrlEncodedLibraryVersion + " LoadException: " +
-            //        e.getStackTrace()[0].toString() + " Nested exception: " + e.getCause());
-            /* Blank slate */
-            mAuthenticatedUsersByProvider = new HashMap<String, JRAuthenticatedUser>();
-            Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
-            mAuthenticatedNativeAuthProviders = new HashSet<String>();
-            Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
+            clearEngageConfigurationCache();
 
-            // Note that these values are removed from the settings when resetting state to prevent
-            // uninitialized state from being read on startup as valid state
-            mProviders = new HashMap<String, JRProvider>();
-            Archiver.delete(ARCHIVE_ALL_PROVIDERS);
-            mAuthProviders = new ArrayList<String>();
-            Archiver.delete(ARCHIVE_AUTH_PROVIDERS);
-            mSharingProviders = new ArrayList<String>();
-            Archiver.delete(ARCHIVE_SHARING_PROVIDERS);
-            mRpBaseUrl = "";
-            PrefUtils.remove(PrefUtils.KEY_JR_RP_BASE_URL);
-            mHidePoweredBy = true;
-            PrefUtils.remove(PrefUtils.KEY_JR_HIDE_POWERED_BY);
-            mOldEtag = "";
-            PrefUtils.remove(PrefUtils.KEY_JR_CONFIGURATION_ETAG);
-            
             // Note that these values are not removed from the Prefs, they can't result in invalid state
             // (The library is accepting of values not belonging to the set of enabled providers.)
             mReturningAuthProvider = PrefUtils.getString(PrefUtils.KEY_JR_LAST_USED_AUTH_PROVIDER, null);
@@ -546,6 +524,28 @@ public class JRSession implements JRConnectionManagerDelegate {
         triggerPublishingJRActivityDidSucceed(mActivity, providerName);
     }
 
+    private void clearEngageConfigurationCache() {
+        mAuthenticatedUsersByProvider = new HashMap<String, JRAuthenticatedUser>();
+        Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
+        mAuthenticatedNativeAuthProviders = new HashSet<String>();
+        Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
+
+        // Note that these values are removed from the settings when resetting state to prevent
+        // uninitialized state from being read on startup as valid state
+        mProviders = new HashMap<String, JRProvider>();
+        Archiver.delete(ARCHIVE_ALL_PROVIDERS);
+        mAuthProviders = new ArrayList<String>();
+        Archiver.delete(ARCHIVE_AUTH_PROVIDERS);
+        mSharingProviders = new ArrayList<String>();
+        Archiver.delete(ARCHIVE_SHARING_PROVIDERS);
+        mRpBaseUrl = "";
+        PrefUtils.remove(PrefUtils.KEY_JR_RP_BASE_URL);
+        mHidePoweredBy = true;
+        PrefUtils.remove(PrefUtils.KEY_JR_HIDE_POWERED_BY);
+        mOldEtag = "";
+        PrefUtils.remove(PrefUtils.KEY_JR_CONFIGURATION_ETAG);
+    }
+
     private JREngageError processShareActivityFailureResponse(JRDictionary errorDict) {
         JREngageError publishError;
         int code = (errorDict.containsKey("code")) ? errorDict.getAsInt("code") : 1000;
@@ -657,6 +657,12 @@ public class JRSession implements JRConnectionManagerDelegate {
         mConfigDone = false;
         mError = null;
         mError = startGetConfiguration();
+    }
+
+    public void tryToReconfigureLibraryWithNewAppId(String engageAppId) {
+        clearEngageConfigurationCache();
+        mAppId = engageAppId;
+        tryToReconfigureLibrary();
     }
 
     private JREngageError startGetConfiguration() {
