@@ -1,3 +1,6 @@
+v4.6.1
+ - Allow Capture Domain, Capture Client ID, and Engage App ID to be changed
+   after initalization
 v4.6.0:
  - Added support for Google+ sign-in using the Google Play SDK
  - Added ability to resend email verification email
