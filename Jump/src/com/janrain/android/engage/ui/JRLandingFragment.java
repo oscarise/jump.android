@@ -85,6 +85,7 @@ public class JRLandingFragment extends JRUiFragment {
     private ImageView mLogo;
     private EditText mUserInput;
     private TextView mWelcomeLabel;
+    private TextView mProviderName;
 
     private Button mSwitchAccountButton;
     private ColorButton mSignInButton;
@@ -114,6 +115,7 @@ public class JRLandingFragment extends JRUiFragment {
         mWelcomeLabel = (TextView)view.findViewById(R.id.jr_landing_welcome_label);
         mSwitchAccountButton = (Button)view.findViewById(R.id.jr_landing_switch_account_button);
         mSignInButton = (ColorButton)view.findViewById(R.id.jr_landing_small_signin_button);
+        mProviderName = (TextView)view.findViewById(R.id.jr_row_provider_label);
 
         mSwitchAccountButton.setOnClickListener(mButtonListener);
         mSignInButton.setOnClickListener(mButtonListener);
@@ -123,7 +125,8 @@ public class JRLandingFragment extends JRUiFragment {
             mSignInButton.setTextColor(getColor(android.R.color.white));
         }
 
-        mLogo.setImageDrawable(mProvider.getProviderLogo(getActivity()));
+        mLogo.setImageDrawable(mProvider.getProviderIcon(getActivity()));
+        mProviderName.setText(mProvider.getFriendlyName());
 
         if (mProvider.getName().equals("openid")) {
             mUserInput.setInputType(EditorInfo.TYPE_CLASS_TEXT | EditorInfo.TYPE_TEXT_VARIATION_URI);
