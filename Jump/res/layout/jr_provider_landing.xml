@@ -51,7 +51,7 @@
                 android:layout_alignParentTop="true"
                 android:singleLine="true"
                 android:textSize="35dip"
-                android:textColorHint="@color/jr_text_color_hint"            android:text="This is a test text"
+                android:textColorHint="@color/jr_text_color_hint"
                 android:layout_marginBottom="5dip"
                 android:gravity="left"
 
