@@ -180,44 +180,6 @@ public interface JREngageDelegate {
     /*@{*/
 
     /**
-     * Notifies the delegate that the user has successfully authenticated with the given provider,
-     * passing to the delegate a JRDictionary object with the user's profile data.
-     *
-     * @param auth_info
-     *   A JRDictionary of fields containing all the information that Janrain Engage knows about
-     *   the user signing in to your application.  Includes the field \e "profile" which contains the
-     *   user's profile information.
-     *
-     * @param provider
-     *   The name of the provider on which the user authenticated.
-     *   For a list of possible strings, please see the
-     *   <a href="http://documentation.janrain.com/engage/sdks/ios/mobile-providers#basicProviders">
-     *   List of Providers</a>
-     *
-     * @note
-     *   The structure of the \e auth_info JRDictionary (represented here in JSON) will be like the
-     *   following:
-     * @code
-    "auth_info":
-    {
-    "profile":
-    {
-    "displayName": "brian",
-    "preferredUsername": "brian",
-    "url": "http:\/\/brian.myopenid.com\/",
-    "providerName": "Other",
-    "identifier": "http:\/\/brian.myopenid.com\/"
-    }
-    }
-     * @endcode
-     *
-     * @sa For a full description of the dictionary and its fields,
-     * please see the <a href="http://documentation.janrain.com/engage/api/auth_info">auth_info
-     * response</a> section of the Janrain Engage API documentation.
-     **/
-    void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider);
-
-    /**
      * Notifies the delegate when authentication has failed and could not be recovered by the
      * library.
      *
@@ -294,9 +256,6 @@ public interface JREngageDelegate {
         }
 
         public void jrSocialDidPublishJRActivity(JRActivityObject activity, String provider) {
-        }
-
-        public void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider) {
         }
 
         public void jrSocialDidCompletePublishing() {
