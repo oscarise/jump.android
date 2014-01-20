@@ -118,12 +118,6 @@ public final class JumpConfig {
     public Jump.TraditionalSignInType traditionalSignInType;
 
     /**
-     * The Backplane channel URL to post identity/login messages to when a user signs in.
-     * Can be used in conjunction with the Livefyre native app support.
-     */
-    public String backplaneChannelUrl;
-
-    /**
      * Set this to "true" if you want the Janrain SDK to silently fail, then attempt WebView authentication
      * when the Google+ SDK is integrated but Google Play Services is unavailable.
      *

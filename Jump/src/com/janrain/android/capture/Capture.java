@@ -87,7 +87,6 @@ public class Capture {
                 "flow", Jump.getCaptureFlowName(),
                 "flow_version", Jump.getCaptureFlowVersion());
         connection.maybeAddParam("merge_token", mergeToken);
-        connection.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
         connection.fetchResponseAsJson(handler);
         return connection;
     }
@@ -175,7 +174,6 @@ public class Capture {
         c.maybeAddParam("flow_version", Jump.getCaptureFlowVersion());
         c.maybeAddParam("flow", Jump.getCaptureFlowName());
         c.maybeAddParam("registration_form", Jump.getCaptureSocialRegistrationFormName());
-        c.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
         c.maybeAddParam("merge_token", mergeToken);
         c.fetchResponseAsJson(handler);
         return c;
@@ -235,7 +233,6 @@ public class Capture {
                 "refresh_secret", refreshSecret
                 );
 
-        c.maybeAddParam("bp_channel", Jump.getBackplaneChannelUrl());
         c.maybeAddParam("flow_version", CaptureFlowUtils.getFlowVersion(Jump.getCaptureFlow()));
         c.maybeAddParam("token", socialRegistrationToken);
 
