@@ -109,7 +109,6 @@ public class Jump {
         /*package*/ String captureTraditionalRegistrationFormName;
         /*package*/ String captureEditUserProfileFormName;
         /*package*/ TraditionalSignInType traditionalSignInType;
-        /*package*/ String backplaneChannelUrl;
         /*package*/ String captureForgotPasswordFormName;
         /*package*/ String captureResendEmailVerificationFormName;
         /*package*/ String userAgent;
@@ -186,7 +185,6 @@ public class Jump {
         state.traditionalSignInType = jumpConfig.traditionalSignInType;
         state.captureLocale = jumpConfig.captureLocale;
         state.captureTraditionalSignInFormName = jumpConfig.captureTraditionalSignInFormName;
-        state.backplaneChannelUrl = jumpConfig.backplaneChannelUrl;
         state.captureForgotPasswordFormName = jumpConfig.captureForgotPasswordFormName;
         state.captureResendEmailVerificationFormName = jumpConfig.captureResendEmailVerificationFormName;
 
@@ -307,10 +305,6 @@ public class Jump {
 
     public static String getRedirectUri() {
         return "http://android.library";
-    }
-
-    public static String getBackplaneChannelUrl() {
-        return state.backplaneChannelUrl;
     }
 
     public static boolean getCaptureEnableThinRegistration() {
