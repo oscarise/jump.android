@@ -34,6 +34,7 @@ package com.janrain.android.engage;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
 
 import java.lang.reflect.InvocationHandler;
@@ -48,6 +49,8 @@ public class NativeFacebook extends NativeProvider {
     private static Class<?> fbSessionClass = null;
     private static Class fbCallbackClass = null;
     private static Class fbCanceledExceptionClass = null;
+
+    private Object mFacebookCallback = null;
 
     static {
         ClassLoader classLoader = JRNativeAuth.class.getClassLoader();
@@ -76,7 +79,7 @@ public class NativeFacebook extends NativeProvider {
 
     @Override
     public void startAuthentication()  {
-        Object fbCallback = getFacebookCallBack();
+        mFacebookCallback = getFacebookCallBack();
         NativeAuthError authError = NativeAuthError.CANNOT_INVOKE_FACEBOOK_OPEN_SESSION_METHODS;
 
         try {
@@ -90,14 +93,14 @@ public class NativeFacebook extends NativeProvider {
                 Method openActiveSession = fbSessionClass.getMethod("openActiveSession",
                         Activity.class, boolean.class, fbCallbackClass);
 
-                openActiveSession.invoke(fbSessionClass, fromActivity, true, fbCallback);
+                openActiveSession.invoke(fbSessionClass, fromActivity, true, mFacebookCallback);
             }
         } catch (NoSuchMethodException e) {
-            completion.onFailure("Could not open Facebook Session", authError, e);
+            triggerOnFailure("Could not open Facebook Session", authError, e);
         } catch (InvocationTargetException e) {
-            completion.onFailure("Could not open Facebook Session", authError, e);
+            triggerOnFailure("Could not open Facebook Session", authError, e);
         } catch (IllegalAccessException e) {
-            completion.onFailure("Could not open Facebook Session", authError, e);
+            triggerOnFailure("Could not open Facebook Session", authError, e);
         }
     }
 
@@ -122,10 +125,42 @@ public class NativeFacebook extends NativeProvider {
         }
     }
 
+    @Override
+    /*package*/ void triggerOnSuccess(JRDictionary payload) {
+        removeFacebookCallback();
+        super.triggerOnSuccess(payload);
+    }
+
+    @Override
+    /*package*/ void triggerOnFailure(final String message, NativeAuthError errorCode, Exception exception,
+                                      boolean shouldTryWebViewAuthentication) {
+        removeFacebookCallback();
+        super.triggerOnFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
+    }
+
+    private void removeFacebookCallback() {
+        if (fbSessionClass != null && mFacebookCallback != null) {
+            try {
+                Method getActiveSession = fbSessionClass.getMethod("getActiveSession");
+                Object session = getActiveSession.invoke(fbSessionClass);
+
+                Method removeCallback = fbSessionClass.getMethod("removeCallback", fbCallbackClass);
+                removeCallback.invoke(session, mFacebookCallback);
+                mFacebookCallback = null;
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     private Object getFacebookCallBack() {
         InvocationHandler handler = new InvocationHandler() {
             @Override
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+            public Object invoke(Object proxy, Method method, Object[] objects) throws Throwable {
                 if (method.getName().equals("call")) {
                     Object fbSession = objects[0],
                             sessionState = objects[1];
@@ -136,17 +171,19 @@ public class NativeFacebook extends NativeProvider {
                         getAuthInfoTokenForAccessToken(accessToken);
                     } else if (isFacebookSessionClosed(fbSession)){
                         if (fbCanceledExceptionClass.isInstance(exception)) {
-                            completion.onFailure(
+                            triggerOnFailure(
                                     "Facebook login canceled",
                                     NativeAuthError.LOGIN_CANCELED,
                                     exception);
                         } else {
-                            completion.onFailure(
+                            triggerOnFailure(
                                     "Could not open Facebook Session",
                                     NativeAuthError.FACEBOOK_SESSION_IS_CLOSED,
                                     exception);
                         }
                     }
+                } else if (method.getName().equals("equals")) {
+                    return (proxy == objects[0]);
                 }
                 return null;
             }
