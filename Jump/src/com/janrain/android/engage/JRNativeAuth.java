@@ -177,12 +177,12 @@ public class JRNativeAuth {
             ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
                 public void run(JSONObject json) {
 
-                    if (json == null) completion.onFailure("Bad Response", null);
+                    if (json == null) triggerOnFailure("Bad Response", null);
 
                     String status = json.optString("stat");
 
                     if (json == null || json.optString("stat") == null || !json.optString("stat").equals("ok")) {
-                        completion.onFailure("Bad Json: " + json, NativeAuthError.ENGAGE_ERROR);
+                        triggerOnFailure("Bad Json: " + json, NativeAuthError.ENGAGE_ERROR);
                         return;
                     }
 
@@ -192,7 +192,7 @@ public class JRNativeAuth {
                     payload.put("token", auth_token);
                     payload.put("auth_info", new JRDictionary());
 
-                    completion.onSuccess(payload);
+                    triggerOnSuccess(payload);
                 }
             };
 
@@ -204,6 +204,27 @@ public class JRNativeAuth {
 
         }
 
+        /*package*/ void triggerOnSuccess(JRDictionary payload) {
+            completion.onSuccess(payload);
+        }
+
+        /*package*/ void triggerOnFailure(String message, NativeAuthError errorCode, Exception exception) {
+            triggerOnFailure(message, errorCode, exception, false);
+        }
+
+        /*package*/ void triggerOnFailure(String message, NativeAuthError errorCode, boolean shouldTryWebView) {
+            triggerOnFailure(message, errorCode, null, shouldTryWebView);
+        }
+
+        /*package*/ void triggerOnFailure(String message, NativeAuthError errorCode) {
+            triggerOnFailure(message, errorCode, null, false);
+        }
+
+        /*package*/ void triggerOnFailure(final String message, NativeAuthError errorCode, Exception exception,
+                              boolean shouldTryWebViewAuthentication) {
+            completion.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
+        }
     }
+
 }
 

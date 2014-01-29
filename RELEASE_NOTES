@@ -1,3 +1,5 @@
+v4.6.2
+ - Fixed crash when signing out of the Facebook SDK
 v4.6.1
  - Allow Capture Domain, Capture Client ID, and Engage App ID to be changed
    after initalization
