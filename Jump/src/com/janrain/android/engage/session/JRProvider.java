@@ -397,30 +397,6 @@ public class JRProvider implements Serializable {
                 for (String iconFileName : iconFileNames) {
                     FileOutputStream fos = null;
                     if (Arrays.asList(c.fileList()).contains("providericon~" + iconFileName)) continue;
-
-                    try {
-                        URL url = new URL(JRSession.getInstance().getEngageBaseUrl()
-                                + "/cdn/images/mobile_icons/android/" + iconFileName);
-                        InputStream is = url.openStream();
-                        fos = c.openFileOutput("providericon~" + iconFileName, Context.MODE_PRIVATE);
-
-                        byte buffer[] = new byte[1000];
-                        int code;
-                        while ((code = is.read(buffer, 0, buffer.length)) > 0) fos.write(buffer, 0, code);
-
-                        fos.close();
-                    } catch (MalformedURLException e) {
-                        LogUtils.logd(TAG, e.toString(), e);
-                    } catch (IOException e) {
-                        LogUtils.logd(TAG, e.toString(), e);
-                    } finally {
-                        if (fos != null) {
-                            try {
-                                fos.close();
-                            } catch (IOException ignore) {
-                            }
-                        }
-                    }
                 }
                 mCurrentlyDownloading = false;
             }
