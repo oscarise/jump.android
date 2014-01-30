@@ -1,3 +1,6 @@
+v4.6.3
+ - Icon support for Microsoft Account
+ - Fixed crash when missing icons for a given provider
 v4.6.2
  - Fixed crash when signing out of the Facebook SDK
 v4.6.1

@@ -99,6 +99,7 @@ public class JRProvider implements Serializable {
                     put("icon_bw_amazon", R.drawable.jr_icon_bw_amazon);
                     put("icon_bw_tumblr", R.drawable.jr_icon_bw_tumblr);
                     put("icon_bw_googleplus", R.drawable.jr_icon_bw_googleplus);
+                    put("icon_bw_microsoftaccount", R.drawable.jr_icon_bw_microsoftaccount);
 
                     put("icon_aol", R.drawable.jr_icon_aol);
                     put("icon_blogger", R.drawable.jr_icon_blogger);
@@ -125,6 +126,7 @@ public class JRProvider implements Serializable {
                     put("icon_amazon", R.drawable.jr_icon_amazon);
                     put("icon_tumblr", R.drawable.jr_icon_tumblr);
                     put("icon_googleplus", R.drawable.jr_icon_googleplus);
+                    put("icon_microsoftaccount", R.drawable.jr_icon_microsoftaccount);
                 }
             };
 
@@ -160,6 +162,7 @@ public class JRProvider implements Serializable {
                     put("logo_amazon", R.drawable.jr_logo_amazon);
                     put("logo_tumblr", R.drawable.jr_logo_tumblr);
                     put("logo_googleplus", R.drawable.jr_logo_googleplus);
+                    put("logo_microsoftaccount", R.drawable.jr_logo_microsoftaccount);
                 }
             };
 
@@ -397,30 +400,6 @@ public class JRProvider implements Serializable {
                 for (String iconFileName : iconFileNames) {
                     FileOutputStream fos = null;
                     if (Arrays.asList(c.fileList()).contains("providericon~" + iconFileName)) continue;
-
-                    try {
-                        URL url = new URL(JRSession.getInstance().getEngageBaseUrl()
-                                + "/cdn/images/mobile_icons/android/" + iconFileName);
-                        InputStream is = url.openStream();
-                        fos = c.openFileOutput("providericon~" + iconFileName, Context.MODE_PRIVATE);
-
-                        byte buffer[] = new byte[1000];
-                        int code;
-                        while ((code = is.read(buffer, 0, buffer.length)) > 0) fos.write(buffer, 0, code);
-
-                        fos.close();
-                    } catch (MalformedURLException e) {
-                        LogUtils.logd(TAG, e.toString(), e);
-                    } catch (IOException e) {
-                        LogUtils.logd(TAG, e.toString(), e);
-                    } finally {
-                        if (fos != null) {
-                            try {
-                                fos.close();
-                            } catch (IOException ignore) {
-                            }
-                        }
-                    }
                 }
                 mCurrentlyDownloading = false;
             }
