@@ -62,6 +62,8 @@ import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 
 public class MainActivity extends FragmentActivity {
 
+    private boolean flowDownloaded = false;
+
     private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
         public void onSuccess() {
             AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
@@ -124,6 +126,23 @@ public class MainActivity extends FragmentActivity {
         }
     };
 
+    private final BroadcastReceiver flowMessageReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            flowDownloaded = true;
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                String state = extras.getString("message");
+                AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
+                b.setMessage(state);
+                b.setNeutralButton("Dismiss", null);
+                b.show();
+            }
+
+        }
+    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,6 +151,9 @@ public class MainActivity extends FragmentActivity {
 
         IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
         LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, filter);
+
+        IntentFilter flowFilter = new IntentFilter(Jump.JR_DOWNLOAD_FLOW_SUCCESS);
+        LocalBroadcastManager.getInstance(this).registerReceiver(flowMessageReceiver, flowFilter);
 
         ScrollView sv = new ScrollView(this);
         sv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
@@ -143,6 +165,7 @@ public class MainActivity extends FragmentActivity {
         Button testAuth = addButton(linearLayout, "Capture Sign-In");
         addButton(linearLayout, "Test Direct Auth").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(flowDownloaded)
                 Jump.showSignInDialog(MainActivity.this, "linkedin", signInResultHandler, null);
             }
         });
@@ -153,6 +176,7 @@ public class MainActivity extends FragmentActivity {
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(flowDownloaded)
                 JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
                         new JRActivityObject("aslkdfj", "http://google.com"));
             }
@@ -160,6 +184,7 @@ public class MainActivity extends FragmentActivity {
 
         addButton(linearLayout, "Traditional Registration").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(flowDownloaded)
                 MainActivity.this.startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
             }
         });
@@ -171,12 +196,14 @@ public class MainActivity extends FragmentActivity {
 
         testAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(flowDownloaded)
                 Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
             }
         });
 
         dumpRecord.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(flowDownloaded)
                 LogUtils.logd(String.valueOf(Jump.getSignedInUser()));
             }
         });
@@ -308,6 +335,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(messageReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(flowMessageReceiver);
         super.onDestroy();
     }
 }
