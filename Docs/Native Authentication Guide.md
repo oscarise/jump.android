@@ -32,6 +32,37 @@ Make sure that both your Android application and Social Sign-in app are configur
 
 Start authentication or sign-in as normal. If the Facebook Android SDK is compiled into your app, it will be used to perform all Facebook authentication.
 
+### Signing Out
+
+Following Facebook’s documentation we’ll use `closeAndClearTokenInformation` to close the in-memory Facebook
+session.
+
+Import the Facebook Session class
+
+    import com.facebook.Session;
+
+Call `closeAndClearTokenInformation` when your sign-out button is pressed. For example, in SimpleDemo, we add
+the following to the `onClickListener` for the `signOut` button
+
+        signOut.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ...
+                // Sign out of the Facebook SDK
+                Session session = Session.getActiveSession();
+                if (session == null) {
+                    session = new Session(MainActivity.this);
+                    Session.setActiveSession(session);
+                }
+                session.closeAndClearTokenInformation();
+            }
+        });
+
+*Note:* This does not revoke the applications access to Facebook. So if a user has a Facebook account set up
+in the Facebook app it will continue to be used to sign in without asking to be reauthorized.
+
+*Note:* The context that is passed into the Session constructor should match the context that you passed into
+Jump when showing the sign in dialog.
+
 ### Release Builds
 
 If you plan to use ProGuard on your release builds add the following to your ProGuard configuration file
