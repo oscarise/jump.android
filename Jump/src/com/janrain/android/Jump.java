@@ -686,6 +686,35 @@ public class Jump {
     }
 
     /**
+     * An interface to receive a callback when authorization completes for account linking.
+     * Implement this interface in addition to te JREngageDelegate interface when you are linking accounts
+     */
+    public interface CaptureLinkAccountHandler {
+        /**
+         * Notifies the delegate that the user has successfully authenticated with the given provider,
+         * passing to the delegate a JRDictionary object with the user's profile data.
+         *
+         * This will be called instead of jrAuthenticationDidSucceedForUser if you are linking accounts.
+         *
+         * @param auth_info
+         *   A JRDictionary of fields containing all the information that Janrain Engage knows about
+         *   the user signing in to your application.  Includes the field \e "profile" which contains the
+         *   user's profile information.
+         *
+         * @param provider
+         *   The name of the provider on which the user authenticated.
+         *   For a list of possible strings, please see the
+         *   <a href="http://documentation.janrain.com/engage/sdks/ios/mobile-providers#basicProviders">
+         *   List of Providers</a>
+         *
+         * @sa For a full description of the dictionary and its fields,
+         * please see the <a href="http://documentation.janrain.com/engage/api/auth_info">auth_info
+         * response</a> section of the Janrain Engage API documentation.
+         **/
+        void jrAuthenticationDidSucceedForLinkAccount(JRDictionary auth_info, String provider);
+    }
+
+    /**
      * @deprecated Loading state from disk is now done automatically from Jump.init
      */
     public static void loadFromDisk(Context context) {

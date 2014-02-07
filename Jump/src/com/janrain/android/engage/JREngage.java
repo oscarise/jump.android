@@ -80,6 +80,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+import com.janrain.android.Jump;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
@@ -1148,7 +1149,10 @@ public class JREngage {
         public void authenticationLinkAccountDidComplete(JRDictionary profile, String provider) {
             LogUtils.logd();
             for (JREngageDelegate d : getDelegatesCopy()) {
-                d.jrAuthenticationDidSucceedForLinkAccount(profile, provider);
+                if (d instanceof Jump.CaptureLinkAccountHandler) {
+                    ((Jump.CaptureLinkAccountHandler)d).jrAuthenticationDidSucceedForLinkAccount(
+                            profile, provider);
+                }
             }
         }
 

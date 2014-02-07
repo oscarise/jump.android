@@ -71,7 +71,7 @@ public class LinkListActivity extends ListActivity {
     private Button mLinkAccount;
     private int position;
     private boolean link_unlink = false;
-    private JREngageDelegate mJREngageDelegate = new JREngageDelegate() {
+    private class MyEngageDelegate implements JREngageDelegate, Jump.CaptureLinkAccountHandler {
         public void jrEngageDialogDidFailToShowWithError(JREngageError error) {
             String message = "Simpledemo:\nJREngage dialog failed to show.\nError: " +
                     ((error == null) ? "unknown" : error.getMessage());
@@ -154,6 +154,8 @@ public class LinkListActivity extends ListActivity {
             Toast.makeText(LinkListActivity.this, "Activity failed to share", Toast.LENGTH_LONG).show();
         }
     };
+
+    private JREngageDelegate mJREngageDelegate = new MyEngageDelegate();
 
     public void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "[onCreate]");

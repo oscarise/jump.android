@@ -34,6 +34,18 @@ This guide describes the steps required to upgrade from different versions of th
 
     Use `com.janrain.android.utils.LogUtils` instead.
 
+### Solutions when upgrading to v4.7.0
+
+* **When linking accounts my implementation of `jrAuthenticationDidSucceedForLinkAccount` is never called**
+
+    `jrAuthenticationDidSucceedForLinkAccount` was moved from the `JREngageDelegate` to the
+    `Jump.CaptureLinkAccountHandler` to prevent Social Sign-in only applications from having to implement
+    unnecessary methods. To fix this add `Jump.CaptureLinkAccountHandler` to the list of interfaces that your
+    delegate implements. For example:
+
+        private class MyEngageDelegate implements JREngageDelegate, Jump.CaptureLinkAccountHandler {
+
+
 ## Upgrading v2.0.1-v3.1.0 to v4.2.0
 
 1. Remove the **JREngage** module from your project.

@@ -161,17 +161,17 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
                 public void onFailure(CaptureApiError error) {
                     dismissProgressIndicator();
-                    AlertDialog.Builder adb = new AlertDialog.Builder(getActivity())
-                            .setTitle(getResources().getString(
-                                    R.string.jr_capture_forgotpassword_error_msg))
-                            .setNegativeButton(getResources().getString(
-                                    R.string.jr_capture_forgotpassword_dismiss_button),
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            dialog.cancel();
-                                        }
-                                    })
-                            .setPositiveButton(getResources().getString(
+                    AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+                    adb.setTitle(getResources().getString(R.string.jr_capture_forgotpassword_error_msg));
+                    adb.setNegativeButton(
+                            getResources().getString(R.string.jr_capture_forgotpassword_dismiss_button),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    if (Jump.getCaptureForgotPasswordFormName() != null) {
+                            adb.setPositiveButton(getResources().getString(
                                     R.string.jr_capture_forgotpassword_forgotpass_button),
                                     new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
@@ -181,6 +181,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                                             dialog.cancel();
                                         }
                                     });
+                    }
                     adb.show();
                 }
             };
