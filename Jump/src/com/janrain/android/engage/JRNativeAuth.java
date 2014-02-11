@@ -117,12 +117,12 @@ public class JRNativeAuth {
             hasFailed = true;
 
             final JRSession session = JRSession.getInstance();
-            if (errorCode.equals(JRNativeAuth.NativeAuthError.ENGAGE_ERROR)) {
+            if (JRNativeAuth.NativeAuthError.ENGAGE_ERROR.equals(errorCode)) {
                 session.triggerAuthenticationDidFail(new JREngageError(
                         message,
                         JREngageError.ConfigurationError.GENERIC_CONFIGURATION_ERROR,
                         JREngageError.ErrorType.CONFIGURATION_FAILED));
-            } else if (errorCode.equals((JRNativeAuth.NativeAuthError.GOOGLE_PLAY_UNAVAILABLE))) {
+            } else if (JRNativeAuth.NativeAuthError.GOOGLE_PLAY_UNAVAILABLE.equals(errorCode)) {
                 if (shouldTryWebViewAuthentication) {
                     tryWebViewAuthentication();
                 } else {
@@ -131,7 +131,7 @@ public class JRNativeAuth {
                             JREngageError.ConfigurationError.GOOGLE_PLAY_UNAVAILABLE,
                             JREngageError.ErrorType.CONFIGURATION_FAILED));
                 }
-            } else if (errorCode.equals(JRNativeAuth.NativeAuthError.LOGIN_CANCELED)) {
+            } else if (JRNativeAuth.NativeAuthError.LOGIN_CANCELED.equals(errorCode)) {
                 if (shouldTriggerAuthenticationDidCancel()) {
                     session.triggerAuthenticationDidCancel();
                 }
@@ -139,7 +139,8 @@ public class JRNativeAuth {
                 session.triggerAuthenticationDidFail(new JREngageError(
                         message,
                         JREngageError.AuthenticationError.AUTHENTICATION_FAILED,
-                        JREngageError.ErrorType.AUTHENTICATION_FAILED
+                        JREngageError.ErrorType.AUTHENTICATION_FAILED,
+                        exception
                 ));
             }
         }
@@ -177,7 +178,10 @@ public class JRNativeAuth {
             ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
                 public void run(JSONObject json) {
 
-                    if (json == null) triggerOnFailure("Bad Response", null);
+                    if (json == null) {
+                        triggerOnFailure("Bad Response", NativeAuthError.ENGAGE_ERROR);
+                        return;
+                    }
 
                     String status = json.optString("stat");
 
