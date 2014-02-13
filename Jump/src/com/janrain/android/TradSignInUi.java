@@ -56,6 +56,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELED_BY_USER;
 import static com.janrain.android.R.string.jr_capture_trad_signin_bad_password;
@@ -264,11 +266,30 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
             //forgot password result failure handler
             public void onFailure(ForgetPasswordError error) {
                 dismissProgressIndicator();
+
+                String errorString = "";
+                if (error.captureApiError != null) {
+                    Map invalidFields = error.captureApiError.getLocalizedValidationErrorMessages();
+
+                    if (invalidFields != null ) {
+                        List forgotPasswordFormMessages =
+                                (List)invalidFields.get(Jump.getCaptureForgotPasswordFormName());
+
+                        if (forgotPasswordFormMessages != null && !forgotPasswordFormMessages.isEmpty()) {
+                            errorString = (String)forgotPasswordFormMessages.get(0);
+                        }
+                    }
+                }
+
+                if (errorString.equals("") && error.captureApiError != null) {
+                    errorString = error.captureApiError.error_description;
+                }
+
                 AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
                 adb
                         .setTitle(getResources().getString(
                                 R.string.jr_capture_forgotpassword_reset_error_msg))
-                        .setMessage(error.captureApiError.error_description)
+                        .setMessage(errorString)
                         .setPositiveButton(getResources().getString(
                                 R.string.jr_capture_forgotpassword_dismiss_button),
                                 new DialogInterface.OnClickListener() {

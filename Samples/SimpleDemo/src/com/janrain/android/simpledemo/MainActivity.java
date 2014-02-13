@@ -134,10 +134,7 @@ public class MainActivity extends FragmentActivity {
             Bundle extras = intent.getExtras();
             if (extras != null) {
                 String state = extras.getString("message");
-                AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
-                b.setMessage(state);
-                b.setNeutralButton("Dismiss", null);
-                b.show();
+                Toast.makeText(MainActivity.this, state, Toast.LENGTH_LONG).show();
             }
 
         }
