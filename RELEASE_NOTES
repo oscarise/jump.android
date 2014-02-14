@@ -1,3 +1,8 @@
+v4.7.0
+ - User landing screen now uses square provider icons
+ - Added broadcasts for when the flow succeeds or fails to downlaod
+ - Removed unused Backplane support
+ - Fixed crash when signing in with a native provider and no network connection
 v4.6.3
  - Icon support for Microsoft Account
  - Fixed crash when missing icons for a given provider
