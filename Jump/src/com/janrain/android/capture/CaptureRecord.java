@@ -206,6 +206,26 @@ public class CaptureRecord extends JSONObject {
         return Base64.encodeToString(hash, Base64.NO_WRAP);
     }
 
+    public void download(final CaptureApiRequestCallback callback){
+    	Capture.performUpdateSignedUserData(new CaptureApiResultHandler(){
+			@Override
+			public void onSuccess(JSONObject response) {
+				
+				JSONObject newRecord = response.optJSONObject("result");
+				if (newRecord!=null) {
+					original = newRecord;
+					JsonUtils.deepCopy(newRecord, CaptureRecord.this);
+					callback.onSuccess();
+					}
+				else {
+					callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+				}
+			}
+			@Override
+			public void onFailure(CaptureApiError error) {
+				callback.onFailure(error);
+			}}); 
+    }
     /**
      * Synchronizes the Capture record with the Capture service
      * Note that this sends any local changes to the service, but does not retrieve updates from the service.
